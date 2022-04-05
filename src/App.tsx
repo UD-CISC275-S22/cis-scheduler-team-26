@@ -7,9 +7,11 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
+            <h3>Jack Kingham</h3>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
+                <div>Iclyn Taero</div>
             </p>
             <div>Developed by: Sean Williams</div>
         </div>
