@@ -11,6 +11,7 @@ function App(): JSX.Element {
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
+                <div>Iclyn Taero</div>
             </p>
             <div>Developed by: Sean Williams</div>
         </div>
