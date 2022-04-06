@@ -10,4 +10,11 @@ courseList: CourseInterFace[]:
 semesterInterface: 
     season: string 
     year: number 
-    
+    courseList: courseList[];
+
+semesterList: 
+    {season: year, {array of courses}}
+    {season: year, {array of courses}}
+    {season: year, {array of courses}}
+    {season: year, {array of courses}}
+    etc. 
