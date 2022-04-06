@@ -18,7 +18,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (70 ms)
+  ✓ renders the course name somewhere (68 ms)
 
 ----------|---------|----------|---------|---------|-------------------
 File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -29,5 +29,5 @@ All files |     100 |      100 |     100 |     100 |
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        1.43 s
+Time:        1.556 s
 Ran all test suites.
