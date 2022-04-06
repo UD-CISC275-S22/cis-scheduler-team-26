@@ -1,0 +1,13 @@
+courseInterFace: 
+    courseName: string 
+    numCredits: number
+    preReq: string[]
+    taken: boolean
+
+courseList: CourseInterFace[]: 
+    {courseName, numCredits, preReq, taken}
+
+semesterInterface: 
+    season: string 
+    year: number 
+    
