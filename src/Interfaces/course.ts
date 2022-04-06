@@ -22,6 +22,13 @@ export function addCourse({
 }: Course): void {
     courseList.push({ id, courseName, numCredits, preReq, taken });
 }
+export function removeCourse(rid: number, rcourseName: string) {
+    const index = courseList.findIndex(
+        (Course): boolean =>
+            Course.id === rid && Course.courseName === rcourseName
+    );
+    courseList.splice(index, 1);
+}
 /**Makes the first semester of classes for you */
 /**The parameters are for adding a breadth that the person
  * chooses to take for the first semester.*/
