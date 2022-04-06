@@ -68,3 +68,4 @@ function setUpCourseList(
         taken: BTtaken
     });
 }
+setUpCourseList(151, "ARTH", 3, [], false);
