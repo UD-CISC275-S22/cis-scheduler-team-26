@@ -2,12 +2,16 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-  console.error
-    Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
-        at div
-        at p
-        at div
-        at App
+PASS src/Interfaces/testingCourse.test.tsx
+PASS src/App.test.tsx
+  ● Console
+
+    console.error
+      Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>.
+          at div
+          at p
+          at div
+          at App
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -16,9 +20,7 @@
       at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
       at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
-
-PASS src/App.test.tsx
-  ✓ renders the course name somewhere (88 ms)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
 ----------------|---------|----------|---------|---------|-------------------
 File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -26,14 +28,15 @@ File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 All files       |     100 |      100 |     100 |     100 |                   
  src            |     100 |      100 |     100 |     100 |                   
   App.tsx       |     100 |      100 |     100 |     100 |                   
- src/Interfaces |       0 |        0 |       0 |       0 |                   
-  course.ts     |       0 |        0 |       0 |       0 |                   
+ src/Interfaces |     100 |      100 |     100 |     100 |                   
+  course.ts     |     100 |      100 |     100 |     100 |                   
   degree.ts     |       0 |        0 |       0 |       0 |                   
   degreePlan.ts |       0 |        0 |       0 |       0 |                   
   semester.ts   |       0 |        0 |       0 |       0 |                   
 ----------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
+
+Test Suites: 2 passed, 2 total
+Tests:       4 passed, 4 total
 Snapshots:   0 total
-Time:        2.191 s
+Time:        1.715 s
 Ran all test suites.
