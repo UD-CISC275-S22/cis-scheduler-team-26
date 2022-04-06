@@ -68,4 +68,7 @@ function setUpCourseList(
         taken: BTtaken
     });
 }
+export function getCourseList(): Course[] {
+    return courseList;
+}
 setUpCourseList(151, "ARTH", 3, [], false);
