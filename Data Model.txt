@@ -1,20 +1,32 @@
+A course will be a simple interface holding important data about that specific course like name, credits, prerequisites, etc
+A semester will be an interface with an array of courses, the total credit count, and the year and season the semester takes place
+A degree plan will contain an array of semesters, a title to label the plan, and the specific degree that the plan represents along
+    its requirements for completion.
+
+We will add any other attributes to the interfaces as we need them.
+
 courseInterFace: 
     courseName: string 
     numCredits: number
     preReq: string[]
     taken: boolean
 
-courseList: CourseInterFace[]: 
-    {courseName, numCredits, preReq, taken}
-
 semesterInterface: 
     season: string 
     year: number 
-    courseList: courseList[];
+    courseList: courseInterface[]
+    totalCredits: number
 
-semesterList: 
-    {season: year, {array of courses}}
-    {season: year, {array of courses}}
-    {season: year, {array of courses}}
-    {season: year, {array of courses}}
-    etc. 
+possibly a year interface to group four consecutive semesters of fall, winter, spring, summer
+
+degreePlanInterface:
+    semesterList: semesterInterface[]
+    title: string
+    degree: string
+    requiredCourses: courseInterface[]
+
+This degree plan interface is highly volatile. We will more that likely need to change it as we start to flesh out the project more.
+For instance we might want to create a year interface, so then the degree plan will contain an array of years rather than semesters.
+
+An array of all possible courses to choose from
+allCourses: courseInterface[]
