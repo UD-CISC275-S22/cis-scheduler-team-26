@@ -3,6 +3,35 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
+  ● Console
+
+    console.error
+      Warning: Each child in a list should have a unique "key" prop.
+      
+      Check the render method of `PlanList`. See https://reactjs.org/link/warning-keys for more information.
+          at div
+          at PlanList (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/PlanList.tsx:40:5)
+          at div
+          at div
+          at App (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/App.tsx:29:31)
+
+      44 |     setPlanList(planList); //NEEDS TO BE REMOVED, CURRENTLY JUST TO AVOID ERROR
+      45 |     return (
+    > 46 |         <div>
+         |         ^
+      47 |             <h3>List of current Degree Plans:</h3>
+      48 |             {planList.map(
+      49 |                 (plan: DegreePlan): JSX.Element =>
+
+      at printWarning (node_modules/react/cjs/react-jsx-dev-runtime.development.js:117:30)
+      at error (node_modules/react/cjs/react-jsx-dev-runtime.development.js:93:5)
+      at validateExplicitKey (node_modules/react/cjs/react-jsx-dev-runtime.development.js:986:5)
+      at validateChildKeys (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1013:11)
+      at jsxWithValidation (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1174:15)
+      at PlanList (src/PlanList.tsx:46:9)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
+
   ● renders the course name somewhere
 
     TestingLibraryElementError: Unable to find an element with the text: /CISC275/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -25,23 +54,51 @@ FAIL src/App.test.tsx
               [0mDeveloped by: Jack Kingham, Sean Williams, Iclyn Taero[0m
             [36m</span>[39m
           [36m</header>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"Header-description"[39m
-          [36m>[39m
-            [0mMake, manage, and save degree plans for computer science degrees offered at UD[0m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"Header-description"[39m
+            [36m>[39m
+              [0mMake, manage, and save degree plans for computer science degrees offered at UD[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"Header-description"[39m
+            [36m>[39m
+              [0mView sample degree plans and required courses for multiple degrees[0m
+            [36m</div>[39m
+            [36m<p>[39m
+              [0mEdit [0m
+              [36m<code>[39m
+                [0msrc/App.tsx[0m
+              [36m</code>[39m
+              [0m and save. This page will automatically reload.[0m
+            [36m</p>[39m
+            [36m<div>[39m
+              [36m<h3>[39m
+                [0mList of current Degree Plans:[0m
+              [36m</h3>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [0mName: [0m
+                  [0mTesting Plan[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mExpected Degree: [0m
+                  [0mTest Degree[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mCurrently Have [0m
+                  [0m100[0m
+                  [0m out of[0m
+                  [0m [0m
+                  [0m150[0m
+                  [0m required Credits[0m
+                [36m</div>[39m
+                [36m<button>[39m
+                  [0mView/Edit Plan[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
           [36m</div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"Header-description"[39m
-          [36m>[39m
-            [0mView sample degree plans and required courses for multiple degrees[0m
-          [36m</div>[39m
-          [36m<p>[39m
-            [0mEdit [0m
-            [36m<code>[39m
-              [0msrc/App.tsx[0m
-            [36m</code>[39m
-            [0m and save. This page will automatically reload.[0m
-          [36m</p>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -61,22 +118,24 @@ FAIL src/App.test.tsx
       at Object.<anonymous> (src/App.test.tsx:7:32)
 
 PASS src/CourseTest.test.tsx
-----------------|---------|----------|---------|---------|-------------------
-File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------------|---------|----------|---------|---------|-------------------
-All files       |     100 |      100 |     100 |     100 |                   
- src            |     100 |      100 |     100 |     100 |                   
-  App.tsx       |     100 |      100 |     100 |     100 |                   
-  Courses.ts    |     100 |      100 |     100 |     100 |                   
- src/Interfaces |       0 |        0 |       0 |       0 |                   
-  course.ts     |       0 |        0 |       0 |       0 |                   
-  degree.ts     |       0 |        0 |       0 |       0 |                   
-  degreePlan.ts |       0 |        0 |       0 |       0 |                   
-  semester.ts   |       0 |        0 |       0 |       0 |                   
-----------------|---------|----------|---------|---------|-------------------
+------------------|---------|----------|---------|---------|-------------------
+File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------|---------|----------|---------|---------|-------------------
+All files         |   52.94 |       50 |   36.36 |   52.94 |                   
+ src              |   52.94 |       50 |   36.36 |   52.94 |                   
+  App.tsx         |     100 |       50 |     100 |     100 | 41                
+  Courses.ts      |     100 |      100 |     100 |     100 |                   
+  PlanList.tsx    |   66.66 |      100 |      60 |   66.66 | 26-28             
+  ViewingPlan.tsx |       0 |      100 |       0 |       0 | 20-74             
+ src/Interfaces   |       0 |        0 |       0 |       0 |                   
+  course.ts       |       0 |        0 |       0 |       0 |                   
+  degree.ts       |       0 |        0 |       0 |       0 |                   
+  degreePlan.ts   |       0 |        0 |       0 |       0 |                   
+  semester.ts     |       0 |        0 |       0 |       0 |                   
+------------------|---------|----------|---------|---------|-------------------
 
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        2.375 s
+Time:        2.206 s
 Ran all test suites.
