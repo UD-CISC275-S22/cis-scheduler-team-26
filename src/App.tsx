@@ -22,15 +22,25 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
+                University Of Delaware
+                <br />
+                Computer Science Degree Planner
+                <span className="Developer-names">
+                    Developed by: Jack Kingham, Sean Williams, Iclyn Taero
+                </span>
             </header>
-            <h3>Jack Kingham</h3>
+            <div className="Header-description">
+                Make, manage, and save degree plans for computer science degrees
+                offered at UD
+            </div>
+            <div className="Header-description">
+                View sample degree plans and required courses for multiple
+                degrees
+            </div>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
-                <div>Iclyn Taero</div>
             </p>
-            <div>Developed by: Sean Williams</div>
             <PlanList
                 planList={plans}
                 setPlanList={setPlans}
