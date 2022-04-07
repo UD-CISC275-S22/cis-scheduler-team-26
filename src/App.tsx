@@ -3,7 +3,7 @@ import "./App.css";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { PlanList } from "./PlanList";
 import { ViewingPlan } from "./ViewingPlan";
-import { courseList } from "./Courses";
+import { courseList } from "./Resources/Courses";
 
 const INITIAL_PLANS: DegreePlan[] = [
     {
