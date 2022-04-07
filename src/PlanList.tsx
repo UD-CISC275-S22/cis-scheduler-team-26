@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { DegreePlan } from "./Interfaces/degreePlan";
 
 interface planListProp {
@@ -16,7 +16,7 @@ function printPlan(
     return (
         <div>
             <div>Name: {plan.planName}</div>
-            <div>Expected Degree: {plan.degree}</div>
+            <div>Expected Degree: {plan.degree.title}</div>
             <div>
                 Currently Have {plan.totalCredits} out of{" "}
                 {plan.degree.requiredCredits} required Credits
@@ -41,6 +41,7 @@ export function PlanList({
     setPlanList,
     setViewPlan
 }: planListProp): JSX.Element {
+    setPlanList(planList); //NEEDS TO BE REMOVED, CURRENTLY JUST TO AVOID ERROR
     return (
         <div>
             <h3>List of current Degree Plans:</h3>
