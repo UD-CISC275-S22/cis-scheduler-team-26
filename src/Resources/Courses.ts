@@ -1,4 +1,4 @@
-import { Course } from "./Interfaces/course";
+import { Course } from "../Interfaces/course";
 export const courseList: Course[] = [
     { id: 101, courseName: "EGGG", numCredits: 3, preReq: [], taken: false },
     { id: 108, courseName: "CISC", numCredits: 3, preReq: [], taken: false },
