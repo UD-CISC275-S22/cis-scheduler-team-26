@@ -4,6 +4,7 @@ import { DegreePlan } from "./Interfaces/degreePlan";
 import { PlanList } from "./PlanList";
 import { ViewingPlan } from "./ViewingPlan";
 import { courseList } from "./Resources/Courses";
+import { CoursesList } from "./CoursesList";
 
 const INITIAL_PLANS: DegreePlan[] = [
     {
@@ -34,6 +35,7 @@ const INITIAL_PLANS: DegreePlan[] = [
 function App(): JSX.Element {
     const [plans, setPlans] = useState<DegreePlan[]>(INITIAL_PLANS);
     const [viewPlan, setViewPlan] = useState<number>(-1);
+    const [showCourses, setShowCourses] = useState<boolean>(false);
     return (
         <div className="App">
             <header className="App-header">
@@ -44,7 +46,9 @@ function App(): JSX.Element {
                     Developed by: Jack Kingham, Sean Williams, Iclyn Taero
                 </span>
             </header>
-            {viewPlan === -1 ? (
+            {showCourses ? (
+                <CoursesList setShowCourses={setShowCourses}></CoursesList>
+            ) : viewPlan === -1 ? (
                 <div>
                     <div className="Header-description">
                         Make, manage, and save degree plans for computer science
@@ -72,6 +76,9 @@ function App(): JSX.Element {
                     setViewPlan={setViewPlan}
                 ></ViewingPlan>
             )}
+            <button onClick={() => setShowCourses(!showCourses)}>
+                View/Edit Course List
+            </button>
         </div>
     );
 }
