@@ -3,35 +3,6 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
-  ● Console
-
-    console.error
-      Warning: Each child in a list should have a unique "key" prop.
-      
-      Check the render method of `PlanList`. See https://reactjs.org/link/warning-keys for more information.
-          at div
-          at PlanList (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/PlanList.tsx:40:5)
-          at div
-          at div
-          at App (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/App.tsx:29:31)
-
-      44 |     setPlanList(planList); //NEEDS TO BE REMOVED, CURRENTLY JUST TO AVOID ERROR
-      45 |     return (
-    > 46 |         <div>
-         |         ^
-      47 |             <h3>List of current Degree Plans:</h3>
-      48 |             {planList.map(
-      49 |                 (plan: DegreePlan): JSX.Element =>
-
-      at printWarning (node_modules/react/cjs/react-jsx-dev-runtime.development.js:117:30)
-      at error (node_modules/react/cjs/react-jsx-dev-runtime.development.js:93:5)
-      at validateExplicitKey (node_modules/react/cjs/react-jsx-dev-runtime.development.js:986:5)
-      at validateChildKeys (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1013:11)
-      at jsxWithValidation (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1174:15)
-      at PlanList (src/PlanList.tsx:46:9)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
-      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
-
   ● renders the course name somewhere
 
     TestingLibraryElementError: Unable to find an element with the text: /CISC275/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -121,16 +92,16 @@ PASS src/Resources/CourseTest.test.tsx
 ------------------|---------|----------|---------|---------|-------------------
 File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------|---------|----------|---------|---------|-------------------
-All files         |      50 |       50 |   36.36 |      50 |                   
- src              |      50 |       50 |   36.36 |      50 |                   
-  App.tsx         |     100 |       50 |     100 |     100 | 41                
-  PlanList.tsx    |   66.66 |      100 |      60 |   66.66 | 26-28             
-  ViewingPlan.tsx |       0 |      100 |       0 |       0 | 20-74             
+All files         |   23.07 |     6.25 |      20 |   23.07 |                   
+ src              |   26.66 |       10 |   21.05 |   26.66 |                   
+  App.tsx         |     100 |       50 |     100 |     100 | 47                
+  PlanList.tsx    |   66.66 |      100 |      60 |   66.66 | 25-27             
+  ViewingPlan.tsx |       0 |        0 |       0 |       0 | 19-159            
  src/Interfaces   |       0 |        0 |       0 |       0 |                   
   course.ts       |       0 |        0 |       0 |       0 |                   
   degree.ts       |       0 |        0 |       0 |       0 |                   
   degreePlan.ts   |       0 |        0 |       0 |       0 |                   
-  semester.ts     |       0 |        0 |       0 |       0 |                   
+  semester.ts     |       0 |        0 |       0 |       0 | 6-13              
  src/Resources    |      50 |      100 |     100 |      50 |                   
   Courses.ts      |     100 |      100 |     100 |     100 |                   
   Degrees.ts      |       0 |      100 |     100 |       0 | 4                 
@@ -139,5 +110,5 @@ All files         |      50 |       50 |   36.36 |      50 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        2.224 s
+Time:        2.081 s
 Ran all test suites.
