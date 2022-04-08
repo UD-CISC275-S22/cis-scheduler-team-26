@@ -70,6 +70,9 @@ FAIL src/App.test.tsx
               [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
+          [36m<button>[39m
+            [0mView/Edit Course List[0m
+          [36m</button>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -92,9 +95,10 @@ PASS src/Resources/CourseTest.test.tsx
 ------------------|---------|----------|---------|---------|-------------------
 File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------|---------|----------|---------|---------|-------------------
-All files         |   20.45 |     4.54 |      16 |   20.45 |                   
- src              |   22.85 |     6.25 |   16.66 |   22.85 |                   
-  App.tsx         |     100 |       50 |     100 |     100 | 47                
+All files         |      20 |     8.33 |   13.33 |      20 |                   
+ src              |   21.95 |    11.11 |   13.79 |   21.95 |                   
+  App.tsx         |   83.33 |       50 |      50 |   83.33 | 79                
+  CoursesList.tsx |       0 |      100 |       0 |       0 | 10-31             
   PlanList.tsx    |   66.66 |      100 |      60 |   66.66 | 25-27             
   ViewingPlan.tsx |       0 |        0 |       0 |       0 | 19-217            
  src/Interfaces   |       0 |        0 |       0 |       0 |                   
@@ -110,5 +114,5 @@ All files         |   20.45 |     4.54 |      16 |   20.45 |
 Test Suites: 1 failed, 1 passed, 2 total
 Tests:       1 failed, 1 passed, 2 total
 Snapshots:   0 total
-Time:        3.374 s
+Time:        2.335 s
 Ran all test suites.
