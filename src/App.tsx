@@ -14,6 +14,12 @@ const INITIAL_PLANS: DegreePlan[] = [
                 season: "Winter",
                 courseList: courseList,
                 totalCredits: 0
+            },
+            {
+                year: 2022,
+                season: "Spring",
+                courseList: courseList,
+                totalCredits: 0
             }
         ],
         degree: {

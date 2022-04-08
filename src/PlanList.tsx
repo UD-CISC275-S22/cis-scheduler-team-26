@@ -2,7 +2,6 @@ import React from "react";
 import { DegreePlan } from "./Interfaces/degreePlan";
 
 interface planListProp {
-    // The type is "a function that consumes a boolean and returns nothing"
     planList: DegreePlan[];
     setPlanList: (newPlan: DegreePlan[]) => void;
     setViewPlan: (newCurrPlan: number) => void;
@@ -14,7 +13,7 @@ function printPlan(
     setViewPlan: (newCurrPlan: number) => void
 ): JSX.Element {
     return (
-        <div>
+        <div key={plan.planName}>
             <div>Name: {plan.planName}</div>
             <div>Expected Degree: {plan.degree.title}</div>
             <div>
