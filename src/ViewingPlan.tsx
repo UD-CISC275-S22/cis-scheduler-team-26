@@ -11,10 +11,38 @@ interface planListProp {
     setViewPlan: (newCurrPlan: number) => void;
 }
 
+function removeSemHelp(
+    curr: DegreePlan,
+    season: Season,
+    year: number
+): DegreePlan {
+    return {
+        ...curr,
+        semesterList: curr.semesterList.filter(
+            (sem: Semester): boolean => sem.season != season || sem.year != year
+        )
+    };
+}
+function removeSemester(
+    plan: DegreePlan,
+    planList: DegreePlan[],
+    setPlans: (newPlans: DegreePlan[]) => void,
+    season: Season,
+    year: number
+) {
+    setPlans(
+        planList.map(
+            (curr: DegreePlan): DegreePlan =>
+                curr === plan ? removeSemHelp(curr, season, year) : curr
+        )
+    );
+}
+
 function printSemesters(
     plan: DegreePlan,
     planList: DegreePlan[],
-    setPlans: (newPlans: DegreePlan[]) => void
+    setPlans: (newPlans: DegreePlan[]) => void,
+    edit: boolean
 ): JSX.Element {
     setPlans(planList); //NEEDS TO BE REMOVED, CURRENTLY JUST TO AVOID ERROR
     return (
@@ -24,11 +52,41 @@ function printSemesters(
                     <div key={semester.season + semester.year}>
                         <Table striped bordered hover>
                             <thead>
-                                <tr>
-                                    <th colSpan={3}>
-                                        {semester.season + " " + semester.year}
-                                    </th>
-                                </tr>
+                                {edit ? (
+                                    <tr>
+                                        <th colSpan={2}>
+                                            {semester.season +
+                                                " " +
+                                                semester.year}
+                                        </th>
+                                        <th>
+                                            <button
+                                                style={{
+                                                    backgroundColor: "red"
+                                                }}
+                                                onClick={() =>
+                                                    removeSemester(
+                                                        plan,
+                                                        planList,
+                                                        setPlans,
+                                                        semester.season,
+                                                        semester.year
+                                                    )
+                                                }
+                                            >
+                                                Delete Semester
+                                            </button>
+                                        </th>
+                                    </tr>
+                                ) : (
+                                    <tr>
+                                        <th colSpan={3}>
+                                            {semester.season +
+                                                " " +
+                                                semester.year}
+                                        </th>
+                                    </tr>
+                                )}
                             </thead>
                             <tr>
                                 <td>Course ID</td>
@@ -144,7 +202,7 @@ export function ViewingPlan({
     return (
         <div>
             <h3>Currently Displaying {plan.planName}:</h3>
-            {printSemesters(plan, planList, setPlans)}
+            {printSemesters(plan, planList, setPlans, edit)}
             {edit &&
                 addSemesters(
                     plan,
