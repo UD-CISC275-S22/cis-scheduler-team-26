@@ -1,11 +1,10 @@
-import React from "react";
-import { Table } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Table } from "react-bootstrap";
 import { Course } from "./Interfaces/course";
 import { DegreePlan } from "./Interfaces/degreePlan";
-import { Semester } from "./Interfaces/semester";
+import { Season, Semester, validSeason } from "./Interfaces/semester";
 
 interface planListProp {
-    // The type is "a function that consumes a boolean and returns nothing"
     plan: DegreePlan;
     planList: DegreePlan[];
     setPlans: (newPlans: DegreePlan[]) => void;
@@ -60,6 +59,78 @@ function printSemesters(
         </div>
     );
 }
+function addSemHelp(
+    plan: DegreePlan,
+    season: Season,
+    year: number
+): DegreePlan {
+    const alreadyContains = plan.semesterList.find(
+        (check: Semester): boolean =>
+            check.season === season && check.year === year
+    );
+    if (alreadyContains) {
+        return plan;
+    }
+    return {
+        ...plan,
+        semesterList: [
+            ...plan.semesterList,
+            { year: year, season: season, courseList: [], totalCredits: 0 }
+        ]
+    };
+}
+function addSemesters(
+    plan: DegreePlan,
+    planList: DegreePlan[],
+    setPlans: (newPlans: DegreePlan[]) => void,
+    season: Season,
+    setSeason: (newSeason: Season) => void,
+    year: number,
+    setYear: (newYear: number) => void
+) {
+    return (
+        <div>
+            <Form.Group controlId="semesterYear">
+                <Form.Label>Year:</Form.Label>
+                <Form.Control
+                    type="number"
+                    value={year}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                        setYear(parseInt(event.target.value))
+                    }
+                />
+            </Form.Group>
+            <Form.Group controlId="semesterSeason">
+                <Form.Label>Season:</Form.Label>
+                <Form.Select
+                    value={season}
+                    onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+                        setSeason(validSeason(event.target.value))
+                    }
+                >
+                    <option value="Winter">Winter</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Fall">Fall</option>
+                </Form.Select>
+            </Form.Group>
+            <button
+                onClick={() =>
+                    setPlans(
+                        planList.map(
+                            (curr: DegreePlan): DegreePlan =>
+                                curr === plan
+                                    ? addSemHelp(curr, season, year)
+                                    : curr
+                        )
+                    )
+                }
+            >
+                Add Semester
+            </button>
+        </div>
+    );
+}
 
 export function ViewingPlan({
     plan,
@@ -67,10 +138,24 @@ export function ViewingPlan({
     setPlans,
     setViewPlan
 }: planListProp): JSX.Element {
+    const [edit, setEdit] = useState<boolean>(false);
+    const [season, setSeason] = useState<Season>("Winter");
+    const [year, setYear] = useState<number>(2022);
     return (
         <div>
             <h3>Currently Displaying {plan.planName}:</h3>
             {printSemesters(plan, planList, setPlans)}
+            {edit &&
+                addSemesters(
+                    plan,
+                    planList,
+                    setPlans,
+                    season,
+                    setSeason,
+                    year,
+                    setYear
+                )}
+            <button onClick={() => setEdit(!edit)}>Edit Semesters</button>
             <button onClick={() => setViewPlan(-1)}>Return to Plan List</button>
         </div>
     );
