@@ -16,7 +16,6 @@ export function CoursesList({ setShowCourses }: coursesListProp): JSX.Element {
     const [courseID, setCourseID] = useState<number>(0);
     const [courseCred, setCourseCred] = useState<number>(0);
     function addCourse() {
-        console.log("it works");
         const newCourse: Course = {
             id: courseID,
             courseName: courseDep,
@@ -25,12 +24,12 @@ export function CoursesList({ setShowCourses }: coursesListProp): JSX.Element {
             taken: false
         };
         setCourseList([...courseListC, newCourse]);
-        console.log(courseListC);
+        console.log(courseListC[courseListC.length - 1]);
     }
     return (
         <div>
             <h3>List of current Courses:</h3>
-            {courseList.map(
+            {courseListC.map(
                 (curr: Course): JSX.Element => (
                     <div key={curr.courseName + curr.id}>
                         {curr.courseName + curr.id}
@@ -88,7 +87,7 @@ export function CoursesList({ setShowCourses }: coursesListProp): JSX.Element {
                     />
                 </Form.Group>
             )}
-            {addingCourse && <button onClick={addCourse}>Submit3</button>}
+            {addingCourse && <button onClick={addCourse}>Submit</button>}
         </div>
     );
 }
