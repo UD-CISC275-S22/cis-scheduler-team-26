@@ -67,10 +67,10 @@ export function CoursesList({ setShowCourses }: coursesListProp): JSX.Element {
                 <Form.Group controlId="Add Course ID">
                     <Form.Label>Type Course ID: </Form.Label>
                     <Form.Control
-                        type="text"
+                        type="number"
                         value={courseID}
                         onChange={(event: ChangeEvent) =>
-                            setCourseID(parseInt(event.target.value) - 1 || 0)
+                            setCourseID(parseInt(event.target.value) || 0)
                         }
                     />
                 </Form.Group>
@@ -79,10 +79,10 @@ export function CoursesList({ setShowCourses }: coursesListProp): JSX.Element {
                 <Form.Group controlId="Add Course Credit">
                     <Form.Label>Type number of Credits: </Form.Label>
                     <Form.Control
-                        type="text"
+                        type="number"
                         value={courseCred}
                         onChange={(event: ChangeEvent) =>
-                            setCourseCred(parseInt(event.target.value) - 1 || 0)
+                            setCourseCred(parseInt(event.target.value) || 0)
                         }
                     />
                 </Form.Group>
