@@ -12,6 +12,7 @@ interface coursesListProp {
 export function CoursesList({ setShowCourses }: coursesListProp): JSX.Element {
     const [courseListC, setCourseList] = useState<Course[]>(courseList);
     const [addingCourse, setAddCourse] = useState<boolean>(false);
+    const [removingCourse, setRemoveCourse] = useState<boolean>(false);
     const [courseDep, setCourseDep] = useState<string>("");
     const [courseID, setCourseID] = useState<number>(0);
     const [courseCred, setCourseCred] = useState<number>(0);
@@ -25,6 +26,14 @@ export function CoursesList({ setShowCourses }: coursesListProp): JSX.Element {
         };
         setCourseList([...courseListC, newCourse]);
         console.log(courseListC[courseListC.length - 1]);
+    }
+    function removeCourse() {
+        setCourseList(
+            courseListC.filter(
+                (course: Course): boolean =>
+                    course.id !== courseID && course.courseName !== courseDep
+            )
+        );
     }
     return (
         <div>
@@ -88,6 +97,32 @@ export function CoursesList({ setShowCourses }: coursesListProp): JSX.Element {
                 </Form.Group>
             )}
             {addingCourse && <button onClick={addCourse}>Submit</button>}
+            <button onClick={() => setRemoveCourse(true)}>Remove Course</button>
+            {removingCourse && (
+                <Form.Group controlId="Removing Course Dep">
+                    <Form.Label>Type Course Department: </Form.Label>
+                    <Form.Control
+                        type="text"
+                        value={courseDep}
+                        onChange={(event: ChangeEvent) =>
+                            setCourseDep(event.target.value)
+                        }
+                    />
+                </Form.Group>
+            )}
+            {removingCourse && (
+                <Form.Group controlId="Removing Course ID">
+                    <Form.Label>Type Course ID: </Form.Label>
+                    <Form.Control
+                        type="number"
+                        value={courseID}
+                        onChange={(event: ChangeEvent) =>
+                            setCourseID(parseInt(event.target.value) || 0)
+                        }
+                    />
+                </Form.Group>
+            )}
+            {removingCourse && <button onClick={removeCourse}>Submit</button>}
         </div>
     );
 }
