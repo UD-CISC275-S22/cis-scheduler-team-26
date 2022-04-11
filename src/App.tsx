@@ -5,6 +5,7 @@ import { PlanList } from "./PlanList";
 import { ViewingPlan } from "./ViewingPlan";
 import { courseList } from "./Resources/Courses";
 import { CoursesList } from "./CoursesList";
+import { Course } from "./Interfaces/course";
 
 const INITIAL_PLANS: DegreePlan[] = [
     {
@@ -33,6 +34,7 @@ const INITIAL_PLANS: DegreePlan[] = [
 ];
 
 function App(): JSX.Element {
+    const [courses, setCourses] = useState<Course[]>(courseList);
     const [plans, setPlans] = useState<DegreePlan[]>(INITIAL_PLANS);
     const [viewPlan, setViewPlan] = useState<number>(-1);
     const [showCourses, setShowCourses] = useState<boolean>(false);
@@ -47,7 +49,11 @@ function App(): JSX.Element {
                 </span>
             </header>
             {showCourses ? (
-                <CoursesList setShowCourses={setShowCourses}></CoursesList>
+                <CoursesList
+                    setShowCourses={setShowCourses}
+                    setCourses={setCourses}
+                    courses={courses}
+                ></CoursesList>
             ) : viewPlan === -1 ? (
                 <div>
                     <div className="Header-description">
@@ -76,9 +82,11 @@ function App(): JSX.Element {
                     setViewPlan={setViewPlan}
                 ></ViewingPlan>
             )}
-            <button onClick={() => setShowCourses(!showCourses)}>
-                View/Edit Course List
-            </button>
+            {!showCourses && (
+                <button onClick={() => setShowCourses(!showCourses)}>
+                    View/Edit Course List
+                </button>
+            )}
         </div>
     );
 }
