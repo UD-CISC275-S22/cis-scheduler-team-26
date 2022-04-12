@@ -45,10 +45,17 @@ function removeSemester(
     );
 }
 function addCourseToSemList(currSem: Semester, addingCourse: Course) {
-    return {
-        ...currSem,
-        courseList: [...currSem.courseList, addingCourse]
-    };
+    if (
+        currSem.courseList.findIndex(
+            (check: Course): boolean => check === addingCourse
+        ) === -1
+    ) {
+        return {
+            ...currSem,
+            courseList: [...currSem.courseList, addingCourse]
+        };
+    }
+    return { ...currSem };
 }
 function addCourseHelp(
     curr: DegreePlan,
