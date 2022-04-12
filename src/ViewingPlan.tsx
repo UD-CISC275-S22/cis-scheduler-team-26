@@ -9,7 +9,14 @@ interface planListProp {
     planList: DegreePlan[];
     setPlans: (newPlans: DegreePlan[]) => void;
     setViewPlan: (newCurrPlan: number) => void;
+    courses: Course[];
 }
+const emptySem: Semester = {
+    year: -1,
+    season: "Fall",
+    courseList: [],
+    totalCredits: -1
+};
 
 function removeSemHelp(
     curr: DegreePlan,
@@ -37,12 +44,66 @@ function removeSemester(
         )
     );
 }
+function addCourseToSemList(currSem: Semester, addingCourse: Course) {
+    return {
+        ...currSem,
+        courseList: [...currSem.courseList, addingCourse]
+    };
+}
+function addCourseHelp(
+    curr: DegreePlan,
+    editingSem: Semester,
+    addingCourse: Course
+): DegreePlan {
+    return {
+        ...curr,
+        semesterList: curr.semesterList.map(
+            (currSem: Semester): Semester =>
+                currSem === editingSem
+                    ? addCourseToSemList(currSem, addingCourse)
+                    : currSem
+        )
+    };
+}
+function addCourse(
+    plan: DegreePlan,
+    planList: DegreePlan[],
+    setPlans: (newPlans: DegreePlan[]) => void,
+    editingSem: Semester,
+    addingCourse: Course
+) {
+    setPlans(
+        planList.map(
+            (curr: DegreePlan): DegreePlan =>
+                curr === plan
+                    ? addCourseHelp(curr, editingSem, addingCourse)
+                    : curr
+        )
+    );
+}
+
+function findCourse(courses: Course[], check: string): Course {
+    const found = courses.find(
+        (currCourse: Course): boolean =>
+            currCourse.courseName + currCourse.id === check
+    );
+    if (found === undefined) {
+        return courses[0];
+    } else {
+        return found;
+    }
+}
 
 function printSemesters(
     plan: DegreePlan,
     planList: DegreePlan[],
     setPlans: (newPlans: DegreePlan[]) => void,
-    edit: boolean
+    edit: boolean,
+    editingSem: Semester,
+    setEditingSem: (newEditingSem: Semester) => void,
+    addingCourse: Course,
+    setAddingCourse: (newAddingCourse: Course) => void,
+    courses: Course[]
 ): JSX.Element {
     setPlans(planList); //NEEDS TO BE REMOVED, CURRENTLY JUST TO AVOID ERROR
     return (
@@ -104,7 +165,81 @@ function printSemesters(
                                     )
                                 )}
                             </tbody>
+                            {semester === editingSem && (
+                                <tbody>
+                                    <tr>
+                                        <td colSpan={2}>
+                                            <Form.Group controlId="addingCourse">
+                                                <Form.Label>
+                                                    Pick the Course to be Added:
+                                                </Form.Label>
+                                                <Form.Select
+                                                    value={
+                                                        addingCourse.courseName +
+                                                        addingCourse.id
+                                                    }
+                                                    onChange={(
+                                                        event: React.ChangeEvent<HTMLSelectElement>
+                                                    ) =>
+                                                        setAddingCourse(
+                                                            findCourse(
+                                                                courses,
+                                                                event.target
+                                                                    .value
+                                                            )
+                                                        )
+                                                    }
+                                                >
+                                                    {courses.map(
+                                                        (curr: Course) => (
+                                                            <option
+                                                                key={
+                                                                    curr.courseName +
+                                                                    curr.id
+                                                                }
+                                                                value={
+                                                                    curr.courseName +
+                                                                    curr.id
+                                                                }
+                                                            >
+                                                                {curr.courseName +
+                                                                    curr.id}
+                                                            </option>
+                                                        )
+                                                    )}
+                                                </Form.Select>
+                                            </Form.Group>
+                                        </td>
+                                        <td>
+                                            <button
+                                                onClick={() =>
+                                                    addCourse(
+                                                        plan,
+                                                        planList,
+                                                        setPlans,
+                                                        editingSem,
+                                                        addingCourse
+                                                    )
+                                                }
+                                            >
+                                                Add Course
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            )}
                         </Table>
+                        <button
+                            onClick={() =>
+                                setEditingSem(
+                                    semester === editingSem
+                                        ? emptySem
+                                        : semester
+                                )
+                            }
+                        >
+                            Edit Courses
+                        </button>
                     </div>
                 )
             )}
@@ -194,15 +329,28 @@ export function ViewingPlan({
     plan,
     planList,
     setPlans,
-    setViewPlan
+    setViewPlan,
+    courses
 }: planListProp): JSX.Element {
     const [edit, setEdit] = useState<boolean>(false);
     const [season, setSeason] = useState<Season>("Winter");
     const [year, setYear] = useState<number>(2022);
+    const [editingSem, setEditingSem] = useState<Semester>(emptySem);
+    const [addingCourse, setAddingCourse] = useState<Course>(courses[0]);
     return (
         <div>
             <h3>Currently Displaying {plan.planName}:</h3>
-            {printSemesters(plan, planList, setPlans, edit)}
+            {printSemesters(
+                plan,
+                planList,
+                setPlans,
+                edit,
+                editingSem,
+                setEditingSem,
+                addingCourse,
+                setAddingCourse,
+                courses
+            )}
             {edit &&
                 addSemesters(
                     plan,
