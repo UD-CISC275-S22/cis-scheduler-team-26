@@ -80,6 +80,7 @@ function App(): JSX.Element {
                     planList={plans}
                     setPlans={setPlans}
                     setViewPlan={setViewPlan}
+                    courses={courses}
                 ></ViewingPlan>
             )}
             {!showCourses && (
