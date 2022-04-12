@@ -112,7 +112,6 @@ function printSemesters(
     setAddingCourse: (newAddingCourse: Course) => void,
     courses: Course[]
 ): JSX.Element {
-    setPlans(planList); //NEEDS TO BE REMOVED, CURRENTLY JUST TO AVOID ERROR
     return (
         <div>
             {plan.semesterList.map(
