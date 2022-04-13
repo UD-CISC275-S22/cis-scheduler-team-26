@@ -58,6 +58,7 @@ export function CoursesList({
                                 Delete
                             </button>
                         )}
+                        <br></br>
                     </div>
                 )
             )}
