@@ -25,30 +25,39 @@ export function CoursesList({
     setCourses,
     courses
 }: coursesListProp): JSX.Element {
+    //buttons
     const [addingCourse, setAddCourse] = useState<boolean>(false);
     const [removingCourse, setRemoveCourse] = useState<boolean>(false);
     const [editCourse, setEditCourse] = useState<boolean>(false);
+    //course info
     const [courseDep, setCourseDep] = useState<string>("");
     const [courseID, setCourseID] = useState<number>(0);
     const [courseCred, setCourseCred] = useState<number>(0);
     const [courseTaken, setTaken] = useState<boolean>(false);
-
-    let storeCourse: Course;
-    let i: number;
+    const [courseIndex, setCourseIndex] = useState<number>(0);
+    const [currCourse, setCurrCourse] = useState<Course>({
+        id: 0,
+        courseName: "0",
+        numCredits: 0,
+        taken: false,
+        preReq: []
+    });
     function saveCourse(oldCourse: Course): void {
-        storeCourse = {
+        const storeCourse: Course = {
             id: oldCourse.id,
             courseName: oldCourse.courseName,
             numCredits: oldCourse.numCredits,
             taken: oldCourse.taken,
             preReq: oldCourse.preReq
         };
-        i = courses.findIndex(
-            (course: Course): boolean =>
-                course.courseName === storeCourse.courseName &&
-                course.id === storeCourse.id
+        setCurrCourse(storeCourse);
+        setCourseIndex(
+            courses.findIndex(
+                (course: Course): boolean =>
+                    course.courseName === storeCourse.courseName &&
+                    course.id === storeCourse.id
+            )
         );
-        console.log(storeCourse.courseName);
     }
     function changeCourse(): void {
         const changedCourse: Course = {
@@ -58,11 +67,25 @@ export function CoursesList({
             taken: courseTaken,
             preReq: []
         };
-        courses.splice(i, 1, changedCourse);
-        //removeCourse(setCourses, courses, storeCourse);
-        //console.log(courses[i].courseName);
-        //console.log(changedCourse.courseName);
+        courses.splice(courseIndex, 1, changedCourse);
         setCourses([...courses]);
+    }
+    function resetCourse(): void {
+        console.log(currCourse.courseName);
+        courses.splice(courseIndex, 1, currCourse);
+        setCourses([...courses]);
+    }
+    function addNewCourse(): void {
+        setCourses([
+            ...courses,
+            {
+                id: courseID,
+                courseName: courseDep,
+                numCredits: courseCred,
+                preReq: [],
+                taken: courseTaken
+            }
+        ]);
     }
     return (
         <div>
@@ -108,6 +131,7 @@ export function CoursesList({
             <button onClick={() => setAddCourse(!addingCourse)}>
                 Add Course
             </button>
+            <Button onClick={() => resetCourse()}>Reset Course</Button>
             {addingCourse && (
                 <Form.Group controlId="Add Course Dep">
                     <Form.Label>Type Course Department: </Form.Label>
@@ -145,7 +169,7 @@ export function CoursesList({
                 </Form.Group>
             )}
             {addingCourse && (
-                <Button onClick={() => setTaken(true)}>
+                <Button onClick={() => setTaken(!courseTaken)}>
                     Click if Course taken
                 </Button>
             )}
@@ -186,27 +210,24 @@ export function CoursesList({
                 </Form.Group>
             )}
             {editCourse && (
-                <Button onClick={() => setTaken(true)}>
+                <Button onClick={() => setTaken(!courseTaken)}>
                     Click if Course taken
                 </Button>
             )}
             {editCourse && (
-                <Button onClick={() => changeCourse()}>Submit</Button>
+                <Button
+                    onClick={() => {
+                        changeCourse(), setEditCourse(!editCourse);
+                    }}
+                >
+                    Submit
+                </Button>
             )}
             {addingCourse && (
                 <button
-                    onClick={() =>
-                        setCourses([
-                            ...courses,
-                            {
-                                id: courseID,
-                                courseName: courseDep,
-                                numCredits: courseCred,
-                                preReq: [],
-                                taken: courseTaken
-                            }
-                        ])
-                    }
+                    onClick={() => {
+                        addNewCourse(), setAddCourse(false);
+                    }}
                 >
                     Submit
                 </button>
