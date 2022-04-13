@@ -115,7 +115,6 @@ export function CoursesList({
                                 Delete
                             </button>
                         )}
-<<<<<<< HEAD
                         <Button
                             onClick={() => {
                                 setEditCourse(true), saveCourse(curr);
@@ -123,9 +122,6 @@ export function CoursesList({
                         >
                             Edit
                         </Button>
-=======
-                        <br></br>
->>>>>>> main
                     </div>
                 )
             )}
