@@ -100,6 +100,41 @@ function findCourse(courses: Course[], check: string): Course {
         return found;
     }
 }
+function removeCourseFromSemester(check: Semester, course: Course): Semester {
+    return {
+        ...check,
+        courseList: check.courseList.filter(
+            (currCourse: Course): boolean => currCourse != course
+        )
+    };
+}
+function removeCourseHelp(
+    course: Course,
+    sem: Semester,
+    curr: DegreePlan
+): DegreePlan {
+    return {
+        ...curr,
+        semesterList: curr.semesterList.map(
+            (check: Semester): Semester =>
+                check === sem ? removeCourseFromSemester(check, course) : check
+        )
+    };
+}
+function removeCourse(
+    course: Course,
+    sem: Semester,
+    plan: DegreePlan,
+    plans: DegreePlan[],
+    setPlans: (newPlans: DegreePlan[]) => void
+) {
+    setPlans(
+        plans.map(
+            (curr: DegreePlan): DegreePlan =>
+                curr === plan ? removeCourseHelp(course, sem, curr) : curr
+        )
+    );
+}
 
 function printSemesters(
     plan: DegreePlan,
@@ -160,17 +195,46 @@ function printSemesters(
                                 <td>Course Name</td>
                                 <td>Number of Credits</td>
                             </tr>
-                            <tbody>
-                                {semester.courseList.map(
-                                    (course: Course): JSX.Element => (
-                                        <tr key={course.courseName}>
-                                            <td>{course.id}</td>
-                                            <td>{course.courseName}</td>
-                                            <td>{course.numCredits}</td>
-                                        </tr>
-                                    )
-                                )}
-                            </tbody>
+                            {semester === editingSem ? (
+                                <tbody>
+                                    {semester.courseList.map(
+                                        (course: Course): JSX.Element => (
+                                            <tr key={course.courseName}>
+                                                <td>{course.id}</td>
+                                                <td>{course.courseName}</td>
+                                                <td>{course.numCredits}</td>
+                                                <td>
+                                                    <button
+                                                        onClick={() =>
+                                                            removeCourse(
+                                                                course,
+                                                                semester,
+                                                                plan,
+                                                                planList,
+                                                                setPlans
+                                                            )
+                                                        }
+                                                    >
+                                                        Remove Course
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        )
+                                    )}
+                                </tbody>
+                            ) : (
+                                <tbody>
+                                    {semester.courseList.map(
+                                        (course: Course): JSX.Element => (
+                                            <tr key={course.courseName}>
+                                                <td>{course.id}</td>
+                                                <td>{course.courseName}</td>
+                                                <td>{course.numCredits}</td>
+                                            </tr>
+                                        )
+                                    )}
+                                </tbody>
+                            )}
                             {semester === editingSem && (
                                 <tbody>
                                     <tr>
