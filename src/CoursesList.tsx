@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Course } from "./Interfaces/course";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
@@ -27,9 +27,25 @@ export function CoursesList({
 }: coursesListProp): JSX.Element {
     const [addingCourse, setAddCourse] = useState<boolean>(false);
     const [removingCourse, setRemoveCourse] = useState<boolean>(false);
+    const [editCourse, setEditCourse] = useState<boolean>(false);
     const [courseDep, setCourseDep] = useState<string>("");
     const [courseID, setCourseID] = useState<number>(0);
     const [courseCred, setCourseCred] = useState<number>(0);
+    const [courseTaken, setTaken] = useState<boolean>(false);
+    function storeOldCourse(oldCourse: Course): Course {
+        return oldCourse;
+    }
+    function changeCourse(
+        newCourseId: number,
+        newCourseDep: string,
+        newCredit: number,
+        newTaken: boolean
+    ): void {
+        setCourseID(newCourseId);
+        setCourseDep(newCourseDep);
+        setCourseCred(newCredit);
+        setTaken(newTaken);
+    }
     return (
         <div>
             <h3>List of current Courses:</h3>
@@ -58,6 +74,13 @@ export function CoursesList({
                                 Delete
                             </button>
                         )}
+                        <Button
+                            onClick={() => {
+                                setEditCourse(true), storeOldCourse(curr);
+                            }}
+                        >
+                            Edit
+                        </Button>
                     </div>
                 )
             )}
@@ -104,6 +127,11 @@ export function CoursesList({
                 </Form.Group>
             )}
             {addingCourse && (
+                <Button onClick={() => setTaken(true)}>
+                    Click if Course taken
+                </Button>
+            )}
+            {addingCourse && (
                 <button
                     onClick={() =>
                         setCourses([
@@ -113,7 +141,7 @@ export function CoursesList({
                                 courseName: courseDep,
                                 numCredits: courseCred,
                                 preReq: [],
-                                taken: false
+                                taken: courseTaken
                             }
                         ])
                     }
