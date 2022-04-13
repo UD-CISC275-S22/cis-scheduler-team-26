@@ -32,10 +32,37 @@ export function CoursesList({
     const [courseID, setCourseID] = useState<number>(0);
     const [courseCred, setCourseCred] = useState<number>(0);
     const [courseTaken, setTaken] = useState<boolean>(false);
+
     let storeCourse: Course;
-    function changeCourse(oldCourse: Course): void {
-        storeCourse = oldCourse;
-        removeCourse(setCourses, courses, oldCourse);
+    let i: number;
+    function saveCourse(oldCourse: Course): void {
+        storeCourse = {
+            id: oldCourse.id,
+            courseName: oldCourse.courseName,
+            numCredits: oldCourse.numCredits,
+            taken: oldCourse.taken,
+            preReq: oldCourse.preReq
+        };
+        i = courses.findIndex(
+            (course: Course): boolean =>
+                course.courseName === storeCourse.courseName &&
+                course.id === storeCourse.id
+        );
+        console.log(storeCourse.courseName);
+    }
+    function changeCourse(): void {
+        const changedCourse: Course = {
+            id: courseID,
+            courseName: courseDep,
+            numCredits: courseCred,
+            taken: courseTaken,
+            preReq: []
+        };
+        courses.splice(i, 1, changedCourse);
+        //removeCourse(setCourses, courses, storeCourse);
+        //console.log(courses[i].courseName);
+        //console.log(changedCourse.courseName);
+        setCourses([...courses]);
     }
     return (
         <div>
@@ -67,7 +94,7 @@ export function CoursesList({
                         )}
                         <Button
                             onClick={() => {
-                                setEditCourse(true), changeCourse(curr);
+                                setEditCourse(true), saveCourse(curr);
                             }}
                         >
                             Edit
@@ -123,7 +150,7 @@ export function CoursesList({
                 </Button>
             )}
             {editCourse && (
-                <Form.Group controlId="Add Course Dep">
+                <Form.Group controlId="Change Course Dep">
                     <Form.Label>Type Course Department: </Form.Label>
                     <Form.Control
                         type="text"
@@ -135,7 +162,7 @@ export function CoursesList({
                 </Form.Group>
             )}
             {editCourse && (
-                <Form.Group controlId="Add Course ID">
+                <Form.Group controlId="Change Course ID">
                     <Form.Label>Type Course ID: </Form.Label>
                     <Form.Control
                         type="number"
@@ -147,7 +174,7 @@ export function CoursesList({
                 </Form.Group>
             )}
             {editCourse && (
-                <Form.Group controlId="Add Course Credit">
+                <Form.Group controlId="Change Course Credit">
                     <Form.Label>Type number of Credits: </Form.Label>
                     <Form.Control
                         type="number"
@@ -164,22 +191,7 @@ export function CoursesList({
                 </Button>
             )}
             {editCourse && (
-                <Button
-                    onClick={() =>
-                        setCourses([
-                            ...courses,
-                            {
-                                id: courseID,
-                                courseName: courseDep,
-                                numCredits: courseCred,
-                                preReq: [],
-                                taken: courseTaken
-                            }
-                        ])
-                    }
-                >
-                    Submit
-                </Button>
+                <Button onClick={() => changeCourse()}>Submit</Button>
             )}
             {addingCourse && (
                 <button
