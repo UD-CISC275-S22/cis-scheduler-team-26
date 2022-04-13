@@ -32,19 +32,10 @@ export function CoursesList({
     const [courseID, setCourseID] = useState<number>(0);
     const [courseCred, setCourseCred] = useState<number>(0);
     const [courseTaken, setTaken] = useState<boolean>(false);
-    function storeOldCourse(oldCourse: Course): Course {
-        return oldCourse;
-    }
-    function changeCourse(
-        newCourseId: number,
-        newCourseDep: string,
-        newCredit: number,
-        newTaken: boolean
-    ): void {
-        setCourseID(newCourseId);
-        setCourseDep(newCourseDep);
-        setCourseCred(newCredit);
-        setTaken(newTaken);
+    let storeCourse: Course;
+    function changeCourse(oldCourse: Course): void {
+        storeCourse = oldCourse;
+        removeCourse(setCourses, courses, oldCourse);
     }
     return (
         <div>
@@ -76,7 +67,7 @@ export function CoursesList({
                         )}
                         <Button
                             onClick={() => {
-                                setEditCourse(true), storeOldCourse(curr);
+                                setEditCourse(true), changeCourse(curr);
                             }}
                         >
                             Edit
@@ -129,6 +120,65 @@ export function CoursesList({
             {addingCourse && (
                 <Button onClick={() => setTaken(true)}>
                     Click if Course taken
+                </Button>
+            )}
+            {editCourse && (
+                <Form.Group controlId="Add Course Dep">
+                    <Form.Label>Type Course Department: </Form.Label>
+                    <Form.Control
+                        type="text"
+                        value={courseDep}
+                        onChange={(event: ChangeEvent) =>
+                            setCourseDep(event.target.value)
+                        }
+                    />
+                </Form.Group>
+            )}
+            {editCourse && (
+                <Form.Group controlId="Add Course ID">
+                    <Form.Label>Type Course ID: </Form.Label>
+                    <Form.Control
+                        type="number"
+                        value={courseID}
+                        onChange={(event: ChangeEvent) =>
+                            setCourseID(parseInt(event.target.value) || 0)
+                        }
+                    />
+                </Form.Group>
+            )}
+            {editCourse && (
+                <Form.Group controlId="Add Course Credit">
+                    <Form.Label>Type number of Credits: </Form.Label>
+                    <Form.Control
+                        type="number"
+                        value={courseCred}
+                        onChange={(event: ChangeEvent) =>
+                            setCourseCred(parseInt(event.target.value) || 0)
+                        }
+                    />
+                </Form.Group>
+            )}
+            {editCourse && (
+                <Button onClick={() => setTaken(true)}>
+                    Click if Course taken
+                </Button>
+            )}
+            {editCourse && (
+                <Button
+                    onClick={() =>
+                        setCourses([
+                            ...courses,
+                            {
+                                id: courseID,
+                                courseName: courseDep,
+                                numCredits: courseCred,
+                                preReq: [],
+                                taken: courseTaken
+                            }
+                        ])
+                    }
+                >
+                    Submit
                 </Button>
             )}
             {addingCourse && (
