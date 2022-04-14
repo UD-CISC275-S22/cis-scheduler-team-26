@@ -39,17 +39,10 @@ export function CoursesList({
         id: 0,
         courseName: "0",
         numCredits: 0,
-        taken: false,
         preReq: []
     });
     function saveCourse(oldCourse: Course): void {
-        const storeCourse: Course = {
-            id: oldCourse.id,
-            courseName: oldCourse.courseName,
-            numCredits: oldCourse.numCredits,
-            taken: oldCourse.taken,
-            preReq: oldCourse.preReq
-        };
+        const storeCourse: Course = { ...oldCourse };
         setCurrCourse(storeCourse);
         setCourseIndex(
             courses.findIndex(
@@ -64,7 +57,6 @@ export function CoursesList({
             id: courseID,
             courseName: courseDep,
             numCredits: courseCred,
-            taken: courseTaken,
             preReq: []
         };
         courses.splice(courseIndex, 1, changedCourse);
@@ -82,8 +74,7 @@ export function CoursesList({
                 id: courseID,
                 courseName: courseDep,
                 numCredits: courseCred,
-                preReq: [],
-                taken: courseTaken
+                preReq: []
             }
         ]);
     }

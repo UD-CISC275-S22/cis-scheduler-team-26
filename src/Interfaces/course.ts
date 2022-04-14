@@ -7,6 +7,4 @@ export interface Course {
     numCredits: number;
     /** A list of the courses required to take this course */
     preReq: Course[];
-    /** Whether or not this course has been taken */
-    taken: boolean;
 }
