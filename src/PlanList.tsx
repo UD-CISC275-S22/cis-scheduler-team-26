@@ -1,5 +1,6 @@
 import React from "react";
 import { DegreePlan } from "./Interfaces/degreePlan";
+import { Button } from "react-bootstrap";
 
 interface planListProp {
     planList: DegreePlan[];
@@ -48,6 +49,7 @@ export function PlanList({
                 (plan: DegreePlan): JSX.Element =>
                     printPlan(plan, planList, setViewPlan)
             )}
+            <Button onClick={() => false}>Create New Plan</Button>
         </div>
     );
 }
