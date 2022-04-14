@@ -27,7 +27,16 @@ function removeSemHelp(
         ...curr,
         semesterList: curr.semesterList.filter(
             (sem: Semester): boolean => sem.season != season || sem.year != year
-        )
+        ),
+        totalCredits:
+            curr.totalCredits -
+            curr.semesterList.reduce(
+                (currentTotal: number, sem: Semester) =>
+                    sem.season === season && sem.year === year
+                        ? currentTotal + sem.totalCredits
+                        : currentTotal,
+                0
+            )
     };
 }
 function removeSemester(
@@ -52,7 +61,8 @@ function addCourseToSemList(currSem: Semester, addingCourse: Course) {
     ) {
         return {
             ...currSem,
-            courseList: [...currSem.courseList, addingCourse]
+            courseList: [...currSem.courseList, addingCourse],
+            totalCredits: currSem.totalCredits + addingCourse.numCredits
         };
     }
     return { ...currSem };
@@ -69,7 +79,18 @@ function addCourseHelp(
                 currSem === editingSem
                     ? addCourseToSemList(currSem, addingCourse)
                     : currSem
-        )
+        ),
+        totalCredits:
+            curr.totalCredits +
+            curr.semesterList.reduce(
+                (currentTotal: number, sem: Semester) =>
+                    sem === editingSem
+                        ? sem.courseList.includes(addingCourse, 0)
+                            ? currentTotal
+                            : addingCourse.numCredits
+                        : currentTotal,
+                0
+            )
     };
 }
 function addCourse(
@@ -105,7 +126,8 @@ function removeCourseFromSemester(check: Semester, course: Course): Semester {
         ...check,
         courseList: check.courseList.filter(
             (currCourse: Course): boolean => currCourse != course
-        )
+        ),
+        totalCredits: check.totalCredits - course.numCredits
     };
 }
 function removeCourseHelp(
@@ -118,7 +140,8 @@ function removeCourseHelp(
         semesterList: curr.semesterList.map(
             (check: Semester): Semester =>
                 check === sem ? removeCourseFromSemester(check, course) : check
-        )
+        ),
+        totalCredits: curr.totalCredits - course.numCredits
     };
 }
 function removeCourse(
