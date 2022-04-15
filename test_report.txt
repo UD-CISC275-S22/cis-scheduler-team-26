@@ -24,24 +24,24 @@
 
 PASS src/ViewingPlan.test.tsx
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (232 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (59 ms)
-    ✓ Courses can be removed (156 ms)
-    ✓ Courses can be added (202 ms)
-    ✓ Semesters can be removed (125 ms)
-    ✓ Semesters can be added (125 ms)
-    ✓ The initial credits in the testing plan are displayed (29 ms)
-    ✓ When adding a course, the total credits in updated (180 ms)
-    ✓ When removing a course, the score is updated (131 ms)
+    ✓ The initial two test semesters are displated (235 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (52 ms)
+    ✓ Courses can be removed (133 ms)
+    ✓ Courses can be added (169 ms)
+    ✓ Semesters can be removed (112 ms)
+    ✓ Semesters can be added (110 ms)
+    ✓ The initial credits in the testing plan are displayed (25 ms)
+    ✓ When adding a course, the total credits in updated (155 ms)
+    ✓ When removing a course, the score is updated (125 ms)
     ✓ Semesters can be removed (99 ms)
 
 ------------------|---------|----------|---------|---------|--------------------
 File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
 ------------------|---------|----------|---------|---------|--------------------
-All files         |   53.65 |    44.18 |      60 |   53.65 |                    
- src              |    53.5 |    43.75 |   59.45 |    53.5 |                    
+All files         |   53.22 |    44.18 |      60 |   53.22 |                    
+ src              |   53.04 |    43.75 |   59.45 |   53.04 |                    
   App.tsx         |   85.71 |    83.33 |      50 |   85.71 | 92                 
-  CoursesList.tsx |       0 |        0 |       0 |       0 | 19-242             
+  CoursesList.tsx |       0 |        0 |       0 |       0 | 20-253             
   PlanList.tsx    |     100 |      100 |     100 |     100 |                    
   ViewingPlan.tsx |   90.74 |       75 |      95 |   90.74 | 68,119,358,385,458 
  src/Interfaces   |   57.14 |       50 |     100 |   57.14 |                    
@@ -56,5 +56,5 @@ All files         |   53.65 |    44.18 |      60 |   53.65 |
 Test Suites: 1 passed, 1 total
 Tests:       10 passed, 10 total
 Snapshots:   0 total
-Time:        4.383 s
+Time:        4.031 s
 Ran all test suites.
