@@ -12,10 +12,14 @@ interface coursesListProp {
 
 function removeCourse(
     setCourses: (newCourses: Course[]) => void,
+    setOldCourses: (newCourses: Course[]) => void,
     courses: Course[],
     removeCourse: Course
 ) {
     setCourses(
+        courses.filter((course: Course): boolean => course != removeCourse)
+    );
+    setOldCourses(
         courses.filter((course: Course): boolean => course != removeCourse)
     );
 }
@@ -29,19 +33,14 @@ export function CoursesList({
     const [addingCourse, setAddCourse] = useState<boolean>(false);
     const [removingCourse, setRemoveCourse] = useState<boolean>(false);
     const [editCourse, setEditCourse] = useState<boolean>(false);
+    const [oldCourses, setOldCourses] = useState<Course[]>(courses);
     //course info
     const [courseDep, setCourseDep] = useState<string>("");
     const [courseID, setCourseID] = useState<number>(0);
     const [courseCred, setCourseCred] = useState<number>(0);
-    const [courseTaken, setTaken] = useState<boolean>(false);
     const [courseIndex, setCourseIndex] = useState<number>(0);
-    const [currCourse, setCurrCourse] = useState<Course>({
-        id: 0,
-        courseName: "0",
-        numCredits: 0,
-        taken: false,
-        preReq: []
-    });
+    const [canUndo, setUndo] = useState<boolean>(false);
+    //when to do stuff
     function saveCourse(oldCourse: Course): void {
         const storeCourse: Course = {
             id: oldCourse.id,
@@ -50,7 +49,6 @@ export function CoursesList({
             taken: oldCourse.taken,
             preReq: oldCourse.preReq
         };
-        setCurrCourse(storeCourse);
         setCourseIndex(
             courses.findIndex(
                 (course: Course): boolean =>
@@ -58,22 +56,62 @@ export function CoursesList({
                     course.id === storeCourse.id
             )
         );
+        oldCourses[
+            courses.findIndex(
+                (course: Course): boolean =>
+                    course.courseName === storeCourse.courseName &&
+                    course.id === storeCourse.id
+            )
+        ] = storeCourse;
+        console.log("save:");
+        console.log(
+            oldCourses[
+                courses.findIndex(
+                    (course: Course): boolean =>
+                        course.courseName === storeCourse.courseName &&
+                        course.id === storeCourse.id
+                )
+            ].courseName
+        );
+        console.log(
+            oldCourses.map((course: Course): string => course.courseName)
+        );
+        setOldCourses([...oldCourses]);
     }
     function changeCourse(): void {
+        setUndo(true);
         const changedCourse: Course = {
             id: courseID,
             courseName: courseDep,
             numCredits: courseCred,
-            taken: courseTaken,
+            taken: false,
             preReq: []
         };
         courses.splice(courseIndex, 1, changedCourse);
         setCourses([...courses]);
     }
-    function resetCourse(): void {
-        console.log(currCourse.courseName);
-        courses.splice(courseIndex, 1, currCourse);
-        setCourses([...courses]);
+    function resetCourse(curr: Course): void {
+        if (canUndo) {
+            const index: number = courses.findIndex(
+                (course: Course): boolean =>
+                    course.id === curr.id &&
+                    course.courseName === curr.courseName
+            );
+            const oldCourse: Course = {
+                id: oldCourses[index].id,
+                courseName: oldCourses[index].courseName,
+                numCredits: oldCourses[index].numCredits,
+                taken: false,
+                preReq: []
+            };
+            console.log("Reset:");
+            console.log(
+                oldCourses.map((course: Course): string => course.courseName)
+            );
+            console.log(oldCourse.courseName);
+            courses.splice(index, 1, oldCourse);
+            setCourses([...courses]);
+        }
     }
     function addNewCourse(): void {
         setCourses([
@@ -83,7 +121,17 @@ export function CoursesList({
                 courseName: courseDep,
                 numCredits: courseCred,
                 preReq: [],
-                taken: courseTaken
+                taken: false
+            }
+        ]);
+        setOldCourses([
+            ...courses,
+            {
+                id: courseID,
+                courseName: courseDep,
+                numCredits: courseCred,
+                preReq: [],
+                taken: false
             }
         ]);
     }
@@ -106,14 +154,19 @@ export function CoursesList({
                             )}
                         </div>
                         {removingCourse && (
-                            <button
+                            <Button
                                 onClick={() =>
-                                    removeCourse(setCourses, courses, curr)
+                                    removeCourse(
+                                        setCourses,
+                                        setOldCourses,
+                                        courses,
+                                        curr
+                                    )
                                 }
                                 style={{ backgroundColor: "red" }}
                             >
                                 Delete
-                            </button>
+                            </Button>
                         )}
                         <Button
                             onClick={() => {
@@ -122,16 +175,18 @@ export function CoursesList({
                         >
                             Edit
                         </Button>
+                        <Button onClick={() => resetCourse(curr)}>
+                            Reset Course
+                        </Button>
                     </div>
                 )
             )}
-            <button onClick={() => setShowCourses(false)}>
+            <Button onClick={() => setShowCourses(false)}>
                 Return to Degree Plans
-            </button>
-            <button onClick={() => setAddCourse(!addingCourse)}>
+            </Button>
+            <Button onClick={() => setAddCourse(!addingCourse)}>
                 Add Course
-            </button>
-            <Button onClick={() => resetCourse()}>Reset Course</Button>
+            </Button>
             {addingCourse && (
                 <Form.Group controlId="Add Course Dep">
                     <Form.Label>Type Course Department: </Form.Label>
@@ -167,11 +222,6 @@ export function CoursesList({
                         }
                     />
                 </Form.Group>
-            )}
-            {addingCourse && (
-                <Button onClick={() => setTaken(!courseTaken)}>
-                    Click if Course taken
-                </Button>
             )}
             {editCourse && (
                 <Form.Group controlId="Change Course Dep">
@@ -210,11 +260,6 @@ export function CoursesList({
                 </Form.Group>
             )}
             {editCourse && (
-                <Button onClick={() => setTaken(!courseTaken)}>
-                    Click if Course taken
-                </Button>
-            )}
-            {editCourse && (
                 <Button
                     onClick={() => {
                         changeCourse(), setEditCourse(!editCourse);
@@ -224,17 +269,17 @@ export function CoursesList({
                 </Button>
             )}
             {addingCourse && (
-                <button
+                <Button
                     onClick={() => {
                         addNewCourse(), setAddCourse(false);
                     }}
                 >
                     Submit
-                </button>
+                </Button>
             )}
-            <button onClick={() => setRemoveCourse(!removingCourse)}>
+            <Button onClick={() => setRemoveCourse(!removingCourse)}>
                 Remove Course
-            </button>
+            </Button>
         </div>
     );
 }
