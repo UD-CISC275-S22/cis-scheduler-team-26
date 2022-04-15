@@ -56,19 +56,6 @@ export function CoursesList({
                     course.id === storeCourse.id
             )
         ] = storeCourse;
-        console.log("save:");
-        console.log(
-            oldCourses[
-                courses.findIndex(
-                    (course: Course): boolean =>
-                        course.courseName === storeCourse.courseName &&
-                        course.id === storeCourse.id
-                )
-            ].courseName
-        );
-        console.log(
-            oldCourses.map((course: Course): string => course.courseName)
-        );
         setOldCourses([...oldCourses]);
     }
     function changeCourse(): void {
@@ -95,11 +82,6 @@ export function CoursesList({
                 numCredits: oldCourses[index].numCredits,
                 preReq: []
             };
-            console.log("Reset:");
-            console.log(
-                oldCourses.map((course: Course): string => course.courseName)
-            );
-            console.log(oldCourse.courseName);
             courses.splice(index, 1, oldCourse);
             setCourses([...courses]);
         }
