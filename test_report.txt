@@ -24,24 +24,24 @@
 
 PASS src/ViewingPlan.test.tsx
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (286 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (80 ms)
-    ✓ Courses can be removed (179 ms)
-    ✓ Courses can be added (237 ms)
-    ✓ Semesters can be removed (148 ms)
-    ✓ Semesters can be added (152 ms)
-    ✓ The initial credits in the testing plan are displayed (36 ms)
-    ✓ When adding a course, the total credits in updated (214 ms)
-    ✓ When removing a course, the score is updated (169 ms)
-    ✓ Semesters can be removed (122 ms)
+    ✓ The initial two test semesters are displated (232 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (59 ms)
+    ✓ Courses can be removed (156 ms)
+    ✓ Courses can be added (202 ms)
+    ✓ Semesters can be removed (125 ms)
+    ✓ Semesters can be added (125 ms)
+    ✓ The initial credits in the testing plan are displayed (29 ms)
+    ✓ When adding a course, the total credits in updated (180 ms)
+    ✓ When removing a course, the score is updated (131 ms)
+    ✓ Semesters can be removed (99 ms)
 
 ------------------|---------|----------|---------|---------|--------------------
 File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
 ------------------|---------|----------|---------|---------|--------------------
-All files         |   56.41 |    45.23 |   60.81 |   56.41 |                    
- src              |   56.48 |    44.87 |   60.27 |   56.48 |                    
+All files         |   53.65 |    44.18 |      60 |   53.65 |                    
+ src              |    53.5 |    43.75 |   59.45 |    53.5 |                    
   App.tsx         |   85.71 |    83.33 |      50 |   85.71 | 92                 
-  CoursesList.tsx |       0 |        0 |       0 |       0 | 18-226             
+  CoursesList.tsx |       0 |        0 |       0 |       0 | 19-242             
   PlanList.tsx    |     100 |      100 |     100 |     100 |                    
   ViewingPlan.tsx |   90.74 |       75 |      95 |   90.74 | 68,119,358,385,458 
  src/Interfaces   |   57.14 |       50 |     100 |   57.14 |                    
@@ -56,5 +56,5 @@ All files         |   56.41 |    45.23 |   60.81 |   56.41 |
 Test Suites: 1 passed, 1 total
 Tests:       10 passed, 10 total
 Snapshots:   0 total
-Time:        5.247 s
+Time:        4.383 s
 Ran all test suites.
