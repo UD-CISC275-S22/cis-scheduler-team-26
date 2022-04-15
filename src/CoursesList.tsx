@@ -14,13 +14,14 @@ function removeCourse(
     setCourses: (newCourses: Course[]) => void,
     setOldCourses: (newCourses: Course[]) => void,
     courses: Course[],
+    oldCourses: Course[],
     removeCourse: Course
 ) {
     setCourses(
         courses.filter((course: Course): boolean => course != removeCourse)
     );
     setOldCourses(
-        courses.filter((course: Course): boolean => course != removeCourse)
+        oldCourses.filter((course: Course): boolean => course != removeCourse)
     );
 }
 
@@ -96,6 +97,15 @@ export function CoursesList({
                 preReq: []
             }
         ]);
+        setOldCourses([
+            ...courses,
+            {
+                id: courseID,
+                courseName: courseDep,
+                numCredits: courseCred,
+                preReq: []
+            }
+        ]);
     }
     return (
         <div>
@@ -122,6 +132,7 @@ export function CoursesList({
                                         setCourses,
                                         setOldCourses,
                                         courses,
+                                        oldCourses,
                                         curr
                                     )
                                 }
