@@ -40,15 +40,8 @@ export function CoursesList({
     const [courseCred, setCourseCred] = useState<number>(0);
     const [courseIndex, setCourseIndex] = useState<number>(0);
     const [canUndo, setUndo] = useState<boolean>(false);
-    //when to do stuff
     function saveCourse(oldCourse: Course): void {
-        const storeCourse: Course = {
-            id: oldCourse.id,
-            courseName: oldCourse.courseName,
-            numCredits: oldCourse.numCredits,
-            taken: oldCourse.taken,
-            preReq: oldCourse.preReq
-        };
+        const storeCourse: Course = { ...oldCourse };
         setCourseIndex(
             courses.findIndex(
                 (course: Course): boolean =>
@@ -84,7 +77,6 @@ export function CoursesList({
             id: courseID,
             courseName: courseDep,
             numCredits: courseCred,
-            taken: false,
             preReq: []
         };
         courses.splice(courseIndex, 1, changedCourse);
@@ -101,7 +93,6 @@ export function CoursesList({
                 id: oldCourses[index].id,
                 courseName: oldCourses[index].courseName,
                 numCredits: oldCourses[index].numCredits,
-                taken: false,
                 preReq: []
             };
             console.log("Reset:");
@@ -120,18 +111,7 @@ export function CoursesList({
                 id: courseID,
                 courseName: courseDep,
                 numCredits: courseCred,
-                preReq: [],
-                taken: false
-            }
-        ]);
-        setOldCourses([
-            ...courses,
-            {
-                id: courseID,
-                courseName: courseDep,
-                numCredits: courseCred,
-                preReq: [],
-                taken: false
+                preReq: []
             }
         ]);
     }
