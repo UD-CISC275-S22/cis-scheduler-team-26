@@ -6,6 +6,8 @@ import { ViewingPlan } from "./ViewingPlan";
 import { courseList } from "./Resources/Courses";
 import { CoursesList } from "./CoursesList";
 import { Course } from "./Interfaces/course";
+import { Button } from "react-bootstrap";
+import { DegreeList } from "./Resources/Degrees";
 
 const INITIAL_PLANS: DegreePlan[] = [
     {
@@ -29,11 +31,7 @@ const INITIAL_PLANS: DegreePlan[] = [
                 totalCredits: 12
             }
         ],
-        degree: {
-            title: "Test Degree",
-            requiredCourses: [],
-            requiredCredits: 150
-        },
+        degree: DegreeList[0],
         totalCredits: 21
     }
 ];
@@ -69,10 +67,6 @@ function App(): JSX.Element {
                         View sample degree plans and required courses for
                         multiple degrees
                     </div>
-                    <p>
-                        Edit <code>src/App.tsx</code> and save. This page will
-                        automatically reload.
-                    </p>
                     <PlanList
                         planList={plans}
                         setPlanList={setPlans}
@@ -89,9 +83,9 @@ function App(): JSX.Element {
                 ></ViewingPlan>
             )}
             {!showCourses && (
-                <button onClick={() => setShowCourses(!showCourses)}>
+                <Button onClick={() => setShowCourses(!showCourses)}>
                     View/Edit Course List
-                </button>
+                </Button>
             )}
         </div>
     );
