@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Table } from "react-bootstrap";
+import { Button, Form, Table } from "react-bootstrap";
 import { Course } from "./Interfaces/course";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { Season, Semester, validSeason } from "./Interfaces/semester";
@@ -185,7 +185,7 @@ function printSemesters(
                                                 semester.year}
                                         </th>
                                         <th>
-                                            <button
+                                            <Button
                                                 style={{
                                                     backgroundColor: "red"
                                                 }}
@@ -200,7 +200,7 @@ function printSemesters(
                                                 }
                                             >
                                                 Delete Semester
-                                            </button>
+                                            </Button>
                                         </th>
                                     </tr>
                                 ) : (
@@ -227,7 +227,7 @@ function printSemesters(
                                                 <td>{course.courseName}</td>
                                                 <td>{course.numCredits}</td>
                                                 <td>
-                                                    <button
+                                                    <Button
                                                         onClick={() =>
                                                             removeCourse(
                                                                 course,
@@ -239,7 +239,7 @@ function printSemesters(
                                                         }
                                                     >
                                                         Remove Course
-                                                    </button>
+                                                    </Button>
                                                 </td>
                                             </tr>
                                         )
@@ -304,7 +304,7 @@ function printSemesters(
                                             </Form.Group>
                                         </td>
                                         <td>
-                                            <button
+                                            <Button
                                                 onClick={() =>
                                                     addCourse(
                                                         plan,
@@ -316,13 +316,13 @@ function printSemesters(
                                                 }
                                             >
                                                 Add Course
-                                            </button>
+                                            </Button>
                                         </td>
                                     </tr>
                                 </tbody>
                             )}
                         </Table>
-                        <button
+                        <Button
                             onClick={() =>
                                 setEditingSem(
                                     semester === editingSem
@@ -332,7 +332,7 @@ function printSemesters(
                             }
                         >
                             Edit Courses
-                        </button>
+                        </Button>
                     </div>
                 )
             )}
@@ -400,7 +400,7 @@ function addSemesters(
                     <option value="Fall">Fall</option>
                 </Form.Select>
             </Form.Group>
-            <button
+            <Button
                 onClick={() =>
                     setPlans(
                         planList.map(
@@ -413,7 +413,7 @@ function addSemesters(
                 }
             >
                 Add Semester
-            </button>
+            </Button>
         </div>
     );
 }
@@ -454,8 +454,8 @@ export function ViewingPlan({
                     year,
                     setYear
                 )}
-            <button onClick={() => setEdit(!edit)}>Edit Semesters</button>
-            <button onClick={() => setViewPlan(-1)}>Return to Plan List</button>
+            <Button onClick={() => setEdit(!edit)}>Edit Semesters</Button>
+            <Button onClick={() => setViewPlan(-1)}>Return to Plan List</Button>
         </div>
     );
 }
