@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { Button } from "react-bootstrap";
 import { DegreeList } from "./Resources/Degrees";
@@ -42,6 +42,7 @@ export function PlanList({
     setPlanList,
     setViewPlan
 }: planListProp): JSX.Element {
+    const [creatingNewPlan, setCreatingNewPlan] = useState<boolean>(false);
     return (
         <div>
             <h3>List of current Degree Plans:</h3>
@@ -49,21 +50,58 @@ export function PlanList({
                 (plan: DegreePlan): JSX.Element =>
                     printPlan(plan, planList, setViewPlan)
             )}
+            {/*Only render the button to create a new plan if your are not currently creating a new plan*/}
+            {!creatingNewPlan && (
+                <Button onClick={() => setCreatingNewPlan(!creatingNewPlan)}>
+                    Create New Plan
+                </Button>
+            )}
+            {/*Only render the form to create a new plan if the create new plan button is pressed */}
+            {creatingNewPlan &&
+                makeNewPlanForm({
+                    planList,
+                    setPlanList,
+                    setCreatingNewPlan
+                })}
+        </div>
+    );
+}
+
+//Renders the form to create a new degree plan
+//takes user input like:
+//  the plan's name
+//  which degree
+function makeNewPlanForm({
+    planList,
+    setPlanList,
+    setCreatingNewPlan
+}: {
+    planList: DegreePlan[];
+    setPlanList: (newPlan: DegreePlan[]) => void;
+    setCreatingNewPlan: (creatingNewPlan: boolean) => void;
+}): JSX.Element {
+    return (
+        <div>
+            Making New Plan
             <Button
-                onClick={() =>
+                onClick={() => {
                     setPlanList([
                         ...planList,
+                        //This plan is just a sample
+                        //MUST BE REMOVED AND REPLACED WITH DATA FROM USER INPUT FORM
                         {
-                            planName: "New Plan",
+                            planName: "Sample Plan",
                             semesterList: [],
                             degree: DegreeList[0],
                             totalCredits: 0
                         }
-                    ])
-                }
+                    ]);
+                    setCreatingNewPlan(false);
+                }}
             >
-                Create New Plan
+                Add Plan
             </Button>
+            <Button onClick={() => setCreatingNewPlan(false)}>Cancel</Button>
         </div>
     );
 }
