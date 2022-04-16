@@ -1,6 +1,7 @@
 import React from "react";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { Button } from "react-bootstrap";
+import { DegreeList } from "./Resources/Degrees";
 
 interface planListProp {
     planList: DegreePlan[];
@@ -49,7 +50,21 @@ export function PlanList({
                 (plan: DegreePlan): JSX.Element =>
                     printPlan(plan, planList, setViewPlan)
             )}
-            <Button onClick={() => false}>Create New Plan</Button>
+            <Button
+                onClick={() =>
+                    setPlanList([
+                        ...planList,
+                        {
+                            planName: "New Plan",
+                            semesterList: [],
+                            degree: DegreeList[0],
+                            totalCredits: 0
+                        }
+                    ])
+                }
+            >
+                Create New Plan
+            </Button>
         </div>
     );
 }
