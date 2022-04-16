@@ -42,7 +42,6 @@ export function PlanList({
     setPlanList,
     setViewPlan
 }: planListProp): JSX.Element {
-    setPlanList(planList); //NEEDS TO BE REMOVED, CURRENTLY JUST TO AVOID ERROR
     return (
         <div>
             <h3>List of current Degree Plans:</h3>
