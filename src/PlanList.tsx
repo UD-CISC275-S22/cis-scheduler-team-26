@@ -1,9 +1,9 @@
+import "./PlanList.css";
 import React, { useState } from "react";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { Button, Form } from "react-bootstrap";
 import { DegreeList } from "./Resources/Degrees";
 import { Degree } from "./Interfaces/degree";
-import { Course } from "./Interfaces/course";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 interface planListProp {
@@ -18,7 +18,7 @@ function printPlan(
     setViewPlan: (newCurrPlan: number) => void
 ): JSX.Element {
     return (
-        <div key={plan.planName}>
+        <div key={plan.planName} className="degree-plan-list-item">
             <div>Name: {plan.planName}</div>
             <div>Expected Degree: {plan.degree.title}</div>
             <div>
