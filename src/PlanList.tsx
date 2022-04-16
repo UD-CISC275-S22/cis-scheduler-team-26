@@ -99,6 +99,15 @@ function makeNewPlanForm({
     newPlanMajor: Degree;
     setNewPlanMajor: (d: Degree) => void;
 }): JSX.Element {
+    function findDegree(name: string): Degree {
+        const found = DegreeList.find((d: Degree): boolean => d.title === name);
+        if (found === undefined) {
+            return DegreeList[0];
+        } else {
+            return found;
+        }
+    }
+
     return (
         <div>
             Making New Plan
@@ -116,13 +125,9 @@ function makeNewPlanForm({
                 <Form.Label>Select Degree: </Form.Label>
                 <Form.Select
                     value={newPlanMajor.title}
-                    onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-                        setNewPlanMajor(
-                            DegreeList.find((d: Degree) => {
-                                event.target.value === d.title;
-                            }) || DegreeList[0]
-                        )
-                    }
+                    onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                        setNewPlanMajor(findDegree(event.target.value));
+                    }}
                 >
                     {DegreeList.map((d: Degree) => (
                         <option key={DegreeList.indexOf(d)}>{d.title}</option>
