@@ -42,6 +42,13 @@ function App(): JSX.Element {
     const [viewPlan, setViewPlan] = useState<number>(-1);
     const [showCourses, setShowCourses] = useState<boolean>(false);
     return (
+        /*App has three mutually exclusive states:
+                Viewing coursesList
+                Viewing planList
+                Viewing specific plan
+        
+        
+        */
         <div className="App">
             <header className="App-header">
                 University Of Delaware
@@ -51,6 +58,7 @@ function App(): JSX.Element {
                     Developed by: Jack Kingham, Sean Williams, Iclyn Taero
                 </span>
             </header>
+            {/*Display courseList if showCourses is true */}
             {showCourses && (
                 <CoursesList
                     setShowCourses={setShowCourses}
