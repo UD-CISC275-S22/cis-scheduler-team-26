@@ -25,6 +25,14 @@ function removeCourse(
     );
 }
 
+/*
+We should split this into separate components.
+The form to add a course can be its own component that conditionally renders inside of the CoursesList component.
+The form to edit a course can be its own component that conditionally renders inside of the CoursesList component.
+
+That will eliminate the long list of forms that are conditionally rendered at the bottom of this component and make
+it much easier to scale this component with more features without becoming unmanageable.
+*/
 export function CoursesList({
     setShowCourses,
     setCourses,
