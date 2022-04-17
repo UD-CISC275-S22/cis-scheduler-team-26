@@ -108,9 +108,17 @@ function makeNewPlanForm({
         }
     }
 
+    function doesPlanNameAlreadyExist(name: string): boolean {
+        return (
+            planList.find((p: DegreePlan): boolean => p.planName === name) !==
+            undefined
+        );
+    }
+
     return (
-        <div>
-            Making New Plan
+        <div className="create-new-plan-form">
+            <h2>Create New Plan:</h2>
+            {/*Text form to choose the new plan's name*/}
             <Form.Group controlId="New Plan Name">
                 <Form.Label>Plan Name: </Form.Label>
                 <Form.Control
@@ -119,8 +127,16 @@ function makeNewPlanForm({
                     onChange={(event: ChangeEvent) =>
                         setNewPlanName(event.target.value)
                     }
+                    style={{ width: "600px" }}
                 />
             </Form.Group>
+            {/*Conditional render to tell the user that a plan with this name already exists */}
+            {doesPlanNameAlreadyExist(newPlanName) && (
+                <p className="plan-name-exists-error-text">
+                    A plan with this name already exists
+                </p>
+            )}
+            {/*Dropdown form to choose which degree to pursue */}
             <Form.Group>
                 <Form.Label>Select Degree: </Form.Label>
                 <Form.Select
@@ -128,32 +144,37 @@ function makeNewPlanForm({
                     onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
                         setNewPlanMajor(findDegree(event.target.value));
                     }}
+                    style={{ width: "500px" }}
                 >
                     {DegreeList.map((d: Degree) => (
                         <option key={DegreeList.indexOf(d)}>{d.title}</option>
                     ))}
                 </Form.Select>
             </Form.Group>
-            <Button
-                onClick={() => {
-                    setNewPlanName(newPlanName + "");
-                    setPlanList([
-                        ...planList,
-                        //This plan is just a sample
-                        //MUST BE REMOVED AND REPLACED WITH DATA FROM USER INPUT FORM
-                        {
-                            planName: newPlanName,
-                            semesterList: [],
-                            degree: newPlanMajor,
-                            totalCredits: 0
-                        }
-                    ]);
-                    setCreatingNewPlan(false);
-                }}
-            >
-                Add Plan
-            </Button>
-            <Button onClick={() => setCreatingNewPlan(false)}>Cancel</Button>
+            {/*Button to create the new plan and insert it into the planList*/}
+            <div>
+                <Button
+                    onClick={() => {
+                        if (doesPlanNameAlreadyExist(newPlanName)) return;
+                        setNewPlanName(newPlanName + "");
+                        setPlanList([
+                            ...planList,
+                            {
+                                planName: newPlanName,
+                                semesterList: [],
+                                degree: newPlanMajor,
+                                totalCredits: 0
+                            }
+                        ]);
+                        setCreatingNewPlan(false);
+                    }}
+                >
+                    Add Plan
+                </Button>
+                <Button onClick={() => setCreatingNewPlan(false)}>
+                    Cancel
+                </Button>
+            </div>
         </div>
     );
 }
