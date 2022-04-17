@@ -24,16 +24,16 @@
 
 FAIL src/ViewingPlan.test.tsx
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (205 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (59 ms)
-    ✓ Courses can be removed (130 ms)
-    ✓ Courses can be added (166 ms)
-    ✓ Semesters can be removed (169 ms)
-    ✓ Semesters can be added (114 ms)
-    ✕ The initial credits in the testing plan are displayed (34 ms)
-    ✕ When adding a course, the total credits in updated (155 ms)
-    ✕ When removing a course, the score is updated (136 ms)
-    ✕ Semesters can be removed (85 ms)
+    ✓ The initial two test semesters are displated (238 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (77 ms)
+    ✓ Courses can be removed (155 ms)
+    ✓ Courses can be added (200 ms)
+    ✓ Semesters can be removed (184 ms)
+    ✓ Semesters can be added (169 ms)
+    ✕ The initial credits in the testing plan are displayed (42 ms)
+    ✕ When adding a course, the total credits in updated (194 ms)
+    ✕ When removing a course, the score is updated (143 ms)
+    ✕ Semesters can be removed (104 ms)
 
   ● ViewingPlan Tests › The initial credits in the testing plan are displayed
 
@@ -239,6 +239,7 @@ FAIL src/ViewingPlan.test.tsx
               [0mReturn to Plan List[0m
             [36m</button>[39m
           [36m</div>[39m
+          [36m<br />[39m
           [36m<button[39m
             [33mclass[39m=[32m"btn btn-primary"[39m
             [33mtype[39m=[32m"button"[39m
@@ -482,6 +483,7 @@ FAIL src/ViewingPlan.test.tsx
               [0mReturn to Plan List[0m
             [36m</button>[39m
           [36m</div>[39m
+          [36m<br />[39m
           [36m<button[39m
             [33mclass[39m=[32m"btn btn-primary"[39m
             [33mtype[39m=[32m"button"[39m
@@ -703,6 +705,7 @@ FAIL src/ViewingPlan.test.tsx
               [0mReturn to Plan List[0m
             [36m</button>[39m
           [36m</div>[39m
+          [36m<br />[39m
           [36m<button[39m
             [33mclass[39m=[32m"btn btn-primary"[39m
             [33mtype[39m=[32m"button"[39m
@@ -932,6 +935,7 @@ FAIL src/ViewingPlan.test.tsx
               [0mReturn to Plan List[0m
             [36m</button>[39m
           [36m</div>[39m
+          [36m<br />[39m
           [36m<button[39m
             [33mclass[39m=[32m"btn btn-primary"[39m
             [33mtype[39m=[32m"button"[39m
@@ -963,10 +967,10 @@ FAIL src/ViewingPlan.test.tsx
 ------------------|---------|----------|---------|---------|--------------------
 File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
 ------------------|---------|----------|---------|---------|--------------------
-All files         |   47.91 |     42.7 |   52.32 |   48.59 |                    
- src              |   46.66 |    42.22 |   51.76 |   47.36 |                    
-  App.tsx         |   85.71 |    83.33 |      50 |   85.71 | 86                 
-  CoursesList.tsx |       0 |        0 |       0 |       0 | 20-253             
+All files         |   47.91 |       45 |   52.32 |   48.59 |                    
+ src              |   46.66 |    44.68 |   51.76 |   47.36 |                    
+  App.tsx         |   85.71 |       90 |      50 |   85.71 | 101                
+  CoursesList.tsx |       0 |        0 |       0 |       0 | 20-261             
   PlanList.tsx    |   30.76 |       30 |   31.25 |   33.33 | 62-174             
   ViewingPlan.tsx |   90.74 |       75 |      95 |   90.74 | 68,119,358,385,458 
  src/Interfaces   |   57.14 |       50 |     100 |   57.14 |                    
@@ -981,5 +985,5 @@ All files         |   47.91 |     42.7 |   52.32 |   48.59 |
 Test Suites: 1 failed, 1 total
 Tests:       4 failed, 6 passed, 10 total
 Snapshots:   0 total
-Time:        3.859 s
+Time:        4.603 s
 Ran all test suites.
