@@ -14,16 +14,25 @@ function removeCourse(
     setCourses: (newCourses: Course[]) => void,
     setOldCourses: (newCourses: Course[]) => void,
     courses: Course[],
+    oldCourses: Course[],
     removeCourse: Course
 ) {
     setCourses(
         courses.filter((course: Course): boolean => course != removeCourse)
     );
     setOldCourses(
-        courses.filter((course: Course): boolean => course != removeCourse)
+        oldCourses.filter((course: Course): boolean => course != removeCourse)
     );
 }
 
+/*
+We should split this into separate components.
+The form to add a course can be its own component that conditionally renders inside of the CoursesList component.
+The form to edit a course can be its own component that conditionally renders inside of the CoursesList component.
+
+That will eliminate the long list of forms that are conditionally rendered at the bottom of this component and make
+it much easier to scale this component with more features without becoming unmanageable.
+*/
 export function CoursesList({
     setShowCourses,
     setCourses,
@@ -40,15 +49,8 @@ export function CoursesList({
     const [courseCred, setCourseCred] = useState<number>(0);
     const [courseIndex, setCourseIndex] = useState<number>(0);
     const [canUndo, setUndo] = useState<boolean>(false);
-    //when to do stuff
     function saveCourse(oldCourse: Course): void {
-        const storeCourse: Course = {
-            id: oldCourse.id,
-            courseName: oldCourse.courseName,
-            numCredits: oldCourse.numCredits,
-            taken: oldCourse.taken,
-            preReq: oldCourse.preReq
-        };
+        const storeCourse: Course = { ...oldCourse };
         setCourseIndex(
             courses.findIndex(
                 (course: Course): boolean =>
@@ -63,19 +65,6 @@ export function CoursesList({
                     course.id === storeCourse.id
             )
         ] = storeCourse;
-        console.log("save:");
-        console.log(
-            oldCourses[
-                courses.findIndex(
-                    (course: Course): boolean =>
-                        course.courseName === storeCourse.courseName &&
-                        course.id === storeCourse.id
-                )
-            ].courseName
-        );
-        console.log(
-            oldCourses.map((course: Course): string => course.courseName)
-        );
         setOldCourses([...oldCourses]);
     }
     function changeCourse(): void {
@@ -84,7 +73,6 @@ export function CoursesList({
             id: courseID,
             courseName: courseDep,
             numCredits: courseCred,
-            taken: false,
             preReq: []
         };
         courses.splice(courseIndex, 1, changedCourse);
@@ -101,14 +89,8 @@ export function CoursesList({
                 id: oldCourses[index].id,
                 courseName: oldCourses[index].courseName,
                 numCredits: oldCourses[index].numCredits,
-                taken: false,
                 preReq: []
             };
-            console.log("Reset:");
-            console.log(
-                oldCourses.map((course: Course): string => course.courseName)
-            );
-            console.log(oldCourse.courseName);
             courses.splice(index, 1, oldCourse);
             setCourses([...courses]);
         }
@@ -120,8 +102,7 @@ export function CoursesList({
                 id: courseID,
                 courseName: courseDep,
                 numCredits: courseCred,
-                preReq: [],
-                taken: false
+                preReq: []
             }
         ]);
         setOldCourses([
@@ -130,8 +111,7 @@ export function CoursesList({
                 id: courseID,
                 courseName: courseDep,
                 numCredits: courseCred,
-                preReq: [],
-                taken: false
+                preReq: []
             }
         ]);
     }
@@ -160,6 +140,7 @@ export function CoursesList({
                                         setCourses,
                                         setOldCourses,
                                         courses,
+                                        oldCourses,
                                         curr
                                     )
                                 }

@@ -1,0 +1,28 @@
+.degree-plan-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+}
+
+.degree-plan-list-item {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 20px;
+}
+
+.create-new-plan-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.plan-name-exists-error-text {
+    color: red;
+    text-align: left;
+}
