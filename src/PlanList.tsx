@@ -15,27 +15,39 @@ interface planListProp {
 function printPlan(
     plan: DegreePlan,
     planList: DegreePlan[],
-    setViewPlan: (newCurrPlan: number) => void
+    setViewPlan: (newCurrPlan: number) => void,
+    deletePlanByName: (name: string) => void
 ): JSX.Element {
+    //takes a plan name and removed that plan from the list of plans
+
     return (
         <div key={plan.planName} className="degree-plan-list-item">
-            <div>Name: {plan.planName}</div>
+            <h3>{plan.planName}</h3>
             <div>Expected Degree: {plan.degree.title}</div>
             <div>
-                Currently Have {plan.totalCredits} out of{" "}
+                Completed {plan.totalCredits} out of{" "}
                 {plan.degree.requiredCredits} required Credits
             </div>
-            <Button
-                onClick={() =>
-                    setViewPlan(
-                        planList.findIndex(
-                            (check: DegreePlan) => check === plan
+            <div>
+                <Button
+                    onClick={() =>
+                        setViewPlan(
+                            planList.findIndex(
+                                (check: DegreePlan) => check === plan
+                            )
                         )
-                    )
-                }
-            >
-                View/Edit Plan
-            </Button>
+                    }
+                >
+                    View/Edit Plan
+                </Button>
+                {/*Button to delete plan from planList */}
+                <Button
+                    style={{ backgroundColor: "red", borderColor: "red" }}
+                    onClick={() => deletePlanByName(plan.planName)}
+                >
+                    Delete Plan
+                </Button>
+            </div>
         </div>
     );
 }
@@ -48,13 +60,21 @@ export function PlanList({
     const [creatingNewPlan, setCreatingNewPlan] = useState<boolean>(false);
     const [newPlanName, setNewPlanName] = useState<string>("");
     const [newPlanMajor, setNewPlanMajor] = useState<Degree>(DegreeList[0]);
+
+    function deletePlanByName(name: string): void {
+        //Get index of the plan to be deleted
+        setPlanList(
+            planList.filter((plan: DegreePlan) => plan.planName !== name)
+        );
+    }
+
     return (
         <div>
-            <h3>Current Degree Plans:</h3>
+            <h2>Current Degree Plans:</h2>
             <div className="degree-plan-list">
                 {planList.map(
                     (plan: DegreePlan): JSX.Element =>
-                        printPlan(plan, planList, setViewPlan)
+                        printPlan(plan, planList, setViewPlan, deletePlanByName)
                 )}
             </div>
             {/*Only render the button to create a new plan if your are not currently creating a new plan*/}
