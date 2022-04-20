@@ -1,12 +1,8 @@
-import { clear } from "console";
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import { cursorTo } from "readline";
-import { SemanticClassificationFormat } from "typescript";
 import { Course } from "./Interfaces/course";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { Season, Semester, validSeason } from "./Interfaces/semester";
-import { courseList } from "./Resources/Courses";
 
 interface planListProp {
     plan: DegreePlan;
