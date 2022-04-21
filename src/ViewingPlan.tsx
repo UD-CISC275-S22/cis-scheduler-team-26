@@ -158,6 +158,26 @@ function removeCourse(
         )
     );
 }
+function clearCourses(curr: DegreePlan, editingSem: Semester): Semester[] {
+    return curr.semesterList.map(
+        (check: Semester): Semester =>
+            check === editingSem ? { ...check, courseList: [] } : check
+    );
+}
+function clearSem(
+    plan: DegreePlan,
+    planList: DegreePlan[],
+    setPlans: (newPlans: DegreePlan[]) => void,
+    editingSem: Semester
+) {
+    const newPlans: DegreePlan[] = planList.map(
+        (curr: DegreePlan): DegreePlan =>
+            curr === plan
+                ? { ...curr, semesterList: clearCourses(curr, editingSem) }
+                : curr
+    );
+    calculateScore(newPlans, setPlans);
+}
 
 function printSemesters(
     plan: DegreePlan,
@@ -213,11 +233,13 @@ function printSemesters(
                                     </tr>
                                 )}
                             </thead>
-                            <tr>
-                                <td>Course ID</td>
-                                <td>Course Name</td>
-                                <td>Number of Credits</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>Course ID</td>
+                                    <td>Course Name</td>
+                                    <td>Number of Credits</td>
+                                </tr>
+                            </tbody>
                             {semester === editingSem ? (
                                 <tbody>
                                     {semester.courseList.map(
@@ -228,6 +250,10 @@ function printSemesters(
                                                 <td>{course.numCredits}</td>
                                                 <td>
                                                     <Button
+                                                        style={{
+                                                            backgroundColor:
+                                                                "red"
+                                                        }}
                                                         onClick={() =>
                                                             removeCourse(
                                                                 course,
@@ -316,6 +342,23 @@ function printSemesters(
                                                 }
                                             >
                                                 Add Course
+                                            </Button>
+                                        </td>
+                                        <td>
+                                            <Button
+                                                onClick={() =>
+                                                    clearSem(
+                                                        plan,
+                                                        planList,
+                                                        setPlans,
+                                                        editingSem
+                                                    )
+                                                }
+                                                style={{
+                                                    backgroundColor: "darkred"
+                                                }}
+                                            >
+                                                Clear All Courses
                                             </Button>
                                         </td>
                                     </tr>
@@ -417,6 +460,63 @@ function addSemesters(
         </div>
     );
 }
+function emptyCourseList(curr: Semester): Semester {
+    return { ...curr, courseList: [] };
+}
+function clearHelp(clearSem: Semester[]): Semester[] {
+    return clearSem.map((curr: Semester): Semester => emptyCourseList(curr));
+}
+function clearAllCourses(
+    plan: DegreePlan,
+    planList: DegreePlan[],
+    setPlans: (newPlans: DegreePlan[]) => void
+) {
+    const newPlans = planList.map(
+        (curr: DegreePlan): DegreePlan =>
+            curr === plan
+                ? { ...curr, semesterList: clearHelp(curr.semesterList) }
+                : curr
+    );
+    calculateScore(newPlans, setPlans);
+}
+export function calculateScore(
+    planList: DegreePlan[],
+    setPlans: (newPlans: DegreePlan[]) => void
+) {
+    function scoreTotal(curr: Semester): Semester {
+        return {
+            ...curr,
+            totalCredits: curr.courseList.reduce(
+                (currentTotal: number, currCourse: Course) =>
+                    currentTotal + currCourse.numCredits,
+                0
+            )
+        };
+    }
+    function scoreSemester(curr: DegreePlan): DegreePlan {
+        return {
+            ...curr,
+            semesterList: curr.semesterList.map(
+                (check: Semester): Semester => scoreTotal(check)
+            )
+        };
+    }
+    function scorePlan(curr: DegreePlan): DegreePlan {
+        return {
+            ...curr,
+            totalCredits: curr.semesterList.reduce(
+                (currentTotal: number, currSem: Semester) =>
+                    currentTotal + currSem.totalCredits,
+                0
+            )
+        };
+    }
+    let newPlans: DegreePlan[] = planList.map(
+        (curr: DegreePlan): DegreePlan => scoreSemester(curr)
+    );
+    newPlans = newPlans.map((curr: DegreePlan): DegreePlan => scorePlan(curr));
+    setPlans(newPlans);
+}
 
 export function ViewingPlan({
     plan,
@@ -455,7 +555,17 @@ export function ViewingPlan({
                     setYear
                 )}
             <Button onClick={() => setEdit(!edit)}>Edit Semesters</Button>
-            <Button onClick={() => setViewPlan(-1)}>Return to Plan List</Button>
+            <Button
+                onClick={() => clearAllCourses(plan, planList, setPlans)}
+                style={{ backgroundColor: "darkred" }}
+            >
+                Clear All Semesters
+            </Button>
+            <div>
+                <Button onClick={() => setViewPlan(-1)}>
+                    Return to Plan List
+                </Button>
+            </div>
         </div>
     );
 }
