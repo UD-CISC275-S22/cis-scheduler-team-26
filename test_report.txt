@@ -4,16 +4,16 @@
 
 FAIL src/ViewingPlan.test.tsx
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (154 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (68 ms)
-    ✓ Courses can be removed (148 ms)
-    ✓ Courses can be added (192 ms)
-    ✓ Semesters can be removed (118 ms)
-    ✓ Semesters can be added (132 ms)
-    ✕ The initial credits in the testing plan are displayed (43 ms)
-    ✕ When adding a course, the total credits in updated (201 ms)
-    ✕ When removing a course, the score is updated (119 ms)
-    ✕ Semesters can be removed (123 ms)
+    ✓ The initial two test semesters are displated (197 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (85 ms)
+    ✓ Courses can be removed (206 ms)
+    ✓ Courses can be added (319 ms)
+    ✓ Semesters can be removed (251 ms)
+    ✓ Semesters can be added (268 ms)
+    ✕ The initial credits in the testing plan are displayed (60 ms)
+    ✕ When adding a course, the total credits in updated (303 ms)
+    ✕ When removing a course, the score is updated (204 ms)
+    ✕ Semesters can be removed (167 ms)
 
   ● ViewingPlan Tests › The initial credits in the testing plan are displayed
 
@@ -37,208 +37,215 @@ FAIL src/ViewingPlan.test.tsx
               [0mDeveloped by: Jack Kingham, Sean Williams, Iclyn Taero[0m
             [36m</span>[39m
           [36m</header>[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mCurrently Displaying [0m
-              [0mTesting Plan[0m
-              [0m:[0m
-            [36m</h3>[39m
-            [36m<div>[39m
-              [36m<div>[39m
-                [36m<table[39m
-                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                [36m>[39m
-                  [36m<thead>[39m
-                    [36m<tr>[39m
-                      [36m<th[39m
-                        [33mcolspan[39m=[32m"3"[39m
-                      [36m>[39m
-                        [0mWinter 2022[0m
-                      [36m</th>[39m
-                    [36m</tr>[39m
-                  [36m</thead>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0mCourse ID[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCourse Name[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mNumber of Credits[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m101[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mEGGG[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m108[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCISC[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m241[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mMATH[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                [36m</table>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mEdit Courses[0m
-                [36m</button>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [36m<table[39m
-                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                [36m>[39m
-                  [36m<thead>[39m
-                    [36m<tr>[39m
-                      [36m<th[39m
-                        [33mcolspan[39m=[32m"3"[39m
-                      [36m>[39m
-                        [0mSpring 2022[0m
-                      [36m</th>[39m
-                    [36m</tr>[39m
-                  [36m</thead>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0mCourse ID[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCourse Name[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mNumber of Credits[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m101[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mEGGG[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m108[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCISC[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m241[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mMATH[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m110[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mENGL[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                [36m</table>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mEdit Courses[0m
-                [36m</button>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mName: [0m
-                [0mTesting Plan[0m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mExpected Degree: [0m
-                [0mComputer Science Bachelor of Arts[0m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mCurrently Have [0m
-                [0m21[0m
-                [0m out of[0m
-                [0m [0m
-                [0m124[0m
-                [0m required Credits[0m
-              [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"main-page-items"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"offcanvas-component"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mView Courses List[0m
+              [36m</button>[39m
             [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mEdit Semesters[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mstyle[39m=[32m"background-color: darkred;"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mClear All Semesters[0m
-            [36m</button>[39m
             [36m<div>[39m
+              [36m<h3>[39m
+                [0mCurrently Displaying [0m
+                [0mTesting Plan[0m
+                [0m:[0m
+              [36m</h3>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"3"[39m
+                        [36m>[39m
+                          [0mWinter 2022[0m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m101[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mEGGG[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m108[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCISC[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m241[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mMATH[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"3"[39m
+                        [36m>[39m
+                          [0mSpring 2022[0m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m101[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mEGGG[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m108[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCISC[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m241[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mMATH[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m110[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mENGL[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mName: [0m
+                  [0mTesting Plan[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mExpected Degree: [0m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mCurrently Have [0m
+                  [0m21[0m
+                  [0m out of[0m
+                  [0m [0m
+                  [0m124[0m
+                  [0m required Credits[0m
+                [36m</div>[39m
+              [36m</div>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
-                [0mReturn to Plan List[0m
+                [0mEdit Semesters[0m
               [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mstyle[39m=[32m"background-color: darkred;"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mClear All Semesters[0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mReturn to Plan List[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
-          [36m<br />[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mView/Edit Course List[0m
-          [36m</button>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -283,219 +290,226 @@ FAIL src/ViewingPlan.test.tsx
               [0mDeveloped by: Jack Kingham, Sean Williams, Iclyn Taero[0m
             [36m</span>[39m
           [36m</header>[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mCurrently Displaying [0m
-              [0mTesting Plan[0m
-              [0m:[0m
-            [36m</h3>[39m
-            [36m<div>[39m
-              [36m<div>[39m
-                [36m<table[39m
-                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                [36m>[39m
-                  [36m<thead>[39m
-                    [36m<tr>[39m
-                      [36m<th[39m
-                        [33mcolspan[39m=[32m"3"[39m
-                      [36m>[39m
-                        [0mWinter 2022[0m
-                      [36m</th>[39m
-                    [36m</tr>[39m
-                  [36m</thead>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0mCourse ID[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCourse Name[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mNumber of Credits[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m101[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mEGGG[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m108[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCISC[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m241[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mMATH[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m110[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mENGL[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                [36m</table>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mEdit Courses[0m
-                [36m</button>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [36m<table[39m
-                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                [36m>[39m
-                  [36m<thead>[39m
-                    [36m<tr>[39m
-                      [36m<th[39m
-                        [33mcolspan[39m=[32m"3"[39m
-                      [36m>[39m
-                        [0mSpring 2022[0m
-                      [36m</th>[39m
-                    [36m</tr>[39m
-                  [36m</thead>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0mCourse ID[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCourse Name[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mNumber of Credits[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m101[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mEGGG[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m108[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCISC[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m241[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mMATH[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m110[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mENGL[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                [36m</table>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mEdit Courses[0m
-                [36m</button>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mName: [0m
-                [0mTesting Plan[0m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mExpected Degree: [0m
-                [0mComputer Science Bachelor of Arts[0m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mCurrently Have [0m
-                [0m24[0m
-                [0m out of[0m
-                [0m [0m
-                [0m124[0m
-                [0m required Credits[0m
-              [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"main-page-items"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"offcanvas-component"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mView Courses List[0m
+              [36m</button>[39m
             [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mEdit Semesters[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mstyle[39m=[32m"background-color: darkred;"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mClear All Semesters[0m
-            [36m</button>[39m
             [36m<div>[39m
+              [36m<h3>[39m
+                [0mCurrently Displaying [0m
+                [0mTesting Plan[0m
+                [0m:[0m
+              [36m</h3>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"3"[39m
+                        [36m>[39m
+                          [0mWinter 2022[0m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m101[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mEGGG[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m108[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCISC[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m241[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mMATH[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m110[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mENGL[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"3"[39m
+                        [36m>[39m
+                          [0mSpring 2022[0m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m101[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mEGGG[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m108[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCISC[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m241[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mMATH[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m110[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mENGL[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mName: [0m
+                  [0mTesting Plan[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mExpected Degree: [0m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mCurrently Have [0m
+                  [0m24[0m
+                  [0m out of[0m
+                  [0m [0m
+                  [0m124[0m
+                  [0m required Credits[0m
+                [36m</div>[39m
+              [36m</div>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
-                [0mReturn to Plan List[0m
+                [0mEdit Semesters[0m
               [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mstyle[39m=[32m"background-color: darkred;"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mClear All Semesters[0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mReturn to Plan List[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
-          [36m<br />[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mView/Edit Course List[0m
-          [36m</button>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -540,197 +554,204 @@ FAIL src/ViewingPlan.test.tsx
               [0mDeveloped by: Jack Kingham, Sean Williams, Iclyn Taero[0m
             [36m</span>[39m
           [36m</header>[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mCurrently Displaying [0m
-              [0mTesting Plan[0m
-              [0m:[0m
-            [36m</h3>[39m
-            [36m<div>[39m
-              [36m<div>[39m
-                [36m<table[39m
-                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                [36m>[39m
-                  [36m<thead>[39m
-                    [36m<tr>[39m
-                      [36m<th[39m
-                        [33mcolspan[39m=[32m"3"[39m
-                      [36m>[39m
-                        [0mWinter 2022[0m
-                      [36m</th>[39m
-                    [36m</tr>[39m
-                  [36m</thead>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0mCourse ID[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCourse Name[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mNumber of Credits[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m108[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCISC[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m241[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mMATH[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                [36m</table>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mEdit Courses[0m
-                [36m</button>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [36m<table[39m
-                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                [36m>[39m
-                  [36m<thead>[39m
-                    [36m<tr>[39m
-                      [36m<th[39m
-                        [33mcolspan[39m=[32m"3"[39m
-                      [36m>[39m
-                        [0mSpring 2022[0m
-                      [36m</th>[39m
-                    [36m</tr>[39m
-                  [36m</thead>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0mCourse ID[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCourse Name[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mNumber of Credits[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m101[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mEGGG[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m108[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCISC[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m241[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mMATH[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m110[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mENGL[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                [36m</table>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mEdit Courses[0m
-                [36m</button>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mName: [0m
-                [0mTesting Plan[0m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mExpected Degree: [0m
-                [0mComputer Science Bachelor of Arts[0m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mCurrently Have [0m
-                [0m18[0m
-                [0m out of[0m
-                [0m [0m
-                [0m124[0m
-                [0m required Credits[0m
-              [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"main-page-items"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"offcanvas-component"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mView Courses List[0m
+              [36m</button>[39m
             [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mEdit Semesters[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mstyle[39m=[32m"background-color: darkred;"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mClear All Semesters[0m
-            [36m</button>[39m
             [36m<div>[39m
+              [36m<h3>[39m
+                [0mCurrently Displaying [0m
+                [0mTesting Plan[0m
+                [0m:[0m
+              [36m</h3>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"3"[39m
+                        [36m>[39m
+                          [0mWinter 2022[0m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m108[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCISC[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m241[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mMATH[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"3"[39m
+                        [36m>[39m
+                          [0mSpring 2022[0m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m101[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mEGGG[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m108[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCISC[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m241[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mMATH[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m110[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mENGL[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mName: [0m
+                  [0mTesting Plan[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mExpected Degree: [0m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mCurrently Have [0m
+                  [0m18[0m
+                  [0m out of[0m
+                  [0m [0m
+                  [0m124[0m
+                  [0m required Credits[0m
+                [36m</div>[39m
+              [36m</div>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
-                [0mReturn to Plan List[0m
+                [0mEdit Semesters[0m
               [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mstyle[39m=[32m"background-color: darkred;"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mClear All Semesters[0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mReturn to Plan List[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
-          [36m<br />[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mView/Edit Course List[0m
-          [36m</button>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -775,203 +796,210 @@ FAIL src/ViewingPlan.test.tsx
               [0mDeveloped by: Jack Kingham, Sean Williams, Iclyn Taero[0m
             [36m</span>[39m
           [36m</header>[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mCurrently Displaying [0m
-              [0mTesting Plan[0m
-              [0m:[0m
-            [36m</h3>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"main-page-items"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"offcanvas-component"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mView Courses List[0m
+              [36m</button>[39m
+            [36m</div>[39m
             [36m<div>[39m
+              [36m<h3>[39m
+                [0mCurrently Displaying [0m
+                [0mTesting Plan[0m
+                [0m:[0m
+              [36m</h3>[39m
               [36m<div>[39m
-                [36m<table[39m
-                  [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                [36m>[39m
-                  [36m<thead>[39m
-                    [36m<tr>[39m
-                      [36m<th[39m
-                        [33mcolspan[39m=[32m"2"[39m
-                      [36m>[39m
-                        [0mSpring 2022[0m
-                      [36m</th>[39m
-                      [36m<th>[39m
-                        [36m<button[39m
-                          [33mclass[39m=[32m"btn btn-primary"[39m
-                          [33mstyle[39m=[32m"background-color: red;"[39m
-                          [33mtype[39m=[32m"button"[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"2"[39m
                         [36m>[39m
-                          [0mDelete Semester[0m
-                        [36m</button>[39m
-                      [36m</th>[39m
-                    [36m</tr>[39m
-                  [36m</thead>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0mCourse ID[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCourse Name[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mNumber of Credits[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                  [36m<tbody>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m101[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mEGGG[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m108[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mCISC[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m241[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mMATH[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                    [36m<tr>[39m
-                      [36m<td>[39m
-                        [0m110[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0mENGL[0m
-                      [36m</td>[39m
-                      [36m<td>[39m
-                        [0m3[0m
-                      [36m</td>[39m
-                    [36m</tr>[39m
-                  [36m</tbody>[39m
-                [36m</table>[39m
+                          [0mSpring 2022[0m
+                        [36m</th>[39m
+                        [36m<th>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: red;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mDelete Semester[0m
+                          [36m</button>[39m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m101[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mEGGG[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m108[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCISC[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m241[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mMATH[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m110[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mENGL[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mName: [0m
+                  [0mTesting Plan[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mExpected Degree: [0m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mCurrently Have [0m
+                  [0m12[0m
+                  [0m out of[0m
+                  [0m [0m
+                  [0m124[0m
+                  [0m required Credits[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mfor[39m=[32m"semesterYear"[39m
+                  [36m>[39m
+                    [0mYear:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mid[39m=[32m"semesterYear"[39m
+                    [33mtype[39m=[32m"number"[39m
+                    [33mvalue[39m=[32m"2022"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mfor[39m=[32m"semesterSeason"[39m
+                  [36m>[39m
+                    [0mSeason:[0m
+                  [36m</label>[39m
+                  [36m<select[39m
+                    [33mclass[39m=[32m"form-select"[39m
+                    [33mid[39m=[32m"semesterSeason"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Winter"[39m
+                    [36m>[39m
+                      [0mWinter[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Spring"[39m
+                    [36m>[39m
+                      [0mSpring[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Summer"[39m
+                    [36m>[39m
+                      [0mSummer[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Fall"[39m
+                    [36m>[39m
+                      [0mFall[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</div>[39m
                 [36m<button[39m
                   [33mclass[39m=[32m"btn btn-primary"[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
-                  [0mEdit Courses[0m
+                  [0mAdd Semester[0m
                 [36m</button>[39m
               [36m</div>[39m
-              [36m<div>[39m
-                [0mName: [0m
-                [0mTesting Plan[0m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mExpected Degree: [0m
-                [0mComputer Science Bachelor of Arts[0m
-              [36m</div>[39m
-              [36m<div>[39m
-                [0mCurrently Have [0m
-                [0m12[0m
-                [0m out of[0m
-                [0m [0m
-                [0m124[0m
-                [0m required Credits[0m
-              [36m</div>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<div>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-label"[39m
-                  [33mfor[39m=[32m"semesterYear"[39m
-                [36m>[39m
-                  [0mYear:[0m
-                [36m</label>[39m
-                [36m<input[39m
-                  [33mclass[39m=[32m"form-control"[39m
-                  [33mid[39m=[32m"semesterYear"[39m
-                  [33mtype[39m=[32m"number"[39m
-                  [33mvalue[39m=[32m"2022"[39m
-                [36m/>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [36m<label[39m
-                  [33mclass[39m=[32m"form-label"[39m
-                  [33mfor[39m=[32m"semesterSeason"[39m
-                [36m>[39m
-                  [0mSeason:[0m
-                [36m</label>[39m
-                [36m<select[39m
-                  [33mclass[39m=[32m"form-select"[39m
-                  [33mid[39m=[32m"semesterSeason"[39m
-                [36m>[39m
-                  [36m<option[39m
-                    [33mvalue[39m=[32m"Winter"[39m
-                  [36m>[39m
-                    [0mWinter[0m
-                  [36m</option>[39m
-                  [36m<option[39m
-                    [33mvalue[39m=[32m"Spring"[39m
-                  [36m>[39m
-                    [0mSpring[0m
-                  [36m</option>[39m
-                  [36m<option[39m
-                    [33mvalue[39m=[32m"Summer"[39m
-                  [36m>[39m
-                    [0mSummer[0m
-                  [36m</option>[39m
-                  [36m<option[39m
-                    [33mvalue[39m=[32m"Fall"[39m
-                  [36m>[39m
-                    [0mFall[0m
-                  [36m</option>[39m
-                [36m</select>[39m
-              [36m</div>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
-                [0mAdd Semester[0m
+                [0mEdit Semesters[0m
               [36m</button>[39m
-            [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mEdit Semesters[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mstyle[39m=[32m"background-color: darkred;"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mClear All Semesters[0m
-            [36m</button>[39m
-            [36m<div>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mstyle[39m=[32m"background-color: darkred;"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
-                [0mReturn to Plan List[0m
+                [0mClear All Semesters[0m
               [36m</button>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mReturn to Plan List[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
-          [36m<br />[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mView/Edit Course List[0m
-          [36m</button>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -997,11 +1025,11 @@ FAIL src/ViewingPlan.test.tsx
 ------------------|---------|----------|---------|---------|--------------------------------------------
 File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                          
 ------------------|---------|----------|---------|---------|--------------------------------------------
-All files         |   39.42 |    47.87 |   40.54 |   40.35 |                                            
- src              |   37.95 |    47.72 |      40 |   38.88 |                                            
-  App.tsx         |   85.71 |       90 |      50 |   85.71 | 101                                        
-  CoursesList.tsx |       0 |        0 |       0 |       0 | 20-324                                     
-  PlanList.tsx    |    25.8 |       30 |   26.31 |   27.58 | 46,66-67,82-196                            
+All files         |   39.32 |    45.45 |   41.07 |   40.22 |                                            
+ src              |   37.86 |    45.12 |   40.54 |   38.78 |                                            
+  App.tsx         |     100 |      100 |     100 |     100 |                                            
+  CoursesList.tsx |    3.77 |        0 |    3.22 |    3.77 | 20-24,36-340                               
+  PlanList.tsx    |   24.24 |       30 |   26.31 |    25.8 | 46,66-67,83-204                            
   ViewingPlan.tsx |   62.82 |    65.21 |   63.33 |   64.47 | 68,119,162-179,350,401,428,464-518,559-565 
  src/Interfaces   |   57.14 |       50 |     100 |   57.14 |                                            
   course.ts       |       0 |        0 |       0 |       0 |                                            
@@ -1015,5 +1043,5 @@ All files         |   39.42 |    47.87 |   40.54 |   40.35 |
 Test Suites: 1 failed, 1 total
 Tests:       4 failed, 6 passed, 10 total
 Snapshots:   0 total
-Time:        4.358 s
+Time:        5.625 s
 Ran all test suites.
