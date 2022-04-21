@@ -158,6 +158,26 @@ function removeCourse(
         )
     );
 }
+function clearCourses(curr: DegreePlan, editingSem: Semester): Semester[] {
+    return curr.semesterList.map(
+        (check: Semester): Semester =>
+            check === editingSem ? { ...check, courseList: [] } : check
+    );
+}
+function clearSem(
+    plan: DegreePlan,
+    planList: DegreePlan[],
+    setPlans: (newPlans: DegreePlan[]) => void,
+    editingSem: Semester
+) {
+    const newPlans: DegreePlan[] = planList.map(
+        (curr: DegreePlan): DegreePlan =>
+            curr === plan
+                ? { ...curr, semesterList: clearCourses(curr, editingSem) }
+                : curr
+    );
+    calculateScore(newPlans, setPlans);
+}
 
 function printSemesters(
     plan: DegreePlan,
@@ -324,6 +344,23 @@ function printSemesters(
                                                 Add Course
                                             </Button>
                                         </td>
+                                        <td>
+                                            <Button
+                                                onClick={() =>
+                                                    clearSem(
+                                                        plan,
+                                                        planList,
+                                                        setPlans,
+                                                        editingSem
+                                                    )
+                                                }
+                                                style={{
+                                                    backgroundColor: "darkred"
+                                                }}
+                                            >
+                                                Clear All Courses
+                                            </Button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             )}
@@ -440,7 +477,6 @@ function clearAllCourses(
                 ? { ...curr, semesterList: clearHelp(curr.semesterList) }
                 : curr
     );
-    setPlans(newPlans);
     calculateScore(newPlans, setPlans);
 }
 export function calculateScore(
