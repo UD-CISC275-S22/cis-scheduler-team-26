@@ -68,7 +68,11 @@ function App(): JSX.Element {
                 ></CoursesList>
             )}
             {/*component testing Offcanvas element */}
-            <TestComponent></TestComponent>
+            <TestComponent
+                setShowCourses={setShowCourses}
+                setCourses={setCourses}
+                courses={courses}
+            ></TestComponent>
             {/*Display list of plans if courseList isn't open and we're not viewing a specific plan */}
             {!showCourses && viewPlan === -1 && (
                 <div>

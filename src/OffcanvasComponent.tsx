@@ -1,9 +1,21 @@
 import React, { useState } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
+import { CoursesList } from "./CoursesList";
+import { Course } from "./Interfaces/course";
 import "./OffcanvasComponent.css";
 
+interface coursesListProp {
+    setShowCourses: (newShowCourses: boolean) => void;
+    setCourses: (newCourses: Course[]) => void;
+    courses: Course[];
+}
+
 //Little test demonstrating use of the Offcanvas react-bootstrap element
-export function TestComponent(): JSX.Element {
+export function TestComponent({
+    setShowCourses,
+    setCourses,
+    courses
+}: coursesListProp): JSX.Element {
     const [show, setShow] = useState<boolean>(false);
     return (
         <div className="offcanvas-component">
@@ -22,7 +34,13 @@ export function TestComponent(): JSX.Element {
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Degree Plan</Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>Hello!</Offcanvas.Body>
+                <Offcanvas.Body>
+                    <CoursesList
+                        setShowCourses={setShowCourses}
+                        setCourses={setCourses}
+                        courses={courses}
+                    ></CoursesList>
+                </Offcanvas.Body>
             </Offcanvas>
         </div>
     );

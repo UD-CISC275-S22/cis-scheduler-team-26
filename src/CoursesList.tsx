@@ -168,98 +168,161 @@ export function CoursesList({
             <Button onClick={() => setAddCourse(!addingCourse)}>
                 Add Course
             </Button>
+            {/*Render the form to add a course if Add Course button is pressed */}
             {addingCourse && (
-                <Form.Group controlId="Add Course Dep">
-                    <Form.Label>Type Course Department: </Form.Label>
-                    <Form.Control
-                        type="text"
-                        value={courseDep}
-                        onChange={(event: ChangeEvent) =>
-                            setCourseDep(event.target.value)
-                        }
-                    />
-                </Form.Group>
+                <AddCourseForm
+                    courseDep={courseDep}
+                    setCourseDep={setCourseDep}
+                    courseID={courseID}
+                    setCourseID={setCourseID}
+                    courseCred={courseCred}
+                    setCourseCred={setCourseCred}
+                    addCourse={addNewCourse}
+                    setAddingCourse={setAddCourse}
+                ></AddCourseForm>
             )}
-            {addingCourse && (
-                <Form.Group controlId="Add Course ID">
-                    <Form.Label>Type Course ID: </Form.Label>
-                    <Form.Control
-                        type="number"
-                        value={courseID}
-                        onChange={(event: ChangeEvent) =>
-                            setCourseID(parseInt(event.target.value) || 0)
-                        }
-                    />
-                </Form.Group>
-            )}
-            {addingCourse && (
-                <Form.Group controlId="Add Course Credit">
-                    <Form.Label>Type number of Credits: </Form.Label>
-                    <Form.Control
-                        type="number"
-                        value={courseCred}
-                        onChange={(event: ChangeEvent) =>
-                            setCourseCred(parseInt(event.target.value) || 0)
-                        }
-                    />
-                </Form.Group>
-            )}
+            {/*Render the form to edit a course if Edit button is pressed */}
             {editCourse && (
-                <Form.Group controlId="Change Course Dep">
-                    <Form.Label>Type Course Department: </Form.Label>
-                    <Form.Control
-                        type="text"
-                        value={courseDep}
-                        onChange={(event: ChangeEvent) =>
-                            setCourseDep(event.target.value)
-                        }
-                    />
-                </Form.Group>
-            )}
-            {editCourse && (
-                <Form.Group controlId="Change Course ID">
-                    <Form.Label>Type Course ID: </Form.Label>
-                    <Form.Control
-                        type="number"
-                        value={courseID}
-                        onChange={(event: ChangeEvent) =>
-                            setCourseID(parseInt(event.target.value) || 0)
-                        }
-                    />
-                </Form.Group>
-            )}
-            {editCourse && (
-                <Form.Group controlId="Change Course Credit">
-                    <Form.Label>Type number of Credits: </Form.Label>
-                    <Form.Control
-                        type="number"
-                        value={courseCred}
-                        onChange={(event: ChangeEvent) =>
-                            setCourseCred(parseInt(event.target.value) || 0)
-                        }
-                    />
-                </Form.Group>
-            )}
-            {editCourse && (
-                <Button
-                    onClick={() => {
-                        changeCourse(), setEditCourse(!editCourse);
-                    }}
-                >
-                    Submit
-                </Button>
-            )}
-            {addingCourse && (
-                <Button
-                    onClick={() => {
-                        addNewCourse(), setAddCourse(false);
-                    }}
-                >
-                    Submit
-                </Button>
+                <EditCourseForm
+                    courseDep={courseDep}
+                    setCourseDep={setCourseDep}
+                    courseID={courseID}
+                    setCourseID={setCourseID}
+                    courseCred={courseCred}
+                    setCourseCred={setCourseCred}
+                    editingCourse={editCourse}
+                    setEditingCourse={setEditCourse}
+                    changeCourse={changeCourse}
+                ></EditCourseForm>
             )}
             <Button onClick={() => setRemoveCourse(!removingCourse)}>
                 Remove Course
+            </Button>
+        </div>
+    );
+}
+
+function AddCourseForm({
+    courseDep,
+    setCourseDep,
+    courseID,
+    setCourseID,
+    courseCred,
+    setCourseCred,
+    addCourse,
+    setAddingCourse
+}: {
+    courseDep: string;
+    setCourseDep: (name: string) => void;
+    courseID: number;
+    setCourseID: (id: number) => void;
+    courseCred: number;
+    setCourseCred: (num: number) => void;
+    addCourse: () => void;
+    setAddingCourse: (val: boolean) => void;
+}): JSX.Element {
+    return (
+        <div>
+            <Form.Group controlId="Add Course Dep">
+                <Form.Label>Type Course Department: </Form.Label>
+                <Form.Control
+                    type="text"
+                    value={courseDep}
+                    onChange={(event: ChangeEvent) =>
+                        setCourseDep(event.target.value)
+                    }
+                />
+            </Form.Group>
+            <Form.Group controlId="Add Course ID">
+                <Form.Label>Type Course ID: </Form.Label>
+                <Form.Control
+                    type="number"
+                    value={courseID}
+                    onChange={(event: ChangeEvent) =>
+                        setCourseID(parseInt(event.target.value) || 0)
+                    }
+                />
+            </Form.Group>
+            <Form.Group controlId="Add Course Credit">
+                <Form.Label>Type number of Credits: </Form.Label>
+                <Form.Control
+                    type="number"
+                    value={courseCred}
+                    onChange={(event: ChangeEvent) =>
+                        setCourseCred(parseInt(event.target.value) || 0)
+                    }
+                />
+            </Form.Group>
+            <Button
+                onClick={() => {
+                    addCourse(), setAddingCourse(false);
+                }}
+            >
+                Submit
+            </Button>
+        </div>
+    );
+}
+
+function EditCourseForm({
+    courseDep,
+    setCourseDep,
+    courseID,
+    setCourseID,
+    courseCred,
+    setCourseCred,
+    editingCourse,
+    setEditingCourse,
+    changeCourse
+}: {
+    courseDep: string;
+    setCourseDep: (name: string) => void;
+    courseID: number;
+    setCourseID: (id: number) => void;
+    courseCred: number;
+    setCourseCred: (num: number) => void;
+    editingCourse: boolean;
+    setEditingCourse: (val: boolean) => void;
+    changeCourse: () => void;
+}): JSX.Element {
+    return (
+        <div>
+            <Form.Group controlId="Change Course Dep">
+                <Form.Label>Type Course Department: </Form.Label>
+                <Form.Control
+                    type="text"
+                    value={courseDep}
+                    onChange={(event: ChangeEvent) =>
+                        setCourseDep(event.target.value)
+                    }
+                />
+            </Form.Group>
+            <Form.Group controlId="Change Course ID">
+                <Form.Label>Type Course ID: </Form.Label>
+                <Form.Control
+                    type="number"
+                    value={courseID}
+                    onChange={(event: ChangeEvent) =>
+                        setCourseID(parseInt(event.target.value) || 0)
+                    }
+                />
+            </Form.Group>
+            <Form.Group controlId="Change Course Credit">
+                <Form.Label>Type number of Credits: </Form.Label>
+                <Form.Control
+                    type="number"
+                    value={courseCred}
+                    onChange={(event: ChangeEvent) =>
+                        setCourseCred(parseInt(event.target.value) || 0)
+                    }
+                />
+            </Form.Group>
+            <Button
+                onClick={() => {
+                    changeCourse(), setEditingCourse(!editingCourse);
+                }}
+            >
+                Submit
             </Button>
         </div>
     );
