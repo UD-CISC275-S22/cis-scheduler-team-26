@@ -187,6 +187,8 @@ function makeNewPlanForm({
                             }
                         ]);
                         setCreatingNewPlan(false);
+                        setNewPlanMajor(DegreeList[0]);
+                        setNewPlanName("");
                     }}
                 >
                     Add Plan
