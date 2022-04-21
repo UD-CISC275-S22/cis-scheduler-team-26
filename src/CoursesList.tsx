@@ -202,6 +202,7 @@ export function CoursesList({
     );
 }
 
+//Form to add a new course to master course list
 function AddCourseForm({
     courseDep,
     setCourseDep,
@@ -264,6 +265,7 @@ function AddCourseForm({
     );
 }
 
+//Form to edit a specific course
 function EditCourseForm({
     courseDep,
     setCourseDep,
