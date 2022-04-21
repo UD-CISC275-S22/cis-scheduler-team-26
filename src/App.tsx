@@ -8,6 +8,7 @@ import { CoursesList } from "./CoursesList";
 import { Course } from "./Interfaces/course";
 import { Button } from "react-bootstrap";
 import { DegreeList } from "./Resources/Degrees";
+import { TestComponent } from "./OffcanvasComponent";
 
 const INITIAL_PLANS: DegreePlan[] = [
     {
@@ -66,6 +67,8 @@ function App(): JSX.Element {
                     courses={courses}
                 ></CoursesList>
             )}
+            {/*component testing Offcanvas element */}
+            <TestComponent></TestComponent>
             {/*Display list of plans if courseList isn't open and we're not viewing a specific plan */}
             {!showCourses && viewPlan === -1 && (
                 <div>
