@@ -4,16 +4,16 @@
 
 FAIL src/ViewingPlan.test.tsx
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (182 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (73 ms)
-    ✓ Courses can be removed (155 ms)
-    ✓ Courses can be added (204 ms)
-    ✓ Semesters can be removed (133 ms)
-    ✓ Semesters can be added (147 ms)
-    ✕ The initial credits in the testing plan are displayed (45 ms)
-    ✕ When adding a course, the total credits in updated (217 ms)
-    ✕ When removing a course, the score is updated (203 ms)
-    ✕ Semesters can be removed (114 ms)
+    ✓ The initial two test semesters are displated (148 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (65 ms)
+    ✓ Courses can be removed (142 ms)
+    ✓ Courses can be added (188 ms)
+    ✓ Semesters can be removed (115 ms)
+    ✓ Semesters can be added (125 ms)
+    ✕ The initial credits in the testing plan are displayed (41 ms)
+    ✕ When adding a course, the total credits in updated (244 ms)
+    ✕ When removing a course, the score is updated (121 ms)
+    ✕ Semesters can be removed (102 ms)
 
   ● ViewingPlan Tests › The initial credits in the testing plan are displayed
 
@@ -994,26 +994,26 @@ FAIL src/ViewingPlan.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------|---------|----------|---------|---------|--------------------------------
-File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
-------------------|---------|----------|---------|---------|--------------------------------
-All files         |   41.07 |    44.11 |   43.26 |   42.07 |                                
- src              |   39.62 |    43.75 |   42.71 |   40.64 |                                
-  App.tsx         |   85.71 |       90 |      50 |   85.71 | 101                            
-  CoursesList.tsx |       0 |        0 |       0 |       0 | 20-261                         
-  PlanList.tsx    |    25.8 |       30 |   26.31 |   27.58 | 46,66-67,82-196                
-  ViewingPlan.tsx |   67.12 |    71.42 |   69.09 |   69.01 | 68,119,364,391,427-482,523-529 
- src/Interfaces   |   57.14 |       50 |     100 |   57.14 |                                
-  course.ts       |       0 |        0 |       0 |       0 |                                
-  degree.ts       |       0 |        0 |       0 |       0 |                                
-  degreePlan.ts   |       0 |        0 |       0 |       0 |                                
-  semester.ts     |   57.14 |       50 |     100 |   57.14 | 7,9,13                         
- src/Resources    |     100 |      100 |     100 |     100 |                                
-  Courses.ts      |     100 |      100 |     100 |     100 |                                
-  Degrees.ts      |     100 |      100 |     100 |     100 |                                
-------------------|---------|----------|---------|---------|--------------------------------
+------------------|---------|----------|---------|---------|--------------------------------------------
+File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                          
+------------------|---------|----------|---------|---------|--------------------------------------------
+All files         |   39.88 |    42.45 |   41.28 |   40.82 |                                            
+ src              |   38.41 |       42 |   40.74 |   39.37 |                                            
+  App.tsx         |   85.71 |       90 |      50 |   85.71 | 101                                        
+  CoursesList.tsx |       0 |        0 |       0 |       0 | 20-261                                     
+  PlanList.tsx    |    25.8 |       30 |   26.31 |   27.58 | 46,66-67,82-196                            
+  ViewingPlan.tsx |   62.82 |    65.21 |   63.33 |   64.47 | 68,119,162-179,350,401,428,464-518,559-565 
+ src/Interfaces   |   57.14 |       50 |     100 |   57.14 |                                            
+  course.ts       |       0 |        0 |       0 |       0 |                                            
+  degree.ts       |       0 |        0 |       0 |       0 |                                            
+  degreePlan.ts   |       0 |        0 |       0 |       0 |                                            
+  semester.ts     |   57.14 |       50 |     100 |   57.14 | 7,9,13                                     
+ src/Resources    |     100 |      100 |     100 |     100 |                                            
+  Courses.ts      |     100 |      100 |     100 |     100 |                                            
+  Degrees.ts      |     100 |      100 |     100 |     100 |                                            
+------------------|---------|----------|---------|---------|--------------------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       4 failed, 6 passed, 10 total
 Snapshots:   0 total
-Time:        4.435 s
+Time:        4.147 s
 Ran all test suites.
