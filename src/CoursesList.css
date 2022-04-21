@@ -1,0 +1,10 @@
+.offcanvas-component {
+    display: flex;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.offcanvas-show-button {
+    font-size: larger;
+}

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Course } from "./Interfaces/course";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Offcanvas } from "react-bootstrap";
+import "./CoursesList.css";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
 interface coursesListProp {
-    setShowCourses: (newShowCourses: boolean) => void;
     setCourses: (newCourses: Course[]) => void;
     courses: Course[];
 }
@@ -25,19 +25,39 @@ function removeCourse(
     );
 }
 
-/*
-We should split this into separate components.
-The form to add a course can be its own component that conditionally renders inside of the CoursesList component.
-The form to edit a course can be its own component that conditionally renders inside of the CoursesList component.
-
-That will eliminate the long list of forms that are conditionally rendered at the bottom of this component and make
-it much easier to scale this component with more features without becoming unmanageable.
-*/
-export function CoursesList({
-    setShowCourses,
+export function CoursesListOffcanvas({
     setCourses,
     courses
 }: coursesListProp): JSX.Element {
+    const [show, setShow] = useState<boolean>(false);
+    return (
+        <div className="offcanvas-component">
+            <Button
+                onClick={() => setShow(true)}
+                className="offcanvas-show-button"
+            >
+                View Courses List
+            </Button>
+            <Offcanvas
+                show={show}
+                onHide={() => setShow(false)}
+                placement={"end"}
+            >
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>All Courses:</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    <CoursesList
+                        setCourses={setCourses}
+                        courses={courses}
+                    ></CoursesList>
+                </Offcanvas.Body>
+            </Offcanvas>
+        </div>
+    );
+}
+
+function CoursesList({ setCourses, courses }: coursesListProp): JSX.Element {
     //buttons
     const [addingCourse, setAddCourse] = useState<boolean>(false);
     const [removingCourse, setRemoveCourse] = useState<boolean>(false);
@@ -117,7 +137,6 @@ export function CoursesList({
     }
     return (
         <div>
-            <h3>List of current Courses:</h3>
             {courses.map(
                 (curr: Course): JSX.Element => (
                     <div key={curr.courseName + curr.id}>
@@ -162,9 +181,6 @@ export function CoursesList({
                     </div>
                 )
             )}
-            <Button onClick={() => setShowCourses(false)}>
-                Return to Degree Plans
-            </Button>
             <Button onClick={() => setAddCourse(!addingCourse)}>
                 Add Course
             </Button>

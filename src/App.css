@@ -49,3 +49,8 @@
         transform: rotate(360deg);
     }
 }
+
+.main-page-items {
+    display: flex;
+    flex-direction: column;
+}
