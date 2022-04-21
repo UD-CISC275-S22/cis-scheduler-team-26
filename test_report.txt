@@ -4,16 +4,16 @@
 
 FAIL src/ViewingPlan.test.tsx
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (148 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (65 ms)
-    ✓ Courses can be removed (142 ms)
-    ✓ Courses can be added (188 ms)
-    ✓ Semesters can be removed (115 ms)
-    ✓ Semesters can be added (125 ms)
-    ✕ The initial credits in the testing plan are displayed (41 ms)
-    ✕ When adding a course, the total credits in updated (244 ms)
-    ✕ When removing a course, the score is updated (121 ms)
-    ✕ Semesters can be removed (102 ms)
+    ✓ The initial two test semesters are displated (154 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (68 ms)
+    ✓ Courses can be removed (148 ms)
+    ✓ Courses can be added (192 ms)
+    ✓ Semesters can be removed (118 ms)
+    ✓ Semesters can be added (132 ms)
+    ✕ The initial credits in the testing plan are displayed (43 ms)
+    ✕ When adding a course, the total credits in updated (201 ms)
+    ✕ When removing a course, the score is updated (119 ms)
+    ✕ Semesters can be removed (123 ms)
 
   ● ViewingPlan Tests › The initial credits in the testing plan are displayed
 
@@ -997,10 +997,10 @@ FAIL src/ViewingPlan.test.tsx
 ------------------|---------|----------|---------|---------|--------------------------------------------
 File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                          
 ------------------|---------|----------|---------|---------|--------------------------------------------
-All files         |   39.88 |    42.45 |   41.28 |   40.82 |                                            
- src              |   38.41 |       42 |   40.74 |   39.37 |                                            
+All files         |   39.42 |    47.87 |   40.54 |   40.35 |                                            
+ src              |   37.95 |    47.72 |      40 |   38.88 |                                            
   App.tsx         |   85.71 |       90 |      50 |   85.71 | 101                                        
-  CoursesList.tsx |       0 |        0 |       0 |       0 | 20-261                                     
+  CoursesList.tsx |       0 |        0 |       0 |       0 | 20-324                                     
   PlanList.tsx    |    25.8 |       30 |   26.31 |   27.58 | 46,66-67,82-196                            
   ViewingPlan.tsx |   62.82 |    65.21 |   63.33 |   64.47 | 68,119,162-179,350,401,428,464-518,559-565 
  src/Interfaces   |   57.14 |       50 |     100 |   57.14 |                                            
@@ -1015,5 +1015,5 @@ All files         |   39.88 |    42.45 |   41.28 |   40.82 |
 Test Suites: 1 failed, 1 total
 Tests:       4 failed, 6 passed, 10 total
 Snapshots:   0 total
-Time:        4.147 s
+Time:        4.358 s
 Ran all test suites.
