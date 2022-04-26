@@ -4,7 +4,7 @@ import { Course } from "./Interfaces/course";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { Season, Semester, validSeason } from "./Interfaces/semester";
 import { movePopup } from "./moveCoursePopup";
-import { calculateScore } from "./ViewPlanFunctions";
+import { calculateCredits, find_course } from "./ViewPlanFunctions";
 
 interface planListProp {
     plan: DegreePlan;
@@ -56,18 +56,11 @@ function removeSemester(
     );
 }
 function addCourseToSemList(currSem: Semester, addingCourse: Course) {
-    if (
-        currSem.courseList.findIndex(
-            (check: Course): boolean => check === addingCourse
-        ) === -1
-    ) {
-        return {
-            ...currSem,
-            courseList: [...currSem.courseList, addingCourse],
-            totalCredits: currSem.totalCredits + addingCourse.numCredits
-        };
-    }
-    return { ...currSem };
+    return {
+        ...currSem,
+        courseList: [...currSem.courseList, addingCourse],
+        totalCredits: currSem.totalCredits + addingCourse.numCredits
+    };
 }
 function addCourseHelp(
     curr: DegreePlan,
@@ -103,14 +96,16 @@ export function addCourse(
     editingSem: Semester,
     addingCourse: Course
 ) {
-    setPlans(
-        planList.map(
-            (curr: DegreePlan): DegreePlan =>
-                curr === plan
-                    ? addCourseHelp(curr, editingSem, addingCourse)
-                    : curr
-        )
-    );
+    if (!find_course(plan, addingCourse)) {
+        setPlans(
+            planList.map(
+                (curr: DegreePlan): DegreePlan =>
+                    curr === plan
+                        ? addCourseHelp(curr, editingSem, addingCourse)
+                        : curr
+            )
+        );
+    }
 }
 
 function findCourse(courses: Course[], check: string): Course {
@@ -179,7 +174,7 @@ function clearSem(
                 ? { ...curr, semesterList: clearCourses(curr, editingSem) }
                 : curr
     );
-    calculateScore(newPlans, setPlans);
+    calculateCredits(newPlans, setPlans);
 }
 
 function printSemesters(
@@ -200,6 +195,8 @@ function printSemesters(
     setMoveCourse: (newMoveCourse: Course) => void
 ): JSX.Element {
     function setMovingCourse(course: Course) {
+        setMoveSem(plan.semesterList[0]);
+        moveSem = plan.semesterList[0];
         setMove(true);
         setMoveCourse(course);
         moveCourse = course;
@@ -515,7 +512,7 @@ function clearAllCourses(
                 ? { ...curr, semesterList: clearHelp(curr.semesterList) }
                 : curr
     );
-    calculateScore(newPlans, setPlans);
+    calculateCredits(newPlans, setPlans);
 }
 
 export function ViewingPlan({
@@ -531,7 +528,7 @@ export function ViewingPlan({
     const [editingSem, setEditingSem] = useState<Semester>(emptySem);
     const [addingCourse, setAddingCourse] = useState<Course>(courses[0]);
     const [move, setMove] = useState<boolean>(false);
-    const [moveSem, setMoveSem] = useState<Semester>(emptySem);
+    const [moveSem, setMoveSem] = useState<Semester>(plan.semesterList[0]);
     const [moveCourse, setMoveCourse] = useState<Course>({
         id: -1,
         courseName: "",
