@@ -2,7 +2,7 @@ import { Course } from "./Interfaces/course";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { Semester } from "./Interfaces/semester";
 
-export function calculateScore(
+export function calculateCredits(
     planList: DegreePlan[],
     setPlans: (newPlans: DegreePlan[]) => void
 ) {
