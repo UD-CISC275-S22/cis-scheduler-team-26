@@ -48,7 +48,6 @@ export function CoursesList({
     const [courseID, setCourseID] = useState<number>(0);
     const [courseCred, setCourseCred] = useState<number>(0);
     const [courseIndex, setCourseIndex] = useState<number>(0);
-    const [canUndo, setUndo] = useState<boolean>(false);
     function saveCourse(oldCourse: Course): void {
         const storeCourse: Course = { ...oldCourse };
         setCourseIndex(
@@ -68,7 +67,6 @@ export function CoursesList({
         setOldCourses([...oldCourses]);
     }
     function changeCourse(): void {
-        setUndo(true);
         const changedCourse: Course = {
             id: courseID,
             courseName: courseDep,
@@ -79,21 +77,18 @@ export function CoursesList({
         setCourses([...courses]);
     }
     function resetCourse(curr: Course): void {
-        if (canUndo) {
-            const index: number = courses.findIndex(
-                (course: Course): boolean =>
-                    course.id === curr.id &&
-                    course.courseName === curr.courseName
-            );
-            const oldCourse: Course = {
-                id: oldCourses[index].id,
-                courseName: oldCourses[index].courseName,
-                numCredits: oldCourses[index].numCredits,
-                preReq: []
-            };
-            courses.splice(index, 1, oldCourse);
-            setCourses([...courses]);
-        }
+        const index: number = courses.findIndex(
+            (course: Course): boolean =>
+                course.id === curr.id && course.courseName === curr.courseName
+        );
+        const oldCourse: Course = {
+            id: oldCourses[index].id,
+            courseName: oldCourses[index].courseName,
+            numCredits: oldCourses[index].numCredits,
+            preReq: []
+        };
+        courses.splice(index, 1, oldCourse);
+        setCourses([...courses]);
     }
     function addNewCourse(): void {
         setCourses([
