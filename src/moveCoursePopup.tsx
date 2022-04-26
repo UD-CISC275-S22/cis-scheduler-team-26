@@ -114,7 +114,7 @@ function moveCourse(
                 (currCourse: Course): boolean => currCourse === course
             ) != undefined
     );
-    if (sem != undefined && sem != moveSem && moveSem.year != -1) {
+    if (sem != undefined && sem != moveSem) {
         const removedCourse: DegreePlan = removeCourseHelp(course, sem, plan);
         const newPlans: DegreePlan[] = planList.map(
             (curr: DegreePlan): DegreePlan =>
@@ -122,5 +122,6 @@ function moveCourse(
         );
         addCourse(removedCourse, newPlans, setPlans, moveSem, course);
     }
+    console.log(plan.totalCredits);
     setMove(false);
 }
