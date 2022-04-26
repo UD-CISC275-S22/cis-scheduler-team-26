@@ -4,16 +4,16 @@
 
 FAIL src/ViewingPlan.test.tsx
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (167 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (62 ms)
-    ✓ Courses can be removed (234 ms)
-    ✓ Courses can be added (220 ms)
-    ✓ Semesters can be removed (123 ms)
-    ✓ Semesters can be added (147 ms)
-    ✕ The initial credits in the testing plan are displayed (45 ms)
-    ✕ When adding a course, the total credits in updated (208 ms)
-    ✕ When removing a course, the score is updated (139 ms)
-    ✕ Semesters can be removed (116 ms)
+    ✓ The initial two test semesters are displated (298 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (101 ms)
+    ✓ Courses can be removed (211 ms)
+    ✓ Courses can be added (274 ms)
+    ✓ Semesters can be removed (183 ms)
+    ✓ Semesters can be added (185 ms)
+    ✕ The initial credits in the testing plan are displayed (77 ms)
+    ✕ When adding a course, the total credits in updated (248 ms)
+    ✕ When removing a course, the score is updated (196 ms)
+    ✕ Semesters can be removed (156 ms)
 
   ● ViewingPlan Tests › The initial credits in the testing plan are displayed
 
@@ -1029,7 +1029,7 @@ All files               |   34.92 |    41.34 |   35.65 |    35.6 |
  src                    |    33.5 |    40.81 |   35.15 |   34.18 |                                                
   App.tsx               |     100 |      100 |     100 |     100 |                                                
   CoursesList.tsx       |       4 |        0 |    3.22 |       4 | 20-24,36-335                                   
-  PlanList.tsx          |   24.24 |       30 |   26.31 |    25.8 | 46,66-67,83-204                                
+  PlanList.tsx          |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                
   ViewPlanFunctions.tsx |       0 |        0 |       0 |       0 | 10-61                                          
   ViewingPlan.tsx       |   70.27 |       66 |   71.69 |   71.23 | 70,122,165-205,289,377,439,466,502-518,573-579 
   moveCoursePopup.tsx   |       0 |        0 |       0 |       0 | 24-125                                         
@@ -1045,5 +1045,5 @@ All files               |   34.92 |    41.34 |   35.65 |    35.6 |
 Test Suites: 1 failed, 1 total
 Tests:       4 failed, 6 passed, 10 total
 Snapshots:   0 total
-Time:        4.586 s
+Time:        5.233 s
 Ran all test suites.
