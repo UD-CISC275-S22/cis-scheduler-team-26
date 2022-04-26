@@ -3,6 +3,8 @@ import { Button, Form, Table } from "react-bootstrap";
 import { Course } from "./Interfaces/course";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { Season, Semester, validSeason } from "./Interfaces/semester";
+import { movePopup } from "./moveCoursePopup";
+import { calculateScore } from "./ViewPlanFunctions";
 
 interface planListProp {
     plan: DegreePlan;
@@ -76,7 +78,8 @@ function addCourseHelp(
         ...curr,
         semesterList: curr.semesterList.map(
             (currSem: Semester): Semester =>
-                currSem === editingSem
+                currSem.season === editingSem.season &&
+                currSem.year === editingSem.year
                     ? addCourseToSemList(currSem, addingCourse)
                     : currSem
         ),
@@ -93,7 +96,7 @@ function addCourseHelp(
             )
     };
 }
-function addCourse(
+export function addCourse(
     plan: DegreePlan,
     planList: DegreePlan[],
     setPlans: (newPlans: DegreePlan[]) => void,
@@ -130,7 +133,7 @@ function removeCourseFromSemester(check: Semester, course: Course): Semester {
         totalCredits: check.totalCredits - course.numCredits
     };
 }
-function removeCourseHelp(
+export function removeCourseHelp(
     course: Course,
     sem: Semester,
     curr: DegreePlan
@@ -188,8 +191,19 @@ function printSemesters(
     setEditingSem: (newEditingSem: Semester) => void,
     addingCourse: Course,
     setAddingCourse: (newAddingCourse: Course) => void,
-    courses: Course[]
+    courses: Course[],
+    move: boolean,
+    setMove: (newMove: boolean) => void,
+    moveSem: Semester,
+    setMoveSem: (newMoveSem: Semester) => void,
+    moveCourse: Course,
+    setMoveCourse: (newMoveCourse: Course) => void
 ): JSX.Element {
+    function setMovingCourse(course: Course) {
+        setMove(true);
+        setMoveCourse(course);
+        moveCourse = course;
+    }
     return (
         <div>
             {plan.semesterList.map(
@@ -265,6 +279,19 @@ function printSemesters(
                                                         }
                                                     >
                                                         Remove Course
+                                                    </Button>
+                                                    <Button
+                                                        style={{
+                                                            backgroundColor:
+                                                                "darkturquoise"
+                                                        }}
+                                                        onClick={() =>
+                                                            setMovingCourse(
+                                                                course
+                                                            )
+                                                        }
+                                                    >
+                                                        Move Course
                                                     </Button>
                                                 </td>
                                             </tr>
@@ -385,6 +412,17 @@ function printSemesters(
                 Currently Have {plan.totalCredits} out of{" "}
                 {plan.degree.requiredCredits} required Credits
             </div>
+            {move &&
+                movePopup(
+                    move,
+                    setMove,
+                    moveSem,
+                    setMoveSem,
+                    plan,
+                    setPlans,
+                    planList,
+                    moveCourse
+                )}
         </div>
     );
 }
@@ -479,44 +517,6 @@ function clearAllCourses(
     );
     calculateScore(newPlans, setPlans);
 }
-export function calculateScore(
-    planList: DegreePlan[],
-    setPlans: (newPlans: DegreePlan[]) => void
-) {
-    function scoreTotal(curr: Semester): Semester {
-        return {
-            ...curr,
-            totalCredits: curr.courseList.reduce(
-                (currentTotal: number, currCourse: Course) =>
-                    currentTotal + currCourse.numCredits,
-                0
-            )
-        };
-    }
-    function scoreSemester(curr: DegreePlan): DegreePlan {
-        return {
-            ...curr,
-            semesterList: curr.semesterList.map(
-                (check: Semester): Semester => scoreTotal(check)
-            )
-        };
-    }
-    function scorePlan(curr: DegreePlan): DegreePlan {
-        return {
-            ...curr,
-            totalCredits: curr.semesterList.reduce(
-                (currentTotal: number, currSem: Semester) =>
-                    currentTotal + currSem.totalCredits,
-                0
-            )
-        };
-    }
-    let newPlans: DegreePlan[] = planList.map(
-        (curr: DegreePlan): DegreePlan => scoreSemester(curr)
-    );
-    newPlans = newPlans.map((curr: DegreePlan): DegreePlan => scorePlan(curr));
-    setPlans(newPlans);
-}
 
 export function ViewingPlan({
     plan,
@@ -530,6 +530,14 @@ export function ViewingPlan({
     const [year, setYear] = useState<number>(2022);
     const [editingSem, setEditingSem] = useState<Semester>(emptySem);
     const [addingCourse, setAddingCourse] = useState<Course>(courses[0]);
+    const [move, setMove] = useState<boolean>(false);
+    const [moveSem, setMoveSem] = useState<Semester>(emptySem);
+    const [moveCourse, setMoveCourse] = useState<Course>({
+        id: -1,
+        courseName: "",
+        numCredits: -1,
+        preReq: []
+    });
     return (
         <div>
             <h3>Currently Displaying {plan.planName}:</h3>
@@ -542,7 +550,13 @@ export function ViewingPlan({
                 setEditingSem,
                 addingCourse,
                 setAddingCourse,
-                courses
+                courses,
+                move,
+                setMove,
+                moveSem,
+                setMoveSem,
+                moveCourse,
+                setMoveCourse
             )}
             {edit &&
                 addSemesters(
