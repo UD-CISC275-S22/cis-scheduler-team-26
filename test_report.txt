@@ -4,16 +4,440 @@
 
 FAIL src/ViewingPlan.test.tsx
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (298 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (101 ms)
-    ✓ Courses can be removed (211 ms)
-    ✓ Courses can be added (274 ms)
-    ✓ Semesters can be removed (183 ms)
-    ✓ Semesters can be added (185 ms)
-    ✕ The initial credits in the testing plan are displayed (77 ms)
-    ✕ When adding a course, the total credits in updated (248 ms)
-    ✕ When removing a course, the score is updated (196 ms)
-    ✕ Semesters can be removed (156 ms)
+    ✓ The initial two test semesters are displated (315 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (117 ms)
+    ✕ Courses can be removed (232 ms)
+    ✓ Courses can be added (297 ms)
+    ✕ Semesters can be removed (188 ms)
+    ✓ Semesters can be added (199 ms)
+    ✕ The initial credits in the testing plan are displayed (80 ms)
+    ✕ When adding a course, the total credits in updated (278 ms)
+    ✕ When removing a course, the score is updated (206 ms)
+    ✕ Semesters can be removed (177 ms)
+
+  ● ViewingPlan Tests › Courses can be removed
+
+    TestingLibraryElementError: Unable to find an element with the text: /EGGG/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUniversity Of Delaware[0m
+            [36m<br />[39m
+            [0mComputer Science Degree Planner[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"Developer-names"[39m
+            [36m>[39m
+              [0mDeveloped by: Jack Kingham, Sean Williams, Iclyn Taero[0m
+            [36m</span>[39m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"main-page-items"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"offcanvas-component"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mView Courses List[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<h3>[39m
+                [0mCurrently Displaying [0m
+                [0mTesting Plan[0m
+                [0m:[0m
+              [36m</h3>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"3"[39m
+                        [36m>[39m
+                          [0mWinter 2022[0m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m108[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCISC[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m241[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mMATH[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"3"[39m
+                        [36m>[39m
+                          [0mSpring 2022[0m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m110[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mENGL[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mName: [0m
+                  [0mTesting Plan[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mExpected Degree: [0m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mCurrently Have [0m
+                  [0m9[0m
+                  [0m out of[0m
+                  [0m [0m
+                  [0m124[0m
+                  [0m required Credits[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mEdit Semesters[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mstyle[39m=[32m"background-color: darkred;"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mClear All Semesters[0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mReturn to Plan List[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      36 |         });
+      37 |         removeCourseButton[0].click();
+    > 38 |         expect(screen.getByText(/EGGG/i)).toBeInTheDocument();
+         |                       ^
+      39 |         expect(screen.getAllByText(/3/i).length === 6);
+      40 |     });
+      41 |     test("Courses can be added", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/ViewingPlan.test.tsx:38:23)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+  ● ViewingPlan Tests › Semesters can be removed
+
+    TestingLibraryElementError: Unable to find an element with the text: /EGGG/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUniversity Of Delaware[0m
+            [36m<br />[39m
+            [0mComputer Science Degree Planner[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"Developer-names"[39m
+            [36m>[39m
+              [0mDeveloped by: Jack Kingham, Sean Williams, Iclyn Taero[0m
+            [36m</span>[39m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"main-page-items"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"offcanvas-component"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mView Courses List[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<h3>[39m
+                [0mCurrently Displaying [0m
+                [0mTesting Plan[0m
+                [0m:[0m
+              [36m</h3>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<table[39m
+                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                  [36m>[39m
+                    [36m<thead>[39m
+                      [36m<tr>[39m
+                        [36m<th[39m
+                          [33mcolspan[39m=[32m"2"[39m
+                        [36m>[39m
+                          [0mSpring 2022[0m
+                        [36m</th>[39m
+                        [36m<th>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: red;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mDelete Semester[0m
+                          [36m</button>[39m
+                        [36m</th>[39m
+                      [36m</tr>[39m
+                    [36m</thead>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0mCourse ID[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mCourse Name[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mNumber of Credits[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
+                      [36m<tr>[39m
+                        [36m<td>[39m
+                          [0m110[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0mENGL[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [0m3[0m
+                        [36m</td>[39m
+                      [36m</tr>[39m
+                    [36m</tbody>[39m
+                  [36m</table>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mEdit Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mName: [0m
+                  [0mTesting Plan[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mExpected Degree: [0m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0mCurrently Have [0m
+                  [0m3[0m
+                  [0m out of[0m
+                  [0m [0m
+                  [0m124[0m
+                  [0m required Credits[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mfor[39m=[32m"semesterYear"[39m
+                  [36m>[39m
+                    [0mYear:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mid[39m=[32m"semesterYear"[39m
+                    [33mtype[39m=[32m"number"[39m
+                    [33mvalue[39m=[32m"2022"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mfor[39m=[32m"semesterSeason"[39m
+                  [36m>[39m
+                    [0mSeason:[0m
+                  [36m</label>[39m
+                  [36m<select[39m
+                    [33mclass[39m=[32m"form-select"[39m
+                    [33mid[39m=[32m"semesterSeason"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Winter"[39m
+                    [36m>[39m
+                      [0mWinter[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Spring"[39m
+                    [36m>[39m
+                      [0mSpring[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Summer"[39m
+                    [36m>[39m
+                      [0mSummer[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Fall"[39m
+                    [36m>[39m
+                      [0mFall[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mAdd Semester[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mEdit Semesters[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mstyle[39m=[32m"background-color: darkred;"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mClear All Semesters[0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mReturn to Plan List[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      63 |         });
+      64 |         removeSemesterButton[0].click();
+    > 65 |         expect(screen.getByText(/EGGG/i)).toBeInTheDocument();
+         |                       ^
+      66 |         expect(screen.queryByText(/Winter 2022/i)).not.toBeInTheDocument();
+      67 |         expect(screen.getAllByText(/3/i).length === 4);
+      68 |     });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/ViewingPlan.test.tsx:65:23)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
   ● ViewingPlan Tests › The initial credits in the testing plan are displayed
 
@@ -155,39 +579,6 @@ FAIL src/ViewingPlan.test.tsx
                     [36m<tbody>[39m
                       [36m<tr>[39m
                         [36m<td>[39m
-                          [0m101[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mEGGG[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m108[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCISC[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m241[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mMATH[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
                           [0m110[0m
                         [36m</td>[39m
                         [36m<td>[39m
@@ -216,7 +607,7 @@ FAIL src/ViewingPlan.test.tsx
                 [36m</div>[39m
                 [36m<div>[39m
                   [0mCurrently Have [0m
-                  [0m21[0m
+                  [0m12[0m
                   [0m out of[0m
                   [0m [0m
                   [0m124[0m
@@ -347,6 +738,22 @@ FAIL src/ViewingPlan.test.tsx
                         [36m<td>[39m
                           [0m3[0m
                         [36m</td>[39m
+                        [36m<td>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: red;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mRemove Course[0m
+                          [36m</button>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: darkturquoise;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mMove Course[0m
+                          [36m</button>[39m
+                        [36m</td>[39m
                       [36m</tr>[39m
                       [36m<tr>[39m
                         [36m<td>[39m
@@ -357,6 +764,22 @@ FAIL src/ViewingPlan.test.tsx
                         [36m</td>[39m
                         [36m<td>[39m
                           [0m3[0m
+                        [36m</td>[39m
+                        [36m<td>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: red;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mRemove Course[0m
+                          [36m</button>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: darkturquoise;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mMove Course[0m
+                          [36m</button>[39m
                         [36m</td>[39m
                       [36m</tr>[39m
                       [36m<tr>[39m
@@ -369,16 +792,79 @@ FAIL src/ViewingPlan.test.tsx
                         [36m<td>[39m
                           [0m3[0m
                         [36m</td>[39m
+                        [36m<td>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: red;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mRemove Course[0m
+                          [36m</button>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: darkturquoise;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mMove Course[0m
+                          [36m</button>[39m
+                        [36m</td>[39m
                       [36m</tr>[39m
+                    [36m</tbody>[39m
+                    [36m<tbody>[39m
                       [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m110[0m
+                        [36m<td[39m
+                          [33mcolspan[39m=[32m"2"[39m
+                        [36m>[39m
+                          [36m<div>[39m
+                            [36m<label[39m
+                              [33mclass[39m=[32m"form-label"[39m
+                              [33mfor[39m=[32m"addingCourse"[39m
+                            [36m>[39m
+                              [0mPick the Course to be Added:[0m
+                            [36m</label>[39m
+                            [36m<select[39m
+                              [33mclass[39m=[32m"form-select"[39m
+                              [33mid[39m=[32m"addingCourse"[39m
+                            [36m>[39m
+                              [36m<option[39m
+                                [33mvalue[39m=[32m"EGGG101"[39m
+                              [36m>[39m
+                                [0mEGGG101[0m
+                              [36m</option>[39m
+                              [36m<option[39m
+                                [33mvalue[39m=[32m"CISC108"[39m
+                              [36m>[39m
+                                [0mCISC108[0m
+                              [36m</option>[39m
+                              [36m<option[39m
+                                [33mvalue[39m=[32m"MATH241"[39m
+                              [36m>[39m
+                                [0mMATH241[0m
+                              [36m</option>[39m
+                              [36m<option[39m
+                                [33mvalue[39m=[32m"ENGL110"[39m
+                              [36m>[39m
+                                [0mENGL110[0m
+                              [36m</option>[39m
+                            [36m</select>[39m
+                          [36m</div>[39m
                         [36m</td>[39m
                         [36m<td>[39m
-                          [0mENGL[0m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mAdd Course[0m
+                          [36m</button>[39m
                         [36m</td>[39m
                         [36m<td>[39m
-                          [0m3[0m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: darkred;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [0mClear All Courses[0m
+                          [36m</button>[39m
                         [36m</td>[39m
                       [36m</tr>[39m
                     [36m</tbody>[39m
@@ -419,39 +905,6 @@ FAIL src/ViewingPlan.test.tsx
                     [36m<tbody>[39m
                       [36m<tr>[39m
                         [36m<td>[39m
-                          [0m101[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mEGGG[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m108[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCISC[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m241[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mMATH[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
                           [0m110[0m
                         [36m</td>[39m
                         [36m<td>[39m
@@ -480,7 +933,7 @@ FAIL src/ViewingPlan.test.tsx
                 [36m</div>[39m
                 [36m<div>[39m
                   [0mCurrently Have [0m
-                  [0m24[0m
+                  [0m12[0m
                   [0m out of[0m
                   [0m [0m
                   [0m124[0m
@@ -661,39 +1114,6 @@ FAIL src/ViewingPlan.test.tsx
                     [36m<tbody>[39m
                       [36m<tr>[39m
                         [36m<td>[39m
-                          [0m101[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mEGGG[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m108[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCISC[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m241[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mMATH[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
                           [0m110[0m
                         [36m</td>[39m
                         [36m<td>[39m
@@ -722,7 +1142,7 @@ FAIL src/ViewingPlan.test.tsx
                 [36m</div>[39m
                 [36m<div>[39m
                   [0mCurrently Have [0m
-                  [0m18[0m
+                  [0m9[0m
                   [0m out of[0m
                   [0m [0m
                   [0m124[0m
@@ -854,39 +1274,6 @@ FAIL src/ViewingPlan.test.tsx
                     [36m<tbody>[39m
                       [36m<tr>[39m
                         [36m<td>[39m
-                          [0m101[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mEGGG[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m108[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCISC[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m241[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mMATH[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
                           [0m110[0m
                         [36m</td>[39m
                         [36m<td>[39m
@@ -915,7 +1302,7 @@ FAIL src/ViewingPlan.test.tsx
                 [36m</div>[39m
                 [36m<div>[39m
                   [0mCurrently Have [0m
-                  [0m12[0m
+                  [0m3[0m
                   [0m out of[0m
                   [0m [0m
                   [0m124[0m
@@ -1022,28 +1409,28 @@ FAIL src/ViewingPlan.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------------|---------|----------|---------|---------|------------------------------------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
-------------------------|---------|----------|---------|---------|------------------------------------------------
-All files               |   34.92 |    41.34 |   35.65 |    35.6 |                                                
- src                    |    33.5 |    40.81 |   35.15 |   34.18 |                                                
-  App.tsx               |     100 |      100 |     100 |     100 |                                                
-  CoursesList.tsx       |       4 |        0 |    3.22 |       4 | 20-24,36-335                                   
-  PlanList.tsx          |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                
-  ViewPlanFunctions.tsx |       0 |        0 |       0 |       0 | 10-61                                          
-  ViewingPlan.tsx       |   70.27 |       66 |   71.69 |   71.23 | 70,122,165-205,289,377,439,466,502-518,573-579 
-  moveCoursePopup.tsx   |       0 |        0 |       0 |       0 | 24-125                                         
- src/Interfaces         |   57.14 |       50 |     100 |   57.14 |                                                
-  course.ts             |       0 |        0 |       0 |       0 |                                                
-  degree.ts             |       0 |        0 |       0 |       0 |                                                
-  degreePlan.ts         |       0 |        0 |       0 |       0 |                                                
-  semester.ts           |   57.14 |       50 |     100 |   57.14 | 7,9,13                                         
- src/Resources          |     100 |      100 |     100 |     100 |                                                
-  Courses.ts            |     100 |      100 |     100 |     100 |                                                
-  Degrees.ts            |     100 |      100 |     100 |     100 |                                                
-------------------------|---------|----------|---------|---------|------------------------------------------------
+------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                         
+------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+All files               |   33.33 |    37.86 |   33.59 |   33.98 |                                                           
+ src                    |   31.84 |    37.11 |   33.07 |   32.48 |                                                           
+  App.tsx               |     100 |      100 |     100 |     100 |                                                           
+  CoursesList.tsx       |       4 |        0 |    3.22 |       4 | 20-24,36-335                                              
+  PlanList.tsx          |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                           
+  ViewPlanFunctions.tsx |      25 |       80 |      25 |   26.66 | 10-41,61                                                  
+  ViewingPlan.tsx       |   60.81 |       50 |   61.53 |   61.64 | 59-83,100-103,117,160-202,286,374,436,463,499-515,570-576 
+  moveCoursePopup.tsx   |       0 |        0 |       0 |       0 | 24-126                                                    
+ src/Interfaces         |   57.14 |       50 |     100 |   57.14 |                                                           
+  course.ts             |       0 |        0 |       0 |       0 |                                                           
+  degree.ts             |       0 |        0 |       0 |       0 |                                                           
+  degreePlan.ts         |       0 |        0 |       0 |       0 |                                                           
+  semester.ts           |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                    
+ src/Resources          |     100 |      100 |     100 |     100 |                                                           
+  Courses.ts            |     100 |      100 |     100 |     100 |                                                           
+  Degrees.ts            |     100 |      100 |     100 |     100 |                                                           
+------------------------|---------|----------|---------|---------|-----------------------------------------------------------
 Test Suites: 1 failed, 1 total
-Tests:       4 failed, 6 passed, 10 total
+Tests:       6 failed, 4 passed, 10 total
 Snapshots:   0 total
-Time:        5.233 s
+Time:        5.7 s
 Ran all test suites.
