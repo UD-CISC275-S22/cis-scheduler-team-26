@@ -4,6 +4,9 @@ import { DegreePlan } from "./Interfaces/degreePlan";
 import { Button, Form } from "react-bootstrap";
 import { DegreeList } from "./Resources/Degrees";
 import { Degree } from "./Interfaces/degree";
+import { BsTrash } from "react-icons/bs";
+import { TiEdit } from "react-icons/ti";
+import { RiAddBoxLine } from "react-icons/ri";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 interface planListProp {
@@ -38,6 +41,7 @@ function printPlan(
                         )
                     }
                 >
+                    <TiEdit></TiEdit>
                     View/Edit Plan
                 </Button>
                 {/*Button to delete plan from planList */}
@@ -45,6 +49,8 @@ function printPlan(
                     style={{ backgroundColor: "red", borderColor: "red" }}
                     onClick={() => deletePlanByName(plan.planName)}
                 >
+                    {/*Trash Icon*/}
+                    <BsTrash></BsTrash>
                     Delete Plan
                 </Button>
             </div>
@@ -70,7 +76,7 @@ export function PlanList({
 
     return (
         <div>
-            <h2>Current Degree Plans:</h2>
+            <h2 className="degree-plan-header">Current Degree Plans:</h2>
             <div className="degree-plan-list">
                 {planList.map(
                     (plan: DegreePlan): JSX.Element =>
@@ -79,7 +85,11 @@ export function PlanList({
             </div>
             {/*Only render the button to create a new plan if your are not currently creating a new plan*/}
             {!creatingNewPlan && (
-                <Button onClick={() => setCreatingNewPlan(!creatingNewPlan)}>
+                <Button
+                    onClick={() => setCreatingNewPlan(!creatingNewPlan)}
+                    style={{ fontSize: "20px" }}
+                >
+                    <RiAddBoxLine></RiAddBoxLine>
                     Create New Plan
                 </Button>
             )}
@@ -190,10 +200,18 @@ function makeNewPlanForm({
                         setNewPlanMajor(DegreeList[0]);
                         setNewPlanName("");
                     }}
+                    style={{ backgroundColor: "green", borderColor: "green" }}
                 >
-                    Add Plan
+                    Confirm
                 </Button>
-                <Button onClick={() => setCreatingNewPlan(false)}>
+                <Button
+                    onClick={() => {
+                        setCreatingNewPlan(false);
+                        setNewPlanMajor(DegreeList[0]);
+                        setNewPlanName("");
+                    }}
+                    style={{ backgroundColor: "red", borderColor: "red" }}
+                >
                     Cancel
                 </Button>
             </div>
