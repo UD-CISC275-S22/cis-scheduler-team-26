@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
 import { Course } from "./Interfaces/course";
 import { DegreePlan } from "./Interfaces/degreePlan";
-import { Season, Semester, validSeason } from "./Interfaces/semester";
+import { Season, Semester } from "./Interfaces/semester";
 import { movePopup } from "./moveCoursePopup";
+import { addSemesterPopup } from "./addSemesterPopup";
 import { calculateCredits, find_course } from "./ViewPlanFunctions";
 
 interface planListProp {
@@ -423,78 +424,6 @@ function printSemesters(
         </div>
     );
 }
-function addSemHelp(
-    plan: DegreePlan,
-    season: Season,
-    year: number
-): DegreePlan {
-    const alreadyContains = plan.semesterList.find(
-        (check: Semester): boolean =>
-            check.season === season && check.year === year
-    );
-    if (alreadyContains) {
-        return plan;
-    }
-    return {
-        ...plan,
-        semesterList: [
-            ...plan.semesterList,
-            { year: year, season: season, courseList: [], totalCredits: 0 }
-        ]
-    };
-}
-function addSemesters(
-    plan: DegreePlan,
-    planList: DegreePlan[],
-    setPlans: (newPlans: DegreePlan[]) => void,
-    season: Season,
-    setSeason: (newSeason: Season) => void,
-    year: number,
-    setYear: (newYear: number) => void
-) {
-    return (
-        <div>
-            <Form.Group controlId="semesterYear">
-                <Form.Label>Year:</Form.Label>
-                <Form.Control
-                    type="number"
-                    value={year}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                        setYear(parseInt(event.target.value))
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="semesterSeason">
-                <Form.Label>Season:</Form.Label>
-                <Form.Select
-                    value={season}
-                    onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-                        setSeason(validSeason(event.target.value))
-                    }
-                >
-                    <option value="Winter">Winter</option>
-                    <option value="Spring">Spring</option>
-                    <option value="Summer">Summer</option>
-                    <option value="Fall">Fall</option>
-                </Form.Select>
-            </Form.Group>
-            <Button
-                onClick={() =>
-                    setPlans(
-                        planList.map(
-                            (curr: DegreePlan): DegreePlan =>
-                                curr === plan
-                                    ? addSemHelp(curr, season, year)
-                                    : curr
-                        )
-                    )
-                }
-            >
-                Add Semester
-            </Button>
-        </div>
-    );
-}
 function emptyCourseList(curr: Semester): Semester {
     return { ...curr, courseList: [] };
 }
@@ -526,6 +455,7 @@ export function ViewingPlan({
     const [season, setSeason] = useState<Season>("Winter");
     const [year, setYear] = useState<number>(2022);
     const [editingSem, setEditingSem] = useState<Semester>(emptySem);
+    const [addSem, setAddSem] = useState<boolean>(false);
     const [addingCourse, setAddingCourse] = useState<Course>(courses[0]);
     const [move, setMove] = useState<boolean>(false);
     const [moveSem, setMoveSem] = useState<Semester>(plan.semesterList[0]);
@@ -556,15 +486,25 @@ export function ViewingPlan({
                 setMoveCourse
             )}
             {edit &&
-                addSemesters(
+                addSemesterPopup(
                     plan,
                     planList,
                     setPlans,
                     season,
                     setSeason,
                     year,
-                    setYear
+                    setYear,
+                    addSem,
+                    setAddSem
                 )}
+            {edit && (
+                <Button
+                    onClick={() => setAddSem(true)}
+                    style={{ backgroundColor: "darkcyan" }}
+                >
+                    Add Semester
+                </Button>
+            )}
             <Button onClick={() => setEdit(!edit)}>Edit Semesters</Button>
             <Button
                 onClick={() => clearAllCourses(plan, planList, setPlans)}
