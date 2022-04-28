@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Course } from "./Interfaces/course";
 import { Button, Form, Offcanvas } from "react-bootstrap";
+import { DegreePlan } from "./Interfaces/degreePlan";
+import { Semester } from "./Interfaces/semester";
 import "./CoursesList.css";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
@@ -8,26 +10,47 @@ type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 interface coursesListProp {
     setCourses: (newCourses: Course[]) => void;
     courses: Course[];
+    plan: DegreePlan[];
+    setPlanList: (newPlan: DegreePlan[]) => void;
 }
 
 function removeCourse(
     setCourses: (newCourses: Course[]) => void,
     setOldCourses: (newCourses: Course[]) => void,
+    setPlanList: (newPlan: DegreePlan[]) => void,
+    plan: DegreePlan[],
     courses: Course[],
     oldCourses: Course[],
     removeCourse: Course
 ) {
     setCourses(
-        courses.filter((course: Course): boolean => course != removeCourse)
+        courses.filter((course: Course): boolean => course !== removeCourse)
     );
     setOldCourses(
-        oldCourses.filter((course: Course): boolean => course != removeCourse)
+        oldCourses.filter((course: Course): boolean => course !== removeCourse)
+    );
+    setPlanList(
+        plan.map(
+            (plan: DegreePlan): DegreePlan => ({
+                ...plan,
+                semesterList: plan.semesterList.map(
+                    (sem: Semester): Semester => ({
+                        ...sem,
+                        courseList: sem.courseList.filter(
+                            (course: Course): boolean => course !== removeCourse
+                        )
+                    })
+                )
+            })
+        )
     );
 }
 
 export function CoursesListOffcanvas({
     setCourses,
-    courses
+    courses,
+    plan,
+    setPlanList
 }: coursesListProp): JSX.Element {
     const [show, setShow] = useState<boolean>(false);
     return (
@@ -50,6 +73,8 @@ export function CoursesListOffcanvas({
                     <CoursesList
                         setCourses={setCourses}
                         courses={courses}
+                        plan={plan}
+                        setPlanList={setPlanList}
                     ></CoursesList>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -57,7 +82,12 @@ export function CoursesListOffcanvas({
     );
 }
 
-function CoursesList({ setCourses, courses }: coursesListProp): JSX.Element {
+function CoursesList({
+    setCourses,
+    courses,
+    plan,
+    setPlanList
+}: coursesListProp): JSX.Element {
     //buttons
     const [addingCourse, setAddCourse] = useState<boolean>(false);
     const [removingCourse, setRemoveCourse] = useState<boolean>(false);
@@ -153,6 +183,8 @@ function CoursesList({ setCourses, courses }: coursesListProp): JSX.Element {
                                     removeCourse(
                                         setCourses,
                                         setOldCourses,
+                                        setPlanList,
+                                        plan,
                                         courses,
                                         oldCourses,
                                         curr

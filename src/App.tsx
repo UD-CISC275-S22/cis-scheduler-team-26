@@ -61,6 +61,8 @@ function App(): JSX.Element {
                 <CoursesListOffcanvas
                     setCourses={setCourses}
                     courses={courses}
+                    plan={plans}
+                    setPlanList={setPlans}
                 ></CoursesListOffcanvas>
 
                 {/*Display specific plan if planList isn't open */}
