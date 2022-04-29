@@ -1,6 +1,6 @@
-import { Course } from "./Interfaces/course";
-import { DegreePlan } from "./Interfaces/degreePlan";
-import { Semester } from "./Interfaces/semester";
+import { Course } from "../../Interfaces/course";
+import { DegreePlan } from "../../Interfaces/degreePlan";
+import { Semester } from "../../Interfaces/semester";
 
 export function calculateCredits(
     planList: DegreePlan[],
