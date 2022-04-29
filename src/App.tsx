@@ -4,7 +4,7 @@ import { DegreePlan } from "./Interfaces/degreePlan";
 import { PlanList } from "./Components/DegreePlanComponents/PlanList";
 import { ViewingPlan } from "./Components/DegreePlanComponents/ViewingPlan";
 import { courseList } from "./Resources/Courses";
-import { CoursesListOffcanvas } from "./Components/CourseListComponents/CoursesList";
+import { CoursesListOffcanvas } from "./Components/CourseListComponents/CourseListOffcanvas";
 import { Course } from "./Interfaces/course";
 import { DegreeList } from "./Resources/Degrees";
 
