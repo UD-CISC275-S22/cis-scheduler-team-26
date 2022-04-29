@@ -1,9 +1,9 @@
 import "./PlanList.css";
 import React, { useState } from "react";
-import { DegreePlan } from "./Interfaces/degreePlan";
+import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Button, Form } from "react-bootstrap";
-import { DegreeList } from "./Resources/Degrees";
-import { Degree } from "./Interfaces/degree";
+import { DegreeList } from "../../Resources/Degrees";
+import { Degree } from "../../Interfaces/degree";
 import { BsTrash } from "react-icons/bs";
 import { TiEdit } from "react-icons/ti";
 import { RiAddBoxLine } from "react-icons/ri";

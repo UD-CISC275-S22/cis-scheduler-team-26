@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Col, Form, Modal, Row } from "react-bootstrap";
-import { Course } from "./Interfaces/course";
-import { DegreePlan } from "./Interfaces/degreePlan";
-import { Semester } from "./Interfaces/semester";
+import { Course } from "../../Interfaces/course";
+import { DegreePlan } from "../../Interfaces/degreePlan";
+import { Semester } from "../../Interfaces/semester";
 import { removeCourseHelp, addCourse } from "./ViewingPlan";
 
 export function movePopup(

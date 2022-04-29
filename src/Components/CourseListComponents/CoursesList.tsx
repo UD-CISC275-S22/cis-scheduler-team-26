@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Course } from "./Interfaces/course";
 import { Button, Form, Offcanvas } from "react-bootstrap";
-import { DegreePlan } from "./Interfaces/degreePlan";
-import { Semester } from "./Interfaces/semester";
+import { DegreePlan } from "../../Interfaces/degreePlan";
+import { Semester } from "../../Interfaces/semester";
+import { Course } from "../../Interfaces/course";
 import "./CoursesList.css";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
@@ -46,7 +46,7 @@ function removeCourse(
     );
 }
 
-export function CoursesListOffcanvas({
+export function CoursesListShow({
     setCourses,
     courses,
     plan,
