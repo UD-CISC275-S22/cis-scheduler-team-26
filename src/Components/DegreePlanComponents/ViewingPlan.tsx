@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
+import { TiEdit } from "react-icons/ti";
+import { AiOutlineClear } from "react-icons/ai";
 import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Season, Semester, validSeason } from "../../Interfaces/semester";
@@ -398,6 +400,7 @@ function printSemesters(
                                 )
                             }
                         >
+                            <TiEdit></TiEdit>
                             Edit Courses
                         </Button>
                     </div>
@@ -565,11 +568,14 @@ export function ViewingPlan({
                     year,
                     setYear
                 )}
-            <Button onClick={() => setEdit(!edit)}>Edit Semesters</Button>
+            <Button onClick={() => setEdit(!edit)}>
+                <TiEdit></TiEdit>Edit Semesters
+            </Button>
             <Button
                 onClick={() => clearAllCourses(plan, planList, setPlans)}
-                style={{ backgroundColor: "darkred" }}
+                style={{ backgroundColor: "red", borderColor: "red" }}
             >
+                <AiOutlineClear></AiOutlineClear>
                 Clear All Semesters
             </Button>
             <div>
