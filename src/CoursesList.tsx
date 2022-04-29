@@ -123,8 +123,30 @@ function CoursesList({
             numCredits: courseCred,
             preReq: []
         };
+        const oldCourse: Course = courses[courseIndex];
+        console.log(oldCourse.courseName);
         courses.splice(courseIndex, 1, changedCourse);
         setCourses([...courses]);
+        setPlanList(
+            plan.map(
+                (plan: DegreePlan): DegreePlan => ({
+                    ...plan,
+                    semesterList: plan.semesterList.map(
+                        (sem: Semester): Semester => ({
+                            ...sem,
+                            courseList: sem.courseList.map(
+                                (course: Course): Course =>
+                                    course.courseName !==
+                                        oldCourse.courseName &&
+                                    course.id !== oldCourse.id
+                                        ? course
+                                        : changedCourse
+                            )
+                        })
+                    )
+                })
+            )
+        );
     }
     function resetCourse(curr: Course): void {
         const index: number = courses.findIndex(
