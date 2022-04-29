@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Course } from "../../Interfaces/course";
-import { Button, Form, Offcanvas } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import "./CoursesList.css";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
@@ -25,39 +25,10 @@ function removeCourse(
     );
 }
 
-export function CoursesListOffcanvas({
+export function CoursesList({
     setCourses,
     courses
 }: coursesListProp): JSX.Element {
-    const [show, setShow] = useState<boolean>(false);
-    return (
-        <div className="offcanvas-component">
-            <Button
-                onClick={() => setShow(true)}
-                className="offcanvas-show-button"
-            >
-                View Courses List
-            </Button>
-            <Offcanvas
-                show={show}
-                onHide={() => setShow(false)}
-                placement={"end"}
-            >
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>All Courses:</Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                    <CoursesList
-                        setCourses={setCourses}
-                        courses={courses}
-                    ></CoursesList>
-                </Offcanvas.Body>
-            </Offcanvas>
-        </div>
-    );
-}
-
-function CoursesList({ setCourses, courses }: coursesListProp): JSX.Element {
     //buttons
     const [addingCourse, setAddCourse] = useState<boolean>(false);
     const [removingCourse, setRemoveCourse] = useState<boolean>(false);
