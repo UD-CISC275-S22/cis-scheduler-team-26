@@ -152,11 +152,12 @@ function CoursesList({
             (course: Course): boolean =>
                 course.id === curr.id && course.courseName === curr.courseName
         );
-        const oldCourse: Course = oldCourses[index];
+        const oldCourse: Course = { ...oldCourses[index] };
         courses.splice(index, 1, oldCourse);
         setCourses([...courses]);
         console.log("current Course: ");
         console.log(curr.courseName);
+        console.log(curr.id);
         console.log("old course: ");
         console.log(oldCourse.courseName);
         //issue is that when i make a change to the 2 courses, and i reset the first change, it changes both
@@ -170,7 +171,7 @@ function CoursesList({
                             ...sem,
                             courseList: sem.courseList.map(
                                 (course: Course): Course =>
-                                    course.courseName !== curr.courseName &&
+                                    course.courseName !== curr.courseName ||
                                     course.id !== curr.id
                                         ? course
                                         : oldCourse
