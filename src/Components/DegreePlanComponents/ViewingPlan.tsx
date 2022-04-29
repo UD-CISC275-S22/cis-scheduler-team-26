@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import { Course } from "./Interfaces/course";
-import { DegreePlan } from "./Interfaces/degreePlan";
-import { Season, Semester, validSeason } from "./Interfaces/semester";
+import { TiEdit } from "react-icons/ti";
+import { AiOutlineClear } from "react-icons/ai";
+import { BsTrash } from "react-icons/bs";
+import { RiAddBoxLine } from "react-icons/ri";
+import { CgMoveRight } from "react-icons/cg";
+import { Course } from "../../Interfaces/course";
+import { DegreePlan } from "../../Interfaces/degreePlan";
+import { Season, Semester, validSeason } from "../../Interfaces/semester";
 import { movePopup } from "./moveCoursePopup";
 import { calculateCredits, find_course } from "./ViewPlanFunctions";
+import { BsArrowReturnLeft } from "react-icons/bs";
 
 interface planListProp {
     plan: DegreePlan;
@@ -263,7 +269,8 @@ function printSemesters(
                                                     <Button
                                                         style={{
                                                             backgroundColor:
-                                                                "red"
+                                                                "red",
+                                                            borderColor: "red"
                                                         }}
                                                         onClick={() =>
                                                             removeCourse(
@@ -275,11 +282,14 @@ function printSemesters(
                                                             )
                                                         }
                                                     >
+                                                        <BsTrash></BsTrash>
                                                         Remove Course
                                                     </Button>
                                                     <Button
                                                         style={{
                                                             backgroundColor:
+                                                                "darkturquoise",
+                                                            borderColor:
                                                                 "darkturquoise"
                                                         }}
                                                         onClick={() =>
@@ -288,6 +298,7 @@ function printSemesters(
                                                             )
                                                         }
                                                     >
+                                                        <CgMoveRight></CgMoveRight>
                                                         Move Course
                                                     </Button>
                                                 </td>
@@ -365,6 +376,7 @@ function printSemesters(
                                                     )
                                                 }
                                             >
+                                                <RiAddBoxLine></RiAddBoxLine>{" "}
                                                 Add Course
                                             </Button>
                                         </td>
@@ -379,9 +391,11 @@ function printSemesters(
                                                     )
                                                 }
                                                 style={{
-                                                    backgroundColor: "darkred"
+                                                    backgroundColor: "red",
+                                                    borderColor: "red"
                                                 }}
                                             >
+                                                <AiOutlineClear></AiOutlineClear>{" "}
                                                 Clear All Courses
                                             </Button>
                                         </td>
@@ -398,6 +412,7 @@ function printSemesters(
                                 )
                             }
                         >
+                            <TiEdit></TiEdit>
                             Edit Courses
                         </Button>
                     </div>
@@ -565,16 +580,19 @@ export function ViewingPlan({
                     year,
                     setYear
                 )}
-            <Button onClick={() => setEdit(!edit)}>Edit Semesters</Button>
+            <Button onClick={() => setEdit(!edit)}>
+                <TiEdit></TiEdit>Edit Semesters
+            </Button>
             <Button
                 onClick={() => clearAllCourses(plan, planList, setPlans)}
-                style={{ backgroundColor: "darkred" }}
+                style={{ backgroundColor: "red", borderColor: "red" }}
             >
+                <AiOutlineClear></AiOutlineClear>
                 Clear All Semesters
             </Button>
             <div>
                 <Button onClick={() => setViewPlan(-1)}>
-                    Return to Plan List
+                    <BsArrowReturnLeft></BsArrowReturnLeft> Return to Plan List
                 </Button>
             </div>
         </div>
