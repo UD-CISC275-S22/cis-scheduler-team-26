@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import { Course } from "../Interfaces/course";
-import { DegreePlan } from "../Interfaces/degreePlan";
-import { Season, Semester, validSeason } from "../Interfaces/semester";
+import { Course } from "../../Interfaces/course";
+import { DegreePlan } from "../../Interfaces/degreePlan";
+import { Season, Semester, validSeason } from "../../Interfaces/semester";
 import { movePopup } from "./moveCoursePopup";
 import { calculateCredits, find_course } from "./ViewPlanFunctions";
 
