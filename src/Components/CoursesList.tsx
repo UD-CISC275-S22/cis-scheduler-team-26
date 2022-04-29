@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Course } from "./Interfaces/course";
+import { Course } from "../Interfaces/course";
 import { Button, Form, Offcanvas } from "react-bootstrap";
 import "./CoursesList.css";
 
