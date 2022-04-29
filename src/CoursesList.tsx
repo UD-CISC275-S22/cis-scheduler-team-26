@@ -124,7 +124,6 @@ function CoursesList({
             preReq: []
         };
         const oldCourse: Course = courses[courseIndex];
-        console.log(oldCourse.courseName);
         courses.splice(courseIndex, 1, changedCourse);
         setCourses([...courses]);
         setPlanList(
@@ -153,14 +152,34 @@ function CoursesList({
             (course: Course): boolean =>
                 course.id === curr.id && course.courseName === curr.courseName
         );
-        const oldCourse: Course = {
-            id: oldCourses[index].id,
-            courseName: oldCourses[index].courseName,
-            numCredits: oldCourses[index].numCredits,
-            preReq: []
-        };
+        const oldCourse: Course = oldCourses[index];
         courses.splice(index, 1, oldCourse);
         setCourses([...courses]);
+        console.log("current Course: ");
+        console.log(curr.courseName);
+        console.log("old course: ");
+        console.log(oldCourse.courseName);
+        //issue is that when i make a change to the 2 courses, and i reset the first change, it changes both
+        //to the same thing
+        setPlanList(
+            plan.map(
+                (plan: DegreePlan): DegreePlan => ({
+                    ...plan,
+                    semesterList: plan.semesterList.map(
+                        (sem: Semester): Semester => ({
+                            ...sem,
+                            courseList: sem.courseList.map(
+                                (course: Course): Course =>
+                                    course.courseName !== curr.courseName &&
+                                    course.id !== curr.id
+                                        ? course
+                                        : oldCourse
+                            )
+                        })
+                    )
+                })
+            )
+        );
     }
     function addNewCourse(): void {
         setCourses([
