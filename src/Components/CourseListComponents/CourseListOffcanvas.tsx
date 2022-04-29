@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CoursesList } from "./CoursesList";
 import { Course } from "../../Interfaces/course";
 import { Button, Offcanvas } from "react-bootstrap";
+import { VscOpenPreview } from "react-icons/vsc";
 import "./CoursesList.css";
 
 export function CoursesListOffcanvas({
@@ -18,7 +19,7 @@ export function CoursesListOffcanvas({
                 onClick={() => setShow(true)}
                 className="offcanvas-show-button"
             >
-                View Courses List
+                <VscOpenPreview></VscOpenPreview> View All Courses
             </Button>
             <Offcanvas
                 show={show}
