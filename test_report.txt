@@ -2,18 +2,18 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/ViewingPlan.test.tsx
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (315 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (117 ms)
-    ✕ Courses can be removed (232 ms)
-    ✓ Courses can be added (297 ms)
-    ✕ Semesters can be removed (188 ms)
-    ✓ Semesters can be added (199 ms)
-    ✕ The initial credits in the testing plan are displayed (80 ms)
-    ✕ When adding a course, the total credits in updated (278 ms)
-    ✕ When removing a course, the score is updated (206 ms)
-    ✕ Semesters can be removed (177 ms)
+    ✓ The initial two test semesters are displated (260 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (89 ms)
+    ✕ Courses can be removed (184 ms)
+    ✓ Courses can be added (238 ms)
+    ✕ Semesters can be removed (149 ms)
+    ✓ Semesters can be added (161 ms)
+    ✕ The initial credits in the testing plan are displayed (62 ms)
+    ✕ When adding a course, the total credits in updated (214 ms)
+    ✕ When removing a course, the score is updated (158 ms)
+    ✕ Semesters can be removed (139 ms)
 
   ● ViewingPlan Tests › Courses can be removed
 
@@ -218,7 +218,7 @@ FAIL src/ViewingPlan.test.tsx
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/ViewingPlan.test.tsx:38:23)
+      at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:38:23)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
@@ -433,7 +433,7 @@ FAIL src/ViewingPlan.test.tsx
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/ViewingPlan.test.tsx:65:23)
+      at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:65:23)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
@@ -653,7 +653,7 @@ FAIL src/ViewingPlan.test.tsx
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/ViewingPlan.test.tsx:86:20)
+      at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:86:20)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
@@ -979,7 +979,7 @@ FAIL src/ViewingPlan.test.tsx
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/ViewingPlan.test.tsx:103:20)
+      at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:103:20)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
@@ -1188,7 +1188,7 @@ FAIL src/ViewingPlan.test.tsx
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/ViewingPlan.test.tsx:116:20)
+      at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:116:20)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
@@ -1403,34 +1403,36 @@ FAIL src/ViewingPlan.test.tsx
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/ViewingPlan.test.tsx:129:20)
+      at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:129:20)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                         
-------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-All files               |   33.33 |    37.86 |   33.59 |   33.98 |                                                           
- src                    |   31.84 |    37.11 |   33.07 |   32.48 |                                                           
-  App.tsx               |     100 |      100 |     100 |     100 |                                                           
-  CoursesList.tsx       |       4 |        0 |    3.22 |       4 | 20-24,36-335                                              
-  PlanList.tsx          |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                           
-  ViewPlanFunctions.tsx |      25 |       80 |      25 |   26.66 | 10-41,61                                                  
-  ViewingPlan.tsx       |   60.81 |       50 |   61.53 |   61.64 | 59-83,100-103,117,160-202,286,374,436,463,499-515,570-576 
-  moveCoursePopup.tsx   |       0 |        0 |       0 |       0 | 24-126                                                    
- src/Interfaces         |   57.14 |       50 |     100 |   57.14 |                                                           
-  course.ts             |       0 |        0 |       0 |       0 |                                                           
-  degree.ts             |       0 |        0 |       0 |       0 |                                                           
-  degreePlan.ts         |       0 |        0 |       0 |       0 |                                                           
-  semester.ts           |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                    
- src/Resources          |     100 |      100 |     100 |     100 |                                                           
-  Courses.ts            |     100 |      100 |     100 |     100 |                                                           
-  Degrees.ts            |     100 |      100 |     100 |     100 |                                                           
-------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                         
+-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+All files                            |   33.33 |    37.86 |   33.59 |   33.98 |                                                           
+ src                                 |     100 |      100 |     100 |     100 |                                                           
+  App.tsx                            |     100 |      100 |     100 |     100 |                                                           
+ src/Components/CourseListComponents |       4 |        0 |    3.22 |       4 |                                                           
+  CoursesList.tsx                    |       4 |        0 |    3.22 |       4 | 20-24,36-335                                              
+ src/Components/DegreePlanComponents |   39.04 |    43.83 |    42.1 |   40.14 |                                                           
+  PlanList.tsx                       |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                           
+  ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                                  
+  ViewingPlan.tsx                    |   60.81 |       50 |   61.53 |   61.64 | 59-83,100-103,117,160-202,286,374,436,463,499-515,570-576 
+  moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-126                                                    
+ src/Interfaces                      |   57.14 |       50 |     100 |   57.14 |                                                           
+  course.ts                          |       0 |        0 |       0 |       0 |                                                           
+  degree.ts                          |       0 |        0 |       0 |       0 |                                                           
+  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                                           
+  semester.ts                        |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                    
+ src/Resources                       |     100 |      100 |     100 |     100 |                                                           
+  Courses.ts                         |     100 |      100 |     100 |     100 |                                                           
+  Degrees.ts                         |     100 |      100 |     100 |     100 |                                                           
+-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       6 failed, 4 passed, 10 total
 Snapshots:   0 total
-Time:        5.7 s
+Time:        4.667 s
 Ran all test suites.
