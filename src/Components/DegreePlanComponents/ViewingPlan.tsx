@@ -7,6 +7,7 @@ import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Season, Semester, validSeason } from "../../Interfaces/semester";
 import { movePopup } from "./moveCoursePopup";
 import { calculateCredits, find_course } from "./ViewPlanFunctions";
+import { BsArrowReturnLeft } from "react-icons/bs";
 
 interface planListProp {
     plan: DegreePlan;
@@ -580,7 +581,7 @@ export function ViewingPlan({
             </Button>
             <div>
                 <Button onClick={() => setViewPlan(-1)}>
-                    Return to Plan List
+                    <BsArrowReturnLeft></BsArrowReturnLeft> Return to Plan List
                 </Button>
             </div>
         </div>
