@@ -1,0 +1,20 @@
+.degree-requirements {
+    outline-width: 10px;
+    outline-color: black;
+    outline-style: solid;
+    margin-top: 80px;
+    margin-inline: 30px;
+    height: 100%;
+    width: 30%;
+}
+
+.degree-requirements-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.degree-requirements-course {
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-block: 5px;
+}
