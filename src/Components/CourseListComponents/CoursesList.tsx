@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Course } from "../../Interfaces/course";
 import { Button, Form } from "react-bootstrap";
+import { RenderCourse } from "./RenderCourse";
 import "./CoursesList.css";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
@@ -103,50 +104,11 @@ export function CoursesList({
     }
     return (
         <div>
-            {courses.map(
-                (curr: Course): JSX.Element => (
-                    <div key={curr.courseName + curr.id}>
-                        {curr.courseName + curr.id}
-                        <div>Worth {curr.numCredits} Credits</div>
-                        <div>
-                            Prerequisite Courses:{" "}
-                            {curr.preReq.map(
-                                (pre: Course): JSX.Element => (
-                                    <div key={curr.courseName + curr.id}>
-                                        {pre.courseName + pre.id}
-                                    </div>
-                                )
-                            )}
-                        </div>
-                        {removingCourse && (
-                            <Button
-                                onClick={() =>
-                                    removeCourse(
-                                        setCourses,
-                                        setOldCourses,
-                                        courses,
-                                        oldCourses,
-                                        curr
-                                    )
-                                }
-                                style={{ backgroundColor: "red" }}
-                            >
-                                Delete
-                            </Button>
-                        )}
-                        <Button
-                            onClick={() => {
-                                setEditCourse(true), saveCourse(curr);
-                            }}
-                        >
-                            Edit
-                        </Button>
-                        <Button onClick={() => resetCourse(curr)}>
-                            Reset Course
-                        </Button>
-                    </div>
-                )
-            )}
+            {courses.map((curr: Course) => (
+                <div key={curr.courseName + curr.id.toString()}>
+                    <RenderCourse Course={curr}></RenderCourse>
+                </div>
+            ))}
             <Button onClick={() => setAddCourse(!addingCourse)}>
                 Add Course
             </Button>
