@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Course } from "../../Interfaces/course";
 import { FiMoreVertical } from "react-icons/fi";
 import "./RenderCourse.css";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
+
+type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
 //Renders a specific course
 export function RenderCourse({
@@ -91,6 +93,7 @@ export function RenderCourse({
             ) : (
                 //Block to display editing course
                 <EditingCourseForm
+                    course={Course}
                     setEditingCourse={setEditingCourse}
                     setIsCourseEdited={setIsCourseEdited}
                     newCourseDepartment={newCourseDepartment}
@@ -99,6 +102,7 @@ export function RenderCourse({
                     setNewCourseID={setNewCourseID}
                     newCourseCredits={newCourseCredits}
                     setNewCourseCredits={setNewCourseCredits}
+                    editCourse={editCourse}
                 ></EditingCourseForm>
             )}
         </div>
@@ -106,6 +110,7 @@ export function RenderCourse({
 }
 
 function EditingCourseForm({
+    course,
     setEditingCourse,
     setIsCourseEdited,
     newCourseDepartment,
@@ -113,8 +118,10 @@ function EditingCourseForm({
     newCourseID,
     setNewCourseID,
     newCourseCredits,
-    setNewCourseCredits
+    setNewCourseCredits,
+    editCourse
 }: {
+    course: Course;
     setEditingCourse: (n: boolean) => void;
     setIsCourseEdited: (n: boolean) => void;
     newCourseDepartment: string;
@@ -123,15 +130,59 @@ function EditingCourseForm({
     setNewCourseID: (n: number) => void;
     newCourseCredits: number;
     setNewCourseCredits: (n: number) => void;
+    editCourse: (
+        newCourseDepartment: string,
+        newCourseID: number,
+        newCourseCredits: number
+    ) => void;
 }): JSX.Element {
     return (
         <div>
             <div>Editing Course</div>
+            <Form.Group controlId="Change Course Dep">
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                    {/* Form for new course department */}
+                    <Form.Control
+                        type="text"
+                        value={newCourseDepartment}
+                        onChange={(event: ChangeEvent) =>
+                            setNewCourseDepartment(event.target.value)
+                        }
+                    />
+                    {/* Form for new course ID */}
+                    <Form.Control
+                        type="number"
+                        value={newCourseID}
+                        onChange={(event: ChangeEvent) =>
+                            setNewCourseID(parseInt(event.target.value) || 0)
+                        }
+                    />
+                </div>
+                {/* Form for new course credits */}
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                    <div style={{ marginTop: "5px" }}>Credits: </div>
+                    <Form.Control
+                        type="number"
+                        value={newCourseCredits}
+                        onChange={(event: ChangeEvent) =>
+                            setNewCourseCredits(
+                                parseInt(event.target.value) || 0
+                            )
+                        }
+                    />
+                </div>
+            </Form.Group>
             {/*Confirm Button */}
             <Button
                 style={{ backgroundColor: "green", borderColor: "green" }}
                 onClick={() => {
                     setEditingCourse(false);
+                    setIsCourseEdited(true);
+                    editCourse(
+                        newCourseDepartment,
+                        newCourseID,
+                        newCourseCredits
+                    );
                 }}
             >
                 Confirm
@@ -141,6 +192,9 @@ function EditingCourseForm({
                 style={{ backgroundColor: "red", borderColor: "red" }}
                 onClick={() => {
                     setEditingCourse(false);
+                    setNewCourseCredits(course.numCredits);
+                    setNewCourseDepartment(course.courseName);
+                    setNewCourseID(course.id);
                 }}
             >
                 Cancel

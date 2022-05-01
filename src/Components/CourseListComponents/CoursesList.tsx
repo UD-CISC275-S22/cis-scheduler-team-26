@@ -46,6 +46,7 @@ export function CoursesList({
                 newCourses.push(course);
             }
         });
+        setCourses(newCourses);
     }
 
     function deleteCourseByName(name: string, id: number) {
@@ -103,71 +104,6 @@ export function CoursesList({
             ></AddCourseForm>
             {/*Render the form to edit a course if Edit button is pressed */}
             {/*editCourse && <EditCourseForm></EditCourseForm>*/}
-        </div>
-    );
-}
-
-//Form to edit a specific course
-function EditCourseForm({
-    courseDep,
-    setCourseDep,
-    courseID,
-    setCourseID,
-    courseCred,
-    setCourseCred,
-    editingCourse,
-    setEditingCourse,
-    changeCourse
-}: {
-    courseDep: string;
-    setCourseDep: (name: string) => void;
-    courseID: number;
-    setCourseID: (id: number) => void;
-    courseCred: number;
-    setCourseCred: (num: number) => void;
-    editingCourse: boolean;
-    setEditingCourse: (val: boolean) => void;
-    changeCourse: () => void;
-}): JSX.Element {
-    return (
-        <div>
-            <Form.Group controlId="Change Course Dep">
-                <Form.Label>Type Course Department: </Form.Label>
-                <Form.Control
-                    type="text"
-                    value={courseDep}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseDep(event.target.value)
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="Change Course ID">
-                <Form.Label>Type Course ID: </Form.Label>
-                <Form.Control
-                    type="number"
-                    value={courseID}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseID(parseInt(event.target.value) || 0)
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="Change Course Credit">
-                <Form.Label>Type number of Credits: </Form.Label>
-                <Form.Control
-                    type="number"
-                    value={courseCred}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseCred(parseInt(event.target.value) || 0)
-                    }
-                />
-            </Form.Group>
-            <Button
-                onClick={() => {
-                    changeCourse(), setEditingCourse(!editingCourse);
-                }}
-            >
-                Submit
-            </Button>
         </div>
     );
 }
