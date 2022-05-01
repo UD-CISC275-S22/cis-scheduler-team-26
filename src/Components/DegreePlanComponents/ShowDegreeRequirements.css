@@ -1,11 +1,12 @@
 .degree-requirements {
-    outline-width: 10px;
-    outline-color: black;
+    outline-width: 2px;
+    outline-color: rgb(146, 146, 146);
     outline-style: solid;
-    margin-top: 80px;
+    margin-top: 72px;
     margin-inline: 30px;
     height: 100%;
     width: 30%;
+    border-radius: 10px;
 }
 
 .degree-requirements-body {
@@ -17,4 +18,10 @@
     align-self: flex-start;
     margin-left: 20px;
     margin-block: 5px;
+    border-radius: 5px;
+}
+
+.degree-requirements-course-text {
+    margin-inline: 10px;
+    font-size: larger;
 }

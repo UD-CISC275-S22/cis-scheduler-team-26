@@ -4,12 +4,19 @@ import { Course } from "../../Interfaces/course";
 import { Degree } from "../../Interfaces/degree";
 import { Semester } from "../../Interfaces/semester";
 
+//icon imports
+import { AiOutlineCheck } from "react-icons/ai";
+import { MdDoNotDisturbAlt } from "react-icons/md";
+import { PlanList } from "./PlanList";
+
 export function DegreeRequirements({
     degree, //degree is the degree to get requirements from
-    semesterList //courses is a list of the
+    semesterList, //courses is a list of the
+    credits
 }: {
     degree: Degree;
     semesterList: Semester[];
+    credits: number;
 }): JSX.Element {
     /* Checks if a course is in the list
     I dont use array.includes method because its too sensitive, it returns false unless everything is the same
@@ -39,6 +46,9 @@ export function DegreeRequirements({
     return (
         <div className="degree-requirements">
             <h1>Requirements</h1>
+            <text>
+                Completed {credits} of {degree.requiredCredits} required credits
+            </text>
             <div className="degree-requirements-body">
                 {degree.requiredCourses.map((course: Course) =>
                     renderCourse(course, isCourseInList(course, courses))
@@ -50,12 +60,21 @@ export function DegreeRequirements({
 
 //component to render a single course
 function renderCourse(course: Course, isFulfilled: boolean): JSX.Element {
+    const color = isFulfilled ? "lightgreen" : "lightpink";
     return (
         <div
             className="degree-requirements-course"
+            style={{ backgroundColor: color }}
             key={course.courseName + course.id.toString()}
         >
-            {course.courseName + course.id.toString() + " " + isFulfilled}
+            <text className="degree-requirements-course-text">
+                {course.courseName + course.id.toString()}{" "}
+                {isFulfilled ? (
+                    <AiOutlineCheck></AiOutlineCheck>
+                ) : (
+                    <MdDoNotDisturbAlt></MdDoNotDisturbAlt>
+                )}
+            </text>
         </div>
     );
 }

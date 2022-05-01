@@ -606,6 +606,7 @@ export function ViewingPlan({
             <DegreeRequirements
                 degree={plan.degree}
                 semesterList={plan.semesterList}
+                credits={plan.totalCredits}
             ></DegreeRequirements>
         </div>
     );
