@@ -1,6 +1,9 @@
 import React from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { Course } from "../../Interfaces/course";
+//icon imports
+import { AiOutlineCheck } from "react-icons/ai";
+import { ImCancelCircle } from "react-icons/im";
 
 export function AddCourseForm({
     addingCourse,
@@ -92,14 +95,16 @@ export function AddCourseForm({
                 )}
             </Modal.Body>
             <Modal.Footer>
+                {/* Confirm button */}
                 <Button
+                    style={{ backgroundColor: "green", borderColor: "green" }}
                     onClick={() => {
-                        setAddingCourse(false);
                         if (
                             !doesCourseExist(
                                 newCourseDepartment + newCourseID.toString()
                             )
                         ) {
+                            setAddingCourse(false);
                             setCourseList([
                                 ...courseList,
                                 {
@@ -109,12 +114,25 @@ export function AddCourseForm({
                                     preReq: []
                                 }
                             ]);
+                            setNewCourseCredits(0);
+                            setNewCourseDepartment("");
+                            setNewCourseID(0);
                         }
                     }}
                 >
-                    Confirm
+                    <AiOutlineCheck></AiOutlineCheck> Confirm
                 </Button>
-                <Button onClick={() => setAddingCourse(false)}>Cancel</Button>
+                <Button
+                    style={{ backgroundColor: "red", borderColor: "red" }}
+                    onClick={() => {
+                        setAddingCourse(false);
+                        setNewCourseCredits(0);
+                        setNewCourseDepartment("");
+                        setNewCourseID(0);
+                    }}
+                >
+                    <ImCancelCircle></ImCancelCircle> Cancel
+                </Button>
             </Modal.Footer>
         </Modal>
     );
