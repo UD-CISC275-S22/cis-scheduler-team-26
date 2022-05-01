@@ -39,11 +39,11 @@ export function DegreeRequirements({
     return (
         <div className="degree-requirements">
             <h1>Requirements</h1>
-            <body className="degree-requirements-body">
+            <div className="degree-requirements-body">
                 {degree.requiredCourses.map((course: Course) =>
                     renderCourse(course, isCourseInList(course, courses))
                 )}
-            </body>
+            </div>
         </div>
     );
 }
@@ -51,7 +51,10 @@ export function DegreeRequirements({
 //component to render a single course
 function renderCourse(course: Course, isFulfilled: boolean): JSX.Element {
     return (
-        <div className="degree-requirements-course">
+        <div
+            className="degree-requirements-course"
+            key={course.courseName + course.id.toString()}
+        >
             {course.courseName + course.id.toString() + " " + isFulfilled}
         </div>
     );
