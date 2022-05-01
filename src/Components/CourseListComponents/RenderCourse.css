@@ -1,6 +1,8 @@
 .courselist-course {
     outline-style: solid;
     outline-width: 2px;
-    outline-color: black;
+    outline-offset: 2px;
+    outline-color: rgb(194, 194, 194);
     margin-block: 10px;
+    width: 350px;
 }
