@@ -47,7 +47,6 @@ export function CoursesList({
             }
         });
         setCourses(newCourses);
-        console.log(name + " " + id + " mods: " + newName + " " + newID);
     }
 
     //This function allows a course to reset itself within the master list of courses
