@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { DegreePlan } from "./Interfaces/degreePlan";
 import { PlanList } from "./Components/DegreePlanComponents/PlanList";
@@ -36,6 +36,17 @@ function App(): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(courseList);
     const [plans, setPlans] = useState<DegreePlan[]>(INITIAL_PLANS);
     const [viewPlan, setViewPlan] = useState<number>(-1);
+
+    useEffect(() => {
+        console.log("getting plan list");
+        const savedPlansString = localStorage.getItem("plans");
+        if (savedPlansString !== null) {
+            const planstmp: DegreePlan[] = JSON.parse(savedPlansString);
+            planstmp.map((plan: DegreePlan) => INITIAL_PLANS.push(plan));
+            setPlans([...INITIAL_PLANS]);
+        }
+    }, [INITIAL_PLANS, setPlans]);
+
     return (
         <div className="App">
             <header className="App-header">

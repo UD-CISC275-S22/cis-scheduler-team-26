@@ -53,6 +53,26 @@ function printPlan(
                     <BsTrash></BsTrash>
                     Delete Plan
                 </Button>
+                <Button
+                    onClick={() => {
+                        const plansString = localStorage.getItem("plans");
+                        if (plansString === null)
+                            localStorage.setItem(
+                                "plans",
+                                JSON.stringify([plan])
+                            );
+                        else
+                            localStorage.setItem(
+                                "plans",
+                                JSON.stringify([
+                                    ...JSON.parse(plansString),
+                                    plan
+                                ])
+                            );
+                    }}
+                >
+                    Save Plan
+                </Button>
             </div>
         </div>
     );
