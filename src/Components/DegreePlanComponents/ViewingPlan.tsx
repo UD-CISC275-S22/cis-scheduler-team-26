@@ -221,7 +221,9 @@ function printSemesters(
                             style={{
                                 marginLeft: "auto",
                                 marginRight: "auto",
-                                width: "95%"
+                                width: "95%",
+                                backgroundColor: "white",
+                                backgroundBlendMode: "lighten"
                             }}
                         >
                             <thead>
@@ -317,7 +319,15 @@ function printSemesters(
                                                             )
                                                         }
                                                     >
-                                                        <CgMoveRight></CgMoveRight>
+                                                        <CgMoveRight
+                                                            style={{
+                                                                fontSize:
+                                                                    "160%",
+                                                                marginTop: "0%",
+                                                                marginBottom:
+                                                                    "0%"
+                                                            }}
+                                                        ></CgMoveRight>
                                                         Move Course
                                                     </Button>
                                                 </td>

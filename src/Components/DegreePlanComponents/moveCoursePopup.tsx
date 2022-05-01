@@ -122,6 +122,5 @@ function moveCourse(
         );
         addCourse(removedCourse, newPlans, setPlans, moveSem, course);
     }
-    console.log(plan.totalCredits);
     setMove(false);
 }
