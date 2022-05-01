@@ -27,12 +27,14 @@ export function CoursesListOffcanvas({
                 placement={"end"}
             >
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>All Courses:</Offcanvas.Title>
+                    <Offcanvas.Title style={{ fontSize: "40px" }}>
+                        All Courses:
+                    </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <CoursesList
-                        setCourses={setCourses}
                         courses={courses}
+                        setCourses={setCourses}
                     ></CoursesList>
                 </Offcanvas.Body>
             </Offcanvas>

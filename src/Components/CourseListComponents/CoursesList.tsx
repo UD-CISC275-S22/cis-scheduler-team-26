@@ -1,313 +1,153 @@
 import React, { useState } from "react";
 import { Course } from "../../Interfaces/course";
-import { Button, Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { RenderCourse } from "./RenderCourse";
+import { AddCourseForm } from "./AddCoursePopup";
 import "./CoursesList.css";
 
-type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
-
+//icon imports
+import { RiAddBoxLine } from "react-icons/ri";
 interface coursesListProp {
     setCourses: (newCourses: Course[]) => void;
     courses: Course[];
-}
-
-function removeCourse(
-    setCourses: (newCourses: Course[]) => void,
-    setOldCourses: (newCourses: Course[]) => void,
-    courses: Course[],
-    oldCourses: Course[],
-    removeCourse: Course
-) {
-    setCourses(
-        courses.filter((course: Course): boolean => course != removeCourse)
-    );
-    setOldCourses(
-        oldCourses.filter((course: Course): boolean => course != removeCourse)
-    );
 }
 
 export function CoursesList({
     setCourses,
     courses
 }: coursesListProp): JSX.Element {
-    //buttons
-    const [addingCourse, setAddCourse] = useState<boolean>(false);
-    const [removingCourse, setRemoveCourse] = useState<boolean>(false);
-    const [editCourse, setEditCourse] = useState<boolean>(false);
-    const [oldCourses, setOldCourses] = useState<Course[]>(courses);
-    //course info
-    const [courseDep, setCourseDep] = useState<string>("");
-    const [courseID, setCourseID] = useState<number>(0);
-    const [courseCred, setCourseCred] = useState<number>(0);
-    const [courseIndex, setCourseIndex] = useState<number>(0);
-    function saveCourse(oldCourse: Course): void {
-        const storeCourse: Course = { ...oldCourse };
-        setCourseIndex(
-            courses.findIndex(
-                (course: Course): boolean =>
-                    course.courseName === storeCourse.courseName &&
-                    course.id === storeCourse.id
-            )
-        );
-        oldCourses[
-            courses.findIndex(
-                (course: Course): boolean =>
-                    course.courseName === storeCourse.courseName &&
-                    course.id === storeCourse.id
-            )
-        ] = storeCourse;
-        setOldCourses([...oldCourses]);
-    }
-    function changeCourse(): void {
-        const changedCourse: Course = {
-            id: courseID,
-            courseName: courseDep,
-            numCredits: courseCred,
-            preReq: []
-        };
-        courses.splice(courseIndex, 1, changedCourse);
-        setCourses([...courses]);
-    }
-    function resetCourse(curr: Course): void {
-        const index: number = courses.findIndex(
-            (course: Course): boolean =>
-                course.id === curr.id && course.courseName === curr.courseName
-        );
-        const oldCourse: Course = {
-            id: oldCourses[index].id,
-            courseName: oldCourses[index].courseName,
-            numCredits: oldCourses[index].numCredits,
-            preReq: []
-        };
-        courses.splice(index, 1, oldCourse);
-        setCourses([...courses]);
-    }
-    function addNewCourse(): void {
-        setCourses([
-            ...courses,
-            {
-                id: courseID,
-                courseName: courseDep,
-                numCredits: courseCred,
-                preReq: []
-            }
-        ]);
-        setOldCourses([
-            ...courses,
-            {
-                id: courseID,
-                courseName: courseDep,
-                numCredits: courseCred,
-                preReq: []
-            }
-        ]);
-    }
+    //List of unmodified courses. It will only be update when adding or removing a course
+    const [unmodifiedCourses, setUnmodifiedCourses] =
+        useState<Course[]>(courses);
+    //Creating new course info
+    const [addingCourse, setAddingCourse] = useState<boolean>(false);
+    const [newCourseDepartment, setNewCourseDepartment] = useState<string>("");
+    const [newCourseID, setNewCourseID] = useState<number>(0);
+    const [newCourseCredits, setNewCourseCredits] = useState<number>(0);
+
     return (
         <div>
-            {courses.map(
-                (curr: Course): JSX.Element => (
-                    <div key={curr.courseName + curr.id}>
-                        {curr.courseName + curr.id}
-                        <div>Worth {curr.numCredits} Credits</div>
-                        <div>
-                            Prerequisite Courses:{" "}
-                            {curr.preReq.map(
-                                (pre: Course): JSX.Element => (
-                                    <div key={curr.courseName + curr.id}>
-                                        {pre.courseName + pre.id}
-                                    </div>
-                                )
-                            )}
-                        </div>
-                        {removingCourse && (
-                            <Button
-                                onClick={() =>
-                                    removeCourse(
-                                        setCourses,
-                                        setOldCourses,
-                                        courses,
-                                        oldCourses,
-                                        curr
-                                    )
-                                }
-                                style={{ backgroundColor: "red" }}
-                            >
-                                Delete
-                            </Button>
-                        )}
-                        <Button
-                            onClick={() => {
-                                setEditCourse(true), saveCourse(curr);
-                            }}
-                        >
-                            Edit
-                        </Button>
-                        <Button onClick={() => resetCourse(curr)}>
-                            Reset Course
-                        </Button>
-                    </div>
-                )
-            )}
-            <Button onClick={() => setAddCourse(!addingCourse)}>
+            {courses.map((curr: Course) => (
+                <div key={curr.courseName + curr.id.toString()}>
+                    <RenderCourse
+                        Course={curr}
+                        deleteCourse={() =>
+                            deleteCourseByName(curr.courseName, curr.id)
+                        }
+                        editCourse={(
+                            newName: string,
+                            newID: number,
+                            newCreds: number
+                        ) =>
+                            editCourseByName(
+                                curr.courseName,
+                                curr.id,
+                                newName,
+                                newID,
+                                newCreds
+                            )
+                        }
+                        resetCourse={() => {
+                            resetCourseByName(curr.courseName, curr.id);
+                        }}
+                    ></RenderCourse>
+                </div>
+            ))}
+            <Button onClick={() => setAddingCourse(true)}>
+                <RiAddBoxLine
+                    style={{ marginBottom: "2px", fontSize: "20px" }}
+                ></RiAddBoxLine>{" "}
                 Add Course
             </Button>
             {/*Render the form to add a course if Add Course button is pressed */}
-            {addingCourse && (
-                <AddCourseForm
-                    courseDep={courseDep}
-                    setCourseDep={setCourseDep}
-                    courseID={courseID}
-                    setCourseID={setCourseID}
-                    courseCred={courseCred}
-                    setCourseCred={setCourseCred}
-                    addCourse={addNewCourse}
-                    setAddingCourse={setAddCourse}
-                ></AddCourseForm>
-            )}
+            <AddCourseForm
+                addingCourse={addingCourse}
+                setAddingCourse={setAddingCourse}
+                newCourseDepartment={newCourseDepartment}
+                setNewCourseDepartment={setNewCourseDepartment}
+                newCourseID={newCourseID}
+                setNewCourseID={setNewCourseID}
+                newCourseCredits={newCourseCredits}
+                setNewCourseCredits={setNewCourseCredits}
+                courseList={courses}
+                addCourse={addCourse}
+            ></AddCourseForm>
             {/*Render the form to edit a course if Edit button is pressed */}
-            {editCourse && (
-                <EditCourseForm
-                    courseDep={courseDep}
-                    setCourseDep={setCourseDep}
-                    courseID={courseID}
-                    setCourseID={setCourseID}
-                    courseCred={courseCred}
-                    setCourseCred={setCourseCred}
-                    editingCourse={editCourse}
-                    setEditingCourse={setEditCourse}
-                    changeCourse={changeCourse}
-                ></EditCourseForm>
-            )}
-            <Button onClick={() => setRemoveCourse(!removingCourse)}>
-                Remove Course
-            </Button>
+            {/*editCourse && <EditCourseForm></EditCourseForm>*/}
         </div>
     );
-}
 
-//Form to add a new course to master course list
-function AddCourseForm({
-    courseDep,
-    setCourseDep,
-    courseID,
-    setCourseID,
-    courseCred,
-    setCourseCred,
-    addCourse,
-    setAddingCourse
-}: {
-    courseDep: string;
-    setCourseDep: (name: string) => void;
-    courseID: number;
-    setCourseID: (id: number) => void;
-    courseCred: number;
-    setCourseCred: (num: number) => void;
-    addCourse: () => void;
-    setAddingCourse: (val: boolean) => void;
-}): JSX.Element {
-    return (
-        <div>
-            <Form.Group controlId="Add Course Dep">
-                <Form.Label>Type Course Department: </Form.Label>
-                <Form.Control
-                    type="text"
-                    value={courseDep}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseDep(event.target.value)
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="Add Course ID">
-                <Form.Label>Type Course ID: </Form.Label>
-                <Form.Control
-                    type="number"
-                    value={courseID}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseID(parseInt(event.target.value) || 0)
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="Add Course Credit">
-                <Form.Label>Type number of Credits: </Form.Label>
-                <Form.Control
-                    type="number"
-                    value={courseCred}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseCred(parseInt(event.target.value) || 0)
-                    }
-                />
-            </Form.Group>
-            <Button
-                onClick={() => {
-                    addCourse(), setAddingCourse(false);
-                }}
-            >
-                Submit
-            </Button>
-        </div>
-    );
-}
+    //This function allows each course to edit itself within the master list of courses
+    function editCourseByName(
+        name: string,
+        id: number,
+        newName: string,
+        newID: number,
+        newCreds: number
+    ) {
+        const newCourses: Course[] = [];
+        courses.map((course: Course) => {
+            if (course.courseName === name && course.id === id) {
+                newCourses.push({
+                    ...course,
+                    courseName: newName,
+                    id: newID,
+                    numCredits: newCreds
+                });
+            } else {
+                newCourses.push(course);
+            }
+        });
+        setCourses(newCourses);
+    }
 
-//Form to edit a specific course
-function EditCourseForm({
-    courseDep,
-    setCourseDep,
-    courseID,
-    setCourseID,
-    courseCred,
-    setCourseCred,
-    editingCourse,
-    setEditingCourse,
-    changeCourse
-}: {
-    courseDep: string;
-    setCourseDep: (name: string) => void;
-    courseID: number;
-    setCourseID: (id: number) => void;
-    courseCred: number;
-    setCourseCred: (num: number) => void;
-    editingCourse: boolean;
-    setEditingCourse: (val: boolean) => void;
-    changeCourse: () => void;
-}): JSX.Element {
-    return (
-        <div>
-            <Form.Group controlId="Change Course Dep">
-                <Form.Label>Type Course Department: </Form.Label>
-                <Form.Control
-                    type="text"
-                    value={courseDep}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseDep(event.target.value)
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="Change Course ID">
-                <Form.Label>Type Course ID: </Form.Label>
-                <Form.Control
-                    type="number"
-                    value={courseID}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseID(parseInt(event.target.value) || 0)
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="Change Course Credit">
-                <Form.Label>Type number of Credits: </Form.Label>
-                <Form.Control
-                    type="number"
-                    value={courseCred}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseCred(parseInt(event.target.value) || 0)
-                    }
-                />
-            </Form.Group>
-            <Button
-                onClick={() => {
-                    changeCourse(), setEditingCourse(!editingCourse);
-                }}
-            >
-                Submit
-            </Button>
-        </div>
-    );
+    //This function allows a course to reset itself within the master list of courses
+    //The unmodified version of the course is drawn from unmodifiedCourses state variable
+    function resetCourseByName(name: string, id: number) {
+        const tmpCourses: string[] = [];
+        courses.map((course: Course) =>
+            tmpCourses.push(course.courseName + course.id.toString())
+        );
+        const ind = tmpCourses.indexOf(name + id.toString());
+        editCourseByName(
+            courses[ind].courseName,
+            courses[ind].id,
+            unmodifiedCourses[ind].courseName,
+            unmodifiedCourses[ind].id,
+            unmodifiedCourses[ind].numCredits
+        );
+    }
+    //Allows a course to delete itself from the master list and the unmodified list
+    function deleteCourseByName(name: string, id: number) {
+        const tmpCourses: string[] = [];
+        courses.map((course: Course) =>
+            tmpCourses.push(course.courseName + course.id.toString())
+        );
+        const ind = tmpCourses.indexOf(name + id.toString());
+        courses.splice(ind, 1);
+        setCourses([...courses]);
+        unmodifiedCourses.splice(ind, 1);
+        setUnmodifiedCourses([...unmodifiedCourses]);
+    }
+    //Adds a course to the master list and the unmodified list
+    function addCourse(newName: string, newID: number, newCredits: number) {
+        setCourses([
+            ...courses,
+            {
+                courseName: newName,
+                id: newID,
+                numCredits: newCredits,
+                preReq: []
+            }
+        ]);
+        setUnmodifiedCourses([
+            ...unmodifiedCourses,
+            {
+                courseName: newName,
+                id: newID,
+                numCredits: newCredits,
+                preReq: []
+            }
+        ]);
+    }
 }

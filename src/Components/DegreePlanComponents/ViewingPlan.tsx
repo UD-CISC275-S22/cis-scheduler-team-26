@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
-import { TiEdit } from "react-icons/ti";
-import { AiOutlineClear } from "react-icons/ai";
-import { BsTrash } from "react-icons/bs";
-import { RiAddBoxLine } from "react-icons/ri";
-import { CgMoveRight } from "react-icons/cg";
 import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Season, Semester, validSeason } from "../../Interfaces/semester";
 import { movePopup } from "./moveCoursePopup";
 import { calculateCredits, find_course } from "./ViewPlanFunctions";
+import { DegreeRequirements } from "./ShowDegreeRequirements";
+
+//Icon imports for buttons
+import { TiEdit } from "react-icons/ti";
+import { AiOutlineClear } from "react-icons/ai";
+import { BsTrash } from "react-icons/bs";
+import { RiAddBoxLine } from "react-icons/ri";
+import { CgMoveRight } from "react-icons/cg";
 import { BsArrowReturnLeft } from "react-icons/bs";
 
 interface planListProp {
@@ -551,50 +554,60 @@ export function ViewingPlan({
         preReq: []
     });
     return (
-        <div>
-            <h3>Currently Displaying {plan.planName}:</h3>
-            {printSemesters(
-                plan,
-                planList,
-                setPlans,
-                edit,
-                editingSem,
-                setEditingSem,
-                addingCourse,
-                setAddingCourse,
-                courses,
-                move,
-                setMove,
-                moveSem,
-                setMoveSem,
-                moveCourse,
-                setMoveCourse
-            )}
-            {edit &&
-                addSemesters(
+        <div style={{ display: "flex" }}>
+            <div style={{ width: "160%" }}>
+                <h2>{plan.planName}:</h2>
+                <br></br>
+                {printSemesters(
                     plan,
                     planList,
                     setPlans,
-                    season,
-                    setSeason,
-                    year,
-                    setYear
+                    edit,
+                    editingSem,
+                    setEditingSem,
+                    addingCourse,
+                    setAddingCourse,
+                    courses,
+                    move,
+                    setMove,
+                    moveSem,
+                    setMoveSem,
+                    moveCourse,
+                    setMoveCourse
                 )}
-            <Button onClick={() => setEdit(!edit)}>
-                <TiEdit></TiEdit>Edit Semesters
-            </Button>
-            <Button
-                onClick={() => clearAllCourses(plan, planList, setPlans)}
-                style={{ backgroundColor: "red", borderColor: "red" }}
-            >
-                <AiOutlineClear></AiOutlineClear>
-                Clear All Semesters
-            </Button>
-            <div>
-                <Button onClick={() => setViewPlan(-1)}>
-                    <BsArrowReturnLeft></BsArrowReturnLeft> Return to Plan List
+                {edit &&
+                    addSemesters(
+                        plan,
+                        planList,
+                        setPlans,
+                        season,
+                        setSeason,
+                        year,
+                        setYear
+                    )}
+                <Button onClick={() => setEdit(!edit)}>
+                    <TiEdit></TiEdit>Edit Semesters
                 </Button>
+                <Button
+                    onClick={() => clearAllCourses(plan, planList, setPlans)}
+                    style={{ backgroundColor: "red", borderColor: "red" }}
+                >
+                    <AiOutlineClear></AiOutlineClear>
+                    Clear All Semesters
+                </Button>
+                <div>
+                    <Button onClick={() => setViewPlan(-1)}>
+                        <BsArrowReturnLeft></BsArrowReturnLeft> Return to Plan
+                        List
+                    </Button>
+                </div>
             </div>
+            {/*Components to show all the requirements for this plan's degree and which have been fulfilled */}
+            <DegreeRequirements
+                degree={plan.degree}
+                semesterList={plan.semesterList}
+                credits={plan.totalCredits}
+            ></DegreeRequirements>
         </div>
     );
 }
