@@ -30,11 +30,21 @@ export function RenderCourse({
     const [newCourseCredits, setNewCourseCredits] = useState<number>(
         Course.numCredits
     );
+    //fancy color states
+    const [backgroundColorIndex, setBackgroundColorIndex] = useState<number>(0);
+    const colors = ["white", "lightgray"];
 
     return (
-        <div className="courselist-course">
+        <div
+            className="courselist-course"
+            style={{ backgroundColor: colors[backgroundColorIndex] }}
+        >
             {!editingCourse ? (
-                <div onClick={() => setRenderExpanded(!renderExpanded)}>
+                <div
+                    onClick={() => setRenderExpanded(!renderExpanded)}
+                    onMouseOver={() => setBackgroundColorIndex(1)}
+                    onMouseLeave={() => setBackgroundColorIndex(0)}
+                >
                     {/* Header of the rendered course */}
                     <div style={{ display: "flex", flexDirection: "row" }}>
                         <h5
