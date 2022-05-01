@@ -45,9 +45,9 @@ export function DegreeRequirements({
     return (
         <div className="degree-requirements">
             <h1>Requirements</h1>
-            <text>
+            <div>
                 Completed {credits} of {degree.requiredCredits} required credits
-            </text>
+            </div>
             <div className="degree-requirements-body">
                 {degree.requiredCourses.map((course: Course) =>
                     renderCourse(course, isCourseInList(course, courses))
@@ -66,14 +66,14 @@ function renderCourse(course: Course, isFulfilled: boolean): JSX.Element {
             style={{ backgroundColor: color }}
             key={course.courseName + course.id.toString()}
         >
-            <text className="degree-requirements-course-text">
+            <div className="degree-requirements-course-text">
                 {course.courseName + course.id.toString()}{" "}
                 {isFulfilled ? (
                     <AiOutlineCheck></AiOutlineCheck>
                 ) : (
                     <MdDoNotDisturbAlt></MdDoNotDisturbAlt>
                 )}
-            </text>
+            </div>
         </div>
     );
 }
