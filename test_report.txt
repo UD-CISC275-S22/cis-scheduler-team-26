@@ -2,17 +2,17 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.705 s)
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (227 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (112 ms)
-    ✕ Courses can be removed (432 ms)
-    ✓ Courses can be added (485 ms)
-    ✕ Semesters can be removed (248 ms)
-    ✓ Semesters can be added (269 ms)
-    ✕ The initial credits in the testing plan are displayed (86 ms)
-    ✕ When adding a course, the total credits in updated (464 ms)
-    ✕ When removing a course, the score is updated (372 ms)
+    ✓ The initial two test semesters are displated (225 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (116 ms)
+    ✕ Courses can be removed (434 ms)
+    ✓ Courses can be added (512 ms)
+    ✕ Semesters can be removed (249 ms)
+    ✓ Semesters can be added (267 ms)
+    ✕ The initial credits in the testing plan are displayed (82 ms)
+    ✕ When adding a course, the total credits in updated (467 ms)
+    ✕ When removing a course, the score is updated (364 ms)
     ✕ Semesters can be removed (228 ms)
 
   ● ViewingPlan Tests › Courses can be removed
@@ -41,10 +41,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
             [33mclass[39m=[32m"main-page-items"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"offcanvas-component"[39m
+              [33mclass[39m=[32m"header-buttons"[39m
             [36m>[39m
               [36m<button[39m
-                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mclass[39m=[32m"return-to-plan-list-button btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
                 [36m<svg[39m
@@ -57,34 +57,62 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                   [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                 [36m>[39m
                   [36m<path[39m
-                    [33mclip-rule[39m=[32m"evenodd"[39m
-                    [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                    [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
                     [33mfill-rule[39m=[32m"evenodd"[39m
                   [36m/>[39m
                 [36m</svg>[39m
-                [0m View All Courses[0m
+                [0m Return to Plan List[0m
               [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"offcanvas-component"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33mfill[39m=[32m"currentColor"[39m
+                    [33mheight[39m=[32m"1em"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-width[39m=[32m"0"[39m
+                    [33mviewBox[39m=[32m"0 0 16 16"[39m
+                    [33mwidth[39m=[32m"1em"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclip-rule[39m=[32m"evenodd"[39m
+                      [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                      [33mfill-rule[39m=[32m"evenodd"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [0m View All Courses[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
-              [33mstyle[39m=[32m"display: flex;"[39m
+              [33mstyle[39m=[32m"display: flex; margin-bottom: 200px;"[39m
             [36m>[39m
               [36m<div[39m
                 [33mstyle[39m=[32m"width: 160%;"[39m
               [36m>[39m
-                [36m<h2>[39m
+                [36m<h1>[39m
                   [0mTesting Plan[0m
-                  [0m:[0m
-                [36m</h2>[39m
+                [36m</h1>[39m
+                [36m<h3>[39m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</h3>[39m
                 [36m<br />[39m
                 [36m<div>[39m
                   [36m<div>[39m
                     [36m<table[39m
                       [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                      [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
                     [36m>[39m
                       [36m<thead>[39m
                         [36m<tr>[39m
                           [36m<th[39m
                             [33mcolspan[39m=[32m"3"[39m
+                            [33mstyle[39m=[32m"font-size: 30px;"[39m
                           [36m>[39m
                             [0mWinter 2022[0m
                           [36m</th>[39m
@@ -93,10 +121,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0mCourse ID[0m
+                            [0mCourse Department[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mCourse Name[0m
+                            [0mCourse ID[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0mNumber of Credits[0m
@@ -106,10 +134,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0m108[0m
+                            [0mCISC[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mCISC[0m
+                            [0m108[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0m3[0m
@@ -117,10 +145,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                         [36m</tr>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0m241[0m
+                            [0mMATH[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mMATH[0m
+                            [0m241[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0m3[0m
@@ -130,6 +158,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                     [36m</table>[39m
                     [36m<button[39m
                       [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
                       [36m<svg[39m
@@ -144,35 +173,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                         [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                       [36m>[39m
                         [36m<path[39m
-                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                        [36m/>[39m
-                      [36m</svg>[39m
-                      [0mEdit Courses[0m
-                    [36m</button>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [36m<table[39m
-                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                    [36m>[39m
-                      [36m<thead>[39m
-                        [36m<tr>[39m
-                          [36m<th[39m
-                            [33mcolspan[39m=[32m"3"[39m
-                          [36m>[39m
-                            [0mSpring 2022[0m
-                          [36m</th>[39m
-                        [36m</tr>[39m
-                      [36m</thead>[39m
-                      [36m<tbody>[39m
-                        [36m<tr>[39m
-                          [36m<td>[39m
-                            [0mCourse ID[0m
-                          [36m</td>[39m
-                          [36m<td>[39m
-                            [0mCourse Name[0m
-                          [36m</td>[39m
-                          [36m<td>[39m
-                         ...
+                          [33md[39m=[32m"M21.561 5.318l-...
 
       36 |         });
       37 |         removeCourseButton[0].click();
@@ -218,10 +219,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
             [33mclass[39m=[32m"main-page-items"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"offcanvas-component"[39m
+              [33mclass[39m=[32m"header-buttons"[39m
             [36m>[39m
               [36m<button[39m
-                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mclass[39m=[32m"return-to-plan-list-button btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
                 [36m<svg[39m
@@ -234,34 +235,62 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                   [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                 [36m>[39m
                   [36m<path[39m
-                    [33mclip-rule[39m=[32m"evenodd"[39m
-                    [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                    [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
                     [33mfill-rule[39m=[32m"evenodd"[39m
                   [36m/>[39m
                 [36m</svg>[39m
-                [0m View All Courses[0m
+                [0m Return to Plan List[0m
               [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"offcanvas-component"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33mfill[39m=[32m"currentColor"[39m
+                    [33mheight[39m=[32m"1em"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-width[39m=[32m"0"[39m
+                    [33mviewBox[39m=[32m"0 0 16 16"[39m
+                    [33mwidth[39m=[32m"1em"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclip-rule[39m=[32m"evenodd"[39m
+                      [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                      [33mfill-rule[39m=[32m"evenodd"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [0m View All Courses[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
-              [33mstyle[39m=[32m"display: flex;"[39m
+              [33mstyle[39m=[32m"display: flex; margin-bottom: 200px;"[39m
             [36m>[39m
               [36m<div[39m
                 [33mstyle[39m=[32m"width: 160%;"[39m
               [36m>[39m
-                [36m<h2>[39m
+                [36m<h1>[39m
                   [0mTesting Plan[0m
-                  [0m:[0m
-                [36m</h2>[39m
+                [36m</h1>[39m
+                [36m<h3>[39m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</h3>[39m
                 [36m<br />[39m
                 [36m<div>[39m
                   [36m<div>[39m
                     [36m<table[39m
                       [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                      [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
                     [36m>[39m
                       [36m<thead>[39m
                         [36m<tr>[39m
                           [36m<th[39m
                             [33mcolspan[39m=[32m"2"[39m
+                            [33mstyle[39m=[32m""[39m
                           [36m>[39m
                             [0mSpring 2022[0m
                           [36m</th>[39m
@@ -279,10 +308,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0mCourse ID[0m
+                            [0mCourse Department[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mCourse Name[0m
+                            [0mCourse ID[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0mNumber of Credits[0m
@@ -292,10 +321,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0m110[0m
+                            [0mENGL[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mENGL[0m
+                            [0m110[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0m3[0m
@@ -305,6 +334,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                     [36m</table>[39m
                     [36m<button[39m
                       [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
                       [36m<svg[39m
@@ -319,37 +349,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                         [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                       [36m>[39m
                         [36m<path[39m
-                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                        [36m/>[39m
-                      [36m</svg>[39m
-                      [0mEdit Courses[0m
-                    [36m</button>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0mName: [0m
-                    [0mTesting Plan[0m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0mExpected Degree: [0m
-                    [0mComputer Science Bachelor of Arts[0m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0mCurrently Have [0m
-                    [0m3[0m
-                    [0m out of[0m
-                    [0m [0m
-                    [0m124[0m
-                    [0m required Credits[0m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [36m<div>[39m
-                    [36m<label[39m
-                      [33mclass[39m=[32m"form-label"[39m
-                      [33mfor[39m=[32m"semesterYear"[39m
-                    [36m>[39m
-                      [0mYear:[0m
-               ...
+                        ...
 
       63 |         });
       64 |         removeSemesterButton[0].click();
@@ -395,10 +395,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
             [33mclass[39m=[32m"main-page-items"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"offcanvas-component"[39m
+              [33mclass[39m=[32m"header-buttons"[39m
             [36m>[39m
               [36m<button[39m
-                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mclass[39m=[32m"return-to-plan-list-button btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
                 [36m<svg[39m
@@ -411,34 +411,62 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                   [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                 [36m>[39m
                   [36m<path[39m
-                    [33mclip-rule[39m=[32m"evenodd"[39m
-                    [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                    [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
                     [33mfill-rule[39m=[32m"evenodd"[39m
                   [36m/>[39m
                 [36m</svg>[39m
-                [0m View All Courses[0m
+                [0m Return to Plan List[0m
               [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"offcanvas-component"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33mfill[39m=[32m"currentColor"[39m
+                    [33mheight[39m=[32m"1em"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-width[39m=[32m"0"[39m
+                    [33mviewBox[39m=[32m"0 0 16 16"[39m
+                    [33mwidth[39m=[32m"1em"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclip-rule[39m=[32m"evenodd"[39m
+                      [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                      [33mfill-rule[39m=[32m"evenodd"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [0m View All Courses[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
-              [33mstyle[39m=[32m"display: flex;"[39m
+              [33mstyle[39m=[32m"display: flex; margin-bottom: 200px;"[39m
             [36m>[39m
               [36m<div[39m
                 [33mstyle[39m=[32m"width: 160%;"[39m
               [36m>[39m
-                [36m<h2>[39m
+                [36m<h1>[39m
                   [0mTesting Plan[0m
-                  [0m:[0m
-                [36m</h2>[39m
+                [36m</h1>[39m
+                [36m<h3>[39m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</h3>[39m
                 [36m<br />[39m
                 [36m<div>[39m
                   [36m<div>[39m
                     [36m<table[39m
                       [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                      [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
                     [36m>[39m
                       [36m<thead>[39m
                         [36m<tr>[39m
                           [36m<th[39m
                             [33mcolspan[39m=[32m"3"[39m
+                            [33mstyle[39m=[32m"font-size: 30px;"[39m
                           [36m>[39m
                             [0mWinter 2022[0m
                           [36m</th>[39m
@@ -447,10 +475,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0mCourse ID[0m
+                            [0mCourse Department[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mCourse Name[0m
+                            [0mCourse ID[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0mNumber of Credits[0m
@@ -460,32 +488,32 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0m101[0m
+                            [0mEGGG[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mEGGG[0m
+                            [0m101[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0m3[0m
                           [36m</td>[39m
                         [36m</tr>[39m
                         [36m<tr>[39m
-                          [36m<td>[39m
-                            [0m108[0m
-                          [36m</td>[39m
                           [36m<td>[39m
                             [0mCISC[0m
                           [36m</td>[39m
                           [36m<td>[39m
+                            [0m108[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
                             [0m3[0m
                           [36m</td>[39m
                         [36m</tr>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0m241[0m
+                            [0mMATH[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mMATH[0m
+                            [0m241[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0m3[0m
@@ -495,6 +523,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                     [36m</table>[39m
                     [36m<button[39m
                       [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
                       [36m<svg[39m
@@ -502,31 +531,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                         [33mfill[39m=[32m"currentColor"[39m
                         [33mheight[39m=[32m"1em"[39m
                         [33mstroke[39m=[32m"currentColor"[39m
-                        [33mstroke-width[39m=[32m"0"[39m
-                        [33mversion[39m=[32m"1.2"[39m
-                        [33mviewBox[39m=[32m"0 0 24 24"[39m
-                        [33mwidth[39m=[32m"1em"[39m
-                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                      [36m>[39m
-                        [36m<path[39m
-                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                        [36m/>[39m
-                      [36m</svg>[39m
-                      [0mEdit Courses[0m
-                    [36m</button>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [36m<table[39m
-                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                    [36m>[39m
-                      [36m<thead>[39m
-                        [36m<tr>[39m
-                          [36m<th[39m
-                            [33mcolspan[39m=[32m"3"[39m
-                          [36m>[39m
-                            [0mSpring 2022[0m
-                          [36m</th>[39m
-                        [36m</tr>[39m...
+                    ...
 
       84 |     test("The initial credits in the testing plan are displayed", () => {
       85 |         expect(
@@ -572,10 +577,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
             [33mclass[39m=[32m"main-page-items"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"offcanvas-component"[39m
+              [33mclass[39m=[32m"header-buttons"[39m
             [36m>[39m
               [36m<button[39m
-                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mclass[39m=[32m"return-to-plan-list-button btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
                 [36m<svg[39m
@@ -588,34 +593,62 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                   [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                 [36m>[39m
                   [36m<path[39m
-                    [33mclip-rule[39m=[32m"evenodd"[39m
-                    [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                    [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
                     [33mfill-rule[39m=[32m"evenodd"[39m
                   [36m/>[39m
                 [36m</svg>[39m
-                [0m View All Courses[0m
+                [0m Return to Plan List[0m
               [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"offcanvas-component"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33mfill[39m=[32m"currentColor"[39m
+                    [33mheight[39m=[32m"1em"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-width[39m=[32m"0"[39m
+                    [33mviewBox[39m=[32m"0 0 16 16"[39m
+                    [33mwidth[39m=[32m"1em"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclip-rule[39m=[32m"evenodd"[39m
+                      [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                      [33mfill-rule[39m=[32m"evenodd"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [0m View All Courses[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
-              [33mstyle[39m=[32m"display: flex;"[39m
+              [33mstyle[39m=[32m"display: flex; margin-bottom: 200px;"[39m
             [36m>[39m
               [36m<div[39m
                 [33mstyle[39m=[32m"width: 160%;"[39m
               [36m>[39m
-                [36m<h2>[39m
+                [36m<h1>[39m
                   [0mTesting Plan[0m
-                  [0m:[0m
-                [36m</h2>[39m
+                [36m</h1>[39m
+                [36m<h3>[39m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</h3>[39m
                 [36m<br />[39m
                 [36m<div>[39m
                   [36m<div>[39m
                     [36m<table[39m
                       [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                      [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
                     [36m>[39m
                       [36m<thead>[39m
                         [36m<tr>[39m
                           [36m<th[39m
                             [33mcolspan[39m=[32m"3"[39m
+                            [33mstyle[39m=[32m"font-size: 30px;"[39m
                           [36m>[39m
                             [0mWinter 2022[0m
                           [36m</th>[39m
@@ -624,10 +657,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0mCourse ID[0m
+                            [0mCourse Department[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mCourse Name[0m
+                            [0mCourse ID[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0mNumber of Credits[0m
@@ -637,10 +670,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0m101[0m
+                            [0mEGGG[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mEGGG[0m
+                            [0m101[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0m3[0m
@@ -664,33 +697,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                                   [33md[39m=[32m"M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"[39m
                                 [36m/>[39m
                                 [36m<path[39m
-                                  [33md[39m=[32m"M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"[39m
-                                  [33mfill-rule[39m=[32m"evenodd"[39m
-                                [36m/>[39m
-                              [36m</svg>[39m
-                              [0mRemove Course[0m
-                            [36m</button>[39m
-                            [36m<button[39m
-                              [33mclass[39m=[32m"btn btn-primary"[39m
-                              [33mstyle[39m=[32m"background-color: darkturquoise; border-color: darkturquoise;"[39m
-                              [33mtype[39m=[32m"button"[39m
-                            [36m>[39m
-                              [36m<svg[39m
-                                [33mfill[39m=[32m"none"[39m
-                                [33mheight[39m=[32m"1em"[39m
-                                [33mstroke[39m=[32m"currentColor"[39m
-                                [33mstroke-width[39m=[32m"0"[39m
-                                [33mviewBox[39m=[32m"0 0 24 24"[39m
-                                [33mwidth[39m=[32m"1em"[39m
-                                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                              [36m>[39m
-                                [36m<path[39m
-                                  [33md[39m=[32m"M5 17V15H13V17H5Z"[39m
-                                  [33mfill[39m=[32m"currentColor"[39m
-                                [36m/>[39m
-                                [36m<path[39m
-                                  [33md[39m=[32m"M5 9V7H13V9H5Z"[39m
-                           ...
+                                  [33md[39m=[32m"M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 ...
 
       101 |         addButton.click();
       102 |         expect(
@@ -736,10 +743,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
             [33mclass[39m=[32m"main-page-items"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"offcanvas-component"[39m
+              [33mclass[39m=[32m"header-buttons"[39m
             [36m>[39m
               [36m<button[39m
-                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mclass[39m=[32m"return-to-plan-list-button btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
                 [36m<svg[39m
@@ -752,34 +759,62 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                   [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                 [36m>[39m
                   [36m<path[39m
-                    [33mclip-rule[39m=[32m"evenodd"[39m
-                    [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                    [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
                     [33mfill-rule[39m=[32m"evenodd"[39m
                   [36m/>[39m
                 [36m</svg>[39m
-                [0m View All Courses[0m
+                [0m Return to Plan List[0m
               [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"offcanvas-component"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33mfill[39m=[32m"currentColor"[39m
+                    [33mheight[39m=[32m"1em"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-width[39m=[32m"0"[39m
+                    [33mviewBox[39m=[32m"0 0 16 16"[39m
+                    [33mwidth[39m=[32m"1em"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclip-rule[39m=[32m"evenodd"[39m
+                      [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                      [33mfill-rule[39m=[32m"evenodd"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [0m View All Courses[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
-              [33mstyle[39m=[32m"display: flex;"[39m
+              [33mstyle[39m=[32m"display: flex; margin-bottom: 200px;"[39m
             [36m>[39m
               [36m<div[39m
                 [33mstyle[39m=[32m"width: 160%;"[39m
               [36m>[39m
-                [36m<h2>[39m
+                [36m<h1>[39m
                   [0mTesting Plan[0m
-                  [0m:[0m
-                [36m</h2>[39m
+                [36m</h1>[39m
+                [36m<h3>[39m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</h3>[39m
                 [36m<br />[39m
                 [36m<div>[39m
                   [36m<div>[39m
                     [36m<table[39m
                       [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                      [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
                     [36m>[39m
                       [36m<thead>[39m
                         [36m<tr>[39m
                           [36m<th[39m
                             [33mcolspan[39m=[32m"3"[39m
+                            [33mstyle[39m=[32m"font-size: 30px;"[39m
                           [36m>[39m
                             [0mWinter 2022[0m
                           [36m</th>[39m
@@ -788,10 +823,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0mCourse ID[0m
+                            [0mCourse Department[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mCourse Name[0m
+                            [0mCourse ID[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0mNumber of Credits[0m
@@ -801,10 +836,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0m108[0m
+                            [0mCISC[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mCISC[0m
+                            [0m108[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0m3[0m
@@ -812,10 +847,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                         [36m</tr>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0m241[0m
+                            [0mMATH[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mMATH[0m
+                            [0m241[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0m3[0m
@@ -825,6 +860,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                     [36m</table>[39m
                     [36m<button[39m
                       [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
                       [36m<svg[39m
@@ -839,35 +875,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                         [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                       [36m>[39m
                         [36m<path[39m
-                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                        [36m/>[39m
-                      [36m</svg>[39m
-                      [0mEdit Courses[0m
-                    [36m</button>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [36m<table[39m
-                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                    [36m>[39m
-                      [36m<thead>[39m
-                        [36m<tr>[39m
-                          [36m<th[39m
-                            [33mcolspan[39m=[32m"3"[39m
-                          [36m>[39m
-                            [0mSpring 2022[0m
-                          [36m</th>[39m
-                        [36m</tr>[39m
-                      [36m</thead>[39m
-                      [36m<tbody>[39m
-                        [36m<tr>[39m
-                          [36m<td>[39m
-                            [0mCourse ID[0m
-                          [36m</td>[39m
-                          [36m<td>[39m
-                            [0mCourse Name[0m
-                          [36m</td>[39m
-                          [36m<td>[39m
-                         ...
+                          [33md[39m=[32m"M21.561 5.318l-...
 
       114 |         removeCourseButton[0].click();
       115 |         expect(
@@ -913,10 +921,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
             [33mclass[39m=[32m"main-page-items"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"offcanvas-component"[39m
+              [33mclass[39m=[32m"header-buttons"[39m
             [36m>[39m
               [36m<button[39m
-                [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                [33mclass[39m=[32m"return-to-plan-list-button btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
                 [36m<svg[39m
@@ -929,34 +937,62 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                   [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                 [36m>[39m
                   [36m<path[39m
-                    [33mclip-rule[39m=[32m"evenodd"[39m
-                    [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                    [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
                     [33mfill-rule[39m=[32m"evenodd"[39m
                   [36m/>[39m
                 [36m</svg>[39m
-                [0m View All Courses[0m
+                [0m Return to Plan List[0m
               [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"offcanvas-component"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33mfill[39m=[32m"currentColor"[39m
+                    [33mheight[39m=[32m"1em"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-width[39m=[32m"0"[39m
+                    [33mviewBox[39m=[32m"0 0 16 16"[39m
+                    [33mwidth[39m=[32m"1em"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclip-rule[39m=[32m"evenodd"[39m
+                      [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                      [33mfill-rule[39m=[32m"evenodd"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [0m View All Courses[0m
+                [36m</button>[39m
+              [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
-              [33mstyle[39m=[32m"display: flex;"[39m
+              [33mstyle[39m=[32m"display: flex; margin-bottom: 200px;"[39m
             [36m>[39m
               [36m<div[39m
                 [33mstyle[39m=[32m"width: 160%;"[39m
               [36m>[39m
-                [36m<h2>[39m
+                [36m<h1>[39m
                   [0mTesting Plan[0m
-                  [0m:[0m
-                [36m</h2>[39m
+                [36m</h1>[39m
+                [36m<h3>[39m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</h3>[39m
                 [36m<br />[39m
                 [36m<div>[39m
                   [36m<div>[39m
                     [36m<table[39m
                       [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                      [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
                     [36m>[39m
                       [36m<thead>[39m
                         [36m<tr>[39m
                           [36m<th[39m
                             [33mcolspan[39m=[32m"2"[39m
+                            [33mstyle[39m=[32m""[39m
                           [36m>[39m
                             [0mSpring 2022[0m
                           [36m</th>[39m
@@ -974,10 +1010,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0mCourse ID[0m
+                            [0mCourse Department[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mCourse Name[0m
+                            [0mCourse ID[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0mNumber of Credits[0m
@@ -987,10 +1023,10 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                       [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
-                            [0m110[0m
+                            [0mENGL[0m
                           [36m</td>[39m
                           [36m<td>[39m
-                            [0mENGL[0m
+                            [0m110[0m
                           [36m</td>[39m
                           [36m<td>[39m
                             [0m3[0m
@@ -1000,6 +1036,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                     [36m</table>[39m
                     [36m<button[39m
                       [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
                       [36m<svg[39m
@@ -1014,37 +1051,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
                         [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                       [36m>[39m
                         [36m<path[39m
-                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                        [36m/>[39m
-                      [36m</svg>[39m
-                      [0mEdit Courses[0m
-                    [36m</button>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0mName: [0m
-                    [0mTesting Plan[0m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0mExpected Degree: [0m
-                    [0mComputer Science Bachelor of Arts[0m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0mCurrently Have [0m
-                    [0m3[0m
-                    [0m out of[0m
-                    [0m [0m
-                    [0m124[0m
-                    [0m required Credits[0m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [36m<div>[39m
-                    [36m<label[39m
-                      [33mclass[39m=[32m"form-label"[39m
-                      [33mfor[39m=[32m"semesterYear"[39m
-                    [36m>[39m
-                      [0mYear:[0m
-               ...
+                        ...
 
       127 |         removeSemesterButton[0].click();
       128 |         expect(
@@ -1064,34 +1071,34 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
--------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                         
--------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-All files                            |   33.33 |    40.18 |   35.41 |   33.86 |                                                           
- src                                 |     100 |      100 |     100 |     100 |                                                           
-  App.tsx                            |     100 |      100 |     100 |     100 |                                                           
- src/Components/CourseListComponents |     2.5 |        0 |    2.56 |     2.5 |                                                           
-  AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                    
-  CourseListOffcanvas.tsx            |      50 |      100 |   33.33 |      50 | 19-26                                                     
-  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 21-143                                                    
-  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 22-187                                                    
- src/Components/DegreePlanComponents |   44.72 |    46.75 |    46.6 |   45.85 |                                                           
-  PlanList.tsx                       |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                           
-  ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                                           
-  ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                                  
-  ViewingPlan.tsx                    |   60.81 |       50 |   61.53 |   61.64 | 68-92,109-112,126,169-211,299,389,454,481,517-533,592-599 
-  moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-126                                                    
- src/Interfaces                      |   57.14 |       50 |     100 |   57.14 |                                                           
-  course.ts                          |       0 |        0 |       0 |       0 |                                                           
-  degree.ts                          |       0 |        0 |       0 |       0 |                                                           
-  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                                           
-  semester.ts                        |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                    
- src/Resources                       |     100 |      100 |     100 |     100 |                                                           
-  Courses.ts                         |     100 |      100 |     100 |     100 |                                                           
-  Degrees.ts                         |     100 |      100 |     100 |     100 |                                                           
--------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+-------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
+File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                     
+-------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
+All files                            |   33.46 |    41.28 |   35.41 |      34 |                                                       
+ src                                 |   83.33 |      100 |      50 |   83.33 |                                                       
+  App.tsx                            |   83.33 |      100 |      50 |   83.33 | 66                                                    
+ src/Components/CourseListComponents |     2.5 |        0 |    2.56 |     2.5 |                                                       
+  AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                
+  CourseListOffcanvas.tsx            |      50 |      100 |   33.33 |      50 | 19-26                                                 
+  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 21-143                                                
+  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 28-214                                                
+ src/Components/DegreePlanComponents |   45.28 |    46.75 |   47.05 |   46.45 |                                                       
+  PlanList.tsx                       |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                       
+  ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                                       
+  ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                              
+  ViewingPlan.tsx                    |   61.64 |       50 |   62.74 |    62.5 | 67-91,108-111,125,168-210,317,424,484,511,547-563,622 
+  moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-125                                                
+ src/Interfaces                      |   57.14 |       50 |     100 |   57.14 |                                                       
+  course.ts                          |       0 |        0 |       0 |       0 |                                                       
+  degree.ts                          |       0 |        0 |       0 |       0 |                                                       
+  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                                       
+  semester.ts                        |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                
+ src/Resources                       |     100 |      100 |     100 |     100 |                                                       
+  Courses.ts                         |     100 |      100 |     100 |     100 |                                                       
+  Degrees.ts                         |     100 |      100 |     100 |     100 |                                                       
+-------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       6 failed, 4 passed, 10 total
 Snapshots:   0 total
-Time:        6.283 s
+Time:        6.422 s
 Ran all test suites.
