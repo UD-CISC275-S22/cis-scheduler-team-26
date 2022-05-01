@@ -9,16 +9,15 @@ type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 //Renders a specific course
 export function RenderCourse({
     Course,
-    deleteCourse
+    deleteCourse,
+    editCourse,
+    resetCourse
 }: {
     Course: Course;
     deleteCourse: () => void;
+    editCourse: (newName: string, newID: number, newCreds: number) => void;
+    resetCourse: () => void;
 }): JSX.Element {
-    //Stores the original state of the course for reset button
-    const [originalState] = useState<Course>(Course);
-    //Stores current state of the course for rendering
-    const [currentCourseState, setCurrentCourseState] =
-        useState<Course>(Course);
     //State determining whether to render expanded information
     const [renderExpanded, setRenderExpanded] = useState<boolean>(false);
     //States for editing course
@@ -54,8 +53,7 @@ export function RenderCourse({
                                 marginLeft: "10px"
                             }}
                         >
-                            {currentCourseState.courseName +
-                                currentCourseState.id}
+                            {Course.courseName + Course.id}
                         </h5>
                         <FiMoreVertical
                             style={{
@@ -68,10 +66,10 @@ export function RenderCourse({
                     {/* Body of the rendered course */}
                     {renderExpanded && (
                         <div style={{ marginLeft: "20px" }}>
-                            <div>Credits: {currentCourseState.numCredits}</div>
+                            <div>Credits: {Course.numCredits}</div>
                             <div>
                                 Prerequisite Courses:{" "}
-                                {currentCourseState.preReq.map(
+                                {Course.preReq.map(
                                     (pre: Course): JSX.Element => (
                                         <div
                                             key={Course.courseName + Course.id}
@@ -84,20 +82,7 @@ export function RenderCourse({
                             <Button onClick={() => setEditingCourse(true)}>
                                 Edit
                             </Button>
-                            <Button
-                                onClick={() => {
-                                    setCurrentCourseState(originalState);
-                                    setNewCourseCredits(
-                                        originalState.numCredits
-                                    );
-                                    setNewCourseDepartment(
-                                        originalState.courseName
-                                    );
-                                    setNewCourseID(originalState.id);
-                                }}
-                            >
-                                Reset
-                            </Button>
+                            <Button onClick={() => resetCourse()}>Reset</Button>
                             <Button onClick={deleteCourse}>Delete</Button>
                         </div>
                     )}
@@ -105,7 +90,14 @@ export function RenderCourse({
             ) : (
                 //Block to display editing course
                 <EditingCourseForm
-                    currentCourseState={currentCourseState}
+                    Course={Course}
+                    editCourse={() =>
+                        editCourse(
+                            newCourseDepartment,
+                            newCourseID,
+                            newCourseCredits
+                        )
+                    }
                     setEditingCourse={setEditingCourse}
                     newCourseDepartment={newCourseDepartment}
                     setNewCourseDepartment={setNewCourseDepartment}
@@ -113,7 +105,6 @@ export function RenderCourse({
                     setNewCourseID={setNewCourseID}
                     newCourseCredits={newCourseCredits}
                     setNewCourseCredits={setNewCourseCredits}
-                    setCurrentCourseState={setCurrentCourseState}
                 ></EditingCourseForm>
             )}
         </div>
@@ -121,17 +112,18 @@ export function RenderCourse({
 }
 
 function EditingCourseForm({
-    currentCourseState,
+    Course,
+    editCourse,
     setEditingCourse,
     newCourseDepartment,
     setNewCourseDepartment,
     newCourseID,
     setNewCourseID,
     newCourseCredits,
-    setNewCourseCredits,
-    setCurrentCourseState
+    setNewCourseCredits
 }: {
-    currentCourseState: Course;
+    Course: Course;
+    editCourse: () => void;
     setEditingCourse: (n: boolean) => void;
     newCourseDepartment: string;
     setNewCourseDepartment: (n: string) => void;
@@ -139,7 +131,6 @@ function EditingCourseForm({
     setNewCourseID: (n: number) => void;
     newCourseCredits: number;
     setNewCourseCredits: (n: number) => void;
-    setCurrentCourseState: (n: Course) => void;
 }): JSX.Element {
     return (
         <div>
@@ -181,12 +172,7 @@ function EditingCourseForm({
                 style={{ backgroundColor: "green", borderColor: "green" }}
                 onClick={() => {
                     setEditingCourse(false);
-                    setCurrentCourseState({
-                        ...currentCourseState,
-                        id: newCourseID,
-                        courseName: newCourseDepartment,
-                        numCredits: newCourseCredits
-                    });
+                    editCourse();
                 }}
             >
                 Confirm
@@ -196,9 +182,9 @@ function EditingCourseForm({
                 style={{ backgroundColor: "red", borderColor: "red" }}
                 onClick={() => {
                     setEditingCourse(false);
-                    setNewCourseCredits(currentCourseState.numCredits);
-                    setNewCourseDepartment(currentCourseState.courseName);
-                    setNewCourseID(currentCourseState.id);
+                    setNewCourseCredits(Course.numCredits);
+                    setNewCourseDepartment(Course.courseName);
+                    setNewCourseID(Course.id);
                 }}
             >
                 Cancel
