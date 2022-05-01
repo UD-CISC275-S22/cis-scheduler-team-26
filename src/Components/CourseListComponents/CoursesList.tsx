@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { Course } from "../../Interfaces/course";
-import { Button, Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { RenderCourse } from "./RenderCourse";
 import { AddCourseForm } from "./AddCoursePopup";
 import "./CoursesList.css";
 
 //icon imports
 import { RiAddBoxLine } from "react-icons/ri";
-
-type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
-
 interface coursesListProp {
     setCourses: (newCourses: Course[]) => void;
     courses: Course[];
@@ -24,30 +21,6 @@ export function CoursesList({
     const [newCourseDepartment, setNewCourseDepartment] = useState<string>("");
     const [newCourseID, setNewCourseID] = useState<number>(0);
     const [newCourseCredits, setNewCourseCredits] = useState<number>(0);
-
-    //This function allows each course to edit itself within the master list of courses
-    function editCourseByName(
-        name: string,
-        id: number,
-        newName: string,
-        newID: number,
-        newCreds: number
-    ) {
-        const newCourses: Course[] = [];
-        courses.map((course: Course) => {
-            if (course.courseName === name && course.id === id) {
-                newCourses.push({
-                    ...course,
-                    courseName: newName,
-                    id: newID,
-                    numCredits: newCreds
-                });
-            } else {
-                newCourses.push(course);
-            }
-        });
-        setCourses(newCourses);
-    }
 
     function deleteCourseByName(name: string, id: number) {
         setCourses(
@@ -64,19 +37,6 @@ export function CoursesList({
                 <div key={curr.courseName + curr.id.toString()}>
                     <RenderCourse
                         Course={curr}
-                        editCourse={(
-                            newName: string,
-                            newID: number,
-                            newCreds: number
-                        ) => {
-                            editCourseByName(
-                                curr.courseName,
-                                curr.id,
-                                newName,
-                                newID,
-                                newCreds
-                            );
-                        }}
                         deleteCourse={() =>
                             deleteCourseByName(curr.courseName, curr.id)
                         }

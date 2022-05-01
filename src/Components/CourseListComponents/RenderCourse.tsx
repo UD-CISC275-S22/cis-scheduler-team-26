@@ -9,16 +9,16 @@ type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 //Renders a specific course
 export function RenderCourse({
     Course,
-    editCourse,
     deleteCourse
 }: {
     Course: Course;
-    editCourse: (newName: string, newID: number, newCredits: number) => void;
     deleteCourse: () => void;
 }): JSX.Element {
     //Stores the original state of the course for reset button
     const [originalState] = useState<Course>(Course);
-    const [isCourseEdited, setIsCourseEdited] = useState<boolean>(false);
+    //Stores current state of the course for rendering
+    const [currentCourseState, setCurrentCourseState] =
+        useState<Course>(Course);
     //State determining whether to render expanded information
     const [renderExpanded, setRenderExpanded] = useState<boolean>(false);
     //States for editing course
@@ -34,8 +34,8 @@ export function RenderCourse({
     return (
         <div className="courselist-course">
             {!editingCourse ? (
-                /* Header of the rendered course */
                 <div onClick={() => setRenderExpanded(!renderExpanded)}>
+                    {/* Header of the rendered course */}
                     <div style={{ display: "flex", flexDirection: "row" }}>
                         <h5
                             style={{
@@ -44,7 +44,8 @@ export function RenderCourse({
                                 marginLeft: "10px"
                             }}
                         >
-                            {Course.courseName + Course.id}
+                            {currentCourseState.courseName +
+                                currentCourseState.id}
                         </h5>
                         <FiMoreVertical
                             style={{
@@ -57,10 +58,10 @@ export function RenderCourse({
                     {/* Body of the rendered course */}
                     {renderExpanded && (
                         <div style={{ marginLeft: "20px" }}>
-                            <div>Credits: {Course.numCredits}</div>
+                            <div>Credits: {currentCourseState.numCredits}</div>
                             <div>
                                 Prerequisite Courses:{" "}
-                                {Course.preReq.map(
+                                {currentCourseState.preReq.map(
                                     (pre: Course): JSX.Element => (
                                         <div
                                             key={Course.courseName + Course.id}
@@ -73,19 +74,20 @@ export function RenderCourse({
                             <Button onClick={() => setEditingCourse(true)}>
                                 Edit
                             </Button>
-                            {isCourseEdited && (
-                                <Button
-                                    onClick={() =>
-                                        editCourse(
-                                            originalState.courseName,
-                                            originalState.id,
-                                            originalState.numCredits
-                                        )
-                                    }
-                                >
-                                    Reset
-                                </Button>
-                            )}
+                            <Button
+                                onClick={() => {
+                                    setCurrentCourseState(originalState);
+                                    setNewCourseCredits(
+                                        originalState.numCredits
+                                    );
+                                    setNewCourseDepartment(
+                                        originalState.courseName
+                                    );
+                                    setNewCourseID(originalState.id);
+                                }}
+                            >
+                                Reset
+                            </Button>
                             <Button onClick={deleteCourse}>Delete</Button>
                         </div>
                     )}
@@ -93,16 +95,15 @@ export function RenderCourse({
             ) : (
                 //Block to display editing course
                 <EditingCourseForm
-                    course={Course}
+                    currentCourseState={currentCourseState}
                     setEditingCourse={setEditingCourse}
-                    setIsCourseEdited={setIsCourseEdited}
                     newCourseDepartment={newCourseDepartment}
                     setNewCourseDepartment={setNewCourseDepartment}
                     newCourseID={newCourseID}
                     setNewCourseID={setNewCourseID}
                     newCourseCredits={newCourseCredits}
                     setNewCourseCredits={setNewCourseCredits}
-                    editCourse={editCourse}
+                    setCurrentCourseState={setCurrentCourseState}
                 ></EditingCourseForm>
             )}
         </div>
@@ -110,35 +111,28 @@ export function RenderCourse({
 }
 
 function EditingCourseForm({
-    course,
+    currentCourseState,
     setEditingCourse,
-    setIsCourseEdited,
     newCourseDepartment,
     setNewCourseDepartment,
     newCourseID,
     setNewCourseID,
     newCourseCredits,
     setNewCourseCredits,
-    editCourse
+    setCurrentCourseState
 }: {
-    course: Course;
+    currentCourseState: Course;
     setEditingCourse: (n: boolean) => void;
-    setIsCourseEdited: (n: boolean) => void;
     newCourseDepartment: string;
     setNewCourseDepartment: (n: string) => void;
     newCourseID: number;
     setNewCourseID: (n: number) => void;
     newCourseCredits: number;
     setNewCourseCredits: (n: number) => void;
-    editCourse: (
-        newCourseDepartment: string,
-        newCourseID: number,
-        newCourseCredits: number
-    ) => void;
+    setCurrentCourseState: (n: Course) => void;
 }): JSX.Element {
     return (
         <div>
-            <div>Editing Course</div>
             <Form.Group controlId="Change Course Dep">
                 <div style={{ display: "flex", flexDirection: "row" }}>
                     {/* Form for new course department */}
@@ -177,12 +171,12 @@ function EditingCourseForm({
                 style={{ backgroundColor: "green", borderColor: "green" }}
                 onClick={() => {
                     setEditingCourse(false);
-                    setIsCourseEdited(true);
-                    editCourse(
-                        newCourseDepartment,
-                        newCourseID,
-                        newCourseCredits
-                    );
+                    setCurrentCourseState({
+                        ...currentCourseState,
+                        id: newCourseID,
+                        courseName: newCourseDepartment,
+                        numCredits: newCourseCredits
+                    });
                 }}
             >
                 Confirm
@@ -192,9 +186,9 @@ function EditingCourseForm({
                 style={{ backgroundColor: "red", borderColor: "red" }}
                 onClick={() => {
                     setEditingCourse(false);
-                    setNewCourseCredits(course.numCredits);
-                    setNewCourseDepartment(course.courseName);
-                    setNewCourseID(course.id);
+                    setNewCourseCredits(currentCourseState.numCredits);
+                    setNewCourseDepartment(currentCourseState.courseName);
+                    setNewCourseID(currentCourseState.id);
                 }}
             >
                 Cancel
