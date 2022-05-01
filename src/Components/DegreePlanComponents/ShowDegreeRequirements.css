@@ -2,11 +2,12 @@
     outline-width: 2px;
     outline-color: rgb(146, 146, 146);
     outline-style: solid;
-    margin-top: 72px;
+    margin-top: 120px;
     margin-inline: 30px;
     height: 100%;
     width: 30%;
     border-radius: 10px;
+    background-color: white;
 }
 
 .degree-requirements-body {

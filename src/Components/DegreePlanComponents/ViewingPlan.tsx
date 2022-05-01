@@ -13,7 +13,6 @@ import { AiOutlineClear } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { RiAddBoxLine } from "react-icons/ri";
 import { CgMoveRight } from "react-icons/cg";
-import { BsArrowReturnLeft } from "react-icons/bs";
 
 interface planListProp {
     plan: DegreePlan;
@@ -215,7 +214,18 @@ function printSemesters(
             {plan.semesterList.map(
                 (semester: Semester): JSX.Element => (
                     <div key={semester.season + semester.year}>
-                        <Table striped bordered hover>
+                        <Table
+                            striped
+                            bordered
+                            hover
+                            style={{
+                                marginLeft: "auto",
+                                marginRight: "auto",
+                                width: "95%",
+                                backgroundColor: "white",
+                                backgroundBlendMode: "lighten"
+                            }}
+                        >
                             <thead>
                                 {edit ? (
                                     <tr>
@@ -245,7 +255,10 @@ function printSemesters(
                                     </tr>
                                 ) : (
                                     <tr>
-                                        <th colSpan={3}>
+                                        <th
+                                            colSpan={3}
+                                            style={{ fontSize: "30px" }}
+                                        >
                                             {semester.season +
                                                 " " +
                                                 semester.year}
@@ -255,8 +268,8 @@ function printSemesters(
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>Course Department</td>
                                     <td>Course ID</td>
-                                    <td>Course Name</td>
                                     <td>Number of Credits</td>
                                 </tr>
                             </tbody>
@@ -264,9 +277,14 @@ function printSemesters(
                                 <tbody>
                                     {semester.courseList.map(
                                         (course: Course): JSX.Element => (
-                                            <tr key={course.courseName}>
-                                                <td>{course.id}</td>
+                                            <tr
+                                                key={
+                                                    course.courseName +
+                                                    course.id.toString()
+                                                }
+                                            >
                                                 <td>{course.courseName}</td>
+                                                <td>{course.id}</td>
                                                 <td>{course.numCredits}</td>
                                                 <td>
                                                     <Button
@@ -301,7 +319,19 @@ function printSemesters(
                                                             )
                                                         }
                                                     >
-                                                        <CgMoveRight></CgMoveRight>
+                                                        {/* I know the negative margins here is ridiculous,
+                                                        its actually needed for the button to stay the same size while 
+                                                        the size of the icon is increased */}
+                                                        <CgMoveRight
+                                                            style={{
+                                                                fontSize:
+                                                                    "160%",
+                                                                marginTop:
+                                                                    "-10px",
+                                                                marginBottom:
+                                                                    "-5px"
+                                                            }}
+                                                        ></CgMoveRight>
                                                         Move Course
                                                     </Button>
                                                 </td>
@@ -313,9 +343,14 @@ function printSemesters(
                                 <tbody>
                                     {semester.courseList.map(
                                         (course: Course): JSX.Element => (
-                                            <tr key={course.courseName}>
-                                                <td>{course.id}</td>
+                                            <tr
+                                                key={
+                                                    course.courseName +
+                                                    course.id.toString()
+                                                }
+                                            >
                                                 <td>{course.courseName}</td>
+                                                <td>{course.id}</td>
                                                 <td>{course.numCredits}</td>
                                             </tr>
                                         )
@@ -407,6 +442,7 @@ function printSemesters(
                             )}
                         </Table>
                         <Button
+                            style={{ marginBottom: "30px" }}
                             onClick={() =>
                                 setEditingSem(
                                     semester === editingSem
@@ -421,12 +457,6 @@ function printSemesters(
                     </div>
                 )
             )}
-            <div>Name: {plan.planName}</div>
-            <div>Expected Degree: {plan.degree.title}</div>
-            <div>
-                Currently Have {plan.totalCredits} out of{" "}
-                {plan.degree.requiredCredits} required Credits
-            </div>
             {move &&
                 movePopup(
                     move,
@@ -537,7 +567,6 @@ export function ViewingPlan({
     plan,
     planList,
     setPlans,
-    setViewPlan,
     courses
 }: planListProp): JSX.Element {
     const [edit, setEdit] = useState<boolean>(false);
@@ -554,9 +583,10 @@ export function ViewingPlan({
         preReq: []
     });
     return (
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", marginBottom: "200px" }}>
             <div style={{ width: "160%" }}>
-                <h2>{plan.planName}:</h2>
+                <h1>{plan.planName}</h1>
+                <h3>{plan.degree.title}</h3>
                 <br></br>
                 {printSemesters(
                     plan,
@@ -595,12 +625,6 @@ export function ViewingPlan({
                     <AiOutlineClear></AiOutlineClear>
                     Clear All Semesters
                 </Button>
-                <div>
-                    <Button onClick={() => setViewPlan(-1)}>
-                        <BsArrowReturnLeft></BsArrowReturnLeft> Return to Plan
-                        List
-                    </Button>
-                </div>
             </div>
             {/*Components to show all the requirements for this plan's degree and which have been fulfilled */}
             <DegreeRequirements

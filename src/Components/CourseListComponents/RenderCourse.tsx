@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { Course } from "../../Interfaces/course";
-import { FiMoreVertical } from "react-icons/fi";
 import "./RenderCourse.css";
 import { Button, Form } from "react-bootstrap";
+
+//icon imports
+import { BsTrash } from "react-icons/bs";
+import { TiEdit } from "react-icons/ti";
+import { FiMoreVertical } from "react-icons/fi";
+import { AiOutlineRollback, AiOutlineCheck } from "react-icons/ai";
+import { ImCancelCircle } from "react-icons/im";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
@@ -80,10 +86,31 @@ export function RenderCourse({
                                 )}
                             </div>
                             <Button onClick={() => setEditingCourse(true)}>
+                                <TiEdit
+                                    style={{ marginBottom: "4px" }}
+                                ></TiEdit>{" "}
                                 Edit
                             </Button>
-                            <Button onClick={() => resetCourse()}>Reset</Button>
-                            <Button onClick={deleteCourse}>Delete</Button>
+                            <Button onClick={() => resetCourse()}>
+                                <AiOutlineRollback
+                                    style={{
+                                        marginBottom: "5px"
+                                    }}
+                                ></AiOutlineRollback>{" "}
+                                Reset
+                            </Button>
+                            <Button
+                                onClick={deleteCourse}
+                                style={{
+                                    backgroundColor: "red",
+                                    borderColor: "red"
+                                }}
+                            >
+                                <BsTrash
+                                    style={{ marginBottom: "3px" }}
+                                ></BsTrash>{" "}
+                                Delete
+                            </Button>
                         </div>
                     )}
                 </div>
@@ -175,7 +202,7 @@ function EditingCourseForm({
                     editCourse();
                 }}
             >
-                Confirm
+                <AiOutlineCheck></AiOutlineCheck> Confirm
             </Button>
             {/*Cancel Button */}
             <Button
@@ -187,7 +214,7 @@ function EditingCourseForm({
                     setNewCourseID(Course.id);
                 }}
             >
-                Cancel
+                <ImCancelCircle></ImCancelCircle> Cancel
             </Button>
         </div>
     );
