@@ -319,13 +319,17 @@ function printSemesters(
                                                             )
                                                         }
                                                     >
+                                                        {/* I know the negative margins here is ridiculous,
+                                                        its actually needed for the button to stay the same size while 
+                                                        the size of the icon is increased */}
                                                         <CgMoveRight
                                                             style={{
                                                                 fontSize:
                                                                     "160%",
-                                                                marginTop: "0%",
+                                                                marginTop:
+                                                                    "-10px",
                                                                 marginBottom:
-                                                                    "0%"
+                                                                    "-5px"
                                                             }}
                                                         ></CgMoveRight>
                                                         Move Course
