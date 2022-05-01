@@ -7,6 +7,8 @@ import { courseList } from "./Resources/Courses";
 import { CoursesListOffcanvas } from "./Components/CourseListComponents/CourseListOffcanvas";
 import { Course } from "./Interfaces/course";
 import { DegreeList } from "./Resources/Degrees";
+import { Button } from "react-bootstrap";
+import { BsArrowReturnLeft } from "react-icons/bs";
 
 const INITIAL_PLANS: DegreePlan[] = [
     {
@@ -58,10 +60,21 @@ function App(): JSX.Element {
                 </div>
             )}
             <div className="main-page-items">
-                <CoursesListOffcanvas
-                    setCourses={setCourses}
-                    courses={courses}
-                ></CoursesListOffcanvas>
+                <div className="header-buttons">
+                    {viewPlan !== -1 && (
+                        <Button
+                            onClick={() => setViewPlan(-1)}
+                            className="return-to-plan-list-button"
+                        >
+                            <BsArrowReturnLeft></BsArrowReturnLeft> Return to
+                            Plan List
+                        </Button>
+                    )}
+                    <CoursesListOffcanvas
+                        setCourses={setCourses}
+                        courses={courses}
+                    ></CoursesListOffcanvas>
+                </div>
 
                 {/*Display specific plan if planList isn't open */}
                 {viewPlan === -1 ? (
