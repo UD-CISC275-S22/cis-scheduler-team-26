@@ -19,25 +19,67 @@ export function CoursesList({
     setCourses,
     courses
 }: coursesListProp): JSX.Element {
-    //buttons
-    const [editCourse, setEditCourse] = useState<boolean>(false);
-    const [oldCourses, setOldCourses] = useState<Course[]>(courses);
-    //course info
-    const [courseDep, setCourseDep] = useState<string>("");
-    const [courseID, setCourseID] = useState<number>(0);
-    const [courseCred, setCourseCred] = useState<number>(0);
-    const [courseIndex, setCourseIndex] = useState<number>(0);
     //Creating new course info
     const [addingCourse, setAddingCourse] = useState<boolean>(false);
     const [newCourseDepartment, setNewCourseDepartment] = useState<string>("");
     const [newCourseID, setNewCourseID] = useState<number>(0);
     const [newCourseCredits, setNewCourseCredits] = useState<number>(0);
 
+    //This function allows each course to edit itself within the master list of courses
+    function editCourseByName(
+        name: string,
+        id: number,
+        newName: string,
+        newID: number,
+        newCreds: number
+    ) {
+        const newCourses: Course[] = [];
+        courses.map((course: Course) => {
+            if (course.courseName === name && course.id === id) {
+                newCourses.push({
+                    ...course,
+                    courseName: newName,
+                    id: newID,
+                    numCredits: newCreds
+                });
+            } else {
+                newCourses.push(course);
+            }
+        });
+    }
+
+    function deleteCourseByName(name: string, id: number) {
+        setCourses(
+            courses.filter(
+                (course: Course) =>
+                    course.courseName !== name && course.id !== id
+            )
+        );
+    }
+
     return (
         <div>
             {courses.map((curr: Course) => (
                 <div key={curr.courseName + curr.id.toString()}>
-                    <RenderCourse Course={curr}></RenderCourse>
+                    <RenderCourse
+                        Course={curr}
+                        editCourse={(
+                            newName: string,
+                            newID: number,
+                            newCreds: number
+                        ) => {
+                            editCourseByName(
+                                curr.courseName,
+                                curr.id,
+                                newName,
+                                newID,
+                                newCreds
+                            );
+                        }}
+                        deleteCourse={() =>
+                            deleteCourseByName(curr.courseName, curr.id)
+                        }
+                    ></RenderCourse>
                 </div>
             ))}
             <Button onClick={() => setAddingCourse(true)}>
