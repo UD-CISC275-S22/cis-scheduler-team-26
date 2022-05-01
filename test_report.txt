@@ -2,18 +2,18 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.155 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.654 s)
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (252 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (99 ms)
-    ✕ Courses can be removed (387 ms)
-    ✓ Courses can be added (477 ms)
-    ✕ Semesters can be removed (223 ms)
-    ✓ Semesters can be added (236 ms)
-    ✕ The initial credits in the testing plan are displayed (70 ms)
-    ✕ When adding a course, the total credits in updated (417 ms)
-    ✕ When removing a course, the score is updated (329 ms)
-    ✕ Semesters can be removed (206 ms)
+    ✓ The initial two test semesters are displated (227 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (112 ms)
+    ✕ Courses can be removed (432 ms)
+    ✓ Courses can be added (485 ms)
+    ✕ Semesters can be removed (248 ms)
+    ✓ Semesters can be added (269 ms)
+    ✕ The initial credits in the testing plan are displayed (86 ms)
+    ✕ When adding a course, the total credits in updated (464 ms)
+    ✕ When removing a course, the score is updated (372 ms)
+    ✕ Semesters can be removed (228 ms)
 
   ● ViewingPlan Tests › Courses can be removed
 
@@ -65,236 +65,114 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.155 s)
                 [0m View All Courses[0m
               [36m</button>[39m
             [36m</div>[39m
-            [36m<div>[39m
-              [36m<h3>[39m
-                [0mCurrently Displaying [0m
-                [0mTesting Plan[0m
-                [0m:[0m
-              [36m</h3>[39m
-              [36m<div>[39m
-                [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                        [36m>[39m
-                          [0mWinter 2022[0m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0mCourse ID[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCourse Name[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mNumber of Credits[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m108[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCISC[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m241[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mMATH[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                  [36m</table>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [36m<svg[39m
-                      [33mbaseProfile[39m=[32m"tiny"[39m
-                      [33mfill[39m=[32m"currentColor"[39m
-                      [33mheight[39m=[32m"1em"[39m
-                      [33mstroke[39m=[32m"currentColor"[39m
-                      [33mstroke-width[39m=[32m"0"[39m
-                      [33mversion[39m=[32m"1.2"[39m
-                      [33mviewBox[39m=[32m"0 0 24 24"[39m
-                      [33mwidth[39m=[32m"1em"[39m
-                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                    [36m>[39m
-                      [36m<path[39m
-                        [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                      [36m/>[39m
-                    [36m</svg>[39m
-                    [0mEdit Courses[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                        [36m>[39m
-                          [0mSpring 2022[0m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0mCourse ID[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCourse Name[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mNumber of Credits[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m110[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mENGL[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                  [36m</table>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [36m<svg[39m
-                      [33mbaseProfile[39m=[32m"tiny"[39m
-                      [33mfill[39m=[32m"currentColor"[39m
-                      [33mheight[39m=[32m"1em"[39m
-                      [33mstroke[39m=[32m"currentColor"[39m
-                      [33mstroke-width[39m=[32m"0"[39m
-                      [33mversion[39m=[32m"1.2"[39m
-                      [33mviewBox[39m=[32m"0 0 24 24"[39m
-                      [33mwidth[39m=[32m"1em"[39m
-                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                    [36m>[39m
-                      [36m<path[39m
-                        [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                      [36m/>[39m
-                    [36m</svg>[39m
-                    [0mEdit Courses[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mName: [0m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: flex;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"width: 160%;"[39m
+              [36m>[39m
+                [36m<h2>[39m
                   [0mTesting Plan[0m
-                [36m</div>[39m
+                  [0m:[0m
+                [36m</h2>[39m
+                [36m<br />[39m
                 [36m<div>[39m
-                  [0mExpected Degree: [0m
-                  [0mComputer Science Bachelor of Arts[0m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mCurrently Have [0m
-                  [0m9[0m
-                  [0m out of[0m
-                  [0m [0m
-                  [0m124[0m
-                  [0m required Credits[0m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mbaseProfile[39m=[32m"tiny"[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mversion[39m=[32m"1.2"[39m
-                  [33mviewBox[39m=[32m"0 0 24 24"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mEdit Semesters[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mt[39m=[32m"1569683368540"[39m
-                  [33mversion[39m=[32m"1.1"[39m
-                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<defs />[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6c-0.3 1.5-0.4 3-0.4 4.4 0 14.4 11.6 26 26 26h723c1.5 0 3-0.1 4.4-0.4 14.2-2.4 23.7-15.9 21.2-30zM204 390h272V182h72v208h272v104H204V390z m468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mClear All Semesters[0m
-              [36m</button>[39m
-              [36m<div>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [36m<svg[39m
-                    [33mfill[39m=[32m"currentColor"[39m
-                    [33mheight[39m=[32m"1em"[39m
-                    [33mstroke[39m=[32m"currentColor"[39m
-                    [33mstroke-width[39m=[32m"0"[39m
-                    [33mviewBox[39m=[32m"0 0 16 16"[39m
-                    [33mwidth[39m=[32m"1em"[39m
-                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                  [36m>[39m
-                    [36m<path[39m
-                      [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
-                      [33mfill-rule[39m=[32m"evenodd"[39m
-                    [36m/>[39m
-                  [36m</svg>[39m
-                  [0m Return to Plan List[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"3"[39m
+                          [36m>[39m
+                            [0mWinter 2022[0m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCourse ID[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCourse Name[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mNumber of Credits[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m108[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCISC[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m241[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mMATH[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                    [36m</table>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33mbaseProfile[39m=[32m"tiny"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                        [33mheight[39m=[32m"1em"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-width[39m=[32m"0"[39m
+                        [33mversion[39m=[32m"1.2"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"1em"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                      [0mEdit Courses[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"3"[39m
+                          [36m>[39m
+                            [0mSpring 2022[0m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCourse ID[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCourse Name[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                         ...
 
       36 |         });
       37 |         removeCourseButton[0].click();
@@ -364,227 +242,114 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.155 s)
                 [0m View All Courses[0m
               [36m</button>[39m
             [36m</div>[39m
-            [36m<div>[39m
-              [36m<h3>[39m
-                [0mCurrently Displaying [0m
-                [0mTesting Plan[0m
-                [0m:[0m
-              [36m</h3>[39m
-              [36m<div>[39m
-                [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"2"[39m
-                        [36m>[39m
-                          [0mSpring 2022[0m
-                        [36m</th>[39m
-                        [36m<th>[39m
-                          [36m<button[39m
-                            [33mclass[39m=[32m"btn btn-primary"[39m
-                            [33mstyle[39m=[32m"background-color: red;"[39m
-                            [33mtype[39m=[32m"button"[39m
-                          [36m>[39m
-                            [0mDelete Semester[0m
-                          [36m</button>[39m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0mCourse ID[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCourse Name[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mNumber of Credits[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m110[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mENGL[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                  [36m</table>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [36m<svg[39m
-                      [33mbaseProfile[39m=[32m"tiny"[39m
-                      [33mfill[39m=[32m"currentColor"[39m
-                      [33mheight[39m=[32m"1em"[39m
-                      [33mstroke[39m=[32m"currentColor"[39m
-                      [33mstroke-width[39m=[32m"0"[39m
-                      [33mversion[39m=[32m"1.2"[39m
-                      [33mviewBox[39m=[32m"0 0 24 24"[39m
-                      [33mwidth[39m=[32m"1em"[39m
-                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                    [36m>[39m
-                      [36m<path[39m
-                        [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                      [36m/>[39m
-                    [36m</svg>[39m
-                    [0mEdit Courses[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mName: [0m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: flex;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"width: 160%;"[39m
+              [36m>[39m
+                [36m<h2>[39m
                   [0mTesting Plan[0m
+                  [0m:[0m
+                [36m</h2>[39m
+                [36m<br />[39m
+                [36m<div>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"2"[39m
+                          [36m>[39m
+                            [0mSpring 2022[0m
+                          [36m</th>[39m
+                          [36m<th>[39m
+                            [36m<button[39m
+                              [33mclass[39m=[32m"btn btn-primary"[39m
+                              [33mstyle[39m=[32m"background-color: red;"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [0mDelete Semester[0m
+                            [36m</button>[39m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCourse ID[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCourse Name[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mNumber of Credits[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m110[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mENGL[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                    [36m</table>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33mbaseProfile[39m=[32m"tiny"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                        [33mheight[39m=[32m"1em"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-width[39m=[32m"0"[39m
+                        [33mversion[39m=[32m"1.2"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"1em"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                      [0mEdit Courses[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [0mName: [0m
+                    [0mTesting Plan[0m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [0mExpected Degree: [0m
+                    [0mComputer Science Bachelor of Arts[0m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [0mCurrently Have [0m
+                    [0m3[0m
+                    [0m out of[0m
+                    [0m [0m
+                    [0m124[0m
+                    [0m required Credits[0m
+                  [36m</div>[39m
                 [36m</div>[39m
                 [36m<div>[39m
-                  [0mExpected Degree: [0m
-                  [0mComputer Science Bachelor of Arts[0m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mCurrently Have [0m
-                  [0m3[0m
-                  [0m out of[0m
-                  [0m [0m
-                  [0m124[0m
-                  [0m required Credits[0m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [36m<div>[39m
-                  [36m<label[39m
-                    [33mclass[39m=[32m"form-label"[39m
-                    [33mfor[39m=[32m"semesterYear"[39m
-                  [36m>[39m
-                    [0mYear:[0m
-                  [36m</label>[39m
-                  [36m<input[39m
-                    [33mclass[39m=[32m"form-control"[39m
-                    [33mid[39m=[32m"semesterYear"[39m
-                    [33mtype[39m=[32m"number"[39m
-                    [33mvalue[39m=[32m"2022"[39m
-                  [36m/>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [36m<label[39m
-                    [33mclass[39m=[32m"form-label"[39m
-                    [33mfor[39m=[32m"semesterSeason"[39m
-                  [36m>[39m
-                    [0mSeason:[0m
-                  [36m</label>[39m
-                  [36m<select[39m
-                    [33mclass[39m=[32m"form-select"[39m
-                    [33mid[39m=[32m"semesterSeason"[39m
-                  [36m>[39m
-                    [36m<option[39m
-                      [33mvalue[39m=[32m"Winter"[39m
+                  [36m<div>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-label"[39m
+                      [33mfor[39m=[32m"semesterYear"[39m
                     [36m>[39m
-                      [0mWinter[0m
-                    [36m</option>[39m
-                    [36m<option[39m
-                      [33mvalue[39m=[32m"Spring"[39m
-                    [36m>[39m
-                      [0mSpring[0m
-                    [36m</option>[39m
-                    [36m<option[39m
-                      [33mvalue[39m=[32m"Summer"[39m
-                    [36m>[39m
-                      [0mSummer[0m
-                    [36m</option>[39m
-                    [36m<option[39m
-                      [33mvalue[39m=[32m"Fall"[39m
-                    [36m>[39m
-                      [0mFall[0m
-                    [36m</option>[39m
-                  [36m</select>[39m
-                [36m</div>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mAdd Semester[0m
-                [36m</button>[39m
-              [36m</div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mbaseProfile[39m=[32m"tiny"[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mversion[39m=[32m"1.2"[39m
-                  [33mviewBox[39m=[32m"0 0 24 24"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mEdit Semesters[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mt[39m=[32m"1569683368540"[39m
-                  [33mversion[39m=[32m"1.1"[39m
-                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<defs />[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6c-0.3 1.5-0.4 3-0.4 4.4 0 14.4 11.6 26 26 26h723c1.5 0 3-0.1 4.4-0.4 14.2-2.4 23.7-15.9 21.2-30zM204 390h272V182h72v208h272v104H204V390z m468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mClear All Semesters[0m
-              [36m</button>[39m
-              [36m<div>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [36m<svg[39m
-                    [33mfill[39m=[32m"currentColor"[39m
-                    [33mheight[39m=[32m"1em"[39m
-                    [33mstroke[39m=[32m"currentColor"[39m
-                    [33mstroke-width[39m=[32m"0"[39m
-                    [33mviewBox[39m=[32m"0 0 16 16"[39m
-                    [33mwidth[39m=[32m"1em"[39m
-                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                  [36m>[39m
-                    [36m<path[39m
-                      [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
-                      [33mfill-rule[39m=[32m"evenodd"[39m
-                    [36m/>[39m
-                  [36m</svg>[39m
-                  [0m Return to Plan List[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+                      [0mYear:[0m
+               ...
 
       63 |         });
       64 |         removeSemesterButton[0].click();
@@ -654,247 +419,114 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.155 s)
                 [0m View All Courses[0m
               [36m</button>[39m
             [36m</div>[39m
-            [36m<div>[39m
-              [36m<h3>[39m
-                [0mCurrently Displaying [0m
-                [0mTesting Plan[0m
-                [0m:[0m
-              [36m</h3>[39m
-              [36m<div>[39m
-                [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                        [36m>[39m
-                          [0mWinter 2022[0m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0mCourse ID[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCourse Name[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mNumber of Credits[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m101[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mEGGG[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m108[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCISC[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m241[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mMATH[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                  [36m</table>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [36m<svg[39m
-                      [33mbaseProfile[39m=[32m"tiny"[39m
-                      [33mfill[39m=[32m"currentColor"[39m
-                      [33mheight[39m=[32m"1em"[39m
-                      [33mstroke[39m=[32m"currentColor"[39m
-                      [33mstroke-width[39m=[32m"0"[39m
-                      [33mversion[39m=[32m"1.2"[39m
-                      [33mviewBox[39m=[32m"0 0 24 24"[39m
-                      [33mwidth[39m=[32m"1em"[39m
-                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                    [36m>[39m
-                      [36m<path[39m
-                        [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                      [36m/>[39m
-                    [36m</svg>[39m
-                    [0mEdit Courses[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                        [36m>[39m
-                          [0mSpring 2022[0m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0mCourse ID[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCourse Name[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mNumber of Credits[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m110[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mENGL[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                  [36m</table>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [36m<svg[39m
-                      [33mbaseProfile[39m=[32m"tiny"[39m
-                      [33mfill[39m=[32m"currentColor"[39m
-                      [33mheight[39m=[32m"1em"[39m
-                      [33mstroke[39m=[32m"currentColor"[39m
-                      [33mstroke-width[39m=[32m"0"[39m
-                      [33mversion[39m=[32m"1.2"[39m
-                      [33mviewBox[39m=[32m"0 0 24 24"[39m
-                      [33mwidth[39m=[32m"1em"[39m
-                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                    [36m>[39m
-                      [36m<path[39m
-                        [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                      [36m/>[39m
-                    [36m</svg>[39m
-                    [0mEdit Courses[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mName: [0m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: flex;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"width: 160%;"[39m
+              [36m>[39m
+                [36m<h2>[39m
                   [0mTesting Plan[0m
-                [36m</div>[39m
+                  [0m:[0m
+                [36m</h2>[39m
+                [36m<br />[39m
                 [36m<div>[39m
-                  [0mExpected Degree: [0m
-                  [0mComputer Science Bachelor of Arts[0m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mCurrently Have [0m
-                  [0m12[0m
-                  [0m out of[0m
-                  [0m [0m
-                  [0m124[0m
-                  [0m required Credits[0m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mbaseProfile[39m=[32m"tiny"[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mversion[39m=[32m"1.2"[39m
-                  [33mviewBox[39m=[32m"0 0 24 24"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mEdit Semesters[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mt[39m=[32m"1569683368540"[39m
-                  [33mversion[39m=[32m"1.1"[39m
-                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<defs />[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6c-0.3 1.5-0.4 3-0.4 4.4 0 14.4 11.6 26 26 26h723c1.5 0 3-0.1 4.4-0.4 14.2-2.4 23.7-15.9 21.2-30zM204 390h272V182h72v208h272v104H204V390z m468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mClear All Semesters[0m
-              [36m</button>[39m
-              [36m<div>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [36m<svg[39m
-                    [33mfill[39m=[32m"currentColor"[39m
-                    [33mheight[39m=[32m"1em"[39m
-                    [33mstroke[39m=[32m"currentColor"[39m
-                    [33mstroke-width[39m=[32m"0"[39m
-                    [33mviewBox[39m=[32m"0 0 16 16"[39m
-                    [33mwidth[39m=[32m"1em"[39m
-                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                  [36m>[39m
-                    [36m<path[39m
-                      [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
-                      [33mfill-rule[39m=[32m"evenodd"[39m
-                    [36m/>[39m
-                  [36m</svg>[39m
-                  [0m Return to Plan List[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"3"[39m
+                          [36m>[39m
+                            [0mWinter 2022[0m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCourse ID[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCourse Name[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mNumber of Credits[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m101[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mEGGG[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m108[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCISC[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m241[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mMATH[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                    [36m</table>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33mbaseProfile[39m=[32m"tiny"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                        [33mheight[39m=[32m"1em"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-width[39m=[32m"0"[39m
+                        [33mversion[39m=[32m"1.2"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"1em"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                      [0mEdit Courses[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"3"[39m
+                          [36m>[39m
+                            [0mSpring 2022[0m
+                          [36m</th>[39m
+                        [36m</tr>[39m...
 
       84 |     test("The initial credits in the testing plan are displayed", () => {
       85 |         expect(
@@ -964,101 +596,101 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.155 s)
                 [0m View All Courses[0m
               [36m</button>[39m
             [36m</div>[39m
-            [36m<div>[39m
-              [36m<h3>[39m
-                [0mCurrently Displaying [0m
-                [0mTesting Plan[0m
-                [0m:[0m
-              [36m</h3>[39m
-              [36m<div>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: flex;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"width: 160%;"[39m
+              [36m>[39m
+                [36m<h2>[39m
+                  [0mTesting Plan[0m
+                  [0m:[0m
+                [36m</h2>[39m
+                [36m<br />[39m
                 [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                        [36m>[39m
-                          [0mWinter 2022[0m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0mCourse ID[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCourse Name[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mNumber of Credits[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m101[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mEGGG[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [36m<button[39m
-                            [33mclass[39m=[32m"btn btn-primary"[39m
-                            [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
-                            [33mtype[39m=[32m"button"[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"3"[39m
                           [36m>[39m
-                            [36m<svg[39m
-                              [33mfill[39m=[32m"currentColor"[39m
-                              [33mheight[39m=[32m"1em"[39m
-                              [33mstroke[39m=[32m"currentColor"[39m
-                              [33mstroke-width[39m=[32m"0"[39m
-                              [33mviewBox[39m=[32m"0 0 16 16"[39m
-                              [33mwidth[39m=[32m"1em"[39m
-                              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                            [0mWinter 2022[0m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCourse ID[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCourse Name[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mNumber of Credits[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m101[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mEGGG[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [36m<button[39m
+                              [33mclass[39m=[32m"btn btn-primary"[39m
+                              [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
+                              [33mtype[39m=[32m"button"[39m
                             [36m>[39m
-                              [36m<path[39m
-                                [33md[39m=[32m"M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"[39m
-                              [36m/>[39m
-                              [36m<path[39m
-                                [33md[39m=[32m"M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"[39m
-                                [33mfill-rule[39m=[32m"evenodd"[39m
-                              [36m/>[39m
-                            [36m</svg>[39m
-                            [0mRemove Course[0m
-                          [36m</button>[39m
-                          [36m<button[39m
-                            [33mclass[39m=[32m"btn btn-primary"[39m
-                            [33mstyle[39m=[32m"background-color: darkturquoise; border-color: darkturquoise;"[39m
-                            [33mtype[39m=[32m"button"[39m
-                          [36m>[39m
-                            [36m<svg[39m
-                              [33mfill[39m=[32m"none"[39m
-                              [33mheight[39m=[32m"1em"[39m
-                              [33mstroke[39m=[32m"currentColor"[39m
-                              [33mstroke-width[39m=[32m"0"[39m
-                              [33mviewBox[39m=[32m"0 0 24 24"[39m
-                              [33mwidth[39m=[32m"1em"[39m
-                              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                              [36m<svg[39m
+                                [33mfill[39m=[32m"currentColor"[39m
+                                [33mheight[39m=[32m"1em"[39m
+                                [33mstroke[39m=[32m"currentColor"[39m
+                                [33mstroke-width[39m=[32m"0"[39m
+                                [33mviewBox[39m=[32m"0 0 16 16"[39m
+                                [33mwidth[39m=[32m"1em"[39m
+                                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                              [36m>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"[39m
+                                [36m/>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"[39m
+                                  [33mfill-rule[39m=[32m"evenodd"[39m
+                                [36m/>[39m
+                              [36m</svg>[39m
+                              [0mRemove Course[0m
+                            [36m</button>[39m
+                            [36m<button[39m
+                              [33mclass[39m=[32m"btn btn-primary"[39m
+                              [33mstyle[39m=[32m"background-color: darkturquoise; border-color: darkturquoise;"[39m
+                              [33mtype[39m=[32m"button"[39m
                             [36m>[39m
-                              [36m<path[39m
-                                [33md[39m=[32m"M5 17V15H13V17H5Z"[39m
-                                [33mfill[39m=[32m"currentColor"[39m
-                              [36m/>[39m
-                              [36m<path[39m
-                                [33md[39m=[32m"M5 9V7H13V9H5Z"[39m
-                                [33mfill[39m=[32m"currentColor"[39m
-                              [36m/>[39m
-                              [36m<path[39m
-                                [33md[39m=[32m"M5 12.9999V10.9999H14.9999V7.96454L19.071 11.9644L14.9999 15.9644V12.9999H5Z"[39m
-                                [33mfill[39m=[32m"currentColor"[39m
-              ...
+                              [36m<svg[39m
+                                [33mfill[39m=[32m"none"[39m
+                                [33mheight[39m=[32m"1em"[39m
+                                [33mstroke[39m=[32m"currentColor"[39m
+                                [33mstroke-width[39m=[32m"0"[39m
+                                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                                [33mwidth[39m=[32m"1em"[39m
+                                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                              [36m>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M5 17V15H13V17H5Z"[39m
+                                  [33mfill[39m=[32m"currentColor"[39m
+                                [36m/>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M5 9V7H13V9H5Z"[39m
+                           ...
 
       101 |         addButton.click();
       102 |         expect(
@@ -1128,236 +760,114 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.155 s)
                 [0m View All Courses[0m
               [36m</button>[39m
             [36m</div>[39m
-            [36m<div>[39m
-              [36m<h3>[39m
-                [0mCurrently Displaying [0m
-                [0mTesting Plan[0m
-                [0m:[0m
-              [36m</h3>[39m
-              [36m<div>[39m
-                [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                        [36m>[39m
-                          [0mWinter 2022[0m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0mCourse ID[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCourse Name[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mNumber of Credits[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m108[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCISC[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m241[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mMATH[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                  [36m</table>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [36m<svg[39m
-                      [33mbaseProfile[39m=[32m"tiny"[39m
-                      [33mfill[39m=[32m"currentColor"[39m
-                      [33mheight[39m=[32m"1em"[39m
-                      [33mstroke[39m=[32m"currentColor"[39m
-                      [33mstroke-width[39m=[32m"0"[39m
-                      [33mversion[39m=[32m"1.2"[39m
-                      [33mviewBox[39m=[32m"0 0 24 24"[39m
-                      [33mwidth[39m=[32m"1em"[39m
-                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                    [36m>[39m
-                      [36m<path[39m
-                        [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                      [36m/>[39m
-                    [36m</svg>[39m
-                    [0mEdit Courses[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                        [36m>[39m
-                          [0mSpring 2022[0m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0mCourse ID[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCourse Name[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mNumber of Credits[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m110[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mENGL[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                  [36m</table>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [36m<svg[39m
-                      [33mbaseProfile[39m=[32m"tiny"[39m
-                      [33mfill[39m=[32m"currentColor"[39m
-                      [33mheight[39m=[32m"1em"[39m
-                      [33mstroke[39m=[32m"currentColor"[39m
-                      [33mstroke-width[39m=[32m"0"[39m
-                      [33mversion[39m=[32m"1.2"[39m
-                      [33mviewBox[39m=[32m"0 0 24 24"[39m
-                      [33mwidth[39m=[32m"1em"[39m
-                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                    [36m>[39m
-                      [36m<path[39m
-                        [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                      [36m/>[39m
-                    [36m</svg>[39m
-                    [0mEdit Courses[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mName: [0m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: flex;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"width: 160%;"[39m
+              [36m>[39m
+                [36m<h2>[39m
                   [0mTesting Plan[0m
-                [36m</div>[39m
+                  [0m:[0m
+                [36m</h2>[39m
+                [36m<br />[39m
                 [36m<div>[39m
-                  [0mExpected Degree: [0m
-                  [0mComputer Science Bachelor of Arts[0m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mCurrently Have [0m
-                  [0m9[0m
-                  [0m out of[0m
-                  [0m [0m
-                  [0m124[0m
-                  [0m required Credits[0m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mbaseProfile[39m=[32m"tiny"[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mversion[39m=[32m"1.2"[39m
-                  [33mviewBox[39m=[32m"0 0 24 24"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mEdit Semesters[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mt[39m=[32m"1569683368540"[39m
-                  [33mversion[39m=[32m"1.1"[39m
-                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<defs />[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6c-0.3 1.5-0.4 3-0.4 4.4 0 14.4 11.6 26 26 26h723c1.5 0 3-0.1 4.4-0.4 14.2-2.4 23.7-15.9 21.2-30zM204 390h272V182h72v208h272v104H204V390z m468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mClear All Semesters[0m
-              [36m</button>[39m
-              [36m<div>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [36m<svg[39m
-                    [33mfill[39m=[32m"currentColor"[39m
-                    [33mheight[39m=[32m"1em"[39m
-                    [33mstroke[39m=[32m"currentColor"[39m
-                    [33mstroke-width[39m=[32m"0"[39m
-                    [33mviewBox[39m=[32m"0 0 16 16"[39m
-                    [33mwidth[39m=[32m"1em"[39m
-                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                  [36m>[39m
-                    [36m<path[39m
-                      [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
-                      [33mfill-rule[39m=[32m"evenodd"[39m
-                    [36m/>[39m
-                  [36m</svg>[39m
-                  [0m Return to Plan List[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"3"[39m
+                          [36m>[39m
+                            [0mWinter 2022[0m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCourse ID[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCourse Name[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mNumber of Credits[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m108[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCISC[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m241[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mMATH[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                    [36m</table>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33mbaseProfile[39m=[32m"tiny"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                        [33mheight[39m=[32m"1em"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-width[39m=[32m"0"[39m
+                        [33mversion[39m=[32m"1.2"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"1em"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                      [0mEdit Courses[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"3"[39m
+                          [36m>[39m
+                            [0mSpring 2022[0m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCourse ID[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCourse Name[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                         ...
 
       114 |         removeCourseButton[0].click();
       115 |         expect(
@@ -1403,30 +913,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.155 s)
             [33mclass[39m=[32m"main-page-items"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                         
--------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-All files                            |   33.33 |    37.86 |   33.59 |   33.98 |                                                           
- src                                 |     100 |      100 |     100 |     100 |                                                           
-  App.tsx                            |     100 |      100 |     100 |     100 |                                                           
- src/Components/CourseListComponents |       4 |        0 |    3.22 |       4 |                                                           
-  CourseListOffcanvas.tsx            |      50 |      100 |   33.33 |      50 | 19-26                                                     
-  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 20-306                                                    
- src/Components/DegreePlanComponents |   39.04 |    43.83 |    42.1 |   40.14 |                                                           
-  PlanList.tsx                       |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                           
-  ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                                  
-  ViewingPlan.tsx                    |   60.81 |       50 |   61.53 |   61.64 | 65-89,106-109,123,166-208,296,386,451,478,514-530,587-594 
-  moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-126                                                    
- src/Interfaces                      |   57.14 |       50 |     100 |   57.14 |                                                           
-  course.ts                          |       0 |        0 |       0 |       0 |                                                           
-  degree.ts                          |       0 |        0 |       0 |       0 |                                                           
-  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                                           
-  semester.ts                        |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                    
- src/Resources                       |     100 |      100 |     100 |     100 |                                                           
-  Courses.ts                         |     100 |      100 |     100 |     100 |                                                           
-  Degrees.ts                         |     100 |      100 |     100 |     100 |                                                           
--------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-m=[32m"offcanvas-component"[39m
+              [33mclass[39m=[32m"offcanvas-component"[39m
             [36m>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
@@ -1450,227 +937,114 @@ m=[32m"offcanvas-component"[39m
                 [0m View All Courses[0m
               [36m</button>[39m
             [36m</div>[39m
-            [36m<div>[39m
-              [36m<h3>[39m
-                [0mCurrently Displaying [0m
-                [0mTesting Plan[0m
-                [0m:[0m
-              [36m</h3>[39m
-              [36m<div>[39m
-                [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"2"[39m
-                        [36m>[39m
-                          [0mSpring 2022[0m
-                        [36m</th>[39m
-                        [36m<th>[39m
-                          [36m<button[39m
-                            [33mclass[39m=[32m"btn btn-primary"[39m
-                            [33mstyle[39m=[32m"background-color: red;"[39m
-                            [33mtype[39m=[32m"button"[39m
-                          [36m>[39m
-                            [0mDelete Semester[0m
-                          [36m</button>[39m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0mCourse ID[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mCourse Name[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mNumber of Credits[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td>[39m
-                          [0m110[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0mENGL[0m
-                        [36m</td>[39m
-                        [36m<td>[39m
-                          [0m3[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                  [36m</table>[39m
-                  [36m<button[39m
-                    [33mclass[39m=[32m"btn btn-primary"[39m
-                    [33mtype[39m=[32m"button"[39m
-                  [36m>[39m
-                    [36m<svg[39m
-                      [33mbaseProfile[39m=[32m"tiny"[39m
-                      [33mfill[39m=[32m"currentColor"[39m
-                      [33mheight[39m=[32m"1em"[39m
-                      [33mstroke[39m=[32m"currentColor"[39m
-                      [33mstroke-width[39m=[32m"0"[39m
-                      [33mversion[39m=[32m"1.2"[39m
-                      [33mviewBox[39m=[32m"0 0 24 24"[39m
-                      [33mwidth[39m=[32m"1em"[39m
-                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                    [36m>[39m
-                      [36m<path[39m
-                        [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                      [36m/>[39m
-                    [36m</svg>[39m
-                    [0mEdit Courses[0m
-                  [36m</button>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mName: [0m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: flex;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"width: 160%;"[39m
+              [36m>[39m
+                [36m<h2>[39m
                   [0mTesting Plan[0m
+                  [0m:[0m
+                [36m</h2>[39m
+                [36m<br />[39m
+                [36m<div>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"2"[39m
+                          [36m>[39m
+                            [0mSpring 2022[0m
+                          [36m</th>[39m
+                          [36m<th>[39m
+                            [36m<button[39m
+                              [33mclass[39m=[32m"btn btn-primary"[39m
+                              [33mstyle[39m=[32m"background-color: red;"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [0mDelete Semester[0m
+                            [36m</button>[39m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCourse ID[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCourse Name[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mNumber of Credits[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0m110[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mENGL[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                    [36m</table>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33mbaseProfile[39m=[32m"tiny"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                        [33mheight[39m=[32m"1em"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-width[39m=[32m"0"[39m
+                        [33mversion[39m=[32m"1.2"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"1em"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                      [0mEdit Courses[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [0mName: [0m
+                    [0mTesting Plan[0m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [0mExpected Degree: [0m
+                    [0mComputer Science Bachelor of Arts[0m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [0mCurrently Have [0m
+                    [0m3[0m
+                    [0m out of[0m
+                    [0m [0m
+                    [0m124[0m
+                    [0m required Credits[0m
+                  [36m</div>[39m
                 [36m</div>[39m
                 [36m<div>[39m
-                  [0mExpected Degree: [0m
-                  [0mComputer Science Bachelor of Arts[0m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [0mCurrently Have [0m
-                  [0m3[0m
-                  [0m out of[0m
-                  [0m [0m
-                  [0m124[0m
-                  [0m required Credits[0m
-                [36m</div>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [36m<div>[39m
-                  [36m<label[39m
-                    [33mclass[39m=[32m"form-label"[39m
-                    [33mfor[39m=[32m"semesterYear"[39m
-                  [36m>[39m
-                    [0mYear:[0m
-                  [36m</label>[39m
-                  [36m<input[39m
-                    [33mclass[39m=[32m"form-control"[39m
-                    [33mid[39m=[32m"semesterYear"[39m
-                    [33mtype[39m=[32m"number"[39m
-                    [33mvalue[39m=[32m"2022"[39m
-                  [36m/>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [36m<label[39m
-                    [33mclass[39m=[32m"form-label"[39m
-                    [33mfor[39m=[32m"semesterSeason"[39m
-                  [36m>[39m
-                    [0mSeason:[0m
-                  [36m</label>[39m
-                  [36m<select[39m
-                    [33mclass[39m=[32m"form-select"[39m
-                    [33mid[39m=[32m"semesterSeason"[39m
-                  [36m>[39m
-                    [36m<option[39m
-                      [33mvalue[39m=[32m"Winter"[39m
+                  [36m<div>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-label"[39m
+                      [33mfor[39m=[32m"semesterYear"[39m
                     [36m>[39m
-                      [0mWinter[0m
-                    [36m</option>[39m
-                    [36m<option[39m
-                      [33mvalue[39m=[32m"Spring"[39m
-                    [36m>[39m
-                      [0mSpring[0m
-                    [36m</option>[39m
-                    [36m<option[39m
-                      [33mvalue[39m=[32m"Summer"[39m
-                    [36m>[39m
-                      [0mSummer[0m
-                    [36m</option>[39m
-                    [36m<option[39m
-                      [33mvalue[39m=[32m"Fall"[39m
-                    [36m>[39m
-                      [0mFall[0m
-                    [36m</option>[39m
-                  [36m</select>[39m
-                [36m</div>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mAdd Semester[0m
-                [36m</button>[39m
-              [36m</div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mbaseProfile[39m=[32m"tiny"[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mversion[39m=[32m"1.2"[39m
-                  [33mviewBox[39m=[32m"0 0 24 24"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M21.561 5.318l-2.879-2.879c-.293-.293-.677-.439-1.061-.439-.385 0-.768.146-1.061.439l-3.56 3.561h-9c-.552 0-1 .447-1 1v13c0 .553.448 1 1 1h13c.552 0 1-.447 1-1v-9l3.561-3.561c.293-.293.439-.677.439-1.061s-.146-.767-.439-1.06zm-10.061 9.354l-2.172-2.172 6.293-6.293 2.172 2.172-6.293 6.293zm-2.561-1.339l1.756 1.728-1.695-.061-.061-1.667zm7.061 5.667h-11v-11h6l-3.18 3.18c-.293.293-.478.812-.629 1.289-.16.5-.191 1.056-.191 1.47v3.061h3.061c.414 0 1.108-.1 1.571-.29.464-.19.896-.347 1.188-.64l3.18-3.07v6zm2.5-11.328l-2.172-2.172 1.293-1.293 2.171 2.172-1.292 1.293z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mEdit Semesters[0m
-              [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mt[39m=[32m"1569683368540"[39m
-                  [33mversion[39m=[32m"1.1"[39m
-                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<defs />[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M899.1 869.6l-53-305.6H864c14.4 0 26-11.6 26-26V346c0-14.4-11.6-26-26-26H618V138c0-14.4-11.6-26-26-26H432c-14.4 0-26 11.6-26 26v182H160c-14.4 0-26 11.6-26 26v192c0 14.4 11.6 26 26 26h17.9l-53 305.6c-0.3 1.5-0.4 3-0.4 4.4 0 14.4 11.6 26 26 26h723c1.5 0 3-0.1 4.4-0.4 14.2-2.4 23.7-15.9 21.2-30zM204 390h272V182h72v208h272v104H204V390z m468 440V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H416V674c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v156H202.8l45.1-260H776l45.1 260H672z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mClear All Semesters[0m
-              [36m</button>[39m
-              [36m<div>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [36m<svg[39m
-                    [33mfill[39m=[32m"currentColor"[39m
-                    [33mheight[39m=[32m"1em"[39m
-                    [33mstroke[39m=[32m"currentColor"[39m
-                    [33mstroke-width[39m=[32m"0"[39m
-                    [33mviewBox[39m=[32m"0 0 16 16"[39m
-                    [33mwidth[39m=[32m"1em"[39m
-                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                  [36m>[39m
-                    [36m<path[39m
-                      [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
-                      [33mfill-rule[39m=[32m"evenodd"[39m
-                    [36m/>[39m
-                  [36m</svg>[39m
-                  [0m Return to Plan List[0m
-                [36m</button>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+                      [0mYear:[0m
+               ...
 
       127 |         removeSemesterButton[0].click();
       128 |         expect(
@@ -1690,8 +1064,34 @@ m=[32m"offcanvas-component"[39m
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
+-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                         
+-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+All files                            |   33.33 |    40.18 |   35.41 |   33.86 |                                                           
+ src                                 |     100 |      100 |     100 |     100 |                                                           
+  App.tsx                            |     100 |      100 |     100 |     100 |                                                           
+ src/Components/CourseListComponents |     2.5 |        0 |    2.56 |     2.5 |                                                           
+  AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                    
+  CourseListOffcanvas.tsx            |      50 |      100 |   33.33 |      50 | 19-26                                                     
+  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 21-143                                                    
+  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 22-187                                                    
+ src/Components/DegreePlanComponents |   44.72 |    46.75 |    46.6 |   45.85 |                                                           
+  PlanList.tsx                       |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                           
+  ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                                           
+  ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                                  
+  ViewingPlan.tsx                    |   60.81 |       50 |   61.53 |   61.64 | 68-92,109-112,126,169-211,299,389,454,481,517-533,592-599 
+  moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-126                                                    
+ src/Interfaces                      |   57.14 |       50 |     100 |   57.14 |                                                           
+  course.ts                          |       0 |        0 |       0 |       0 |                                                           
+  degree.ts                          |       0 |        0 |       0 |       0 |                                                           
+  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                                           
+  semester.ts                        |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                    
+ src/Resources                       |     100 |      100 |     100 |     100 |                                                           
+  Courses.ts                         |     100 |      100 |     100 |     100 |                                                           
+  Degrees.ts                         |     100 |      100 |     100 |     100 |                                                           
+-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       6 failed, 4 passed, 10 total
 Snapshots:   0 total
-Time:        5.82 s
+Time:        6.283 s
 Ran all test suites.
