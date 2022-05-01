@@ -33,8 +33,8 @@ export function CoursesListOffcanvas({
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <CoursesList
-                        setCourses={setCourses}
                         courses={courses}
+                        setCourses={setCourses}
                     ></CoursesList>
                 </Offcanvas.Body>
             </Offcanvas>

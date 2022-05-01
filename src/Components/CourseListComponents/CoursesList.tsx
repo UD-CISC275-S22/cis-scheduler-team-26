@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Course } from "../../Interfaces/course";
 import { Button, Form } from "react-bootstrap";
 import { RenderCourse } from "./RenderCourse";
+import { AddCourseForm } from "./AddCoursePopup";
 import "./CoursesList.css";
+
+//icon imports
+import { RiAddBoxLine } from "react-icons/ri";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
@@ -31,7 +35,6 @@ export function CoursesList({
     courses
 }: coursesListProp): JSX.Element {
     //buttons
-    const [addingCourse, setAddCourse] = useState<boolean>(false);
     const [removingCourse, setRemoveCourse] = useState<boolean>(false);
     const [editCourse, setEditCourse] = useState<boolean>(false);
     const [oldCourses, setOldCourses] = useState<Course[]>(courses);
@@ -40,6 +43,12 @@ export function CoursesList({
     const [courseID, setCourseID] = useState<number>(0);
     const [courseCred, setCourseCred] = useState<number>(0);
     const [courseIndex, setCourseIndex] = useState<number>(0);
+    //Creating new course info
+    const [addingCourse, setAddingCourse] = useState<boolean>(false);
+    const [newCourseDepartment, setNewCourseDepartment] = useState<string>("");
+    const [newCourseID, setNewCourseID] = useState<number>(0);
+    const [newCourseCredits, setNewCourseCredits] = useState<number>(0);
+
     function saveCourse(oldCourse: Course): void {
         const storeCourse: Course = { ...oldCourse };
         setCourseIndex(
@@ -109,20 +118,25 @@ export function CoursesList({
                     <RenderCourse Course={curr}></RenderCourse>
                 </div>
             ))}
-            <Button onClick={() => setAddCourse(!addingCourse)}>
+            <Button onClick={() => setAddingCourse(true)}>
+                <RiAddBoxLine
+                    style={{ marginBottom: "2px", fontSize: "20px" }}
+                ></RiAddBoxLine>{" "}
                 Add Course
             </Button>
             {/*Render the form to add a course if Add Course button is pressed */}
             {addingCourse && (
                 <AddCourseForm
-                    courseDep={courseDep}
-                    setCourseDep={setCourseDep}
-                    courseID={courseID}
-                    setCourseID={setCourseID}
-                    courseCred={courseCred}
-                    setCourseCred={setCourseCred}
-                    addCourse={addNewCourse}
-                    setAddingCourse={setAddCourse}
+                    addingCourse={addingCourse}
+                    setAddingCourse={setAddingCourse}
+                    newCourseDepartment={newCourseDepartment}
+                    setNewCourseDepartment={setNewCourseDepartment}
+                    newCourseID={newCourseID}
+                    setNewCourseID={setNewCourseID}
+                    newCourseCredits={newCourseCredits}
+                    setNewCourseCredits={setNewCourseCredits}
+                    courseList={courses}
+                    setCourseList={setCourses}
                 ></AddCourseForm>
             )}
             {/*Render the form to edit a course if Edit button is pressed */}
@@ -139,72 +153,6 @@ export function CoursesList({
                     changeCourse={changeCourse}
                 ></EditCourseForm>
             )}
-            <Button onClick={() => setRemoveCourse(!removingCourse)}>
-                Remove Course
-            </Button>
-        </div>
-    );
-}
-
-//Form to add a new course to master course list
-function AddCourseForm({
-    courseDep,
-    setCourseDep,
-    courseID,
-    setCourseID,
-    courseCred,
-    setCourseCred,
-    addCourse,
-    setAddingCourse
-}: {
-    courseDep: string;
-    setCourseDep: (name: string) => void;
-    courseID: number;
-    setCourseID: (id: number) => void;
-    courseCred: number;
-    setCourseCred: (num: number) => void;
-    addCourse: () => void;
-    setAddingCourse: (val: boolean) => void;
-}): JSX.Element {
-    return (
-        <div>
-            <Form.Group controlId="Add Course Dep">
-                <Form.Label>Type Course Department: </Form.Label>
-                <Form.Control
-                    type="text"
-                    value={courseDep}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseDep(event.target.value)
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="Add Course ID">
-                <Form.Label>Type Course ID: </Form.Label>
-                <Form.Control
-                    type="number"
-                    value={courseID}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseID(parseInt(event.target.value) || 0)
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="Add Course Credit">
-                <Form.Label>Type number of Credits: </Form.Label>
-                <Form.Control
-                    type="number"
-                    value={courseCred}
-                    onChange={(event: ChangeEvent) =>
-                        setCourseCred(parseInt(event.target.value) || 0)
-                    }
-                />
-            </Form.Group>
-            <Button
-                onClick={() => {
-                    addCourse(), setAddingCourse(false);
-                }}
-            >
-                Submit
-            </Button>
         </div>
     );
 }

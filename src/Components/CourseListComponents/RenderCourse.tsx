@@ -33,7 +33,7 @@ export function RenderCourse({ Course }: { Course: Course }): JSX.Element {
                 ></FiMoreVertical>
             </div>
             {renderExpanded && (
-                <div>
+                <div style={{ marginLeft: "20px" }}>
                     <div>Credits: {Course.numCredits}</div>
                     <div>
                         Prerequisite Courses:{" "}
