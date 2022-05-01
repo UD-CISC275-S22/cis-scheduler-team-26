@@ -7,7 +7,6 @@ import { Semester } from "../../Interfaces/semester";
 //icon imports
 import { AiOutlineCheck } from "react-icons/ai";
 import { MdDoNotDisturbAlt } from "react-icons/md";
-import { PlanList } from "./PlanList";
 
 export function DegreeRequirements({
     degree, //degree is the degree to get requirements from
