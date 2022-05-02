@@ -53,4 +53,16 @@
 .main-page-items {
     display: flex;
     flex-direction: column;
+    background-color: rgb(255, 255, 255);
+}
+
+.header-buttons {
+    display: flex;
+    font-size: larger;
+}
+
+.return-to-plan-list-button {
+    font-size: larger;
+    margin-top: 20px;
+    margin-left: 20px;
 }

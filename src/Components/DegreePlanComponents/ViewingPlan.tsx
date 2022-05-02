@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
+import { Course } from "../../Interfaces/course";
+import { DegreePlan } from "../../Interfaces/degreePlan";
+import { Season, Semester } from "../../Interfaces/semester";
+import { movePopup } from "./moveCoursePopup";
+import { addSemesterPopup } from "./addSemesterPopup";
+import { calculateCredits, find_course } from "./ViewPlanFunctions";
+import { DegreeRequirements } from "./ShowDegreeRequirements";
+
+//Icon imports for buttons
 import { TiEdit } from "react-icons/ti";
 import { AiOutlineClear } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { RiAddBoxLine } from "react-icons/ri";
 import { CgMoveRight } from "react-icons/cg";
-import { Course } from "../../Interfaces/course";
-import { DegreePlan } from "../../Interfaces/degreePlan";
-import { Season, Semester, validSeason } from "../../Interfaces/semester";
-import { movePopup } from "./moveCoursePopup";
-import { calculateCredits, find_course } from "./ViewPlanFunctions";
-import { BsArrowReturnLeft } from "react-icons/bs";
+import {
+    deletePlanFromStorageByName,
+    savePlanToStorage
+} from "../../StorageFunctions";
+import { FiSave } from "react-icons/fi";
 
 interface planListProp {
     plan: DegreePlan;
@@ -212,11 +220,25 @@ function printSemesters(
             {plan.semesterList.map(
                 (semester: Semester): JSX.Element => (
                     <div key={semester.season + semester.year}>
-                        <Table striped bordered hover>
+                        <Table
+                            striped
+                            bordered
+                            hover
+                            style={{
+                                marginLeft: "auto",
+                                marginRight: "auto",
+                                width: "95%",
+                                backgroundColor: "white",
+                                backgroundBlendMode: "lighten"
+                            }}
+                        >
                             <thead>
                                 {edit ? (
                                     <tr>
-                                        <th colSpan={2}>
+                                        <th
+                                            colSpan={2}
+                                            style={{ fontSize: "30px" }}
+                                        >
                                             {semester.season +
                                                 " " +
                                                 semester.year}
@@ -224,7 +246,8 @@ function printSemesters(
                                         <th>
                                             <Button
                                                 style={{
-                                                    backgroundColor: "red"
+                                                    backgroundColor: "red",
+                                                    borderColor: "red"
                                                 }}
                                                 onClick={() =>
                                                     removeSemester(
@@ -242,7 +265,10 @@ function printSemesters(
                                     </tr>
                                 ) : (
                                     <tr>
-                                        <th colSpan={3}>
+                                        <th
+                                            colSpan={3}
+                                            style={{ fontSize: "30px" }}
+                                        >
                                             {semester.season +
                                                 " " +
                                                 semester.year}
@@ -252,8 +278,8 @@ function printSemesters(
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>Course Department</td>
                                     <td>Course ID</td>
-                                    <td>Course Name</td>
                                     <td>Number of Credits</td>
                                 </tr>
                             </tbody>
@@ -261,9 +287,14 @@ function printSemesters(
                                 <tbody>
                                     {semester.courseList.map(
                                         (course: Course): JSX.Element => (
-                                            <tr key={course.courseName}>
-                                                <td>{course.id}</td>
+                                            <tr
+                                                key={
+                                                    course.courseName +
+                                                    course.id.toString()
+                                                }
+                                            >
                                                 <td>{course.courseName}</td>
+                                                <td>{course.id}</td>
                                                 <td>{course.numCredits}</td>
                                                 <td>
                                                     <Button
@@ -298,7 +329,19 @@ function printSemesters(
                                                             )
                                                         }
                                                     >
-                                                        <CgMoveRight></CgMoveRight>
+                                                        {/* I know the negative margins here is ridiculous,
+                                                        its actually needed for the button to stay the same size while 
+                                                        the size of the icon is increased */}
+                                                        <CgMoveRight
+                                                            style={{
+                                                                fontSize:
+                                                                    "160%",
+                                                                marginTop:
+                                                                    "-10px",
+                                                                marginBottom:
+                                                                    "-5px"
+                                                            }}
+                                                        ></CgMoveRight>
                                                         Move Course
                                                     </Button>
                                                 </td>
@@ -310,9 +353,14 @@ function printSemesters(
                                 <tbody>
                                     {semester.courseList.map(
                                         (course: Course): JSX.Element => (
-                                            <tr key={course.courseName}>
-                                                <td>{course.id}</td>
+                                            <tr
+                                                key={
+                                                    course.courseName +
+                                                    course.id.toString()
+                                                }
+                                            >
                                                 <td>{course.courseName}</td>
+                                                <td>{course.id}</td>
                                                 <td>{course.numCredits}</td>
                                             </tr>
                                         )
@@ -404,6 +452,7 @@ function printSemesters(
                             )}
                         </Table>
                         <Button
+                            style={{ marginBottom: "30px" }}
                             onClick={() =>
                                 setEditingSem(
                                     semester === editingSem
@@ -418,12 +467,6 @@ function printSemesters(
                     </div>
                 )
             )}
-            <div>Name: {plan.planName}</div>
-            <div>Expected Degree: {plan.degree.title}</div>
-            <div>
-                Currently Have {plan.totalCredits} out of{" "}
-                {plan.degree.requiredCredits} required Credits
-            </div>
             {move &&
                 movePopup(
                     move,
@@ -435,78 +478,6 @@ function printSemesters(
                     planList,
                     moveCourse
                 )}
-        </div>
-    );
-}
-function addSemHelp(
-    plan: DegreePlan,
-    season: Season,
-    year: number
-): DegreePlan {
-    const alreadyContains = plan.semesterList.find(
-        (check: Semester): boolean =>
-            check.season === season && check.year === year
-    );
-    if (alreadyContains) {
-        return plan;
-    }
-    return {
-        ...plan,
-        semesterList: [
-            ...plan.semesterList,
-            { year: year, season: season, courseList: [], totalCredits: 0 }
-        ]
-    };
-}
-function addSemesters(
-    plan: DegreePlan,
-    planList: DegreePlan[],
-    setPlans: (newPlans: DegreePlan[]) => void,
-    season: Season,
-    setSeason: (newSeason: Season) => void,
-    year: number,
-    setYear: (newYear: number) => void
-) {
-    return (
-        <div>
-            <Form.Group controlId="semesterYear">
-                <Form.Label>Year:</Form.Label>
-                <Form.Control
-                    type="number"
-                    value={year}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                        setYear(parseInt(event.target.value))
-                    }
-                />
-            </Form.Group>
-            <Form.Group controlId="semesterSeason">
-                <Form.Label>Season:</Form.Label>
-                <Form.Select
-                    value={season}
-                    onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-                        setSeason(validSeason(event.target.value))
-                    }
-                >
-                    <option value="Winter">Winter</option>
-                    <option value="Spring">Spring</option>
-                    <option value="Summer">Summer</option>
-                    <option value="Fall">Fall</option>
-                </Form.Select>
-            </Form.Group>
-            <Button
-                onClick={() =>
-                    setPlans(
-                        planList.map(
-                            (curr: DegreePlan): DegreePlan =>
-                                curr === plan
-                                    ? addSemHelp(curr, season, year)
-                                    : curr
-                        )
-                    )
-                }
-            >
-                Add Semester
-            </Button>
         </div>
     );
 }
@@ -534,13 +505,13 @@ export function ViewingPlan({
     plan,
     planList,
     setPlans,
-    setViewPlan,
     courses
 }: planListProp): JSX.Element {
     const [edit, setEdit] = useState<boolean>(false);
-    const [season, setSeason] = useState<Season>("Winter");
+    const [season, setSeason] = useState<Season>("Fall");
     const [year, setYear] = useState<number>(2022);
     const [editingSem, setEditingSem] = useState<Semester>(emptySem);
+    const [addSem, setAddSem] = useState<boolean>(false);
     const [addingCourse, setAddingCourse] = useState<Course>(courses[0]);
     const [move, setMove] = useState<boolean>(false);
     const [moveSem, setMoveSem] = useState<Semester>(plan.semesterList[0]);
@@ -550,51 +521,113 @@ export function ViewingPlan({
         numCredits: -1,
         preReq: []
     });
+
+    //save the plan to storage every time its changed if isPlanSaved is true
+    if (plan.isSaved) savePlanToStorage(plan);
+
     return (
-        <div>
-            <h3>Currently Displaying {plan.planName}:</h3>
-            {printSemesters(
-                plan,
-                planList,
-                setPlans,
-                edit,
-                editingSem,
-                setEditingSem,
-                addingCourse,
-                setAddingCourse,
-                courses,
-                move,
-                setMove,
-                moveSem,
-                setMoveSem,
-                moveCourse,
-                setMoveCourse
-            )}
-            {edit &&
-                addSemesters(
+        <div style={{ display: "flex", marginBottom: "200px" }}>
+            <div style={{ width: "160%" }}>
+                <h1>{plan.planName}</h1>
+                <h3>{plan.degree.title}</h3>
+                <br></br>
+                {printSemesters(
                     plan,
                     planList,
                     setPlans,
-                    season,
-                    setSeason,
-                    year,
-                    setYear
+                    edit,
+                    editingSem,
+                    setEditingSem,
+                    addingCourse,
+                    setAddingCourse,
+                    courses,
+                    move,
+                    setMove,
+                    moveSem,
+                    setMoveSem,
+                    moveCourse,
+                    setMoveCourse
                 )}
-            <Button onClick={() => setEdit(!edit)}>
-                <TiEdit></TiEdit>Edit Semesters
-            </Button>
-            <Button
-                onClick={() => clearAllCourses(plan, planList, setPlans)}
-                style={{ backgroundColor: "red", borderColor: "red" }}
-            >
-                <AiOutlineClear></AiOutlineClear>
-                Clear All Semesters
-            </Button>
-            <div>
-                <Button onClick={() => setViewPlan(-1)}>
-                    <BsArrowReturnLeft></BsArrowReturnLeft> Return to Plan List
+                {addSem &&
+                    addSemesterPopup(
+                        plan,
+                        planList,
+                        setPlans,
+                        season,
+                        setSeason,
+                        year,
+                        setYear,
+                        addSem,
+                        setAddSem
+                    )}
+                {edit && (
+                    <div>
+                        <Button onClick={() => setAddSem(true)}>
+                            Add Semester
+                        </Button>
+                    </div>
+                )}
+                <Button onClick={() => setEdit(!edit)}>
+                    <TiEdit></TiEdit>Edit Semesters
                 </Button>
+                <Button
+                    onClick={() => clearAllCourses(plan, planList, setPlans)}
+                    style={{ backgroundColor: "red", borderColor: "red" }}
+                >
+                    <AiOutlineClear></AiOutlineClear>
+                    Clear All Semesters
+                </Button>
+                {/* Render unsave plan button is plan is saved.
+                Otherwise render save plan button */}
+                {plan.isSaved ? (
+                    <Button
+                        onClick={() => {
+                            changeIsPlanSavedByName(
+                                plan.planName,
+                                planList,
+                                setPlans
+                            );
+                            deletePlanFromStorageByName(plan.planName);
+                        }}
+                    >
+                        <FiSave style={{ fontSize: "120%" }}></FiSave> Unsave
+                        Plan
+                    </Button>
+                ) : (
+                    <Button
+                        onClick={() =>
+                            changeIsPlanSavedByName(
+                                plan.planName,
+                                planList,
+                                setPlans
+                            )
+                        }
+                    >
+                        <FiSave style={{ fontSize: "120%" }}></FiSave> Save Plan
+                    </Button>
+                )}
             </div>
+            {/*Components to show all the requirements for this plan's degree and which have been fulfilled */}
+            <DegreeRequirements
+                degree={plan.degree}
+                semesterList={plan.semesterList}
+                credits={plan.totalCredits}
+            ></DegreeRequirements>
         </div>
+    );
+}
+
+//Flips the isSaved variable of DegreePlan with name
+//Just for use in the button in viewingPlan save/unsave plan
+function changeIsPlanSavedByName(
+    name: string,
+    planList: DegreePlan[],
+    setPlanList: (d: DegreePlan[]) => void
+) {
+    setPlanList(
+        planList.map((plan: DegreePlan) => {
+            if (plan.planName !== name) return plan;
+            return { ...plan, isSaved: !plan.isSaved };
+        })
     );
 }
