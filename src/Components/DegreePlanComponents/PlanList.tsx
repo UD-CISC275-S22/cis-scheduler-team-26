@@ -4,10 +4,13 @@ import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Button, Form } from "react-bootstrap";
 import { DegreeList } from "../../Resources/Degrees";
 import { Degree } from "../../Interfaces/degree";
+import { deletePlanFromStorageByName } from "../../StorageFunctions";
+
+//icon imports
 import { BsTrash } from "react-icons/bs";
 import { TiEdit } from "react-icons/ti";
 import { RiAddBoxLine } from "react-icons/ri";
-import { deletePlanFromStorageByName } from "../../StorageFunctions";
+import { FiSave } from "react-icons/fi";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 interface planListProp {
@@ -22,11 +25,11 @@ function printPlan(
     setViewPlan: (newCurrPlan: number) => void,
     deletePlanByName: (name: string) => void
 ): JSX.Element {
-    //takes a plan name and removed that plan from the list of plans
-
     return (
         <div key={plan.planName} className="degree-plan-list-item">
-            <h3>{plan.planName}</h3>
+            <h3>
+                {plan.planName} {plan.isSaved && <FiSave></FiSave>}
+            </h3>
             <div>Expected Degree: {plan.degree.title}</div>
             <div>
                 Completed {plan.totalCredits} out of{" "}
@@ -197,7 +200,8 @@ function makeNewPlanForm({
                                 planName: newPlanName,
                                 semesterList: [],
                                 degree: newPlanMajor,
-                                totalCredits: 0
+                                totalCredits: 0,
+                                isSaved: false
                             }
                         ]);
                         setCreatingNewPlan(false);
