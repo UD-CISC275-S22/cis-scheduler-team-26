@@ -235,7 +235,10 @@ function printSemesters(
                             <thead>
                                 {edit ? (
                                     <tr>
-                                        <th colSpan={2}>
+                                        <th
+                                            colSpan={2}
+                                            style={{ fontSize: "30px" }}
+                                        >
                                             {semester.season +
                                                 " " +
                                                 semester.year}
