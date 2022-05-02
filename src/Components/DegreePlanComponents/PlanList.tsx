@@ -7,6 +7,7 @@ import { Degree } from "../../Interfaces/degree";
 import { BsTrash } from "react-icons/bs";
 import { TiEdit } from "react-icons/ti";
 import { RiAddBoxLine } from "react-icons/ri";
+import { deletePlanFromStorageByName } from "../../StorageFunctions";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 interface planListProp {
@@ -88,10 +89,13 @@ export function PlanList({
     const [newPlanMajor, setNewPlanMajor] = useState<Degree>(DegreeList[0]);
 
     function deletePlanByName(name: string): void {
-        //Get index of the plan to be deleted
+        //remove the plan from the plan list
         setPlanList(
             planList.filter((plan: DegreePlan) => plan.planName !== name)
         );
+        //also remove the plan from local storage
+        //This function fails gracefully if it doesn't exist in local storage
+        deletePlanFromStorageByName(name);
     }
 
     return (

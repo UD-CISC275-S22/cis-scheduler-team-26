@@ -9,6 +9,7 @@ import { Course } from "./Interfaces/course";
 import { DegreeList } from "./Resources/Degrees";
 import { Button } from "react-bootstrap";
 import { BsArrowReturnLeft } from "react-icons/bs";
+import { loadPlansFromStorage } from "./StorageFunctions";
 
 const INITIAL_PLANS: DegreePlan[] = [
     {
@@ -37,15 +38,8 @@ function App(): JSX.Element {
     const [plans, setPlans] = useState<DegreePlan[]>(INITIAL_PLANS);
     const [viewPlan, setViewPlan] = useState<number>(-1);
 
-    useEffect(() => {
-        console.log("getting plan list");
-        const savedPlansString = localStorage.getItem("plans");
-        if (savedPlansString !== null) {
-            const planstmp: DegreePlan[] = JSON.parse(savedPlansString);
-            planstmp.map((plan: DegreePlan) => INITIAL_PLANS.push(plan));
-            setPlans([...INITIAL_PLANS]);
-        }
-    }, [INITIAL_PLANS, setPlans]);
+    //Function to load the saved degree plans from storage
+    loadPlansFromStorage(plans, setPlans);
 
     return (
         <div className="App">
