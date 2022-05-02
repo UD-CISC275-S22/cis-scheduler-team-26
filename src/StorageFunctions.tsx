@@ -4,6 +4,10 @@ import { DegreePlan } from "./Interfaces/degreePlan";
 //This function saves a plan to local storage
 //It makes sure to replace any saved plan with the same name
 export function savePlanToStorage(plan: DegreePlan) {
+    const tmpPlans: DegreePlan[] = JSON.parse(
+        localStorage.getItem("plans") || "[]"
+    );
+    if (tmpPlans == []) return;
     return;
 }
 
@@ -11,10 +15,10 @@ export function savePlanToStorage(plan: DegreePlan) {
 //It deletes by name because plan names should be unique
 //It fails gracefully if a plan with name does not exist in local storage
 export function deletePlanFromStorageByName(name: string) {
-    const tmpPlans: DegreePlan[] = JSON.parse(
-        localStorage.getItem("plans") || ""
-    );
-    if (tmpPlans === []) return;
+    const tmpPlansString: string = localStorage.getItem("plans") || "";
+    if (tmpPlansString === "") return;
+    //convert saved string to list of DegreePlan
+    const tmpPlans: DegreePlan[] = JSON.parse(tmpPlansString);
     //remove the old list of plans
     localStorage.removeItem("plans");
     //Save the new list of plans
