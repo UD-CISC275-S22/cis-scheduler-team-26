@@ -2,18 +2,18 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.705 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.8 s)
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (225 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (116 ms)
-    ✕ Courses can be removed (434 ms)
-    ✓ Courses can be added (512 ms)
-    ✕ Semesters can be removed (249 ms)
-    ✓ Semesters can be added (267 ms)
-    ✕ The initial credits in the testing plan are displayed (82 ms)
-    ✕ When adding a course, the total credits in updated (467 ms)
-    ✕ When removing a course, the score is updated (364 ms)
-    ✕ Semesters can be removed (228 ms)
+    ✓ The initial two test semesters are displated (231 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (120 ms)
+    ✕ Courses can be removed (476 ms)
+    ✓ Courses can be added (505 ms)
+    ✕ Semesters can be removed (272 ms)
+    ✓ Semesters can be added (303 ms)
+    ✕ The initial credits in the testing plan are displayed (90 ms)
+    ✕ When adding a course, the total credits in updated (470 ms)
+    ✕ When removing a course, the score is updated (381 ms)
+    ✕ Semesters can be removed (238 ms)
 
   ● ViewingPlan Tests › Courses can be removed
 
@@ -1071,34 +1071,35 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.705 s)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
--------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
-File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                     
--------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
-All files                            |   33.46 |    41.28 |   35.41 |      34 |                                                       
- src                                 |   83.33 |      100 |      50 |   83.33 |                                                       
-  App.tsx                            |   83.33 |      100 |      50 |   83.33 | 66                                                    
- src/Components/CourseListComponents |     2.5 |        0 |    2.56 |     2.5 |                                                       
-  AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                
-  CourseListOffcanvas.tsx            |      50 |      100 |   33.33 |      50 | 19-26                                                 
-  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 21-143                                                
-  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 28-214                                                
- src/Components/DegreePlanComponents |   45.28 |    46.75 |   47.05 |   46.45 |                                                       
-  PlanList.tsx                       |   24.24 |       30 |   26.31 |    25.8 | 50,72-73,89-211                                       
-  ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                                       
-  ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                              
-  ViewingPlan.tsx                    |   61.64 |       50 |   62.74 |    62.5 | 67-91,108-111,125,168-210,317,424,484,511,547-563,622 
-  moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-125                                                
- src/Interfaces                      |   57.14 |       50 |     100 |   57.14 |                                                       
-  course.ts                          |       0 |        0 |       0 |       0 |                                                       
-  degree.ts                          |       0 |        0 |       0 |       0 |                                                       
-  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                                       
-  semester.ts                        |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                
- src/Resources                       |     100 |      100 |     100 |     100 |                                                       
-  Courses.ts                         |     100 |      100 |     100 |     100 |                                                       
-  Degrees.ts                         |     100 |      100 |     100 |     100 |                                                       
--------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
+-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                         
+-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
+All files                            |   31.83 |    38.58 |   34.41 |   32.85 |                                                           
+ src                                 |   35.48 |    43.75 |    37.5 |   39.28 |                                                           
+  App.tsx                            |   85.71 |      100 |      50 |   85.71 | 72                                                        
+  StorageFunctions.tsx               |   20.83 |       10 |   33.33 |    23.8 | 7-35,51-52                                                
+ src/Components/CourseListComponents |     2.5 |        0 |    2.56 |     2.5 |                                                           
+  AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                    
+  CourseListOffcanvas.tsx            |      50 |      100 |   33.33 |      50 | 19-26                                                     
+  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 21-143                                                    
+  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 28-214                                                    
+ src/Components/DegreePlanComponents |   43.19 |    45.88 |   45.28 |   44.78 |                                                           
+  PlanList.tsx                       |   23.52 |    33.33 |   26.31 |      25 | 54,76-81,96-219                                           
+  ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                                           
+  ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                                  
+  ViewingPlan.tsx                    |   56.09 |    48.21 |   58.18 |   58.22 | 72-96,113-116,130,173-215,322,429,489,516,552-568,631-687 
+  moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-125                                                    
+ src/Interfaces                      |   57.14 |       50 |     100 |   57.14 |                                                           
+  course.ts                          |       0 |        0 |       0 |       0 |                                                           
+  degree.ts                          |       0 |        0 |       0 |       0 |                                                           
+  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                                           
+  semester.ts                        |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                    
+ src/Resources                       |     100 |      100 |     100 |     100 |                                                           
+  Courses.ts                         |     100 |      100 |     100 |     100 |                                                           
+  Degrees.ts                         |     100 |      100 |     100 |     100 |                                                           
+-------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       6 failed, 4 passed, 10 total
 Snapshots:   0 total
-Time:        6.422 s
+Time:        6.407 s
 Ran all test suites.
