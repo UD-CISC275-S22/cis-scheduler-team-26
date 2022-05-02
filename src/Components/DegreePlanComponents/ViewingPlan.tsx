@@ -13,6 +13,11 @@ import { AiOutlineClear } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { RiAddBoxLine } from "react-icons/ri";
 import { CgMoveRight } from "react-icons/cg";
+import {
+    deletePlanFromStorageByName,
+    savePlanToStorage
+} from "../../StorageFunctions";
+import { FiSave } from "react-icons/fi";
 
 interface planListProp {
     plan: DegreePlan;
@@ -582,6 +587,10 @@ export function ViewingPlan({
         numCredits: -1,
         preReq: []
     });
+
+    //save the plan to storage every time its changed if isPlanSaved is true
+    if (plan.isSaved) savePlanToStorage(plan);
+
     return (
         <div style={{ display: "flex", marginBottom: "200px" }}>
             <div style={{ width: "160%" }}>
@@ -625,6 +634,35 @@ export function ViewingPlan({
                     <AiOutlineClear></AiOutlineClear>
                     Clear All Semesters
                 </Button>
+                {/* Render unsave plan button is plan is saved.
+                Otherwise render save plan button */}
+                {plan.isSaved ? (
+                    <Button
+                        onClick={() => {
+                            changeIsPlanSavedByName(
+                                plan.planName,
+                                planList,
+                                setPlans
+                            );
+                            deletePlanFromStorageByName(plan.planName);
+                        }}
+                    >
+                        <FiSave style={{ fontSize: "120%" }}></FiSave> Unsave
+                        Plan
+                    </Button>
+                ) : (
+                    <Button
+                        onClick={() =>
+                            changeIsPlanSavedByName(
+                                plan.planName,
+                                planList,
+                                setPlans
+                            )
+                        }
+                    >
+                        <FiSave style={{ fontSize: "120%" }}></FiSave> Save Plan
+                    </Button>
+                )}
             </div>
             {/*Components to show all the requirements for this plan's degree and which have been fulfilled */}
             <DegreeRequirements
@@ -633,5 +671,20 @@ export function ViewingPlan({
                 credits={plan.totalCredits}
             ></DegreeRequirements>
         </div>
+    );
+}
+
+//Flips the isSaved variable of DegreePlan with name
+//Just for use in the button in viewingPlan save/unsave plan
+function changeIsPlanSavedByName(
+    name: string,
+    planList: DegreePlan[],
+    setPlanList: (d: DegreePlan[]) => void
+) {
+    setPlanList(
+        planList.map((plan: DegreePlan) => {
+            if (plan.planName !== name) return plan;
+            return { ...plan, isSaved: !plan.isSaved };
+        })
     );
 }

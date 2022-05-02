@@ -6,8 +6,10 @@ export interface DegreePlan {
     planName: string;
     /** A list of all the semesters in this plan */
     semesterList: Semester[];
-    /** The total number of credits required to get this degree */
+    /** The degree from which to draw requirements */
     degree: Degree;
-
+    /** The total number of credits required to get this degree */
     totalCredits: number;
+    /** Is the plan saved in local storage */
+    isSaved: boolean;
 }
