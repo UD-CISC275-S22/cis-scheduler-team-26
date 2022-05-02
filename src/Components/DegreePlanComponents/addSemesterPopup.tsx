@@ -72,6 +72,18 @@ export function addSemesterPopup(
         </Modal>
     );
 }
+function seasonNumber(season: Season) {
+    const check: string = validSeason(season);
+    if (check === "Fall") {
+        return 0;
+    } else if (check === "Winter") {
+        return 1;
+    } else if (check === "Spring") {
+        return 2;
+    } else {
+        return 3;
+    }
+}
 function addSemester(
     plan: DegreePlan,
     planList: DegreePlan[],
@@ -79,79 +91,34 @@ function addSemester(
     season: Season,
     year: number
 ) {
-    if (
-        !plan.semesterList.find(
-            (check: Semester): boolean =>
-                check.season === season && check.year === year
-        )
-    ) {
-        if (
-            plan.semesterList.findIndex(
-                (check: Semester): boolean => check.year === year
-            ) != -1
-        ) {
-            //Check Seasons
-        } else if (
-            plan.semesterList.findIndex(
-                (check: Semester): boolean => check.year > year
-            ) != -1
-        ) {
-            //Add Semester before index found
-            const index = plan.semesterList.findIndex(
-                (check: Semester): boolean => check.year > year
-            );
-            const newPlan = plan;
-            newPlan.semesterList.splice(index, 0, {
-                year: year,
-                season: season,
-                courseList: [],
-                totalCredits: 0
-            });
-            setPlans(
-                planList.map(
-                    (curr: DegreePlan): DegreePlan =>
-                        curr === plan ? newPlan : curr
-                )
-            );
-        } else {
-            //Add Semester to end of list
-            const newPlan = plan;
-            newPlan.semesterList = [
-                ...newPlan.semesterList,
-                {
-                    year: year,
-                    season: season,
-                    courseList: [],
-                    totalCredits: 0
-                }
-            ];
-            setPlans(
-                planList.map(
-                    (curr: DegreePlan): DegreePlan =>
-                        curr === plan ? newPlan : curr
-                )
-            );
-        }
-    }
-}
-
-function addSemHelp(
-    plan: DegreePlan,
-    season: Season,
-    year: number
-): DegreePlan {
     const alreadyContains = plan.semesterList.find(
         (check: Semester): boolean =>
             check.season === season && check.year === year
     );
-    if (alreadyContains) {
-        return plan;
+    if (!alreadyContains) {
+        const newPlan = plan;
+        newPlan.semesterList.splice(0, 0, {
+            year: year,
+            season: season,
+            courseList: [],
+            totalCredits: 0
+        });
+        newPlan.semesterList.sort((s1: Semester, s2: Semester) => {
+            if (s1.year > s2.year) {
+                return 1;
+            } else if (s1.year < s2.year) {
+                return -1;
+            } else if (seasonNumber(s1.season) > seasonNumber(s2.season)) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
+        setPlans(
+            planList.map(
+                (curr: DegreePlan): DegreePlan =>
+                    curr === plan ? newPlan : curr
+            )
+        );
     }
-    return {
-        ...plan,
-        semesterList: [
-            ...plan.semesterList,
-            { year: year, season: season, courseList: [], totalCredits: 0 }
-        ]
-    };
 }
