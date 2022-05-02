@@ -2,18 +2,18 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.38 s)
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (228 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (123 ms)
-    ✕ Courses can be removed (463 ms)
-    ✓ Courses can be added (518 ms)
-    ✕ Semesters can be removed (276 ms)
-    ✕ Semesters can be added (1605 ms)
-    ✕ The initial credits in the testing plan are displayed (84 ms)
-    ✕ When adding a course, the total credits in updated (473 ms)
-    ✕ When removing a course, the score is updated (363 ms)
-    ✕ Semesters can be removed (238 ms)
+    ✓ The initial two test semesters are displated (232 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (127 ms)
+    ✕ Courses can be removed (481 ms)
+    ✓ Courses can be added (515 ms)
+    ✕ Semesters can be removed (274 ms)
+    ✕ Semesters can be added (1654 ms)
+    ✕ The initial credits in the testing plan are displayed (89 ms)
+    ✕ When adding a course, the total credits in updated (488 ms)
+    ✕ When removing a course, the score is updated (397 ms)
+    ✕ Semesters can be removed (252 ms)
 
   ● ViewingPlan Tests › Courses can be removed
 
@@ -290,14 +290,14 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
                         [36m<tr>[39m
                           [36m<th[39m
                             [33mcolspan[39m=[32m"2"[39m
-                            [33mstyle[39m=[32m""[39m
+                            [33mstyle[39m=[32m"font-size: 30px;"[39m
                           [36m>[39m
                             [0mSpring 2022[0m
                           [36m</th>[39m
                           [36m<th>[39m
                             [36m<button[39m
                               [33mclass[39m=[32m"btn btn-primary"[39m
-                              [33mstyle[39m=[32m"background-color: red;"[39m
+                              [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
                               [33mtype[39m=[32m"button"[39m
                             [36m>[39m
                               [0mDelete Semester[0m
@@ -348,8 +348,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
                         [33mwidth[39m=[32m"1em"[39m
                         [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                       [36m>[39m
-                        [36m<path[39m
-                        ...
+                        ...
 
       63 |         });
       64 |         removeSemesterButton[0].click();
@@ -400,7 +399,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
       Name "Delete Semester":
       [36m<button[39m
         [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mstyle[39m=[32m"background-color: red;"[39m
+        [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
         [33mtype[39m=[32m"button"[39m
       [36m/>[39m
 
@@ -414,7 +413,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
       Name "Delete Semester":
       [36m<button[39m
         [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mstyle[39m=[32m"background-color: red;"[39m
+        [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
         [33mtype[39m=[32m"button"[39m
       [36m/>[39m
 
@@ -531,7 +530,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
       Name "Winter 2022":
       [36m<th[39m
         [33mcolspan[39m=[32m"2"[39m
-        [33mstyle[39m=[32m""[39m
+        [33mstyle[39m=[32m"font-size: 30px;"[39m
       [36m/>[39m
 
       Name "Delete Semester":
@@ -540,7 +539,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
       Name "Spring 2022":
       [36m<th[39m
         [33mcolspan[39m=[32m"2"[39m
-        [33mstyle[39m=[32m""[39m
+        [33mstyle[39m=[32m"font-size: 30px;"[39m
       [36m/>[39m
 
       Name "Delete Semester":
@@ -698,14 +697,14 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
                         [36m<tr>[39m
                           [36m<th[39m
                             [33mcolspan[39m=[32m"2"[39m
-                            [33mstyle[39m=[32m""[39m
+                            [33mstyle[39m=[32m"font-size: 30px;"[39m
                           [36m>[39m
                             [0mWinter 2022[0m
                           [36m</th>[39m
                           [36m<th>[39m
                             [36m<button[39m
                               [33mclass[39m=[32m"btn btn-primary"[39m
-                              [33mstyle[39m=[32m"background-color: red;"[39m
+                              [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
                               [33mtype[39m=[32m"button"[39m
                             [36m>[39m
                               [0mDelete Semester[0m
@@ -763,7 +762,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
                       [36m</tbody>[39m
                     [36m</table>[39m
                     [36m<button[39m
-                      [33mclass[39m=[32m"btn btn-primar...
+                      ...
 
       72 |         });
       73 |         editButton.click();
@@ -1406,14 +1405,14 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
                         [36m<tr>[39m
                           [36m<th[39m
                             [33mcolspan[39m=[32m"2"[39m
-                            [33mstyle[39m=[32m""[39m
+                            [33mstyle[39m=[32m"font-size: 30px;"[39m
                           [36m>[39m
                             [0mSpring 2022[0m
                           [36m</th>[39m
                           [36m<th>[39m
                             [36m<button[39m
                               [33mclass[39m=[32m"btn btn-primary"[39m
-                              [33mstyle[39m=[32m"background-color: red;"[39m
+                              [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
                               [33mtype[39m=[32m"button"[39m
                             [36m>[39m
                               [0mDelete Semester[0m
@@ -1464,8 +1463,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
                         [33mwidth[39m=[32m"1em"[39m
                         [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                       [36m>[39m
-                        [36m<path[39m
-                        ...
+                        ...
 
       127 |         removeSemesterButton[0].click();
       128 |         expect(
@@ -1496,13 +1494,13 @@ All files                            |    23.9 |    30.34 |    26.9 |   24.84 |
   AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                
   CourseListOffcanvas.tsx            |      60 |      100 |   33.33 |      60 | 27-34                                                 
   CoursesList.tsx                    |       0 |        0 |       0 |       0 | 30-165                                                
-  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 34-231                                                
+  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 34-237                                                
   UpdateCoursesInPlansFunction.tsx   |       0 |        0 |       0 |       0 | 15-70                                                 
  src/Components/DegreePlanComponents |   34.73 |    37.37 |   37.83 |   35.86 |                                                       
-  PlanList.tsx                       |   23.52 |    33.33 |   26.31 |      25 | 54,76-81,96-219                                       
+  PlanList.tsx                       |   23.52 |    33.33 |   26.31 |      25 | 59,81-86,101-224                                      
   ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                                       
   ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                              
-  ViewingPlan.tsx                    |    52.7 |    48.07 |   53.06 |   54.92 | 73-97,114-117,131,174-216,323,430,481-497,561,570-626 
+  ViewingPlan.tsx                    |    52.7 |    48.07 |   53.06 |   54.92 | 73-97,114-117,131,174-216,327,434,485-501,565,574-630 
   addSemesterPopup.tsx               |       0 |        0 |       0 |       0 | 17-120                                                
   moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-124                                                
  src/Interfaces                      |       0 |        0 |       0 |       0 |                                                       
@@ -1517,5 +1515,5 @@ All files                            |    23.9 |    30.34 |    26.9 |   24.84 |
 Test Suites: 1 failed, 1 total
 Tests:       7 failed, 3 passed, 10 total
 Snapshots:   0 total
-Time:        7.726 s
+Time:        8.05 s
 Ran all test suites.
