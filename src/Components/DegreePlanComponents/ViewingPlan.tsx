@@ -235,7 +235,10 @@ function printSemesters(
                             <thead>
                                 {edit ? (
                                     <tr>
-                                        <th colSpan={2}>
+                                        <th
+                                            colSpan={2}
+                                            style={{ fontSize: "30px" }}
+                                        >
                                             {semester.season +
                                                 " " +
                                                 semester.year}
@@ -243,7 +246,8 @@ function printSemesters(
                                         <th>
                                             <Button
                                                 style={{
-                                                    backgroundColor: "red"
+                                                    backgroundColor: "red",
+                                                    borderColor: "red"
                                                 }}
                                                 onClick={() =>
                                                     removeSemester(
