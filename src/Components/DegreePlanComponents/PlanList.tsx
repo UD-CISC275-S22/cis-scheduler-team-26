@@ -44,13 +44,18 @@ function printPlan(
                             )
                         )
                     }
+                    style={{ fontSize: "120%" }}
                 >
                     <TiEdit></TiEdit>
                     View/Edit Plan
                 </Button>
                 {/*Button to delete plan from planList */}
                 <Button
-                    style={{ backgroundColor: "red", borderColor: "red" }}
+                    style={{
+                        backgroundColor: "red",
+                        borderColor: "red",
+                        fontSize: "120%"
+                    }}
                     onClick={() => deletePlanByName(plan.planName)}
                 >
                     {/*Trash Icon*/}
@@ -83,7 +88,7 @@ export function PlanList({
 
     return (
         <div>
-            <h2 className="degree-plan-header">Current Degree Plans:</h2>
+            <h1 className="degree-plan-header">Current Degree Plans:</h1>
             <div className="degree-plan-list">
                 {planList.map(
                     (plan: DegreePlan): JSX.Element =>
