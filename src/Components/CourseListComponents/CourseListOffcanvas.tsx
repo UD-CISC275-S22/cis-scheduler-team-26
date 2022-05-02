@@ -1,43 +1,26 @@
 import React, { useState } from "react";
-import { CoursesListShow } from "./CoursesList";
+import { CoursesList } from "./CoursesList";
 import { Course } from "../../Interfaces/course";
+import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Button, Offcanvas } from "react-bootstrap";
 import { VscOpenPreview } from "react-icons/vsc";
 import "./CoursesList.css";
-import { DegreePlan } from "../../Interfaces/degreePlan";
-import { courseList } from "../../Resources/Courses";
-import { DegreeList } from "../../Resources/Degrees";
 
-const INITIAL_PLANS: DegreePlan[] = [
-    {
-        planName: "Testing Plan",
-        semesterList: [
-            {
-                year: 2022,
-                season: "Winter",
-                courseList: [courseList[0], courseList[1], courseList[2]],
-                totalCredits: 9
-            },
-            {
-                year: 2022,
-                season: "Spring",
-                courseList: [courseList[3]],
-                totalCredits: 3
-            }
-        ],
-        degree: DegreeList[0],
-        totalCredits: 12
-    }
-];
 export function CoursesListOffcanvas({
     setCourses,
-    courses
+    courses,
+    planList,
+    setPlanList
 }: {
     setCourses: (courses: Course[]) => void;
     courses: Course[];
+    planList: DegreePlan[];
+    setPlanList: (d: DegreePlan[]) => void;
 }): JSX.Element {
     const [show, setShow] = useState<boolean>(false);
-    const [plans, setPlans] = useState<DegreePlan[]>(INITIAL_PLANS);
+    //List of unmodified courses. It will only be update when adding or removing a course
+    const [unmodifiedCourses, setUnmodifiedCourses] =
+        useState<Course[]>(courses);
     return (
         <div className="offcanvas-component">
             <Button
@@ -52,15 +35,19 @@ export function CoursesListOffcanvas({
                 placement={"end"}
             >
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>All Courses:</Offcanvas.Title>
+                    <Offcanvas.Title style={{ fontSize: "40px" }}>
+                        All Courses:
+                    </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    <CoursesListShow
-                        setCourses={setCourses}
+                    <CoursesList
                         courses={courses}
-                        plan={plans}
-                        setPlanList={setPlans}
-                    ></CoursesListShow>
+                        setCourses={setCourses}
+                        unmodifiedCourses={unmodifiedCourses}
+                        setUnmodifiedCourses={setUnmodifiedCourses}
+                        planList={planList}
+                        setPlanList={setPlanList}
+                    ></CoursesList>
                 </Offcanvas.Body>
             </Offcanvas>
         </div>

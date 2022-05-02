@@ -14,6 +14,9 @@
     padding-inline: 20px;
     flex-direction: column;
     align-items: center;
+    border-color: lightgray;
+    border-style: solid;
+    border-radius: 20px;
 }
 
 .create-new-plan-form {

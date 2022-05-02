@@ -1,6 +1,6 @@
 import { Course } from "./course";
 
-export type Season = "Winter" | "Spring" | "Summer" | "Fall";
+export type Season = "Fall" | "Winter" | "Spring" | "Summer";
 
 export function validSeason(check: string): Season {
     if (check === "Winter") {
