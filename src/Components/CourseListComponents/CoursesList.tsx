@@ -12,6 +12,8 @@ import { updateCoursesInPlans } from "./UpdateCoursesInPlansFunction";
 interface coursesListProp {
     setCourses: (newCourses: Course[]) => void;
     courses: Course[];
+    unmodifiedCourses: Course[];
+    setUnmodifiedCourses: (c: Course[]) => void;
     planList: DegreePlan[];
     setPlanList: (d: DegreePlan[]) => void;
 }
@@ -19,12 +21,11 @@ interface coursesListProp {
 export function CoursesList({
     setCourses,
     courses,
+    unmodifiedCourses,
+    setUnmodifiedCourses,
     planList,
     setPlanList
 }: coursesListProp): JSX.Element {
-    //List of unmodified courses. It will only be update when adding or removing a course
-    const [unmodifiedCourses, setUnmodifiedCourses] =
-        useState<Course[]>(courses);
     //Creating new course info
     const [addingCourse, setAddingCourse] = useState<boolean>(false);
     const [newCourseDepartment, setNewCourseDepartment] = useState<string>("");

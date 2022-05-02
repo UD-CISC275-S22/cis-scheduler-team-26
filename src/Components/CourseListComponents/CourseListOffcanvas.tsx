@@ -18,6 +18,9 @@ export function CoursesListOffcanvas({
     setPlanList: (d: DegreePlan[]) => void;
 }): JSX.Element {
     const [show, setShow] = useState<boolean>(false);
+    //List of unmodified courses. It will only be update when adding or removing a course
+    const [unmodifiedCourses, setUnmodifiedCourses] =
+        useState<Course[]>(courses);
     return (
         <div className="offcanvas-component">
             <Button
@@ -40,6 +43,8 @@ export function CoursesListOffcanvas({
                     <CoursesList
                         courses={courses}
                         setCourses={setCourses}
+                        unmodifiedCourses={unmodifiedCourses}
+                        setUnmodifiedCourses={setUnmodifiedCourses}
                         planList={planList}
                         setPlanList={setPlanList}
                     ></CoursesList>
