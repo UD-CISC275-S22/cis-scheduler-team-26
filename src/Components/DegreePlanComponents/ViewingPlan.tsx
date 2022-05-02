@@ -246,7 +246,8 @@ function printSemesters(
                                         <th>
                                             <Button
                                                 style={{
-                                                    backgroundColor: "red"
+                                                    backgroundColor: "red",
+                                                    borderColor: "red"
                                                 }}
                                                 onClick={() =>
                                                     removeSemester(
