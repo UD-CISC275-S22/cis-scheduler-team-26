@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
 import { DegreePlan } from "./Interfaces/degreePlan";
-import { PlanList } from "./PlanList";
-import { ViewingPlan } from "./ViewingPlan";
+import { PlanList } from "./Components/DegreePlanComponents/PlanList";
+import { ViewingPlan } from "./Components/DegreePlanComponents/ViewingPlan";
 import { courseList } from "./Resources/Courses";
-import { CoursesListOffcanvas } from "./CoursesList";
+import { CoursesListOffcanvas } from "./Components/CourseListComponents/CourseListOffcanvas";
 import { Course } from "./Interfaces/course";
 import { DegreeList } from "./Resources/Degrees";
+import { Button } from "react-bootstrap";
+import { BsArrowReturnLeft } from "react-icons/bs";
+import { loadPlansFromStorage } from "./StorageFunctions";
 
 const INITIAL_PLANS: DegreePlan[] = [
     {
@@ -26,7 +29,8 @@ const INITIAL_PLANS: DegreePlan[] = [
             }
         ],
         degree: DegreeList[0],
-        totalCredits: 12
+        totalCredits: 12,
+        isSaved: false
     }
 ];
 
@@ -34,6 +38,10 @@ function App(): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(courseList);
     const [plans, setPlans] = useState<DegreePlan[]>(INITIAL_PLANS);
     const [viewPlan, setViewPlan] = useState<number>(-1);
+
+    //Function to load the saved degree plans from storage
+    loadPlansFromStorage(plans, setPlans);
+
     return (
         <div className="App">
             <header className="App-header">
@@ -58,10 +66,21 @@ function App(): JSX.Element {
                 </div>
             )}
             <div className="main-page-items">
-                <CoursesListOffcanvas
-                    setCourses={setCourses}
-                    courses={courses}
-                ></CoursesListOffcanvas>
+                <div className="header-buttons">
+                    {viewPlan !== -1 && (
+                        <Button
+                            onClick={() => setViewPlan(-1)}
+                            className="return-to-plan-list-button"
+                        >
+                            <BsArrowReturnLeft></BsArrowReturnLeft> Return to
+                            Plan List
+                        </Button>
+                    )}
+                    <CoursesListOffcanvas
+                        setCourses={setCourses}
+                        courses={courses}
+                    ></CoursesListOffcanvas>
+                </div>
 
                 {/*Display specific plan if planList isn't open */}
                 {viewPlan === -1 ? (
