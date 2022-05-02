@@ -7,7 +7,10 @@ import { Degree } from "../../Interfaces/degree";
 import { BsTrash } from "react-icons/bs";
 import { TiEdit } from "react-icons/ti";
 import { RiAddBoxLine } from "react-icons/ri";
-import { deletePlanFromStorageByName } from "../../StorageFunctions";
+import {
+    deletePlanFromStorageByName,
+    savePlanToStorage
+} from "../../StorageFunctions";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 interface planListProp {
@@ -54,24 +57,7 @@ function printPlan(
                     <BsTrash></BsTrash>
                     Delete Plan
                 </Button>
-                <Button
-                    onClick={() => {
-                        const plansString = localStorage.getItem("plans");
-                        if (plansString === null)
-                            localStorage.setItem(
-                                "plans",
-                                JSON.stringify([plan])
-                            );
-                        else
-                            localStorage.setItem(
-                                "plans",
-                                JSON.stringify([
-                                    ...JSON.parse(plansString),
-                                    plan
-                                ])
-                            );
-                    }}
-                >
+                <Button onClick={() => savePlanToStorage(plan)}>
                     Save Plan
                 </Button>
             </div>
