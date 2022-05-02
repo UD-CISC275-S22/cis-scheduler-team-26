@@ -91,13 +91,19 @@ export function RenderCourse({
                                     )
                                 )}
                             </div>
-                            <Button onClick={() => setEditingCourse(true)}>
+                            <Button
+                                onClick={() => setEditingCourse(true)}
+                                style={{ marginRight: "5px" }}
+                            >
                                 <TiEdit
                                     style={{ marginBottom: "4px" }}
                                 ></TiEdit>{" "}
                                 Edit
                             </Button>
-                            <Button onClick={() => resetCourse()}>
+                            <Button
+                                onClick={() => resetCourse()}
+                                style={{ marginRight: "5px" }}
+                            >
                                 <AiOutlineRollback
                                     style={{
                                         marginBottom: "5px"
