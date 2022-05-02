@@ -94,7 +94,7 @@ export function PlanList({
             {!creatingNewPlan && (
                 <Button
                     onClick={() => setCreatingNewPlan(!creatingNewPlan)}
-                    style={{ fontSize: "20px" }}
+                    style={{ fontSize: "20px", marginTop: "10px" }}
                 >
                     <RiAddBoxLine></RiAddBoxLine>
                     Create New Plan
