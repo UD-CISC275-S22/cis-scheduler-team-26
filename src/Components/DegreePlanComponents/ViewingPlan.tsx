@@ -674,6 +674,8 @@ export function ViewingPlan({
     );
 }
 
+//Flips the isSaved variable of DegreePlan with name
+//Just for use in the button in viewingPlan save/unsave plan
 function changeIsPlanSavedByName(
     name: string,
     planList: DegreePlan[],
