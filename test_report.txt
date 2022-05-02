@@ -2,18 +2,18 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.8 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (6.87 s)
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (231 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (120 ms)
-    ✕ Courses can be removed (476 ms)
-    ✓ Courses can be added (505 ms)
-    ✕ Semesters can be removed (272 ms)
-    ✓ Semesters can be added (303 ms)
+    ✓ The initial two test semesters are displated (213 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (128 ms)
+    ✕ Courses can be removed (507 ms)
+    ✓ Courses can be added (506 ms)
+    ✕ Semesters can be removed (270 ms)
+    ✕ Semesters can be added (1673 ms)
     ✕ The initial credits in the testing plan are displayed (90 ms)
-    ✕ When adding a course, the total credits in updated (470 ms)
-    ✕ When removing a course, the score is updated (381 ms)
-    ✕ Semesters can be removed (238 ms)
+    ✕ When adding a course, the total credits in updated (474 ms)
+    ✕ When removing a course, the score is updated (329 ms)
+    ✕ Semesters can be removed (207 ms)
 
   ● ViewingPlan Tests › Courses can be removed
 
@@ -364,6 +364,420 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.8 s)
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:65:23)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+  ● ViewingPlan Tests › Semesters can be added
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "combobox" and name `/Season:/i`
+
+    Here are the accessible roles:
+
+      banner:
+
+      Name "":
+      [36m<header[39m
+        [33mclass[39m=[32m"App-header"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "Return to Plan List":
+      [36m<button[39m
+        [33mclass[39m=[32m"return-to-plan-list-button btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "View All Courses":
+      [36m<button[39m
+        [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Delete Semester":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mstyle[39m=[32m"background-color: red;"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit Courses":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Delete Semester":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mstyle[39m=[32m"background-color: red;"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit Courses":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mstyle[39m=[32m"margin-bottom: 30px;"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Add Semester":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Edit Semesters":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Clear All Semesters":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mstyle[39m=[32m"background-color: red; border-color: red;"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Save Plan":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      heading:
+
+      Name "Testing Plan":
+      [36m<h1 />[39m
+
+      Name "Computer Science Bachelor of Arts":
+      [36m<h3 />[39m
+
+      Name "Requirements":
+      [36m<h1 />[39m
+
+      --------------------------------------------------
+      table:
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+        [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
+      [36m/>[39m
+
+      Name "":
+      [36m<table[39m
+        [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+        [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      rowgroup:
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<thead />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      Name "":
+      [36m<tbody />[39m
+
+      --------------------------------------------------
+      row:
+
+      Name "Winter 2022 Delete Semester":
+      [36m<tr />[39m
+
+      Name "Course Department Course ID Number of Credits":
+      [36m<tr />[39m
+
+      Name "EGGG 101 3":
+      [36m<tr />[39m
+
+      Name "CISC 108 3":
+      [36m<tr />[39m
+
+      Name "MATH 241 3":
+      [36m<tr />[39m
+
+      Name "Spring 2022 Delete Semester":
+      [36m<tr />[39m
+
+      Name "Course Department Course ID Number of Credits":
+      [36m<tr />[39m
+
+      Name "ENGL 110 3":
+      [36m<tr />[39m
+
+      --------------------------------------------------
+      columnheader:
+
+      Name "Winter 2022":
+      [36m<th[39m
+        [33mcolspan[39m=[32m"2"[39m
+        [33mstyle[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "Delete Semester":
+      [36m<th />[39m
+
+      Name "Spring 2022":
+      [36m<th[39m
+        [33mcolspan[39m=[32m"2"[39m
+        [33mstyle[39m=[32m""[39m
+      [36m/>[39m
+
+      Name "Delete Semester":
+      [36m<th />[39m
+
+      --------------------------------------------------
+      cell:
+
+      Name "Course Department":
+      [36m<td />[39m
+
+      Name "Course ID":
+      [36m<td />[39m
+
+      Name "Number of Credits":
+      [36m<td />[39m
+
+      Name "EGGG":
+      [36m<td />[39m
+
+      Name "101":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "CISC":
+      [36m<td />[39m
+
+      Name "108":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "MATH":
+      [36m<td />[39m
+
+      Name "241":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      Name "Course Department":
+      [36m<td />[39m
+
+      Name "Course ID":
+      [36m<td />[39m
+
+      Name "Number of Credits":
+      [36m<td />[39m
+
+      Name "ENGL":
+      [36m<td />[39m
+
+      Name "110":
+      [36m<td />[39m
+
+      Name "3":
+      [36m<td />[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUniversity Of Delaware[0m
+            [36m<br />[39m
+            [0mComputer Science Degree Planner[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"Developer-names"[39m
+            [36m>[39m
+              [0mDeveloped by: Jack Kingham, Sean Williams, Iclyn Taero[0m
+            [36m</span>[39m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"main-page-items"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"header-buttons"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"return-to-plan-list-button btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33mfill[39m=[32m"currentColor"[39m
+                  [33mheight[39m=[32m"1em"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-width[39m=[32m"0"[39m
+                  [33mviewBox[39m=[32m"0 0 16 16"[39m
+                  [33mwidth[39m=[32m"1em"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"[39m
+                    [33mfill-rule[39m=[32m"evenodd"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [0m Return to Plan List[0m
+              [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"offcanvas-component"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"offcanvas-show-button btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33mfill[39m=[32m"currentColor"[39m
+                    [33mheight[39m=[32m"1em"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-width[39m=[32m"0"[39m
+                    [33mviewBox[39m=[32m"0 0 16 16"[39m
+                    [33mwidth[39m=[32m"1em"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclip-rule[39m=[32m"evenodd"[39m
+                      [33md[39m=[32m"M3 1h11l1 1v5.3a3.21 3.21 0 0 0-1-.3V2H9v10.88L7.88 14H3l-1-1V2l1-1zm0 12h5V2H3v11zm10.379-4.998a2.53 2.53 0 0 0-1.19.348h-.03a2.51 2.51 0 0 0-.799 3.53L9 14.23l.71.71 2.35-2.36c.325.22.7.358 1.09.4a2.47 2.47 0 0 0 1.14-.13 2.51 2.51 0 0 0 1-.63 2.46 2.46 0 0 0 .58-1 2.63 2.63 0 0 0 .07-1.15 2.53 2.53 0 0 0-1.35-1.81 2.53 2.53 0 0 0-1.211-.258zm.24 3.992a1.5 1.5 0 0 1-.979-.244 1.55 1.55 0 0 1-.56-.68 1.49 1.49 0 0 1-.08-.86 1.49 1.49 0 0 1 1.18-1.18 1.49 1.49 0 0 1 .86.08c.276.117.512.311.68.56a1.5 1.5 0 0 1-1.1 2.324z"[39m
+                      [33mfill-rule[39m=[32m"evenodd"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [0m View All Courses[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mstyle[39m=[32m"display: flex; margin-bottom: 200px;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"width: 160%;"[39m
+              [36m>[39m
+                [36m<h1>[39m
+                  [0mTesting Plan[0m
+                [36m</h1>[39m
+                [36m<h3>[39m
+                  [0mComputer Science Bachelor of Arts[0m
+                [36m</h3>[39m
+                [36m<br />[39m
+                [36m<div>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                      [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"2"[39m
+                            [33mstyle[39m=[32m""[39m
+                          [36m>[39m
+                            [0mWinter 2022[0m
+                          [36m</th>[39m
+                          [36m<th>[39m
+                            [36m<button[39m
+                              [33mclass[39m=[32m"btn btn-primary"[39m
+                              [33mstyle[39m=[32m"background-color: red;"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [0mDelete Semester[0m
+                            [36m</button>[39m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCourse Department[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mCourse ID[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0mNumber of Credits[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mEGGG[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m101[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mCISC[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m108[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                        [36m<tr>[39m
+                          [36m<td>[39m
+                            [0mMATH[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m241[0m
+                          [36m</td>[39m
+                          [36m<td>[39m
+                            [0m3[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                    [36m</table>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primar...
+
+      72 |         });
+      73 |         editButton.click();
+    > 74 |         const seasonDropdown = screen.getByRole("combobox", {
+         |                                       ^
+      75 |             name: /Season:/i
+      76 |         });
+      77 |         userEvent.selectOptions(seasonDropdown, "Summer");
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:74:39)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
@@ -1007,7 +1421,35 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.8 s)
                           [36m</th>[39m
                         [36m</tr>[39m
                       [36m</thead>[39m
-                      [36m<tbody>[39m
+                -------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
+File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                     
+-------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
+All files                            |   26.12 |     31.2 |   28.93 |   26.91 |                                                       
+ src                                 |   35.48 |    43.75 |    37.5 |   39.28 |                                                       
+  App.tsx                            |   85.71 |      100 |      50 |   85.71 | 72                                                    
+  StorageFunctions.tsx               |   20.83 |       10 |   33.33 |    23.8 | 7-35,51-52                                            
+ src/Components/CourseListComponents |     2.5 |        0 |    2.56 |     2.5 |                                                       
+  AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                
+  CourseListOffcanvas.tsx            |      50 |      100 |   33.33 |      50 | 19-26                                                 
+  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 21-143                                                
+  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 28-214                                                
+ src/Components/DegreePlanComponents |   34.73 |    37.37 |   37.83 |   35.86 |                                                       
+  PlanList.tsx                       |   23.52 |    33.33 |   26.31 |      25 | 54,76-81,96-219                                       
+  ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                                       
+  ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                              
+  ViewingPlan.tsx                    |    52.7 |    48.07 |   53.06 |   54.92 | 73-97,114-117,131,174-216,323,430,481-497,561,570-626 
+  addSemesterPopup.tsx               |       0 |        0 |       0 |       0 | 17-120                                                
+  moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-124                                                
+ src/Interfaces                      |       0 |        0 |       0 |       0 |                                                       
+  course.ts                          |       0 |        0 |       0 |       0 |                                                       
+  degree.ts                          |       0 |        0 |       0 |       0 |                                                       
+  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                                       
+  semester.ts                        |       0 |        0 |       0 |       0 | 6-13                                                  
+ src/Resources                       |     100 |      100 |     100 |     100 |                                                       
+  Courses.ts                         |     100 |      100 |     100 |     100 |                                                       
+  Degrees.ts                         |     100 |      100 |     100 |     100 |                                                       
+-------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
+      [36m<tbody>[39m
                         [36m<tr>[39m
                           [36m<td>[39m
                             [0mCourse Department[0m
@@ -1071,35 +1513,8 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (5.8 s)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
--------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                         
--------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-All files                            |   31.83 |    38.58 |   34.41 |   32.85 |                                                           
- src                                 |   35.48 |    43.75 |    37.5 |   39.28 |                                                           
-  App.tsx                            |   85.71 |      100 |      50 |   85.71 | 72                                                        
-  StorageFunctions.tsx               |   20.83 |       10 |   33.33 |    23.8 | 7-35,51-52                                                
- src/Components/CourseListComponents |     2.5 |        0 |    2.56 |     2.5 |                                                           
-  AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                    
-  CourseListOffcanvas.tsx            |      50 |      100 |   33.33 |      50 | 19-26                                                     
-  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 21-143                                                    
-  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 28-214                                                    
- src/Components/DegreePlanComponents |   43.19 |    45.88 |   45.28 |   44.78 |                                                           
-  PlanList.tsx                       |   23.52 |    33.33 |   26.31 |      25 | 54,76-81,96-219                                           
-  ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                                           
-  ViewPlanFunctions.tsx              |      25 |       80 |      25 |   26.66 | 10-41,61                                                  
-  ViewingPlan.tsx                    |   56.09 |    48.21 |   58.18 |   58.22 | 72-96,113-116,130,173-215,322,429,489,516,552-568,631-687 
-  moveCoursePopup.tsx                |       0 |        0 |       0 |       0 | 24-125                                                    
- src/Interfaces                      |   57.14 |       50 |     100 |   57.14 |                                                           
-  course.ts                          |       0 |        0 |       0 |       0 |                                                           
-  degree.ts                          |       0 |        0 |       0 |       0 |                                                           
-  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                                           
-  semester.ts                        |   57.14 |       50 |     100 |   57.14 | 7,9,13                                                    
- src/Resources                       |     100 |      100 |     100 |     100 |                                                           
-  Courses.ts                         |     100 |      100 |     100 |     100 |                                                           
-  Degrees.ts                         |     100 |      100 |     100 |     100 |                                                           
--------------------------------------|---------|----------|---------|---------|-----------------------------------------------------------
 Test Suites: 1 failed, 1 total
-Tests:       6 failed, 4 passed, 10 total
+Tests:       7 failed, 3 passed, 10 total
 Snapshots:   0 total
-Time:        6.407 s
+Time:        7.497 s
 Ran all test suites.
