@@ -39,7 +39,6 @@ export function movePopup(
                 <Modal.Title>Move Course</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {/*ID*/}
                 <Form.Group controlId="formPlanID" as={Row}>
                     <Col>
                         <Form.Group controlId="moveToSemester">
