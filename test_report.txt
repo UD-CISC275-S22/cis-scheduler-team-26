@@ -2,18 +2,18 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.351 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.081 s)
   ViewingPlan Tests
-    ✓ The initial two test semesters are displated (234 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (122 ms)
-    ✕ Courses can be removed (483 ms)
-    ✓ Courses can be added (505 ms)
-    ✕ Semesters can be removed (269 ms)
-    ✕ Semesters can be added (1633 ms)
-    ✕ The initial credits in the testing plan are displayed (90 ms)
-    ✕ When adding a course, the total credits in updated (479 ms)
-    ✕ When removing a course, the score is updated (394 ms)
-    ✕ Semesters can be removed (244 ms)
+    ✓ The initial two test semesters are displated (228 ms)
+    ✓ All 4 inital test courses are displayed for both semesters (123 ms)
+    ✕ Courses can be removed (463 ms)
+    ✓ Courses can be added (518 ms)
+    ✕ Semesters can be removed (276 ms)
+    ✕ Semesters can be added (1605 ms)
+    ✕ The initial credits in the testing plan are displayed (84 ms)
+    ✕ When adding a course, the total credits in updated (473 ms)
+    ✕ When removing a course, the score is updated (363 ms)
+    ✕ Semesters can be removed (238 ms)
 
   ● ViewingPlan Tests › Courses can be removed
 
@@ -1488,14 +1488,14 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.351 s)
 -------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                     
 -------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
-All files                            |   23.61 |    30.34 |    26.9 |   24.54 |                                                       
+All files                            |    23.9 |    30.34 |    26.9 |   24.84 |                                                       
  src                                 |   35.48 |    43.75 |    37.5 |   39.28 |                                                       
   App.tsx                            |   85.71 |      100 |      50 |   85.71 | 72                                                    
   StorageFunctions.tsx               |   20.83 |       10 |   33.33 |    23.8 | 7-35,51-52                                            
- src/Components/CourseListComponents |    1.76 |        0 |    1.96 |    1.83 |                                                       
+ src/Components/CourseListComponents |    2.65 |        0 |    1.96 |    2.75 |                                                       
   AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                
-  CourseListOffcanvas.tsx            |      50 |      100 |   33.33 |      50 | 24-31                                                 
-  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 27-164                                                
+  CourseListOffcanvas.tsx            |      60 |      100 |   33.33 |      60 | 27-34                                                 
+  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 30-165                                                
   RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 34-231                                                
   UpdateCoursesInPlansFunction.tsx   |       0 |        0 |       0 |       0 | 15-70                                                 
  src/Components/DegreePlanComponents |   34.73 |    37.37 |   37.83 |   35.86 |                                                       
@@ -1517,5 +1517,5 @@ All files                            |   23.61 |    30.34 |    26.9 |   24.54 |
 Test Suites: 1 failed, 1 total
 Tests:       7 failed, 3 passed, 10 total
 Snapshots:   0 total
-Time:        8.073 s
+Time:        7.726 s
 Ran all test suites.
