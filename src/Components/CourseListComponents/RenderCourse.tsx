@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Course } from "../../Interfaces/course";
+import { DegreePlan } from "../../Interfaces/degreePlan";
 import "./RenderCourse.css";
 import { Button, Form } from "react-bootstrap";
+import { updateCoursesInPlans } from "./UpdateCoursesInPlansFunction";
 
 //icon imports
 import { BsTrash } from "react-icons/bs";
@@ -17,12 +19,16 @@ export function RenderCourse({
     Course,
     deleteCourse,
     editCourse,
-    resetCourse
+    resetCourse,
+    planList,
+    setPlanList
 }: {
     Course: Course;
     deleteCourse: () => void;
     editCourse: (newName: string, newID: number, newCreds: number) => void;
     resetCourse: () => void;
+    planList: DegreePlan[];
+    setPlanList: (d: DegreePlan[]) => void;
 }): JSX.Element {
     //State determining whether to render expanded information
     const [renderExpanded, setRenderExpanded] = useState<boolean>(false);
@@ -132,6 +138,14 @@ export function RenderCourse({
                     setNewCourseID={setNewCourseID}
                     newCourseCredits={newCourseCredits}
                     setNewCourseCredits={setNewCourseCredits}
+                    updateCoursesInPlans={() =>
+                        updateCoursesInPlans(planList, setPlanList, Course, {
+                            id: newCourseID,
+                            courseName: newCourseDepartment,
+                            numCredits: newCourseCredits,
+                            preReq: []
+                        })
+                    }
                 ></EditingCourseForm>
             )}
         </div>
@@ -147,7 +161,8 @@ function EditingCourseForm({
     newCourseID,
     setNewCourseID,
     newCourseCredits,
-    setNewCourseCredits
+    setNewCourseCredits,
+    updateCoursesInPlans
 }: {
     Course: Course;
     editCourse: () => void;
@@ -158,6 +173,7 @@ function EditingCourseForm({
     setNewCourseID: (n: number) => void;
     newCourseCredits: number;
     setNewCourseCredits: (n: number) => void;
+    updateCoursesInPlans: () => void;
 }): JSX.Element {
     return (
         <div>
@@ -200,6 +216,7 @@ function EditingCourseForm({
                 onClick={() => {
                     setEditingCourse(false);
                     editCourse();
+                    updateCoursesInPlans();
                 }}
             >
                 <AiOutlineCheck></AiOutlineCheck> Confirm

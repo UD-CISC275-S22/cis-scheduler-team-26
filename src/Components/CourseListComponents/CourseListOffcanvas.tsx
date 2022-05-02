@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { CoursesList } from "./CoursesList";
 import { Course } from "../../Interfaces/course";
+import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Button, Offcanvas } from "react-bootstrap";
 import { VscOpenPreview } from "react-icons/vsc";
 import "./CoursesList.css";
 
 export function CoursesListOffcanvas({
     setCourses,
-    courses
+    courses,
+    planList,
+    setPlanList
 }: {
     setCourses: (courses: Course[]) => void;
     courses: Course[];
+    planList: DegreePlan[];
+    setPlanList: (d: DegreePlan[]) => void;
 }): JSX.Element {
     const [show, setShow] = useState<boolean>(false);
     return (
@@ -35,6 +40,8 @@ export function CoursesListOffcanvas({
                     <CoursesList
                         courses={courses}
                         setCourses={setCourses}
+                        planList={planList}
+                        setPlanList={setPlanList}
                     ></CoursesList>
                 </Offcanvas.Body>
             </Offcanvas>

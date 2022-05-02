@@ -3,18 +3,24 @@ import { Course } from "../../Interfaces/course";
 import { Button } from "react-bootstrap";
 import { RenderCourse } from "./RenderCourse";
 import { AddCourseForm } from "./AddCoursePopup";
+import { DegreePlan } from "../../Interfaces/degreePlan";
 import "./CoursesList.css";
 
 //icon imports
 import { RiAddBoxLine } from "react-icons/ri";
+import { updateCoursesInPlans } from "./UpdateCoursesInPlansFunction";
 interface coursesListProp {
     setCourses: (newCourses: Course[]) => void;
     courses: Course[];
+    planList: DegreePlan[];
+    setPlanList: (d: DegreePlan[]) => void;
 }
 
 export function CoursesList({
     setCourses,
-    courses
+    courses,
+    planList,
+    setPlanList
 }: coursesListProp): JSX.Element {
     //List of unmodified courses. It will only be update when adding or removing a course
     const [unmodifiedCourses, setUnmodifiedCourses] =
@@ -31,9 +37,15 @@ export function CoursesList({
                 <div key={curr.courseName + curr.id.toString()}>
                     <RenderCourse
                         Course={curr}
-                        deleteCourse={() =>
-                            deleteCourseByName(curr.courseName, curr.id)
-                        }
+                        deleteCourse={() => {
+                            deleteCourseByName(curr.courseName, curr.id);
+                            updateCoursesInPlans(
+                                planList,
+                                setPlanList,
+                                curr,
+                                null
+                            );
+                        }}
                         editCourse={(
                             newName: string,
                             newID: number,
@@ -48,8 +60,10 @@ export function CoursesList({
                             )
                         }
                         resetCourse={() => {
-                            resetCourseByName(curr.courseName, curr.id);
+                            resetCourse(curr, planList, setPlanList);
                         }}
+                        planList={planList}
+                        setPlanList={setPlanList}
                     ></RenderCourse>
                 </div>
             ))}
@@ -103,12 +117,19 @@ export function CoursesList({
 
     //This function allows a course to reset itself within the master list of courses
     //The unmodified version of the course is drawn from unmodifiedCourses state variable
-    function resetCourseByName(name: string, id: number) {
+    function resetCourse(
+        course: Course,
+        plans: DegreePlan[],
+        setPlans: (d: DegreePlan[]) => void
+    ) {
         const tmpCourses: string[] = [];
         courses.map((course: Course) =>
             tmpCourses.push(course.courseName + course.id.toString())
         );
-        const ind = tmpCourses.indexOf(name + id.toString());
+        const ind = tmpCourses.indexOf(
+            course.courseName + course.id.toString()
+        );
+        updateCoursesInPlans(plans, setPlans, course, unmodifiedCourses[ind]);
         editCourseByName(
             courses[ind].courseName,
             courses[ind].id,

@@ -79,6 +79,8 @@ function App(): JSX.Element {
                     <CoursesListOffcanvas
                         setCourses={setCourses}
                         courses={courses}
+                        planList={plans}
+                        setPlanList={setPlans}
                     ></CoursesListOffcanvas>
                 </div>
 
