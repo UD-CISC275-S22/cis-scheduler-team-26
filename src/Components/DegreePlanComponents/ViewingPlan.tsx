@@ -13,6 +13,8 @@ import { AiOutlineClear } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { RiAddBoxLine } from "react-icons/ri";
 import { CgMoveRight } from "react-icons/cg";
+import { savePlanToStorage } from "../../StorageFunctions";
+import { FiSave } from "react-icons/fi";
 
 interface planListProp {
     plan: DegreePlan;
@@ -624,6 +626,9 @@ export function ViewingPlan({
                 >
                     <AiOutlineClear></AiOutlineClear>
                     Clear All Semesters
+                </Button>
+                <Button onClick={() => savePlanToStorage(plan)}>
+                    <FiSave style={{ fontSize: "120%" }}></FiSave> Save Plan
                 </Button>
             </div>
             {/*Components to show all the requirements for this plan's degree and which have been fulfilled */}

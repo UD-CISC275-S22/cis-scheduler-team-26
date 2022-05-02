@@ -7,10 +7,7 @@ import { Degree } from "../../Interfaces/degree";
 import { BsTrash } from "react-icons/bs";
 import { TiEdit } from "react-icons/ti";
 import { RiAddBoxLine } from "react-icons/ri";
-import {
-    deletePlanFromStorageByName,
-    savePlanToStorage
-} from "../../StorageFunctions";
+import { deletePlanFromStorageByName } from "../../StorageFunctions";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 interface planListProp {
@@ -56,9 +53,6 @@ function printPlan(
                     {/*Trash Icon*/}
                     <BsTrash></BsTrash>
                     Delete Plan
-                </Button>
-                <Button onClick={() => savePlanToStorage(plan)}>
-                    Save Plan
                 </Button>
             </div>
         </div>
