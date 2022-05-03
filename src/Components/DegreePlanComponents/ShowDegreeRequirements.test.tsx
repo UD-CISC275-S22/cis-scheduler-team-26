@@ -50,7 +50,7 @@ describe("Degree Requirements Tests", () => {
         screen
             .getAllByRole("button", {
                 name: "Remove Course"
-            })[1]
+            })[2]
             .click();
 
         expect(courses[0].style.backgroundColor).toEqual("lightpink");
