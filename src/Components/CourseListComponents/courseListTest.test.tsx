@@ -42,8 +42,15 @@ describe("Add course button test", () => {
         expect(screen.getAllByText(/test1/i).length === 2);
     });
     test("Removing a course", () => {
-        const clickCourse = screen.getByText("EGGG101");
-        clickCourse.click();
+        const egggCourse = screen.getByText("EGGG101");
+        egggCourse.click();
+        expect(screen.getAllByText(/EGGG101/i).length === 0);
+        const mathCourse = screen.getByText("MATH241");
+        mathCourse.click();
+        expect(screen.getAllByText(/MATH241/i).length === 0);
+        const ciscCourse = screen.getByText("CISC108");
+        ciscCourse.click();
+        expect(screen.getAllByText(/CISC108/i).length === 0);
     });
     test("Editing a course", () => {
         const clickCourse = screen.getByText("EGGG101");
@@ -70,5 +77,29 @@ describe("Add course button test", () => {
     test("Undo a edit", () => {
         const clickCourse = screen.getByText("EGGG101");
         clickCourse.click();
+        const edit = screen.getAllByRole("button", {
+            name: "Edit"
+        });
+        const reset = screen.getAllByRole("button", {
+            name: "Reset"
+        });
+        edit[0].click();
+        const submit = screen.getAllByRole("button", {
+            name: "Confirm"
+        });
+        const courseDep = screen.getByTestId("editDep");
+        const courseID = screen.getByTestId("editId");
+        const courseCred = screen.getByTestId("editCred");
+
+        //first test
+        userEvent.type(courseDep, "test");
+        userEvent.type(courseID, "100");
+        userEvent.type(courseCred, "3");
+        submit[0].click();
+
+        clickCourse.click();
+        reset[0].click();
+        expect(screen.getAllByText(/EGGG/i).length !== 2);
+        expect(screen.getAllByText(/101/i).length !== 2);
     });
 });
