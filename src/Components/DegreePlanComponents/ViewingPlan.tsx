@@ -73,7 +73,7 @@ function addCourseToSemList(currSem: Semester, addingCourse: Course) {
     return {
         ...currSem,
         courseList: [...currSem.courseList, addingCourse],
-        totalCredits: currSem.totalCredits + addingCourse.numCredits
+        totalCredits: currSem.totalCredits + addingCourse.credits
     };
 }
 function addCourseHelp(
@@ -97,7 +97,7 @@ function addCourseHelp(
                     sem === editingSem
                         ? sem.courseList.includes(addingCourse, 0)
                             ? currentTotal
-                            : addingCourse.numCredits
+                            : addingCourse.credits
                         : currentTotal,
                 0
             )
@@ -124,8 +124,7 @@ export function addCourse(
 
 function findCourse(courses: Course[], check: string): Course {
     const found = courses.find(
-        (currCourse: Course): boolean =>
-            currCourse.courseName + currCourse.id === check
+        (currCourse: Course): boolean => currCourse.code === check
     );
     if (found === undefined) {
         return courses[0];
@@ -139,7 +138,7 @@ function removeCourseFromSemester(check: Semester, course: Course): Semester {
         courseList: check.courseList.filter(
             (currCourse: Course): boolean => currCourse != course
         ),
-        totalCredits: check.totalCredits - course.numCredits
+        totalCredits: check.totalCredits - course.credits
     };
 }
 export function removeCourseHelp(
@@ -153,7 +152,7 @@ export function removeCourseHelp(
             (check: Semester): Semester =>
                 check === sem ? removeCourseFromSemester(check, course) : check
         ),
-        totalCredits: curr.totalCredits - course.numCredits
+        totalCredits: curr.totalCredits - course.credits
     };
 }
 function removeCourse(
@@ -287,15 +286,21 @@ function printSemesters(
                                 <tbody>
                                     {semester.courseList.map(
                                         (course: Course): JSX.Element => (
-                                            <tr
-                                                key={
-                                                    course.courseName +
-                                                    course.id.toString()
-                                                }
-                                            >
-                                                <td>{course.courseName}</td>
-                                                <td>{course.id}</td>
-                                                <td>{course.numCredits}</td>
+                                            <tr key={course.code}>
+                                                <td>
+                                                    {course.code.substring(
+                                                        0,
+                                                        course.code.indexOf(" ")
+                                                    )}
+                                                </td>
+                                                <td>
+                                                    {course.code.substring(
+                                                        course.code.indexOf(
+                                                            " "
+                                                        ) + 1
+                                                    )}
+                                                </td>
+                                                <td>{course.credits}</td>
                                                 <td>
                                                     <Button
                                                         style={{
@@ -353,15 +358,21 @@ function printSemesters(
                                 <tbody>
                                     {semester.courseList.map(
                                         (course: Course): JSX.Element => (
-                                            <tr
-                                                key={
-                                                    course.courseName +
-                                                    course.id.toString()
-                                                }
-                                            >
-                                                <td>{course.courseName}</td>
-                                                <td>{course.id}</td>
-                                                <td>{course.numCredits}</td>
+                                            <tr key={course.code}>
+                                                <td>
+                                                    {course.code.substring(
+                                                        0,
+                                                        course.code.indexOf(" ")
+                                                    )}
+                                                </td>
+                                                <td>
+                                                    {course.code.substring(
+                                                        course.code.indexOf(
+                                                            " "
+                                                        ) + 1
+                                                    )}
+                                                </td>
+                                                <td>{course.credits}</td>
                                             </tr>
                                         )
                                     )}
@@ -376,10 +387,7 @@ function printSemesters(
                                                     Pick the Course to be Added:
                                                 </Form.Label>
                                                 <Form.Select
-                                                    value={
-                                                        addingCourse.courseName +
-                                                        addingCourse.id
-                                                    }
+                                                    value={addingCourse.code}
                                                     onChange={(
                                                         event: React.ChangeEvent<HTMLSelectElement>
                                                     ) =>
@@ -395,17 +403,12 @@ function printSemesters(
                                                     {courses.map(
                                                         (curr: Course) => (
                                                             <option
-                                                                key={
-                                                                    curr.courseName +
-                                                                    curr.id
-                                                                }
+                                                                key={curr.code}
                                                                 value={
-                                                                    curr.courseName +
-                                                                    curr.id
+                                                                    curr.code
                                                                 }
                                                             >
-                                                                {curr.courseName +
-                                                                    curr.id}
+                                                                {curr.code}
                                                             </option>
                                                         )
                                                     )}
@@ -517,10 +520,14 @@ export function ViewingPlan({
     const [move, setMove] = useState<boolean>(false);
     const [moveSem, setMoveSem] = useState<Semester>(plan.semesterList[0]);
     const [moveCourse, setMoveCourse] = useState<Course>({
-        id: -1,
-        courseName: "",
-        numCredits: -1,
-        preReq: []
+        code: "",
+        credits: -1,
+        preReq: "",
+        name: "",
+        descr: "",
+        restrict: "",
+        breadth: "",
+        typ: ""
     });
 
     //save the plan to storage every time its changed if isPlanSaved is true

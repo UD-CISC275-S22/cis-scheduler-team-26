@@ -31,9 +31,7 @@ export function AddCourseForm({
     /* Checks if a course already exists in the courseList */
     function doesCourseExist(name: string) {
         const courseNames: string[] = [];
-        courseList.map((course: Course) =>
-            courseNames.push(course.courseName + course.id.toString())
-        );
+        courseList.map((course: Course) => courseNames.push(course.code));
         return courseNames.includes(name);
     }
     return (
@@ -90,7 +88,7 @@ export function AddCourseForm({
                     ></Form.Control>
                 </Form.Group>
                 {doesCourseExist(
-                    newCourseDepartment + newCourseID.toString()
+                    newCourseDepartment + " " + newCourseID.toString()
                 ) && (
                     <div style={{ color: "red" }}>
                         This course already exists!
@@ -104,7 +102,9 @@ export function AddCourseForm({
                     onClick={() => {
                         if (
                             !doesCourseExist(
-                                newCourseDepartment + newCourseID.toString()
+                                newCourseDepartment +
+                                    " " +
+                                    newCourseID.toString()
                             )
                         ) {
                             setAddingCourse(false);

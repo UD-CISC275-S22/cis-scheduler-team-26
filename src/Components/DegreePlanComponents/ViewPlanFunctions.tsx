@@ -11,7 +11,7 @@ export function calculateCredits(
             ...curr,
             totalCredits: curr.courseList.reduce(
                 (currentTotal: number, currCourse: Course) =>
-                    currentTotal + currCourse.numCredits,
+                    currentTotal + currCourse.credits,
                 0
             )
         };
@@ -50,9 +50,8 @@ export function find_course(
             (curr: Semester): boolean =>
                 curr.courseList.find(
                     (check: Course): boolean =>
-                        check.courseName === findCourse.courseName &&
-                        check.id === findCourse.id &&
-                        check.numCredits === findCourse.numCredits
+                        check.code === findCourse.code &&
+                        check.credits === findCourse.credits
                 ) != undefined
         ) != undefined
     ) {
