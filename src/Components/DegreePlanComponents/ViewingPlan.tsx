@@ -460,6 +460,7 @@ function printSemesters(
                                         : semester
                                 )
                             }
+                            data-testid={"editCourseButton"}
                         >
                             <TiEdit></TiEdit>
                             Edit Courses
