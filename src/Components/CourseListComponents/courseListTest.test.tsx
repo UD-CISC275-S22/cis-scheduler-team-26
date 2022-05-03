@@ -29,9 +29,11 @@ describe("Add course button test", () => {
         const submit = screen.getAllByRole("button", {
             name: "Confirm"
         });
-        const courseDep = screen.getByTestId("dep");
-        const courseID = screen.getByTestId("id");
-        const courseCred = screen.getByTestId("credits");
+        const courseDep = screen.getByTestId("addDep");
+        const courseID = screen.getByTestId("addId");
+        const courseCred = screen.getByTestId("addCredits");
+
+        //first test
         userEvent.type(courseDep, "test1");
         userEvent.type(courseID, "200");
         userEvent.type(courseCred, "3");
@@ -46,6 +48,24 @@ describe("Add course button test", () => {
     test("Editing a course", () => {
         const clickCourse = screen.getByText("EGGG101");
         clickCourse.click();
+        const edit = screen.getAllByRole("button", {
+            name: "Edit"
+        });
+        edit[0].click();
+        const submit = screen.getAllByRole("button", {
+            name: "Confirm"
+        });
+        const courseDep = screen.getByTestId("editDep");
+        const courseID = screen.getByTestId("editId");
+        const courseCred = screen.getByTestId("editCred");
+
+        //first test
+        userEvent.type(courseDep, "test2");
+        userEvent.type(courseID, "200");
+        userEvent.type(courseCred, "3");
+        submit[0].click();
+        expect(screen.getAllByText(/200/i).length === 2);
+        expect(screen.getAllByText(/test2/i).length === 2);
     });
     test("Undo a edit", () => {
         const clickCourse = screen.getByText("EGGG101");
