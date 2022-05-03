@@ -20,13 +20,10 @@ export function DegreeRequirements({
     /* Checks if a course is in the list
     I dont use array.includes method because its too sensitive, it returns false unless everything is the same
     This checks for equality just using the course name and id. */
-    function isCourseInList(course: Course, list: Course[]): boolean {
-        const check: string = course.courseName + course.id.toString();
+    function isCourseInList(course: string, list: Course[]): boolean {
         const checklist: string[] = [];
-        list.map((course: Course) =>
-            checklist.push(course.courseName + course.id.toString())
-        );
-        return checklist.includes(check);
+        list.map((course: Course) => checklist.push(course.code));
+        return checklist.includes(course);
     }
 
     /* Takes in a list of semesters and returns a list of all courses in the semesters.
@@ -49,8 +46,11 @@ export function DegreeRequirements({
                 Completed {credits} of {degree.requiredCredits} required credits
             </div>
             <div className="degree-requirements-body">
-                {degree.requiredCourses.map((course: Course) =>
-                    renderCourse(course, isCourseInList(course, courses))
+                {degree.requiredCourses.map((courseCode: string) =>
+                    renderCourse(
+                        courseCode,
+                        isCourseInList(courseCode, courses)
+                    )
                 )}
             </div>
         </div>
@@ -58,17 +58,17 @@ export function DegreeRequirements({
 }
 
 //component to render a single course
-function renderCourse(course: Course, isFulfilled: boolean): JSX.Element {
+function renderCourse(course: string, isFulfilled: boolean): JSX.Element {
     const color = isFulfilled ? "lightgreen" : "lightpink";
     return (
         <div
             className="degree-requirements-course"
             data-testid="requirements-course-colored"
             style={{ backgroundColor: color }}
-            key={course.courseName + course.id.toString()}
+            key={course}
         >
             <div className="degree-requirements-course-text">
-                {course.courseName + course.id.toString()}{" "}
+                {course}{" "}
                 {isFulfilled ? (
                     <AiOutlineCheck></AiOutlineCheck>
                 ) : (

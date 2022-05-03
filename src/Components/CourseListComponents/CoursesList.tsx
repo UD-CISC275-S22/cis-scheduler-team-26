@@ -35,11 +35,11 @@ export function CoursesList({
     return (
         <div>
             {courses.map((curr: Course) => (
-                <div key={curr.courseName + curr.id.toString()}>
+                <div key={curr.code}>
                     <RenderCourse
                         Course={curr}
                         deleteCourse={() => {
-                            deleteCourseByName(curr.courseName, curr.id);
+                            deleteCourseByName(curr.code);
                             updateCoursesInPlans(
                                 planList,
                                 setPlanList,
@@ -47,18 +47,8 @@ export function CoursesList({
                                 null
                             );
                         }}
-                        editCourse={(
-                            newName: string,
-                            newID: number,
-                            newCreds: number
-                        ) =>
-                            editCourseByName(
-                                curr.courseName,
-                                curr.id,
-                                newName,
-                                newID,
-                                newCreds
-                            )
+                        editCourse={(newName: string, newCreds: number) =>
+                            editCourseByName(curr.code, newName, newCreds)
                         }
                         resetCourse={() => {
                             resetCourse(curr, planList, setPlanList);
@@ -93,21 +83,14 @@ export function CoursesList({
     );
 
     //This function allows each course to edit itself within the master list of courses
-    function editCourseByName(
-        name: string,
-        id: number,
-        newName: string,
-        newID: number,
-        newCreds: number
-    ) {
+    function editCourseByName(name: string, newName: string, newCreds: number) {
         const newCourses: Course[] = [];
         courses.map((course: Course) => {
-            if (course.courseName === name && course.id === id) {
+            if (course.code === name) {
                 newCourses.push({
                     ...course,
-                    courseName: newName,
-                    id: newID,
-                    numCredits: newCreds
+                    code: newName,
+                    credits: newCreds
                 });
             } else {
                 newCourses.push(course);
@@ -124,51 +107,51 @@ export function CoursesList({
         setPlans: (d: DegreePlan[]) => void
     ) {
         const tmpCourses: string[] = [];
-        courses.map((course: Course) =>
-            tmpCourses.push(course.courseName + course.id.toString())
-        );
-        const ind = tmpCourses.indexOf(
-            course.courseName + course.id.toString()
-        );
+        courses.map((course: Course) => tmpCourses.push(course.code));
+        const ind = tmpCourses.indexOf(course.code);
         updateCoursesInPlans(plans, setPlans, course, unmodifiedCourses[ind]);
         editCourseByName(
-            courses[ind].courseName,
-            courses[ind].id,
-            unmodifiedCourses[ind].courseName,
-            unmodifiedCourses[ind].id,
-            unmodifiedCourses[ind].numCredits
+            courses[ind].code,
+            unmodifiedCourses[ind].code,
+            unmodifiedCourses[ind].credits
         );
     }
     //Allows a course to delete itself from the master list and the unmodified list
-    function deleteCourseByName(name: string, id: number) {
+    function deleteCourseByName(name: string) {
         const tmpCourses: string[] = [];
-        courses.map((course: Course) =>
-            tmpCourses.push(course.courseName + course.id.toString())
-        );
-        const ind = tmpCourses.indexOf(name + id.toString());
+        courses.map((course: Course) => tmpCourses.push(course.code));
+        const ind = tmpCourses.indexOf(name);
         courses.splice(ind, 1);
         setCourses([...courses]);
         unmodifiedCourses.splice(ind, 1);
         setUnmodifiedCourses([...unmodifiedCourses]);
     }
     //Adds a course to the master list and the unmodified list
-    function addCourse(newName: string, newID: number, newCredits: number) {
+    function addCourse(newName: string, newCredits: number) {
         setCourses([
             ...courses,
             {
-                courseName: newName,
-                id: newID,
-                numCredits: newCredits,
-                preReq: []
+                code: newName,
+                credits: newCredits,
+                preReq: "",
+                name: "",
+                descr: "",
+                restrict: "",
+                breadth: "",
+                typ: ""
             }
         ]);
         setUnmodifiedCourses([
             ...unmodifiedCourses,
             {
-                courseName: newName,
-                id: newID,
-                numCredits: newCredits,
-                preReq: []
+                code: newName,
+                credits: newCredits,
+                preReq: "",
+                name: "",
+                descr: "",
+                restrict: "",
+                breadth: "",
+                typ: ""
             }
         ]);
     }

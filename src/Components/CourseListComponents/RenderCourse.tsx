@@ -25,7 +25,7 @@ export function RenderCourse({
 }: {
     Course: Course;
     deleteCourse: () => void;
-    editCourse: (newName: string, newID: number, newCreds: number) => void;
+    editCourse: (newName: string, newCreds: number) => void;
     resetCourse: () => void;
     planList: DegreePlan[];
     setPlanList: (d: DegreePlan[]) => void;
@@ -35,11 +35,13 @@ export function RenderCourse({
     //States for editing course
     const [editingCourse, setEditingCourse] = useState<boolean>(false);
     const [newCourseDepartment, setNewCourseDepartment] = useState<string>(
-        Course.courseName
+        Course.code.substring(0, Course.code.indexOf(" "))
     );
-    const [newCourseID, setNewCourseID] = useState<number>(Course.id);
+    const [newCourseID, setNewCourseID] = useState<number>(
+        parseInt(Course.code.substring(Course.code.indexOf(" ") + 1))
+    );
     const [newCourseCredits, setNewCourseCredits] = useState<number>(
-        Course.numCredits
+        Course.credits
     );
     //fancy color states
     const [backgroundColorIndex, setBackgroundColorIndex] = useState<number>(0);
@@ -65,7 +67,7 @@ export function RenderCourse({
                                 marginLeft: "10px"
                             }}
                         >
-                            {Course.courseName + Course.id}
+                            {Course.code}
                         </h5>
                         <FiMoreVertical
                             style={{
@@ -78,19 +80,8 @@ export function RenderCourse({
                     {/* Body of the rendered course */}
                     {renderExpanded && (
                         <div style={{ marginLeft: "20px" }}>
-                            <div>Credits: {Course.numCredits}</div>
-                            <div>
-                                Prerequisite Courses:{" "}
-                                {Course.preReq.map(
-                                    (pre: Course): JSX.Element => (
-                                        <div
-                                            key={Course.courseName + Course.id}
-                                        >
-                                            {pre.courseName + pre.id}
-                                        </div>
-                                    )
-                                )}
-                            </div>
+                            <div>Credits: {Course.credits}</div>
+                            <div>Prerequisite Courses: {Course.preReq}</div>
                             <Button
                                 onClick={() => setEditingCourse(true)}
                                 style={{ marginRight: "5px" }}
@@ -132,8 +123,7 @@ export function RenderCourse({
                     Course={Course}
                     editCourse={() =>
                         editCourse(
-                            newCourseDepartment,
-                            newCourseID,
+                            newCourseDepartment + " " + newCourseID,
                             newCourseCredits
                         )
                     }
@@ -146,10 +136,14 @@ export function RenderCourse({
                     setNewCourseCredits={setNewCourseCredits}
                     updateCoursesInPlans={() =>
                         updateCoursesInPlans(planList, setPlanList, Course, {
-                            id: newCourseID,
-                            courseName: newCourseDepartment,
-                            numCredits: newCourseCredits,
-                            preReq: []
+                            code: newCourseDepartment + " " + newCourseID,
+                            credits: newCourseCredits,
+                            preReq: "",
+                            name: "",
+                            descr: "",
+                            restrict: "",
+                            breadth: "",
+                            typ: ""
                         })
                     }
                 ></EditingCourseForm>
@@ -235,9 +229,15 @@ function EditingCourseForm({
                 style={{ backgroundColor: "red", borderColor: "red" }}
                 onClick={() => {
                     setEditingCourse(false);
-                    setNewCourseCredits(Course.numCredits);
-                    setNewCourseDepartment(Course.courseName);
-                    setNewCourseID(Course.id);
+                    setNewCourseCredits(Course.credits);
+                    setNewCourseDepartment(
+                        Course.code.substring(0, Course.code.indexOf(" "))
+                    );
+                    setNewCourseID(
+                        parseInt(
+                            Course.code.substring(Course.code.indexOf(" ") + 1)
+                        )
+                    );
                 }}
             >
                 <ImCancelCircle></ImCancelCircle> Cancel
