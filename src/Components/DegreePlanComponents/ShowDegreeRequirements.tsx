@@ -63,7 +63,7 @@ function renderCourse(course: Course, isFulfilled: boolean): JSX.Element {
     return (
         <div
             className="degree-requirements-course"
-            data-testID="requirements-course-colored"
+            data-testid="requirements-course-colored"
             style={{ backgroundColor: color }}
             key={course.courseName + course.id.toString()}
         >
