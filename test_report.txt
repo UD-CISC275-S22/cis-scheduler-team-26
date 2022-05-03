@@ -2,77 +2,10 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (8.98 s)
-  ● Console
-
-    console.error
-      Warning: React does not recognize the `data-testID` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-          at div
-          at div
-          at div
-          at DegreeRequirements (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ShowDegreeRequirements.tsx:12:5)
-          at div
-          at ViewingPlan (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ViewingPlan.tsx:506:5)
-          at div
-          at div
-          at App (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/App.tsx:38:35)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
-      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
-      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
-      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
-      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
-      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
-
+PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.423 s)
 PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx
-  ● Console
-
-    console.error
-      Warning: React does not recognize the `data-testID` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-          at div
-          at div
-          at div
-          at DegreeRequirements (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ShowDegreeRequirements.tsx:12:5)
-          at div
-          at ViewingPlan (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ViewingPlan.tsx:506:5)
-          at div
-          at div
-          at App (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/App.tsx:38:35)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
-      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
-      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
-      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
-      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
-      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
-
 PASS src/Components/DegreePlanComponents/savePlans.test.tsx
   ● Console
-
-    console.error
-      Warning: React does not recognize the `data-testID` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-          at div
-          at div
-          at div
-          at DegreeRequirements (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ShowDegreeRequirements.tsx:12:5)
-          at div
-          at ViewingPlan (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ViewingPlan.tsx:506:5)
-          at div
-          at div
-          at App (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/App.tsx:38:35)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
-      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
-      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
-      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
-      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
-      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
     console.error
       Error: Not implemented: navigation (except hash changes)
@@ -163,29 +96,6 @@ PASS src/Components/DegreePlanComponents/savePlans.test.tsx
 
 PASS src/Components/CourseListComponents/courseListTest.test.tsx
 FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx
-  ● Console
-
-    console.error
-      Warning: React does not recognize the `data-testID` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-          at div
-          at div
-          at div
-          at DegreeRequirements (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ShowDegreeRequirements.tsx:12:5)
-          at div
-          at ViewingPlan (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ViewingPlan.tsx:506:5)
-          at div
-          at div
-          at App (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/App.tsx:38:35)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
-      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
-      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
-      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
-      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
-      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
-
   ● Degree Requirements Tests › Correctly determines whether or not a requirement is fulfilled
 
     expect(received).toEqual(expected) // deep equality
@@ -239,5 +149,5 @@ All files                            |   83.38 |    77.24 |   85.38 |   83.33 |
 Test Suites: 1 failed, 4 passed, 5 total
 Tests:       1 failed, 23 passed, 24 total
 Snapshots:   0 total
-Time:        18.856 s
+Time:        15.405 s
 Ran all test suites.
