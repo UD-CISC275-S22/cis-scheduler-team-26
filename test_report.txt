@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.423 s)
+PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.247 s)
 PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx
 PASS src/Components/DegreePlanComponents/savePlans.test.tsx
   ● Console
@@ -95,28 +95,7 @@ PASS src/Components/DegreePlanComponents/savePlans.test.tsx
       at Object.<anonymous> (src/Components/DegreePlanComponents/savePlans.test.tsx:83:18)
 
 PASS src/Components/CourseListComponents/courseListTest.test.tsx
-FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx
-  ● Degree Requirements Tests › Correctly determines whether or not a requirement is fulfilled
-
-    expect(received).toEqual(expected) // deep equality
-
-    Expected: "lightpink"
-    Received: "lightgreen"
-
-      54 |             .click();
-      55 |
-    > 56 |         expect(courses[0].style.backgroundColor).toEqual("lightpink");
-         |                                                  ^
-      57 |     });
-      58 | });
-      59 |
-
-      at Object.<anonymous> (src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx:56:50)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
-
+PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx
 -------------------------------------|---------|----------|---------|---------|------------------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s            
 -------------------------------------|---------|----------|---------|---------|------------------------------
@@ -146,8 +125,9 @@ All files                            |   83.38 |    77.24 |   85.38 |   83.33 |
   Courses.ts                         |     100 |      100 |     100 |     100 |                              
   Degrees.ts                         |     100 |      100 |     100 |     100 |                              
 -------------------------------------|---------|----------|---------|---------|------------------------------
-Test Suites: 1 failed, 4 passed, 5 total
-Tests:       1 failed, 23 passed, 24 total
+
+Test Suites: 5 passed, 5 total
+Tests:       24 passed, 24 total
 Snapshots:   0 total
-Time:        15.405 s
+Time:        14.959 s
 Ran all test suites.
