@@ -2,7 +2,30 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (10.411 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (6.957 s)
+  ● Console
+
+    console.error
+      Warning: React does not recognize the `data-testID` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+          at div
+          at div
+          at div
+          at DegreeRequirements (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ShowDegreeRequirements.tsx:12:5)
+          at div
+          at ViewingPlan (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ViewingPlan.tsx:505:5)
+          at div
+          at div
+          at App (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/App.tsx:38:35)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
+
   ● ViewingPlan Tests › Courses can be removed
 
     TestingLibraryElementError: Unable to find an element with the text: /EGGG/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -1444,6 +1467,30 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (10.411 s)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:129:20)
 
 PASS src/Components/CourseListComponents/courseListTest.test.tsx
+PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx
+  ● Console
+
+    console.error
+      Warning: React does not recognize the `data-testID` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `data-testid` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+          at div
+          at div
+          at div
+          at DegreeRequirements (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ShowDegreeRequirements.tsx:12:5)
+          at div
+          at ViewingPlan (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/Components/DegreePlanComponents/ViewingPlan.tsx:505:5)
+          at div
+          at div
+          at App (/home/runner/work/cis-scheduler-team-26/cis-scheduler-team-26/src/App.tsx:38:35)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
+
 -------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                     
 -------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
@@ -1474,8 +1521,8 @@ All files                            |   46.93 |    42.06 |   47.95 |   47.57 |
   Degrees.ts                         |     100 |      100 |     100 |     100 |                                                       
 -------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
 
-Test Suites: 1 failed, 1 passed, 2 total
-Tests:       7 failed, 8 passed, 15 total
+Test Suites: 1 failed, 2 passed, 3 total
+Tests:       7 failed, 11 passed, 18 total
 Snapshots:   0 total
-Time:        13.508 s
+Time:        10.596 s
 Ran all test suites.
