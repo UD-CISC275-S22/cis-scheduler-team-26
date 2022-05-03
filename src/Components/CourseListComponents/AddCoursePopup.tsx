@@ -51,6 +51,7 @@ export function AddCourseForm({
                         <div>
                             <Form.Label>Course Department</Form.Label>
                             <Form.Control
+                                data-testid="dep"
                                 type="text"
                                 value={newCourseDepartment}
                                 onChange={(
@@ -61,6 +62,7 @@ export function AddCourseForm({
                         <div>
                             <Form.Label>Course ID</Form.Label>
                             <Form.Control
+                                data-testid="id"
                                 type="number"
                                 value={newCourseID}
                                 onChange={(
@@ -75,6 +77,7 @@ export function AddCourseForm({
                     </div>
                     <Form.Label>Course Credits</Form.Label>
                     <Form.Control
+                        data-testid="credits"
                         type="number"
                         value={newCourseCredits}
                         onChange={(
