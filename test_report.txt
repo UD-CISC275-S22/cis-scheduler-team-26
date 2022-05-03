@@ -2,19 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.38 s)
-  ViewingPlan Tests
-    ✓ The initial two test semesters are displated (232 ms)
-    ✓ All 4 inital test courses are displayed for both semesters (127 ms)
-    ✕ Courses can be removed (481 ms)
-    ✓ Courses can be added (515 ms)
-    ✕ Semesters can be removed (274 ms)
-    ✕ Semesters can be added (1654 ms)
-    ✕ The initial credits in the testing plan are displayed (89 ms)
-    ✕ When adding a course, the total credits in updated (488 ms)
-    ✕ When removing a course, the score is updated (397 ms)
-    ✕ Semesters can be removed (252 ms)
-
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (10.411 s)
   ● ViewingPlan Tests › Courses can be removed
 
     TestingLibraryElementError: Unable to find an element with the text: /EGGG/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -188,10 +176,6 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.38 s)
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:38:23)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
   ● ViewingPlan Tests › Semesters can be removed
 
@@ -363,10 +347,6 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.38 s)
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:65:23)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
   ● ViewingPlan Tests › Semesters can be added
 
@@ -777,10 +757,6 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.38 s)
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:74:39)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
   ● ViewingPlan Tests › The initial credits in the testing plan are displayed
 
@@ -959,10 +935,6 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.38 s)
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:86:20)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
   ● ViewingPlan Tests › When adding a course, the total credits in updated
 
@@ -1125,10 +1097,6 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.38 s)
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:103:20)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
   ● ViewingPlan Tests › When removing a course, the score is updated
 
@@ -1303,10 +1271,6 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.38 s)
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:116:20)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
   ● ViewingPlan Tests › Semesters can be removed
 
@@ -1478,24 +1442,21 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (7.38 s)
       at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:129:20)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
+PASS src/Components/CourseListComponents/courseListTest.test.tsx
 -------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                     
 -------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
-All files                            |    23.9 |    30.34 |    26.9 |   24.84 |                                                       
+All files                            |   46.93 |    42.06 |   47.95 |   47.57 |                                                       
  src                                 |   35.48 |    43.75 |    37.5 |   39.28 |                                                       
   App.tsx                            |   85.71 |      100 |      50 |   85.71 | 72                                                    
   StorageFunctions.tsx               |   20.83 |       10 |   33.33 |    23.8 | 7-35,51-52                                            
- src/Components/CourseListComponents |    2.65 |        0 |    1.96 |    2.75 |                                                       
-  AddCoursePopup.tsx                 |       0 |        0 |       0 |       0 | 33-127                                                
-  CourseListOffcanvas.tsx            |      60 |      100 |   33.33 |      60 | 27-34                                                 
-  CoursesList.tsx                    |       0 |        0 |       0 |       0 | 30-165                                                
-  RenderCourse.tsx                   |       0 |        0 |       0 |       0 | 34-237                                                
-  UpdateCoursesInPlansFunction.tsx   |       0 |        0 |       0 |       0 | 15-70                                                 
+ src/Components/CourseListComponents |   72.56 |    70.83 |   72.54 |   71.55 |                                                       
+  AddCoursePopup.tsx                 |   73.68 |       50 |   77.77 |   73.68 | 42,127-130                                            
+  CourseListOffcanvas.tsx            |      80 |      100 |   66.66 |      80 | 34                                                    
+  CoursesList.tsx                    |   48.48 |      100 |   53.84 |   48.48 | 42-43,64,126-152                                      
+  RenderCourse.tsx                   |   70.37 |       75 |   66.66 |   70.37 | 56-86,104,237-240                                     
+  UpdateCoursesInPlansFunction.tsx   |     100 |       75 |     100 |     100 | 23                                                    
  src/Components/DegreePlanComponents |   34.73 |    37.37 |   37.83 |   35.86 |                                                       
   PlanList.tsx                       |   23.52 |    33.33 |   26.31 |      25 | 59,81-86,101-224                                      
   ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                                       
@@ -1512,8 +1473,9 @@ All files                            |    23.9 |    30.34 |    26.9 |   24.84 |
   Courses.ts                         |     100 |      100 |     100 |     100 |                                                       
   Degrees.ts                         |     100 |      100 |     100 |     100 |                                                       
 -------------------------------------|---------|----------|---------|---------|-------------------------------------------------------
-Test Suites: 1 failed, 1 total
-Tests:       7 failed, 3 passed, 10 total
+
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       7 failed, 8 passed, 15 total
 Snapshots:   0 total
-Time:        8.05 s
+Time:        13.508 s
 Ran all test suites.
