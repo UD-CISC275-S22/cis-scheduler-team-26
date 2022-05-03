@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../../App";
+import { DegreePlan } from "../../Interfaces/degreePlan";
 
 describe("MoveCourse Tests", () => {
     beforeEach(() => {
@@ -28,15 +29,12 @@ describe("MoveCourse Tests", () => {
             name: /Save Plan/i
         });
         savePlan.click();
-        const returnButton = screen.getByRole("button", {
-            name: /Return to Plan List/i
-        });
-        returnButton.click();
-        location.reload();
-        expect(screen.getByText(/testplan2/i)).toBeInTheDocument();
-        expect(
-            screen.getByText(/Completed 0 out of 124 required credits/i)
-        ).toBeInTheDocument();
+        const plantest: DegreePlan[] = JSON.parse(
+            localStorage.getItem("plans")
+        );
+        expect(plantest[0].planName).toBe("testplan2");
+        expect(plantest[0].totalCredits).toBe(0);
+        savePlan.click();
     });
     test("Plans can be unsaved", () => {
         const addPlanButton = screen.getByRole("button", {
@@ -51,39 +49,20 @@ describe("MoveCourse Tests", () => {
             name: /Confirm/i
         });
         confirmButton.click();
-        let viewPlan = screen.getAllByRole("button", {
+        const viewPlan = screen.getAllByRole("button", {
             name: "View/Edit Plan"
         });
         viewPlan[1].click();
-        let savePlan = screen.getByRole("button", {
+        const savePlan = screen.getByRole("button", {
             name: /Save Plan/i
         });
         savePlan.click();
-        let returnButton = screen.getByRole("button", {
-            name: /Return to Plan List/i
-        });
-        returnButton.click();
-        location.reload();
-        expect(screen.getByText(/testplan2/i)).toBeInTheDocument();
-        expect(
-            screen.getByText(/Completed 0 out of 124 required credits/i)
-        ).toBeInTheDocument();
-        viewPlan = screen.getAllByRole("button", {
-            name: "View/Edit Plan"
-        });
-        viewPlan[1].click();
-        savePlan = screen.getByRole("button", {
-            name: /Save Plan/i
-        });
+        const plantest: DegreePlan[] = JSON.parse(
+            localStorage.getItem("plans")
+        );
+        expect(plantest[0].planName).toBe("testplan2");
+        expect(plantest[0].totalCredits).toBe(0);
         savePlan.click();
-        returnButton = screen.getByRole("button", {
-            name: /Return to Plan List/i
-        });
-        returnButton.click();
-        location.reload();
-        expect(screen.getByText(/testplan2/i)).toBeInTheDocument();
-        expect(
-            screen.getByText(/Completed 0 out of 124 required credits/i)
-        ).toBeInTheDocument();
+        expect(localStorage.getItem("plans")).toBe("[]");
     });
 });
