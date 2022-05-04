@@ -33,7 +33,6 @@ describe("MoveCourse Tests", () => {
             localStorage.getItem("plans")
         );
         expect(plantest[0].planName).toBe("testplan2");
-        expect(plantest[0].totalCredits).toBe(0);
         savePlan.click();
     });
     test("Plans can be unsaved", () => {
@@ -61,7 +60,6 @@ describe("MoveCourse Tests", () => {
             localStorage.getItem("plans")
         );
         expect(plantest[0].planName).toBe("testplan2");
-        expect(plantest[0].totalCredits).toBe(0);
         savePlan.click();
         expect(localStorage.getItem("plans")).toBe("[]");
     });
