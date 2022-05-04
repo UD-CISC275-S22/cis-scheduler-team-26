@@ -35,7 +35,6 @@ export function updateCoursesInPlans(
             planName: plan.planName,
             semesterList: newSemesterList,
             degree: plan.degree,
-            totalCredits: getTotalCreditsSemesterList(newSemesterList),
             isSaved: plan.isSaved
         });
     });
@@ -52,17 +51,6 @@ function areCoursesEqual(c1: Course, c2: Course): boolean {
 function getTotalCreditsCourselist(courseList: Course[]): number {
     const numList: number[] = [];
     courseList.map((course: Course) => numList.push(course.credits));
-    const sum = 0;
-    numList.reduce((prev, curr) => prev + curr, sum);
-    return sum;
-}
-
-//calculate the total number of credits over a semester list
-function getTotalCreditsSemesterList(semesterlist: Semester[]): number {
-    const numList: number[] = [];
-    semesterlist.map((semester: Semester) =>
-        numList.push(semester.totalCredits)
-    );
     const sum = 0;
     numList.reduce((prev, curr) => prev + curr, sum);
     return sum;

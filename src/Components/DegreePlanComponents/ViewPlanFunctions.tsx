@@ -24,20 +24,9 @@ export function calculateCredits(
             )
         };
     }
-    function scorePlan(curr: DegreePlan): DegreePlan {
-        return {
-            ...curr,
-            totalCredits: curr.semesterList.reduce(
-                (currentTotal: number, currSem: Semester) =>
-                    currentTotal + currSem.totalCredits,
-                0
-            )
-        };
-    }
-    let newPlans: DegreePlan[] = planList.map(
+    const newPlans: DegreePlan[] = planList.map(
         (curr: DegreePlan): DegreePlan => scoreSemester(curr)
     );
-    newPlans = newPlans.map((curr: DegreePlan): DegreePlan => scorePlan(curr));
     setPlans(newPlans);
 }
 

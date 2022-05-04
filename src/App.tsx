@@ -29,7 +29,6 @@ const INITIAL_PLANS: DegreePlan[] = [
             }
         ],
         degree: DegreeList[0],
-        totalCredits: 12,
         isSaved: false
     }
 ];
