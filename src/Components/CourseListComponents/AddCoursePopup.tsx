@@ -26,7 +26,7 @@ export function AddCourseForm({
     newCourseCredits: number;
     setNewCourseCredits: (newCred: number) => void;
     courseList: Course[];
-    addCourse: (newName: string, newID: number, newCredits: number) => void;
+    addCourse: (newName: string, newCredits: number) => void;
 }): JSX.Element {
     /* Checks if a course already exists in the courseList */
     function doesCourseExist(name: string) {
@@ -109,8 +109,7 @@ export function AddCourseForm({
                         ) {
                             setAddingCourse(false);
                             addCourse(
-                                newCourseDepartment,
-                                newCourseID,
+                                newCourseDepartment + " " + newCourseID,
                                 newCourseCredits
                             );
                             setNewCourseCredits(0);
