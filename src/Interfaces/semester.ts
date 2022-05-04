@@ -21,6 +21,4 @@ export interface Semester {
     season: Season;
     /** A list of all the courses being taken this semester */
     courseList: Course[];
-    /** The total number of credits being taken this semester */
-    totalCredits: number;
 }
