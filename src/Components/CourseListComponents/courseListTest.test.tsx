@@ -75,7 +75,7 @@ describe("Add course button test", () => {
         expect(screen.getAllByText(/test2/i).length === 2);
     });
     test("Undo a edit", () => {
-        const clickCourse = screen.getByText("EGGG101");
+        const clickCourse = screen.getByText("EGGG 101");
         clickCourse.click();
         const edit = screen.getAllByRole("button", {
             name: "Edit"

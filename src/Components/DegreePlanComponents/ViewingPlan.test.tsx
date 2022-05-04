@@ -53,7 +53,7 @@ describe("ViewingPlan Tests", () => {
         const typeDropdown = screen.getByRole("combobox", {
             name: /Pick the Course to be Added:/i
         });
-        userEvent.selectOptions(typeDropdown, "EGGG101");
+        userEvent.selectOptions(typeDropdown, "EGGG 101");
         const addButton = screen.getByRole("button", {
             name: /Add Course/i
         });
@@ -103,7 +103,7 @@ describe("ViewingPlan Tests", () => {
         });
         returnButton.click();
         expect(
-            screen.getByText(/Completed 12 out of 124 required credits/i)
+            screen.getByText(/Completed 11 out of 124 required credits/i)
         ).toBeInTheDocument();
     });
     test("When removing a course, the score is updated", () => {
@@ -146,7 +146,7 @@ describe("ViewingPlan Tests", () => {
         const typeDropdown = screen.getByRole("combobox", {
             name: /Pick the Course to be Added:/i
         });
-        userEvent.selectOptions(typeDropdown, "EGGG101");
+        userEvent.selectOptions(typeDropdown, "EGGG 101");
         const addButton = screen.getByRole("button", {
             name: /Add Course/i
         });
@@ -156,7 +156,7 @@ describe("ViewingPlan Tests", () => {
         });
         returnButton2.click();
         expect(
-            screen.getByText(/Completed 12 out of 124 required credits/i)
+            screen.getByText(/Completed 11 out of 124 required credits/i)
         ).toBeInTheDocument();
     });
     test("Semesters can be removed", () => {
@@ -204,7 +204,7 @@ describe("ViewingPlan Tests", () => {
         expect(screen.getByText(/108/i)).toBeInTheDocument();
         expect(screen.queryByText(/101/i)).not.toBeInTheDocument();
         expect(screen.queryByText(/EGGG/i)).not.toBeInTheDocument();
-        expect(screen.getByText(/ENGL110/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/ENGL/i).length).toEqual(1); //It still appears in requirements
         const returnButton = screen.getByRole("button", {
             name: /Return to Plan List/i
         });

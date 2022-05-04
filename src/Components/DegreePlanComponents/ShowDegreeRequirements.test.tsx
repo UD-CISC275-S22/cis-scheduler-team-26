@@ -19,7 +19,7 @@ describe("Degree Requirements Tests", () => {
         const displayedCreds = screen
             .getByText(/of 124 required credits/i)
             .textContent.split(" ")[1];
-        expect(displayedCreds).toEqual("12");
+        expect(displayedCreds).toEqual("11");
 
         screen
             .getAllByRole("button", {

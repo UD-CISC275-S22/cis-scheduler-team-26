@@ -35,7 +35,7 @@ describe("MoveCourse Tests", () => {
         });
         returnButton.click();
         expect(
-            screen.getByText(/Completed 12 out of 124 required credits/i)
+            screen.getByText(/Completed 11 out of 124 required credits/i)
         ).toBeInTheDocument();
     });
     test("Courses can be moved back after being moved", () => {
@@ -78,7 +78,7 @@ describe("MoveCourse Tests", () => {
         });
         returnButton.click();
         expect(
-            screen.getByText(/Completed 12 out of 124 required credits/i)
+            screen.getByText(/Completed 11 out of 124 required credits/i)
         ).toBeInTheDocument();
     });
 });
