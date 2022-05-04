@@ -27,8 +27,7 @@ export function updateCoursesInPlans(
             newSemesterList.push({
                 year: semester.year,
                 season: semester.season,
-                courseList: newCourseList,
-                totalCredits: getTotalCreditsCourselist(newCourseList)
+                courseList: newCourseList
             });
         });
         newPlanlist.push({
@@ -45,13 +44,4 @@ export function updateCoursesInPlans(
 //check if courses are equal by their department and id
 function areCoursesEqual(c1: Course, c2: Course): boolean {
     return c1.code === c2.code;
-}
-
-//canculate the total number of credits over a course list
-function getTotalCreditsCourselist(courseList: Course[]): number {
-    const numList: number[] = [];
-    courseList.map((course: Course) => numList.push(course.credits));
-    const sum = 0;
-    numList.reduce((prev, curr) => prev + curr, sum);
-    return sum;
 }

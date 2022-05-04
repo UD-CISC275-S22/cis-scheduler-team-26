@@ -18,14 +18,12 @@ const INITIAL_PLANS: DegreePlan[] = [
             {
                 year: 2022,
                 season: "Winter",
-                courseList: [courseList[0], courseList[1], courseList[2]],
-                totalCredits: 9
+                courseList: [courseList[0], courseList[1], courseList[2]]
             },
             {
                 year: 2022,
                 season: "Spring",
-                courseList: [courseList[3]],
-                totalCredits: 3
+                courseList: [courseList[3]]
             }
         ],
         degree: DegreeList[0],
