@@ -10,13 +10,31 @@ import { MdDoNotDisturbAlt } from "react-icons/md";
 
 export function DegreeRequirements({
     degree, //degree is the degree to get requirements from
-    semesterList, //courses is a list of the
-    credits
+    semesterList //list of semesters in the plan
 }: {
     degree: Degree;
     semesterList: Semester[];
-    credits: number;
 }): JSX.Element {
+    const courses = getCourses(semesterList);
+
+    return (
+        <div className="degree-requirements">
+            <h1>Requirements</h1>
+            <div>
+                Completed {getTotalCredits(courses)} of {degree.requiredCredits}{" "}
+                required credits
+            </div>
+            <div className="degree-requirements-body">
+                {degree.requiredCourses.map((courseCode: string) =>
+                    renderCourse(
+                        courseCode,
+                        isCourseInList(courseCode, courses)
+                    )
+                )}
+            </div>
+        </div>
+    );
+
     /* Checks if a course is in the list
     I dont use array.includes method because its too sensitive, it returns false unless everything is the same
     This checks for equality just using the course name and id. */
@@ -37,24 +55,17 @@ export function DegreeRequirements({
         });
         return courses;
     }
-    const courses = getCourses(semesterList);
 
-    return (
-        <div className="degree-requirements">
-            <h1>Requirements</h1>
-            <div>
-                Completed {credits} of {degree.requiredCredits} required credits
-            </div>
-            <div className="degree-requirements-body">
-                {degree.requiredCourses.map((courseCode: string) =>
-                    renderCourse(
-                        courseCode,
-                        isCourseInList(courseCode, courses)
-                    )
-                )}
-            </div>
-        </div>
-    );
+    /* Takes a list of courses and returns the total number of credits over that list */
+    function getTotalCredits(courses: Course[]): number {
+        const creditsList: number[] = [];
+        courses.map((course: Course) => creditsList.push(course.credits));
+        const total = creditsList.reduce(
+            (previousValue, currentValue) => previousValue + currentValue,
+            0
+        );
+        return total;
+    }
 }
 
 //component to render a single course

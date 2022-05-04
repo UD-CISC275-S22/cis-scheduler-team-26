@@ -43,16 +43,7 @@ function removeSemHelp(
         ...curr,
         semesterList: curr.semesterList.filter(
             (sem: Semester): boolean => sem.season != season || sem.year != year
-        ),
-        totalCredits:
-            curr.totalCredits -
-            curr.semesterList.reduce(
-                (currentTotal: number, sem: Semester) =>
-                    sem.season === season && sem.year === year
-                        ? currentTotal + sem.totalCredits
-                        : currentTotal,
-                0
-            )
+        )
     };
 }
 function removeSemester(
@@ -89,18 +80,7 @@ function addCourseHelp(
                 currSem.year === editingSem.year
                     ? addCourseToSemList(currSem, addingCourse)
                     : currSem
-        ),
-        totalCredits:
-            curr.totalCredits +
-            curr.semesterList.reduce(
-                (currentTotal: number, sem: Semester) =>
-                    sem === editingSem
-                        ? sem.courseList.includes(addingCourse, 0)
-                            ? currentTotal
-                            : addingCourse.credits
-                        : currentTotal,
-                0
-            )
+        )
     };
 }
 export function addCourse(
@@ -151,8 +131,7 @@ export function removeCourseHelp(
         semesterList: curr.semesterList.map(
             (check: Semester): Semester =>
                 check === sem ? removeCourseFromSemester(check, course) : check
-        ),
-        totalCredits: curr.totalCredits - course.credits
+        )
     };
 }
 function removeCourse(
@@ -619,7 +598,6 @@ export function ViewingPlan({
             <DegreeRequirements
                 degree={plan.degree}
                 semesterList={plan.semesterList}
-                credits={plan.totalCredits}
             ></DegreeRequirements>
         </div>
     );
