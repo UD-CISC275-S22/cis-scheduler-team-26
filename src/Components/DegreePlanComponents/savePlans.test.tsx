@@ -21,10 +21,10 @@ describe("MoveCourse Tests", () => {
             name: /Confirm/i
         });
         confirmButton.click();
-        const viewPlan = screen.getAllByRole("button", {
+        const viewPlan = screen.getByRole("button", {
             name: "View/Edit Plan"
         });
-        viewPlan[1].click();
+        viewPlan.click();
         const savePlan = screen.getByRole("button", {
             name: /Save Plan/i
         });
@@ -48,10 +48,10 @@ describe("MoveCourse Tests", () => {
             name: /Confirm/i
         });
         confirmButton.click();
-        const viewPlan = screen.getAllByRole("button", {
+        const viewPlan = screen.getByRole("button", {
             name: "View/Edit Plan"
         });
-        viewPlan[1].click();
+        viewPlan.click();
         const savePlan = screen.getByRole("button", {
             name: /Save Plan/i
         });

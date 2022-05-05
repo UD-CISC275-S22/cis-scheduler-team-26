@@ -6,10 +6,56 @@ import App from "../../App";
 describe("ViewingPlan Tests", () => {
     beforeEach(() => {
         render(<App />);
+        screen.getByRole("button", { name: "Create New Plan" }).click();
+        const nameBox = screen.getByRole("textbox", {
+            name: /Plan Name:/i
+        });
+        userEvent.type(nameBox, "Testing Plan");
+        screen.getByRole("button", { name: "Confirm" }).click();
         const viewPlanButton = screen.getAllByRole("button", {
             name: "View/Edit Plan"
         });
         viewPlanButton[0].click();
+        screen.getByRole("button", { name: "Edit Semesters" }).click();
+        screen.getByRole("button", { name: "Add Semester" }).click();
+        const seasonDropdown = screen.getByRole("combobox", {
+            name: /Season:/i
+        });
+        userEvent.selectOptions(seasonDropdown, "Winter");
+        screen.getAllByRole("button", { name: "Add Semester" })[1].click();
+        userEvent.selectOptions(seasonDropdown, "Spring");
+        screen.getAllByRole("button", { name: "Add Semester" })[1].click();
+        screen.getByRole("button", { name: "Cancel" }).click();
+        screen.getByRole("button", { name: "Edit Semesters" }).click();
+        const courseButtons = screen.getAllByRole("button", {
+            name: "Edit Courses"
+        });
+        courseButtons[0].click();
+        screen.getByRole("button", { name: "Add Course" }).click();
+        courseButtons[0].click();
+        userEvent.selectOptions(
+            screen.getByRole("combobox", {
+                name: /Pick the Course to be Added:/i
+            }),
+            "ENGL 110"
+        );
+        screen.getByRole("button", { name: "Add Course" }).click();
+        courseButtons[0].click();
+        userEvent.selectOptions(
+            screen.getByRole("combobox", {
+                name: /Pick the Course to be Added:/i
+            }),
+            "CISC 108"
+        );
+        screen.getByRole("button", { name: "Add Course" }).click();
+        courseButtons[1].click();
+        userEvent.selectOptions(
+            screen.getByRole("combobox", {
+                name: /Pick the Course to be Added:/i
+            }),
+            "CISC 181"
+        );
+        screen.getByRole("button", { name: "Add Course" }).click();
     });
     test("The initial two test semesters are displated", () => {
         expect(screen.getByText(/Winter 2022/i)).toBeInTheDocument();
@@ -18,13 +64,12 @@ describe("ViewingPlan Tests", () => {
     test("All 4 inital test courses are displayed", () => {
         expect(screen.getByText(/101/i)).toBeInTheDocument();
         expect(screen.getByText(/EGGG/i)).toBeInTheDocument();
-        expect(screen.getAllByText(/108/i).length === 2);
-        expect(screen.getAllByText(/CISC/i).length === 2);
-        expect(screen.getAllByText(/241/i).length === 2);
-        expect(screen.getAllByText(/MATH/i).length === 2);
-        expect(screen.getAllByText(/110/i).length === 2);
-        expect(screen.getAllByText(/ENGL/i).length === 2);
-        expect(screen.getAllByText(/3/i).length === 4);
+        expect(screen.getAllByText(/108/i)).toHaveLength(2);
+        expect(screen.getAllByText(/CISC/i)).toHaveLength(8);
+        expect(screen.getAllByText(/181/i)).toHaveLength(2);
+        expect(screen.getAllByText(/110/i)).toHaveLength(2);
+        expect(screen.getAllByText(/ENGL/i)).toHaveLength(2);
+        expect(screen.getAllByText(/3/i)).toHaveLength(3);
     });
     test("Courses can be removed", () => {
         const editButton = screen.getAllByRole("button", {
