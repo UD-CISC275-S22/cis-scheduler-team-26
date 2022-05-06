@@ -7,6 +7,7 @@ import { movePopup } from "./moveCoursePopup";
 import { addSemesterPopup } from "./addSemesterPopup";
 import { find_course } from "./ViewPlanFunctions";
 import { DegreeRequirements } from "./ShowDegreeRequirements";
+import { CourseInSemester } from "./CourseInSemester";
 
 //Icon imports for buttons
 import { TiEdit } from "react-icons/ti";
@@ -253,9 +254,7 @@ function printSemesters(
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Course Department</td>
-                                    <td>Course ID</td>
-                                    <td>Number of Credits</td>
+                                    <td>Course</td>
                                 </tr>
                             </tbody>
                             {semester === editingSem ? (
@@ -264,19 +263,10 @@ function printSemesters(
                                         (course: Course): JSX.Element => (
                                             <tr key={course.code}>
                                                 <td>
-                                                    {course.code.substring(
-                                                        0,
-                                                        course.code.indexOf(" ")
-                                                    )}
+                                                    <CourseInSemester
+                                                        course={course}
+                                                    ></CourseInSemester>
                                                 </td>
-                                                <td>
-                                                    {course.code.substring(
-                                                        course.code.indexOf(
-                                                            " "
-                                                        ) + 1
-                                                    )}
-                                                </td>
-                                                <td>{course.credits}</td>
                                                 <td>
                                                     <Button
                                                         style={{
@@ -297,6 +287,8 @@ function printSemesters(
                                                         <BsTrash></BsTrash>
                                                         Remove Course
                                                     </Button>
+                                                </td>
+                                                <td>
                                                     <Button
                                                         style={{
                                                             backgroundColor:
@@ -335,20 +327,9 @@ function printSemesters(
                                     {semester.courseList.map(
                                         (course: Course): JSX.Element => (
                                             <tr key={course.code}>
-                                                <td>
-                                                    {course.code.substring(
-                                                        0,
-                                                        course.code.indexOf(" ")
-                                                    )}
-                                                </td>
-                                                <td>
-                                                    {course.code.substring(
-                                                        course.code.indexOf(
-                                                            " "
-                                                        ) + 1
-                                                    )}
-                                                </td>
-                                                <td>{course.credits}</td>
+                                                <CourseInSemester
+                                                    course={course}
+                                                ></CourseInSemester>
                                             </tr>
                                         )
                                     )}
@@ -357,7 +338,7 @@ function printSemesters(
                             {semester === editingSem && (
                                 <tbody>
                                     <tr>
-                                        <td colSpan={2}>
+                                        <td colSpan={1}>
                                             <Form.Group controlId="addingCourse">
                                                 <Form.Label>
                                                     Pick the Course to be Added:
