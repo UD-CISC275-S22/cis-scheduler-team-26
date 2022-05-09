@@ -100,8 +100,7 @@ function addSemester(
         newPlan.semesterList.splice(0, 0, {
             year: year,
             season: season,
-            courseList: [],
-            totalCredits: 0
+            courseList: []
         });
         newPlan.semesterList.sort((s1: Semester, s2: Semester) => {
             if (s1.year > s2.year) {

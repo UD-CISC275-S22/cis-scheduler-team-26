@@ -6,11 +6,10 @@ import { ViewingPlan } from "./Components/DegreePlanComponents/ViewingPlan";
 import { courseList } from "./Resources/Courses";
 import { CoursesListOffcanvas } from "./Components/CourseListComponents/CourseListOffcanvas";
 import { Course } from "./Interfaces/course";
-import { DegreeList } from "./Resources/Degrees";
 import { Button } from "react-bootstrap";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { loadPlansFromStorage } from "./StorageFunctions";
-
+/*
 const INITIAL_PLANS: DegreePlan[] = [
     {
         planName: "Testing Plan",
@@ -18,25 +17,22 @@ const INITIAL_PLANS: DegreePlan[] = [
             {
                 year: 2022,
                 season: "Winter",
-                courseList: [courseList[0], courseList[1], courseList[2]],
-                totalCredits: 9
+                courseList: [courseList[0], courseList[1], courseList[2]]
             },
             {
                 year: 2022,
                 season: "Spring",
-                courseList: [courseList[3]],
-                totalCredits: 3
+                courseList: [courseList[3]]
             }
         ],
         degree: DegreeList[0],
-        totalCredits: 12,
         isSaved: false
     }
 ];
-
+*/
 function App(): JSX.Element {
     const [courses, setCourses] = useState<Course[]>(courseList);
-    const [plans, setPlans] = useState<DegreePlan[]>(INITIAL_PLANS);
+    const [plans, setPlans] = useState<DegreePlan[]>([]);
     const [viewPlan, setViewPlan] = useState<number>(-1);
 
     //Function to load the saved degree plans from storage

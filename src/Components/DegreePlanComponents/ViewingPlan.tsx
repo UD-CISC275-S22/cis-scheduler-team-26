@@ -5,8 +5,9 @@ import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Season, Semester } from "../../Interfaces/semester";
 import { movePopup } from "./moveCoursePopup";
 import { addSemesterPopup } from "./addSemesterPopup";
-import { calculateCredits, find_course } from "./ViewPlanFunctions";
+import { find_course } from "./ViewPlanFunctions";
 import { DegreeRequirements } from "./ShowDegreeRequirements";
+import { CourseInSemester } from "./CourseInSemester";
 
 //Icon imports for buttons
 import { TiEdit } from "react-icons/ti";
@@ -30,8 +31,7 @@ interface planListProp {
 const emptySem: Semester = {
     year: -1,
     season: "Fall",
-    courseList: [],
-    totalCredits: -1
+    courseList: []
 };
 
 function removeSemHelp(
@@ -43,16 +43,7 @@ function removeSemHelp(
         ...curr,
         semesterList: curr.semesterList.filter(
             (sem: Semester): boolean => sem.season != season || sem.year != year
-        ),
-        totalCredits:
-            curr.totalCredits -
-            curr.semesterList.reduce(
-                (currentTotal: number, sem: Semester) =>
-                    sem.season === season && sem.year === year
-                        ? currentTotal + sem.totalCredits
-                        : currentTotal,
-                0
-            )
+        )
     };
 }
 function removeSemester(
@@ -72,8 +63,7 @@ function removeSemester(
 function addCourseToSemList(currSem: Semester, addingCourse: Course) {
     return {
         ...currSem,
-        courseList: [...currSem.courseList, addingCourse],
-        totalCredits: currSem.totalCredits + addingCourse.numCredits
+        courseList: [...currSem.courseList, addingCourse]
     };
 }
 function addCourseHelp(
@@ -89,18 +79,7 @@ function addCourseHelp(
                 currSem.year === editingSem.year
                     ? addCourseToSemList(currSem, addingCourse)
                     : currSem
-        ),
-        totalCredits:
-            curr.totalCredits +
-            curr.semesterList.reduce(
-                (currentTotal: number, sem: Semester) =>
-                    sem === editingSem
-                        ? sem.courseList.includes(addingCourse, 0)
-                            ? currentTotal
-                            : addingCourse.numCredits
-                        : currentTotal,
-                0
-            )
+        )
     };
 }
 export function addCourse(
@@ -124,8 +103,7 @@ export function addCourse(
 
 function findCourse(courses: Course[], check: string): Course {
     const found = courses.find(
-        (currCourse: Course): boolean =>
-            currCourse.courseName + currCourse.id === check
+        (currCourse: Course): boolean => currCourse.code === check
     );
     if (found === undefined) {
         return courses[0];
@@ -138,8 +116,7 @@ function removeCourseFromSemester(check: Semester, course: Course): Semester {
         ...check,
         courseList: check.courseList.filter(
             (currCourse: Course): boolean => currCourse != course
-        ),
-        totalCredits: check.totalCredits - course.numCredits
+        )
     };
 }
 export function removeCourseHelp(
@@ -152,8 +129,7 @@ export function removeCourseHelp(
         semesterList: curr.semesterList.map(
             (check: Semester): Semester =>
                 check === sem ? removeCourseFromSemester(check, course) : check
-        ),
-        totalCredits: curr.totalCredits - course.numCredits
+        )
     };
 }
 function removeCourse(
@@ -188,7 +164,7 @@ function clearSem(
                 ? { ...curr, semesterList: clearCourses(curr, editingSem) }
                 : curr
     );
-    calculateCredits(newPlans, setPlans);
+    setPlans(newPlans);
 }
 
 function printSemesters(
@@ -278,24 +254,19 @@ function printSemesters(
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Course Department</td>
-                                    <td>Course ID</td>
-                                    <td>Number of Credits</td>
+                                    <td>Course</td>
                                 </tr>
                             </tbody>
                             {semester === editingSem ? (
                                 <tbody>
                                     {semester.courseList.map(
                                         (course: Course): JSX.Element => (
-                                            <tr
-                                                key={
-                                                    course.courseName +
-                                                    course.id.toString()
-                                                }
-                                            >
-                                                <td>{course.courseName}</td>
-                                                <td>{course.id}</td>
-                                                <td>{course.numCredits}</td>
+                                            <tr key={course.code}>
+                                                <td>
+                                                    <CourseInSemester
+                                                        course={course}
+                                                    ></CourseInSemester>
+                                                </td>
                                                 <td>
                                                     <Button
                                                         style={{
@@ -316,6 +287,8 @@ function printSemesters(
                                                         <BsTrash></BsTrash>
                                                         Remove Course
                                                     </Button>
+                                                </td>
+                                                <td>
                                                     <Button
                                                         style={{
                                                             backgroundColor:
@@ -353,15 +326,10 @@ function printSemesters(
                                 <tbody>
                                     {semester.courseList.map(
                                         (course: Course): JSX.Element => (
-                                            <tr
-                                                key={
-                                                    course.courseName +
-                                                    course.id.toString()
-                                                }
-                                            >
-                                                <td>{course.courseName}</td>
-                                                <td>{course.id}</td>
-                                                <td>{course.numCredits}</td>
+                                            <tr key={course.code}>
+                                                <CourseInSemester
+                                                    course={course}
+                                                ></CourseInSemester>
                                             </tr>
                                         )
                                     )}
@@ -370,16 +338,13 @@ function printSemesters(
                             {semester === editingSem && (
                                 <tbody>
                                     <tr>
-                                        <td colSpan={2}>
+                                        <td colSpan={1}>
                                             <Form.Group controlId="addingCourse">
                                                 <Form.Label>
                                                     Pick the Course to be Added:
                                                 </Form.Label>
                                                 <Form.Select
-                                                    value={
-                                                        addingCourse.courseName +
-                                                        addingCourse.id
-                                                    }
+                                                    value={addingCourse.code}
                                                     onChange={(
                                                         event: React.ChangeEvent<HTMLSelectElement>
                                                     ) =>
@@ -395,17 +360,12 @@ function printSemesters(
                                                     {courses.map(
                                                         (curr: Course) => (
                                                             <option
-                                                                key={
-                                                                    curr.courseName +
-                                                                    curr.id
-                                                                }
+                                                                key={curr.code}
                                                                 value={
-                                                                    curr.courseName +
-                                                                    curr.id
+                                                                    curr.code
                                                                 }
                                                             >
-                                                                {curr.courseName +
-                                                                    curr.id}
+                                                                {curr.code}
                                                             </option>
                                                         )
                                                     )}
@@ -460,6 +420,7 @@ function printSemesters(
                                         : semester
                                 )
                             }
+                            data-testid={"editCourseButton"}
                         >
                             <TiEdit></TiEdit>
                             Edit Courses
@@ -498,7 +459,7 @@ function clearAllCourses(
                 ? { ...curr, semesterList: clearHelp(curr.semesterList) }
                 : curr
     );
-    calculateCredits(newPlans, setPlans);
+    setPlans(newPlans);
 }
 
 export function ViewingPlan({
@@ -516,10 +477,14 @@ export function ViewingPlan({
     const [move, setMove] = useState<boolean>(false);
     const [moveSem, setMoveSem] = useState<Semester>(plan.semesterList[0]);
     const [moveCourse, setMoveCourse] = useState<Course>({
-        id: -1,
-        courseName: "",
-        numCredits: -1,
-        preReq: []
+        code: "",
+        credits: -1,
+        preReq: "",
+        name: "",
+        descr: "",
+        restrict: "",
+        breadth: "",
+        typ: ""
     });
 
     //save the plan to storage every time its changed if isPlanSaved is true
@@ -611,7 +576,6 @@ export function ViewingPlan({
             <DegreeRequirements
                 degree={plan.degree}
                 semesterList={plan.semesterList}
-                credits={plan.totalCredits}
             ></DegreeRequirements>
         </div>
     );

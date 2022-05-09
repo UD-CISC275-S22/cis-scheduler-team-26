@@ -10,23 +10,38 @@ import { MdDoNotDisturbAlt } from "react-icons/md";
 
 export function DegreeRequirements({
     degree, //degree is the degree to get requirements from
-    semesterList, //courses is a list of the
-    credits
+    semesterList //list of semesters in the plan
 }: {
     degree: Degree;
     semesterList: Semester[];
-    credits: number;
 }): JSX.Element {
+    const courses = getCourses(semesterList);
+
+    return (
+        <div className="degree-requirements">
+            <h1>Requirements</h1>
+            <div>
+                Completed {getTotalCredits(courses)} of {degree.requiredCredits}{" "}
+                required credits
+            </div>
+            <div className="degree-requirements-body">
+                {degree.requiredCourses.map((courseCode: string) =>
+                    renderCourse(
+                        courseCode,
+                        isCourseInList(courseCode, courses)
+                    )
+                )}
+            </div>
+        </div>
+    );
+
     /* Checks if a course is in the list
     I dont use array.includes method because its too sensitive, it returns false unless everything is the same
     This checks for equality just using the course name and id. */
-    function isCourseInList(course: Course, list: Course[]): boolean {
-        const check: string = course.courseName + course.id.toString();
+    function isCourseInList(course: string, list: Course[]): boolean {
         const checklist: string[] = [];
-        list.map((course: Course) =>
-            checklist.push(course.courseName + course.id.toString())
-        );
-        return checklist.includes(check);
+        list.map((course: Course) => checklist.push(course.code));
+        return checklist.includes(course);
     }
 
     /* Takes in a list of semesters and returns a list of all courses in the semesters.
@@ -40,34 +55,31 @@ export function DegreeRequirements({
         });
         return courses;
     }
-    const courses = getCourses(semesterList);
 
-    return (
-        <div className="degree-requirements">
-            <h1>Requirements</h1>
-            <div>
-                Completed {credits} of {degree.requiredCredits} required credits
-            </div>
-            <div className="degree-requirements-body">
-                {degree.requiredCourses.map((course: Course) =>
-                    renderCourse(course, isCourseInList(course, courses))
-                )}
-            </div>
-        </div>
-    );
+    /* Takes a list of courses and returns the total number of credits over that list */
+    function getTotalCredits(courses: Course[]): number {
+        const creditsList: number[] = [];
+        courses.map((course: Course) => creditsList.push(course.credits));
+        const total = creditsList.reduce(
+            (previousValue, currentValue) => previousValue + currentValue,
+            0
+        );
+        return total;
+    }
 }
 
 //component to render a single course
-function renderCourse(course: Course, isFulfilled: boolean): JSX.Element {
+function renderCourse(course: string, isFulfilled: boolean): JSX.Element {
     const color = isFulfilled ? "lightgreen" : "lightpink";
     return (
         <div
             className="degree-requirements-course"
+            data-testid="requirements-course-colored"
             style={{ backgroundColor: color }}
-            key={course.courseName + course.id.toString()}
+            key={course}
         >
             <div className="degree-requirements-course-text">
-                {course.courseName + course.id.toString()}{" "}
+                {course}{" "}
                 {isFulfilled ? (
                     <AiOutlineCheck></AiOutlineCheck>
                 ) : (

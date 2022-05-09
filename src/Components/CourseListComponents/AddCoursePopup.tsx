@@ -26,14 +26,12 @@ export function AddCourseForm({
     newCourseCredits: number;
     setNewCourseCredits: (newCred: number) => void;
     courseList: Course[];
-    addCourse: (newName: string, newID: number, newCredits: number) => void;
+    addCourse: (newName: string, newCredits: number) => void;
 }): JSX.Element {
     /* Checks if a course already exists in the courseList */
     function doesCourseExist(name: string) {
         const courseNames: string[] = [];
-        courseList.map((course: Course) =>
-            courseNames.push(course.courseName + course.id.toString())
-        );
+        courseList.map((course: Course) => courseNames.push(course.code));
         return courseNames.includes(name);
     }
     return (
@@ -51,6 +49,7 @@ export function AddCourseForm({
                         <div>
                             <Form.Label>Course Department</Form.Label>
                             <Form.Control
+                                data-testid="addDep"
                                 type="text"
                                 value={newCourseDepartment}
                                 onChange={(
@@ -61,6 +60,7 @@ export function AddCourseForm({
                         <div>
                             <Form.Label>Course ID</Form.Label>
                             <Form.Control
+                                data-testid="addId"
                                 type="number"
                                 value={newCourseID}
                                 onChange={(
@@ -75,6 +75,7 @@ export function AddCourseForm({
                     </div>
                     <Form.Label>Course Credits</Form.Label>
                     <Form.Control
+                        data-testid="addCredits"
                         type="number"
                         value={newCourseCredits}
                         onChange={(
@@ -87,7 +88,7 @@ export function AddCourseForm({
                     ></Form.Control>
                 </Form.Group>
                 {doesCourseExist(
-                    newCourseDepartment + newCourseID.toString()
+                    newCourseDepartment + " " + newCourseID.toString()
                 ) && (
                     <div style={{ color: "red" }}>
                         This course already exists!
@@ -101,13 +102,14 @@ export function AddCourseForm({
                     onClick={() => {
                         if (
                             !doesCourseExist(
-                                newCourseDepartment + newCourseID.toString()
+                                newCourseDepartment +
+                                    " " +
+                                    newCourseID.toString()
                             )
                         ) {
                             setAddingCourse(false);
                             addCourse(
-                                newCourseDepartment,
-                                newCourseID,
+                                newCourseDepartment + " " + newCourseID,
                                 newCourseCredits
                             );
                             setNewCourseCredits(0);

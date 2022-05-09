@@ -6,109 +6,16 @@ export const DegreeList: Degree[] = [
         title: "Computer Science Bachelor of Arts",
         requiredCourses: [
             //Major requirements
-            {
-                id: 108,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: []
-            },
-            {
-                id: 181,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 108,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 210,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 108,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 220,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 210,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 260,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 210,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 275,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 181,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    },
-                    {
-                        id: 220,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 210,
-                courseName: "MATH",
-                numCredits: 3,
-                preReq: []
-            },
-            {
-                id: 241,
-                courseName: "MATH",
-                numCredits: 4,
-                preReq: [
-                    {
-                        id: 117,
-                        courseName: "MATH",
-                        numCredits: 4,
-                        preReq: []
-                    }
-                ]
-            },
+            "CISC 108",
+            "CISC 181",
+            "CISC 210",
+            "CISC 220",
+            "CISC 260",
+            "CISC 275",
+            "MATH 210",
+            "MATH 241",
             //University Requirements
-            {
-                id: 110,
-                courseName: "ENGL",
-                numCredits: 3,
-                preReq: []
-            }
+            "ENGL 110"
             //Theres also a number of other university requirements such as breadth reqs
             //Not sure how to reflect those here
         ],
@@ -118,212 +25,22 @@ export const DegreeList: Degree[] = [
         title: "Computer Science Bachelor of Science",
         requiredCourses: [
             //Major requirements
-            {
-                id: 108,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: []
-            },
-            {
-                id: 181,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 108,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 210,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 108,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 220,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 210,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 260,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 210,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 275,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 181,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    },
-                    {
-                        id: 220,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 303,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 220,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    },
-                    {
-                        id: 210,
-                        courseName: "MATH",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 320,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 220,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    },
-                    {
-                        id: 210,
-                        courseName: "MATH",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 361,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 220,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    },
-                    {
-                        id: 260,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 372,
-                courseName: "CISC",
-                numCredits: 3,
-                preReq: [
-                    {
-                        id: 220,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    },
-                    {
-                        id: 260,
-                        courseName: "CISC",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                //This or math350. not sure how to implement conditional requirements
-                id: 205,
-                courseName: "MATH",
-                numCredits: 4,
-                preReq: [
-                    {
-                        id: 210,
-                        courseName: "MATH",
-                        numCredits: 3,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 210,
-                courseName: "MATH",
-                numCredits: 3,
-                preReq: []
-            },
-            {
-                id: 241,
-                courseName: "MATH",
-                numCredits: 4,
-                preReq: [
-                    {
-                        id: 117,
-                        courseName: "MATH",
-                        numCredits: 4,
-                        preReq: []
-                    }
-                ]
-            },
-            {
-                id: 242,
-                courseName: "MATH",
-                numCredits: 4,
-                preReq: [
-                    {
-                        id: 241,
-                        courseName: "MATH",
-                        numCredits: 4,
-                        preReq: []
-                    }
-                ]
-            },
+            "CISC 108",
+            "CISC 181",
+            "CISC 210",
+            "CISC 220",
+            "CISC 260",
+            "CISC 275",
+            "CISC 303",
+            "CISC 320",
+            "CISC 361",
+            "CISC 372",
+            "MATH 205",
+            "MATH 210",
+            "MATH 241",
+            "MATH 242",
             //University Requirements
-            {
-                id: 110,
-                courseName: "ENGL",
-                numCredits: 3,
-                preReq: []
-            }
+            "ENGL 110"
             //Theres also a number of other university requirements such as breadth reqs
             //Not sure how to reflect those here
         ],

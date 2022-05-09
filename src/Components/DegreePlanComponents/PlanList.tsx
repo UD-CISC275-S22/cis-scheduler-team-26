@@ -11,6 +11,8 @@ import { BsTrash } from "react-icons/bs";
 import { TiEdit } from "react-icons/ti";
 import { RiAddBoxLine } from "react-icons/ri";
 import { FiSave } from "react-icons/fi";
+import { Semester } from "../../Interfaces/semester";
+import { Course } from "../../Interfaces/course";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 interface planListProp {
@@ -32,7 +34,7 @@ function printPlan(
             </h3>
             <div>Expected Degree: {plan.degree.title}</div>
             <div>
-                Completed {plan.totalCredits} out of{" "}
+                Completed {getTotalCredits(plan)} out of{" "}
                 {plan.degree.requiredCredits} required Credits
             </div>
             <div>
@@ -65,6 +67,15 @@ function printPlan(
             </div>
         </div>
     );
+    function getTotalCredits(plan: DegreePlan): number {
+        const numList: number[] = [];
+        plan.semesterList.map((semester: Semester) => {
+            semester.courseList.map((course: Course) =>
+                numList.push(course.credits)
+            );
+        });
+        return numList.reduce((prev, curr) => prev + curr, 0);
+    }
 }
 
 export function PlanList({
@@ -205,7 +216,6 @@ function makeNewPlanForm({
                                 planName: newPlanName,
                                 semesterList: [],
                                 degree: newPlanMajor,
-                                totalCredits: 0,
                                 isSaved: false
                             }
                         ]);
