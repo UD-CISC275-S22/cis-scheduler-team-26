@@ -97,7 +97,10 @@ function App(): JSX.Element {
                         courses={courses}
                     ></ViewingPlan>
                 )}
-                <ExportCSV plan={plans[viewPlan]}></ExportCSV>
+                {console.log(plans[viewPlan])}
+                {viewPlan !== -1 && (
+                    <ExportCSV plan={plans[viewPlan]}></ExportCSV>
+                )}
             </div>
         </div>
     );
