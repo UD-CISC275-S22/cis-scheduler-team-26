@@ -2,9 +2,9 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (22.708 s)
-PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (5.728 s)
-PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (5.851 s)
+PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (27.062 s)
+PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (6.772 s)
+PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (6.893 s)
 PASS src/Components/CourseListComponents/courseListTest.test.tsx
 PASS src/Components/DegreePlanComponents/savePlans.test.tsx
 -------------------------------------|---------|----------|---------|---------|----------------------------------
@@ -23,9 +23,9 @@ All files                            |      74 |    66.89 |   77.16 |   75.64 |
  src/Components/DegreePlanComponents |   85.26 |    67.34 |   88.07 |   86.26 |                                  
   CourseInSemester.tsx               |   66.66 |     12.5 |      50 |   66.66 | 9                                
   PlanList.tsx                       |    62.5 |    58.33 |   65.21 |   64.86 | 61,92-97,156-160,166,198,232-234 
-  PrintSemesters.tsx                 |     100 |    78.57 |     100 |     100 | 59,92-96,134,152,378             
+  PrintSemesters.tsx                 |     100 |     87.5 |     100 |     100 | 262                              
   ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                  
-  ViewPlanFunctions.tsx              |      80 |       50 |     100 |      80 | 19,28                            
+  ViewPlanFunctions.tsx              |   93.54 |    69.23 |     100 |   93.54 | 16,25                            
   ViewingPlan.tsx                    |   96.66 |    85.71 |     100 |     100 | 46,195                           
   addSemesterPopup.tsx               |   82.75 |    66.66 |   81.81 |   82.75 | 18-32,78,107,109                 
   moveCoursePopup.tsx                |   81.81 |     62.5 |   83.33 |   81.81 | 29-30,37,76                      
@@ -42,5 +42,5 @@ All files                            |      74 |    66.89 |   77.16 |   75.64 |
 Test Suites: 5 passed, 5 total
 Tests:       22 passed, 22 total
 Snapshots:   0 total
-Time:        37.149 s
+Time:        44.241 s
 Ran all test suites.
