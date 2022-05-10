@@ -24,36 +24,54 @@ export function CourseInSemester({ course }: { course: Course }): JSX.Element {
                                     {course.code}: {course.name}
                                 </h4>
                             </Row>
-                            <Row>
-                                <Col>
-                                    {descriptionVis && (
-                                        <h5>({course.credits} credits)</h5>
-                                    )}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    {descriptionVis && <p>{course.descr}</p>}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    {descriptionVis && <p>{course.preReq}</p>}
-                                </Col>
-                                <Col>
-                                    {descriptionVis && <p>{course.breadth}</p>}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    {descriptionVis && <p>{course.restrict}</p>}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    {descriptionVis && <p>{course.typ}</p>}
-                                </Col>
-                            </Row>
+                            {descriptionVis && (
+                                <Container>
+                                    <Row>
+                                        <Col>
+                                            <h5>({course.credits} credits)</h5>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                            <p>{course.descr}</p>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                            {course.preReq != "" && (
+                                                <p>
+                                                    Prerequisite Courses:{" "}
+                                                    {course.preReq}
+                                                </p>
+                                            )}
+                                        </Col>
+                                        <Col>
+                                            {course.breadth !=
+                                                "University: ; A&S: " && (
+                                                <p>
+                                                    Satisfies Breadth:{" "}
+                                                    {course.breadth}
+                                                </p>
+                                            )}
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                            {course.restrict != "" && (
+                                                <p>
+                                                    Restrictions:{" "}
+                                                    {course.restrict}
+                                                </p>
+                                            )}
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                            Typically Offered in: {course.typ}
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            )}
                         </Col>
                     </Row>
                 </Container>

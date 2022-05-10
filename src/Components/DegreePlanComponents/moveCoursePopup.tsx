@@ -3,7 +3,7 @@ import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Semester } from "../../Interfaces/semester";
-import { removeCourseHelp, addCourse } from "./ViewingPlan";
+import { removeCourseHelp, addCourse } from "./PrintSemesters";
 
 export function movePopup(
     move: boolean,
