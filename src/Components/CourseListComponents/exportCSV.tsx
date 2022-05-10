@@ -9,7 +9,7 @@ export function ExportCSV({ plan }: { plan: DegreePlan }): JSX.Element {
     const data = plan.semesterList.map((sem: Semester) => ({
         year: sem.year,
         season: sem.season,
-        courseList: sem.courseList.map((course: Course) => course.name)
+        courseList: sem.courseList.map((course: Course) => course.code)
     }));
 
     return (
