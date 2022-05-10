@@ -13,6 +13,10 @@ const all_courses_record: Record<string, Record<string, Course>> = JSON.parse(
 );
 Object.entries(all_courses_record).map((courses) => {
     Object.entries(courses[1]).map((courseObj) => {
-        courseList.push(courseObj[1]);
+        courseList.push({
+            ...courseObj[1],
+            //I know this looks funky but it is required
+            credits: parseInt(courseObj[1].credits.toString())
+        });
     });
 });
