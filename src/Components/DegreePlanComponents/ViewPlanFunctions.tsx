@@ -1,6 +1,6 @@
 import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
-import { Season, Semester } from "../../Interfaces/semester";
+import { Semester } from "../../Interfaces/semester";
 
 function findCourseInPlan(checkPlan: DegreePlan, findCourse: Course): boolean {
     if (
@@ -28,42 +28,23 @@ export function findCourseByCode(courses: Course[], check: string): Course {
     }
 }
 
-function removeSemHelp(
-    curr: DegreePlan,
-    season: Season,
-    year: number
-): DegreePlan {
-    return {
-        ...curr,
-        semesterList: curr.semesterList.filter(
-            (sem: Semester): boolean => sem.season != season || sem.year != year
-        )
-    };
-}
-export function removeSemester(
-    plan: DegreePlan,
-    planList: DegreePlan[],
-    setPlans: (newPlans: DegreePlan[]) => void,
-    season: Season,
-    year: number
+function addCourseToSemList(
+    currSem: Semester,
+    addingCourse: Course,
+    setEditingSem: (newSem: Semester) => void
 ) {
-    setPlans(
-        planList.map(
-            (curr: DegreePlan): DegreePlan =>
-                curr === plan ? removeSemHelp(curr, season, year) : curr
-        )
-    );
-}
-function addCourseToSemList(currSem: Semester, addingCourse: Course) {
-    return {
+    const newSem: Semester = {
         ...currSem,
         courseList: [...currSem.courseList, addingCourse]
     };
+    setEditingSem(newSem);
+    return newSem;
 }
 function addCourseHelp(
     curr: DegreePlan,
     editingSem: Semester,
-    addingCourse: Course
+    addingCourse: Course,
+    setEditingSem: (newSem: Semester) => void
 ): DegreePlan {
     return {
         ...curr,
@@ -71,7 +52,7 @@ function addCourseHelp(
             (currSem: Semester): Semester =>
                 currSem.season === editingSem.season &&
                 currSem.year === editingSem.year
-                    ? addCourseToSemList(currSem, addingCourse)
+                    ? addCourseToSemList(currSem, addingCourse, setEditingSem)
                     : currSem
         )
     };
@@ -81,53 +62,19 @@ export function addCourse(
     planList: DegreePlan[],
     setPlans: (newPlans: DegreePlan[]) => void,
     editingSem: Semester,
-    addingCourse: Course
+    addingCourse: Course,
+    edit: (newSem: Semester) => void
 ) {
     if (!findCourseInPlan(plan, addingCourse)) {
         setPlans(
             planList.map(
                 (curr: DegreePlan): DegreePlan =>
                     curr === plan
-                        ? addCourseHelp(curr, editingSem, addingCourse)
+                        ? addCourseHelp(curr, editingSem, addingCourse, edit)
                         : curr
             )
         );
     }
-}
-function removeCourseFromSemester(check: Semester, course: Course): Semester {
-    return {
-        ...check,
-        courseList: check.courseList.filter(
-            (currCourse: Course): boolean => currCourse != course
-        )
-    };
-}
-export function removeCourseHelp(
-    course: Course,
-    sem: Semester,
-    curr: DegreePlan
-): DegreePlan {
-    return {
-        ...curr,
-        semesterList: curr.semesterList.map(
-            (check: Semester): Semester =>
-                check === sem ? removeCourseFromSemester(check, course) : check
-        )
-    };
-}
-export function removeCourse(
-    course: Course,
-    sem: Semester,
-    plan: DegreePlan,
-    plans: DegreePlan[],
-    setPlans: (newPlans: DegreePlan[]) => void
-) {
-    setPlans(
-        plans.map(
-            (curr: DegreePlan): DegreePlan =>
-                curr === plan ? removeCourseHelp(course, sem, curr) : curr
-        )
-    );
 }
 function clearCourses(curr: DegreePlan, editingSem: Semester): Semester[] {
     return curr.semesterList.map(
