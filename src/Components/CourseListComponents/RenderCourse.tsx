@@ -81,7 +81,26 @@ export function RenderCourse({
                     {renderExpanded && (
                         <div style={{ marginLeft: "20px" }}>
                             <div>Credits: {Course.credits}</div>
-                            <div>Prerequisite Courses: {Course.preReq}</div>
+                            {Course.preReq != "" && (
+                                <div>
+                                    <div>Prerequisite Courses:</div>
+                                    <div>{Course.preReq}</div>
+                                </div>
+                            )}
+                            {Course.breadth != "University: ; A&S: " && (
+                                <div>
+                                    <div>Satisfies Breadth: </div>
+                                    <div>{Course.breadth}</div>
+                                </div>
+                            )}
+                            {Course.restrict != "" && (
+                                <div>
+                                    <div>Restrictions: </div>
+                                    <div>{Course.restrict}</div>
+                                </div>
+                            )}
+                            <div>Typically offered in: </div>
+                            <div>{Course.typ}</div>
                             <Button
                                 onClick={() => setEditingCourse(true)}
                                 style={{ marginRight: "5px" }}

@@ -2,7 +2,7 @@ import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Semester } from "../../Interfaces/semester";
 
-export function find_course(
+export function findCourseInPlan(
     checkPlan: DegreePlan,
     findCourse: Course
 ): boolean {
@@ -19,4 +19,14 @@ export function find_course(
         return true;
     }
     return false;
+}
+export function findCourseByCode(courses: Course[], check: string): Course {
+    const found = courses.find(
+        (currCourse: Course): boolean => currCourse.code === check
+    );
+    if (found === undefined) {
+        return courses[0];
+    } else {
+        return found;
+    }
 }

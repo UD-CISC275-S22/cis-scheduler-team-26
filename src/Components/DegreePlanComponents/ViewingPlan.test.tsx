@@ -69,7 +69,6 @@ describe("ViewingPlan Tests", () => {
         expect(screen.getAllByText(/181/i)).toHaveLength(2);
         expect(screen.getAllByText(/110/i)).toHaveLength(2);
         expect(screen.getAllByText(/ENGL/i)).toHaveLength(2);
-        expect(screen.getAllByText(/3/i)).toHaveLength(3);
     });
     test("Courses can be removed", () => {
         const editButton = screen.getAllByRole("button", {
@@ -81,7 +80,6 @@ describe("ViewingPlan Tests", () => {
         });
         removeCourseButton[0].click();
         expect(screen.queryByText(/EGGG/i)).not.toBeInTheDocument();
-        expect(screen.getAllByText(/3/i).length === 4);
     });
     test("Courses can be added", () => {
         const editButton = screen.getAllByRole("button", {
@@ -93,7 +91,6 @@ describe("ViewingPlan Tests", () => {
         });
         removeCourseButton[0].click();
         expect(screen.queryByText(/EGGG/i)).not.toBeInTheDocument();
-        expect(screen.getAllByText(/3/i).length === 4);
         editButton[0].click();
         const typeDropdown = screen.getByRole("combobox", {
             name: /Pick the Course to be Added:/i
