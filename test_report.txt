@@ -2,15 +2,15 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (27.062 s)
-PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (6.772 s)
-PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (6.893 s)
+PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (27.01 s)
+PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (6.996 s)
+PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (7.226 s)
 PASS src/Components/CourseListComponents/courseListTest.test.tsx
 PASS src/Components/DegreePlanComponents/savePlans.test.tsx
 -------------------------------------|---------|----------|---------|---------|----------------------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------------------|---------|----------|---------|---------|----------------------------------
-All files                            |      74 |    66.89 |   77.16 |   75.64 |                                  
+All files                            |   74.24 |    66.89 |   77.57 |   75.87 |                                  
  src                                 |      90 |    81.25 |    87.5 |     100 |                                  
   App.tsx                            |     100 |      100 |     100 |     100 |                                  
   StorageFunctions.tsx               |    87.5 |       70 |   83.33 |     100 | 17-28                            
@@ -20,15 +20,18 @@ All files                            |      74 |    66.89 |   77.16 |   75.64 |
   CoursesList.tsx                    |   39.39 |      100 |   38.46 |   41.93 | 42-43,54-61,109-144              
   RenderCourse.tsx                   |   73.07 |    85.71 |   71.42 |   73.07 | 58-59,114,250-255                
   UpdateCoursesInPlansFunction.tsx   |   26.66 |        0 |      20 |   28.57 | 17-33,46                         
- src/Components/DegreePlanComponents |   85.26 |    67.34 |   88.07 |   86.26 |                                  
+ src/Components/DegreePlanComponents |   85.49 |    67.34 |   88.39 |   86.48 |                                  
   CourseInSemester.tsx               |   66.66 |     12.5 |      50 |   66.66 | 9                                
   PlanList.tsx                       |    62.5 |    58.33 |   65.21 |   64.86 | 61,92-97,156-160,166,198,232-234 
-  PrintSemesters.tsx                 |     100 |     87.5 |     100 |     100 | 262                              
+  PrintSemesters.tsx                 |     100 |       75 |     100 |     100 | 100                              
   ShowDegreeRequirements.tsx         |     100 |      100 |     100 |     100 |                                  
-  ViewPlanFunctions.tsx              |   93.54 |    69.23 |     100 |   93.54 | 16,25                            
+  TableBody.tsx                      |     100 |    83.33 |     100 |     100 | 53                               
+  TableFooter.tsx                    |     100 |      100 |     100 |     100 |                                  
+  TableHead.tsx                      |     100 |    83.33 |     100 |     100 | 36                               
+  ViewPlanFunctions.tsx              |   90.47 |    66.66 |     100 |   90.47 | 16,25                            
   ViewingPlan.tsx                    |   96.66 |    85.71 |     100 |     100 | 46,195                           
   addSemesterPopup.tsx               |   82.75 |    66.66 |   81.81 |   82.75 | 18-32,78,107,109                 
-  moveCoursePopup.tsx                |   81.81 |     62.5 |   83.33 |   81.81 | 29-30,37,76                      
+  moveCoursePopup.tsx                |   81.81 |     62.5 |   83.33 |   81.81 | 30-31,38,77                      
  src/Interfaces                      |   85.71 |    83.33 |     100 |   85.71 |                                  
   course.ts                          |       0 |        0 |       0 |       0 |                                  
   degree.ts                          |       0 |        0 |       0 |       0 |                                  
@@ -42,5 +45,5 @@ All files                            |      74 |    66.89 |   77.16 |   75.64 |
 Test Suites: 5 passed, 5 total
 Tests:       22 passed, 22 total
 Snapshots:   0 total
-Time:        44.241 s
+Time:        44.897 s
 Ran all test suites.
