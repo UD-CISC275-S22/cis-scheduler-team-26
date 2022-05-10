@@ -91,6 +91,7 @@ export function PrintSemesters({
                         addingCourse={addingCourse}
                         setAddingCourse={setAddingCourse}
                         courses={courses}
+                        setEditingSem={setEditingSem}
                     ></TableFooter>
                 )}
             </Table>

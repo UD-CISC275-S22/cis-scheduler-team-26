@@ -32,7 +32,6 @@ describe("MoveCourse Tests", () => {
         });
         courseButtons[0].click();
         screen.getByRole("button", { name: "Add Course" }).click();
-        courseButtons[0].click();
         userEvent.selectOptions(
             screen.getByRole("combobox", {
                 name: /Pick the Course to be Added:/i
@@ -40,7 +39,6 @@ describe("MoveCourse Tests", () => {
             "ENGL 110"
         );
         screen.getByRole("button", { name: "Add Course" }).click();
-        courseButtons[0].click();
         userEvent.selectOptions(
             screen.getByRole("combobox", {
                 name: /Pick the Course to be Added:/i
@@ -56,6 +54,7 @@ describe("MoveCourse Tests", () => {
             "CISC 181"
         );
         screen.getByRole("button", { name: "Add Course" }).click();
+        courseButtons[1].click();
     });
     test("Courses can be moved between semesters", () => {
         const editButton = screen.getAllByRole("button", {
@@ -101,10 +100,8 @@ describe("MoveCourse Tests", () => {
             name: /Move Course/i
         });
         moveButton2[6].click();
-        const editButton2 = screen.getAllByRole("button", {
-            name: /Edit Courses/i
-        });
-        editButton2[1].click();
+        editButton[1].click();
+        editButton[1].click();
         const moveButton3 = screen.getAllByRole("button", {
             name: /Move Course/i
         });

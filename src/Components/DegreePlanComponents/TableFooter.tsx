@@ -10,7 +10,7 @@ import { addCourse, clearSem } from "./ViewPlanFunctions";
 import { AiOutlineClear } from "react-icons/ai";
 import { RiAddBoxLine } from "react-icons/ri";
 
-interface planListProp {
+interface footerProps {
     plan: DegreePlan;
     planList: DegreePlan[];
     setPlans: (newPlans: DegreePlan[]) => void;
@@ -18,6 +18,7 @@ interface planListProp {
     addingCourse: Course;
     setAddingCourse: (newAddingCourse: Course) => void;
     courses: Course[];
+    setEditingSem: (newSem: Semester) => void;
 }
 
 export function TableFooter({
@@ -27,8 +28,9 @@ export function TableFooter({
     editingSem,
     addingCourse,
     setAddingCourse,
-    courses
-}: planListProp): JSX.Element {
+    courses,
+    setEditingSem
+}: footerProps): JSX.Element {
     return (
         <tbody>
             <tr>
@@ -64,7 +66,8 @@ export function TableFooter({
                                 planList,
                                 setPlans,
                                 editingSem,
-                                addingCourse
+                                addingCourse,
+                                setEditingSem
                             )
                         }
                     >

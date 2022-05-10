@@ -9,7 +9,7 @@ import { CourseInSemester } from "./CourseInSemester";
 import { BsTrash } from "react-icons/bs";
 import { CgMoveRight } from "react-icons/cg";
 
-interface planListProp {
+interface bodyProp {
     plan: DegreePlan;
     planList: DegreePlan[];
     setPlans: (newPlans: DegreePlan[]) => void;
@@ -64,7 +64,7 @@ export function TableBody({
     setMoveSem,
     setMoveCourse,
     semester
-}: planListProp): JSX.Element {
+}: bodyProp): JSX.Element {
     function setMovingCourse(course: Course) {
         setMoveSem(plan.semesterList[0]);
         setMove(true);

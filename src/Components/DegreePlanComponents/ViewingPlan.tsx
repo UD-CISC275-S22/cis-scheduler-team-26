@@ -113,7 +113,8 @@ export function ViewingPlan({
                         plan,
                         setPlans,
                         planList,
-                        moveCourse
+                        moveCourse,
+                        setEditingSem
                     )}
                 {addSem &&
                     addSemesterPopup(
