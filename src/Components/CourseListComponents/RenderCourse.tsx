@@ -11,7 +11,6 @@ import { TiEdit } from "react-icons/ti";
 import { FiMoreVertical } from "react-icons/fi";
 import { AiOutlineRollback, AiOutlineCheck } from "react-icons/ai";
 import { ImCancelCircle } from "react-icons/im";
-import { courseList } from "../../Resources/Courses";
 
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 

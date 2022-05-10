@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Form, Table } from "react-bootstrap";
 import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Season, Semester } from "../../Interfaces/semester";
-import { movePopup } from "./moveCoursePopup";
-import { addSemesterPopup } from "./addSemesterPopup";
-import { find_course } from "./ViewPlanFunctions";
-import { DegreeRequirements } from "./ShowDegreeRequirements";
+import { findCourseInPlan, findCourseByCode } from "./ViewPlanFunctions";
 import { CourseInSemester } from "./CourseInSemester";
 
 //Icon imports for buttons
@@ -15,11 +12,6 @@ import { AiOutlineClear } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { RiAddBoxLine } from "react-icons/ri";
 import { CgMoveRight } from "react-icons/cg";
-import {
-    deletePlanFromStorageByName,
-    savePlanToStorage
-} from "../../StorageFunctions";
-import { FiSave } from "react-icons/fi";
 
 interface planListProp {
     plan: DegreePlan;
@@ -97,7 +89,7 @@ export function addCourse(
     editingSem: Semester,
     addingCourse: Course
 ) {
-    if (!find_course(plan, addingCourse)) {
+    if (!findCourseInPlan(plan, addingCourse)) {
         setPlans(
             planList.map(
                 (curr: DegreePlan): DegreePlan =>
@@ -106,17 +98,6 @@ export function addCourse(
                         : curr
             )
         );
-    }
-}
-
-function findCourse(courses: Course[], check: string): Course {
-    const found = courses.find(
-        (currCourse: Course): boolean => currCourse.code === check
-    );
-    if (found === undefined) {
-        return courses[0];
-    } else {
-        return found;
     }
 }
 function removeCourseFromSemester(check: Semester, course: Course): Semester {
@@ -335,7 +316,7 @@ export function PrintSemesters({
                                             event: React.ChangeEvent<HTMLSelectElement>
                                         ) =>
                                             setAddingCourse(
-                                                findCourse(
+                                                findCourseByCode(
                                                     courses,
                                                     event.target.value
                                                 )

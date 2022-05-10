@@ -1,21 +1,16 @@
 import React, { useState } from "react";
-import { Button, Form, Table } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Season, Semester } from "../../Interfaces/semester";
 import { movePopup } from "./moveCoursePopup";
 import { addSemesterPopup } from "./addSemesterPopup";
-import { find_course } from "./ViewPlanFunctions";
 import { DegreeRequirements } from "./ShowDegreeRequirements";
-import { CourseInSemester } from "./CourseInSemester";
 import { PrintSemesters } from "./PrintSemesters";
 
 //Icon imports for buttons
 import { TiEdit } from "react-icons/ti";
 import { AiOutlineClear } from "react-icons/ai";
-import { BsTrash } from "react-icons/bs";
-import { RiAddBoxLine } from "react-icons/ri";
-import { CgMoveRight } from "react-icons/cg";
 import {
     deletePlanFromStorageByName,
     savePlanToStorage
