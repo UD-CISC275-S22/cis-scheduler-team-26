@@ -1,49 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
-import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
-import { Semester } from "../../Interfaces/semester";
 import { CSVLink } from "react-csv";
+import { Course } from "../../Interfaces/course";
+import { Semester } from "../../Interfaces/semester";
 
-interface exportInterfaces {
-    plan: DegreePlan;
-}
-export function ExportCSV({ plan }: exportInterfaces): JSX.Element {
-    const [csvData, updateDegree] = useState<DegreePlan>(plan);
-    const [data, updateData] = useState(
-        csvData.semesterList.map((semester: Semester) => ({
-            SemesterSeason: semester.season,
-            year: semester.year,
-            ClassesTaking: semester.courseList.map(
-                (course: Course): string => course.name
-            ),
-            TotalCredits: 0
-        }))
-    );
-    function getData() {
-        updateDegree(plan);
-        updateData(
-            csvData.semesterList.map((semester: Semester) => ({
-                SemesterSeason: semester.season,
-                year: semester.year,
-                ClassesTaking: semester.courseList.map(
-                    (course: Course): string => course.name
-                ),
-                TotalCredits: 0
-            }))
-        );
-    }
-    const csvHeaders = [
-        { label: "Season", key: "SemesterSeason" },
-        { label: "Year", key: "year" },
-        { label: "Courses", key: "ClassesTaking" },
-        { label: "Number of Credits", key: "TotalCredits" }
-    ];
+export function ExportCSV({ plan }: { plan: DegreePlan }): JSX.Element {
+    const data = plan.semesterList.map((sem: Semester) => ({
+        year: sem.year,
+        season: sem.season,
+        courseList: sem.courseList.map((course: Course) => course.name)
+    }));
 
     return (
         <div>
-            <CSVLink headers={csvHeaders} filename="DegreePlan" data={data}>
-                <Button className={"makeInformationButton"} onClick={getData}>
+            <CSVLink filename="DegreePlan" data={data}>
+                <Button className={"makeInformationButton"}>
                     Export to CSV
                 </Button>
             </CSVLink>
