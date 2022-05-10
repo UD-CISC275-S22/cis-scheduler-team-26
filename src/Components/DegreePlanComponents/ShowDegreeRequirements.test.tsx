@@ -32,7 +32,6 @@ describe("Degree Requirements Tests", () => {
         });
         courseButtons[0].click();
         screen.getByRole("button", { name: "Add Course" }).click();
-        courseButtons[0].click();
         userEvent.selectOptions(
             screen.getByRole("combobox", {
                 name: /Pick the Course to be Added:/i
@@ -40,7 +39,6 @@ describe("Degree Requirements Tests", () => {
             "ENGL 110"
         );
         screen.getByRole("button", { name: "Add Course" }).click();
-        courseButtons[0].click();
         userEvent.selectOptions(
             screen.getByRole("combobox", {
                 name: /Pick the Course to be Added:/i
@@ -56,6 +54,7 @@ describe("Degree Requirements Tests", () => {
             "CISC 181"
         );
         screen.getByRole("button", { name: "Add Course" }).click();
+        courseButtons[1].click();
     });
 
     test("Requirements window is displayed", () => {

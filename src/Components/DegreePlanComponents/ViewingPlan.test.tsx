@@ -32,7 +32,6 @@ describe("ViewingPlan Tests", () => {
         });
         courseButtons[0].click();
         screen.getByRole("button", { name: "Add Course" }).click();
-        courseButtons[0].click();
         userEvent.selectOptions(
             screen.getByRole("combobox", {
                 name: /Pick the Course to be Added:/i
@@ -40,7 +39,6 @@ describe("ViewingPlan Tests", () => {
             "ENGL 110"
         );
         screen.getByRole("button", { name: "Add Course" }).click();
-        courseButtons[0].click();
         userEvent.selectOptions(
             screen.getByRole("combobox", {
                 name: /Pick the Course to be Added:/i
@@ -56,6 +54,7 @@ describe("ViewingPlan Tests", () => {
             "CISC 181"
         );
         screen.getByRole("button", { name: "Add Course" }).click();
+        courseButtons[1].click();
     });
     test("The initial two test semesters are displated", () => {
         expect(screen.getByText(/Winter 2022/i)).toBeInTheDocument();
@@ -100,6 +99,7 @@ describe("ViewingPlan Tests", () => {
             name: /Add Course/i
         });
         addButton.click();
+        editButton[0].click();
         expect(screen.getByText(/101/i)).toBeInTheDocument();
         expect(screen.getByText(/EGGG/i)).toBeInTheDocument();
     });
