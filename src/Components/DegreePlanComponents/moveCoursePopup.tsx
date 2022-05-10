@@ -14,7 +14,8 @@ export function movePopup(
     plan: DegreePlan,
     setPlans: (newPlans: DegreePlan[]) => void,
     planList: DegreePlan[],
-    course: Course
+    course: Course,
+    setEditingSem: (newSem: Semester) => void
 ): JSX.Element {
     function setMovingSem(
         setMoveSem: (newSem: Semester) => void,
@@ -89,7 +90,8 @@ export function movePopup(
                             setPlans,
                             moveSem,
                             course,
-                            setMove
+                            setMove,
+                            setEditingSem
                         )
                     }
                     color="primary"
@@ -106,7 +108,8 @@ function moveCourse(
     setPlans: (newPlans: DegreePlan[]) => void,
     moveSem: Semester,
     course: Course,
-    setMove: (newMove: boolean) => void
+    setMove: (newMove: boolean) => void,
+    setEditingSem: (newSem: Semester) => void
 ) {
     const sem = plan.semesterList.find(
         (currSem: Semester): boolean =>
@@ -120,7 +123,14 @@ function moveCourse(
             (curr: DegreePlan): DegreePlan =>
                 curr === plan ? removedCourse : curr
         );
-        addCourse(removedCourse, newPlans, setPlans, moveSem, course);
+        addCourse(
+            removedCourse,
+            newPlans,
+            setPlans,
+            moveSem,
+            course,
+            setEditingSem
+        );
     }
     setMove(false);
 }

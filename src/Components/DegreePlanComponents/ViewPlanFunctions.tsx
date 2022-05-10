@@ -28,16 +28,23 @@ export function findCourseByCode(courses: Course[], check: string): Course {
     }
 }
 
-function addCourseToSemList(currSem: Semester, addingCourse: Course) {
-    return {
+function addCourseToSemList(
+    currSem: Semester,
+    addingCourse: Course,
+    setEditingSem: (newSem: Semester) => void
+) {
+    const newSem: Semester = {
         ...currSem,
         courseList: [...currSem.courseList, addingCourse]
     };
+    setEditingSem(newSem);
+    return newSem;
 }
 function addCourseHelp(
     curr: DegreePlan,
     editingSem: Semester,
-    addingCourse: Course
+    addingCourse: Course,
+    setEditingSem: (newSem: Semester) => void
 ): DegreePlan {
     return {
         ...curr,
@@ -45,7 +52,7 @@ function addCourseHelp(
             (currSem: Semester): Semester =>
                 currSem.season === editingSem.season &&
                 currSem.year === editingSem.year
-                    ? addCourseToSemList(currSem, addingCourse)
+                    ? addCourseToSemList(currSem, addingCourse, setEditingSem)
                     : currSem
         )
     };
@@ -55,14 +62,15 @@ export function addCourse(
     planList: DegreePlan[],
     setPlans: (newPlans: DegreePlan[]) => void,
     editingSem: Semester,
-    addingCourse: Course
+    addingCourse: Course,
+    edit: (newSem: Semester) => void
 ) {
     if (!findCourseInPlan(plan, addingCourse)) {
         setPlans(
             planList.map(
                 (curr: DegreePlan): DegreePlan =>
                     curr === plan
-                        ? addCourseHelp(curr, editingSem, addingCourse)
+                        ? addCourseHelp(curr, editingSem, addingCourse, edit)
                         : curr
             )
         );
