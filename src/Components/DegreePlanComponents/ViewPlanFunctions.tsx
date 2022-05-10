@@ -1,6 +1,6 @@
 import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
-import { Season, Semester } from "../../Interfaces/semester";
+import { Semester } from "../../Interfaces/semester";
 
 function findCourseInPlan(checkPlan: DegreePlan, findCourse: Course): boolean {
     if (
@@ -28,32 +28,6 @@ export function findCourseByCode(courses: Course[], check: string): Course {
     }
 }
 
-function removeSemHelp(
-    curr: DegreePlan,
-    season: Season,
-    year: number
-): DegreePlan {
-    return {
-        ...curr,
-        semesterList: curr.semesterList.filter(
-            (sem: Semester): boolean => sem.season != season || sem.year != year
-        )
-    };
-}
-export function removeSemester(
-    plan: DegreePlan,
-    planList: DegreePlan[],
-    setPlans: (newPlans: DegreePlan[]) => void,
-    season: Season,
-    year: number
-) {
-    setPlans(
-        planList.map(
-            (curr: DegreePlan): DegreePlan =>
-                curr === plan ? removeSemHelp(curr, season, year) : curr
-        )
-    );
-}
 function addCourseToSemList(currSem: Semester, addingCourse: Course) {
     return {
         ...currSem,
@@ -93,41 +67,6 @@ export function addCourse(
             )
         );
     }
-}
-function removeCourseFromSemester(check: Semester, course: Course): Semester {
-    return {
-        ...check,
-        courseList: check.courseList.filter(
-            (currCourse: Course): boolean => currCourse != course
-        )
-    };
-}
-export function removeCourseHelp(
-    course: Course,
-    sem: Semester,
-    curr: DegreePlan
-): DegreePlan {
-    return {
-        ...curr,
-        semesterList: curr.semesterList.map(
-            (check: Semester): Semester =>
-                check === sem ? removeCourseFromSemester(check, course) : check
-        )
-    };
-}
-export function removeCourse(
-    course: Course,
-    sem: Semester,
-    plan: DegreePlan,
-    plans: DegreePlan[],
-    setPlans: (newPlans: DegreePlan[]) => void
-) {
-    setPlans(
-        plans.map(
-            (curr: DegreePlan): DegreePlan =>
-                curr === plan ? removeCourseHelp(course, sem, curr) : curr
-        )
-    );
 }
 function clearCourses(curr: DegreePlan, editingSem: Semester): Semester[] {
     return curr.semesterList.map(
