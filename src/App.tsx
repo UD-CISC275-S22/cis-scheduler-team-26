@@ -9,6 +9,7 @@ import { Course } from "./Interfaces/course";
 import { Button } from "react-bootstrap";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { loadPlansFromStorage } from "./StorageFunctions";
+import { ExportCSV } from "./Components/CourseListComponents/exportCSV";
 /*
 const INITIAL_PLANS: DegreePlan[] = [
     {
@@ -95,6 +96,10 @@ function App(): JSX.Element {
                         setViewPlan={setViewPlan}
                         courses={courses}
                     ></ViewingPlan>
+                )}
+                {console.log(plans[viewPlan])}
+                {viewPlan !== -1 && (
+                    <ExportCSV plan={plans[viewPlan]}></ExportCSV>
                 )}
             </div>
         </div>
