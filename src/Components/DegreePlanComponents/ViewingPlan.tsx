@@ -8,14 +8,15 @@ import { addSemesterPopup } from "./addSemesterPopup";
 import { DegreeRequirements } from "./ShowDegreeRequirements";
 import { PrintSemesters } from "./PrintSemesters";
 import { ExportCSV } from "./exportCSV";
-
-//Icon imports for buttons
-import { TiEdit } from "react-icons/ti";
-import { AiOutlineClear } from "react-icons/ai";
 import {
     deletePlanFromStorageByName,
     savePlanToStorage
 } from "../../StorageFunctions";
+import "./ViewingPlan.css";
+
+//Icon imports for buttons
+import { TiEdit } from "react-icons/ti";
+import { AiOutlineClear } from "react-icons/ai";
 import { FiSave } from "react-icons/fi";
 
 interface planListProp {
@@ -87,22 +88,26 @@ export function ViewingPlan({
                 <br></br>
                 {plan.semesterList.map(
                     (semester: Semester): JSX.Element => (
-                        <PrintSemesters
+                        <div
                             key={semester.season + semester.year}
-                            plan={plan}
-                            planList={planList}
-                            setPlans={setPlans}
-                            edit={edit}
-                            editingSem={editingSem}
-                            setEditingSem={setEditingSem}
-                            addingCourse={addingCourse}
-                            setAddingCourse={setAddingCourse}
-                            courses={courses}
-                            setMove={setMove}
-                            setMoveSem={setMoveSem}
-                            setMoveCourse={setMoveCourse}
-                            semester={semester}
-                        ></PrintSemesters>
+                            className="degree-plan-semester-table-list"
+                        >
+                            <PrintSemesters
+                                plan={plan}
+                                planList={planList}
+                                setPlans={setPlans}
+                                edit={edit}
+                                editingSem={editingSem}
+                                setEditingSem={setEditingSem}
+                                addingCourse={addingCourse}
+                                setAddingCourse={setAddingCourse}
+                                courses={courses}
+                                setMove={setMove}
+                                setMoveSem={setMoveSem}
+                                setMoveCourse={setMoveCourse}
+                                semester={semester}
+                            ></PrintSemesters>
+                        </div>
                     )
                 )}
                 {move &&
