@@ -2,7 +2,2355 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (267.527 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (263.812 s)
+  ● Console
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Spring', courseList: [Array] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] },
+          { year: 2022, season: 'Summer', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Spring', courseList: [Array] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
   ● ViewingPlan Tests › All 4 inital test courses are displayed
 
     TestingLibraryElementError: Unable to find an element with the text: /101/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -368,7 +2716,428 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (267.527 s)
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:148:20)
 
-FAIL src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (68.778 s)
+FAIL src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (72.236 s)
+  ● Console
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
   ● MoveCourse Tests › Courses can be moved between semesters
 
     TestingLibraryElementError: Unable to find an element with the text: /Completed 11 out of 124 required credits/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -755,7 +3524,542 @@ FAIL src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (68.778 s)
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/moveCoursePopup.test.tsx:124:20)
 
-FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (62.885 s)
+FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (60.4 s)
+  ● Console
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [ { year: 2022, season: 'Winter', courseList: [] } ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'Testing Plan',
+        semesterList: [
+          { year: 2022, season: 'Winter', courseList: [Array] },
+          { year: 2022, season: 'Spring', courseList: [Array] }
+        ],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
   ● Degree Requirements Tests › Correctly displays the number of credits
 
     expect(received).toEqual(expected) // deep equality
@@ -773,21 +4077,216 @@ FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (62.885
 
       at Object.<anonymous> (src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx:68:32)
 
-PASS src/Components/CourseListComponents/courseListTest.test.tsx (35.916 s)
+PASS src/Components/CourseListComponents/courseListTest.test.tsx (34.496 s)
+  ● Console
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
 PASS src/Components/DegreePlanComponents/savePlans.test.tsx
+  ● Console
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'testplan2',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'testplan2',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: true
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'testplan2',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      undefined
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'testplan2',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'testplan2',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: true
+      }
+
+      at App (src/App.tsx:100:26)
+
+    console.log
+      {
+        planName: 'testplan2',
+        semesterList: [],
+        degree: {
+          title: 'Computer Science Bachelor of Arts',
+          requiredCourses: [
+            'CISC 108', 'CISC 181',
+            'CISC 210', 'CISC 220',
+            'CISC 260', 'CISC 275',
+            'MATH 210', 'MATH 241',
+            'ENGL 110'
+          ],
+          requiredCredits: 124
+        },
+        isSaved: false
+      }
+
+      at App (src/App.tsx:100:26)
+
 -------------------------------------|---------|----------|---------|---------|----------------------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------------------|---------|----------|---------|---------|----------------------------------
-All files                            |    74.7 |    67.56 |   77.84 |   76.32 |                                  
- src                                 |      90 |    81.25 |    87.5 |     100 |                                  
+All files                            |      75 |       68 |   78.23 |   76.54 |                                  
+ src                                 |      90 |    83.33 |    87.5 |     100 |                                  
   App.tsx                            |     100 |      100 |     100 |     100 |                                  
   StorageFunctions.tsx               |    87.5 |       70 |   83.33 |     100 | 17-28                            
- src/Components/CourseListComponents |   45.91 |    53.57 |   47.72 |    46.8 |                                  
+ src/Components/CourseListComponents |   48.03 |    53.57 |   51.06 |   48.45 |                                  
   AddCoursePopup.tsx                 |   26.31 |     12.5 |   33.33 |   22.22 | 40-129                           
   CourseListOffcanvas.tsx            |      80 |      100 |   66.66 |      80 | 34                               
   CoursesList.tsx                    |   39.39 |      100 |   38.46 |   41.93 | 42-43,54-61,109-144              
   RenderCourse.tsx                   |   73.07 |    85.71 |   71.42 |   73.07 | 58-59,114,250-255                
   UpdateCoursesInPlansFunction.tsx   |   26.66 |        0 |      20 |   28.57 | 17-33,46                         
+  exportCSV.tsx                      |     100 |      100 |     100 |     100 |                                  
  src/Components/DegreePlanComponents |   85.64 |    68.36 |   88.39 |   86.63 |                                  
   CourseInSemester.tsx               |   66.66 |     12.5 |      50 |   66.66 | 9                                
   PlanList.tsx                       |    62.5 |    58.33 |   65.21 |   64.86 | 61,92-97,156-160,166,198,232-234 
@@ -813,5 +4312,5 @@ All files                            |    74.7 |    67.56 |   77.84 |   76.32 |
 Test Suites: 3 failed, 2 passed, 5 total
 Tests:       5 failed, 17 passed, 22 total
 Snapshots:   0 total
-Time:        437.167 s
+Time:        432.977 s
 Ran all test suites.
