@@ -7,6 +7,7 @@ import { movePopup } from "./moveCoursePopup";
 import { addSemesterPopup } from "./addSemesterPopup";
 import { DegreeRequirements } from "./ShowDegreeRequirements";
 import { PrintSemesters } from "./PrintSemesters";
+import { ExportCSV } from "./exportCSV";
 
 //Icon imports for buttons
 import { TiEdit } from "react-icons/ti";
@@ -174,6 +175,7 @@ export function ViewingPlan({
                         <FiSave style={{ fontSize: "120%" }}></FiSave> Save Plan
                     </Button>
                 )}
+                <ExportCSV plan={plan}></ExportCSV>
             </div>
             {/*Components to show all the requirements for this plan's degree and which have been fulfilled */}
             <DegreeRequirements
