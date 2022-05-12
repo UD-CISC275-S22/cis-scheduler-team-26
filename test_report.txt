@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (329.031 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (313.522 s)
   ● ViewingPlan Tests › All 4 inital test courses are displayed
 
     TestingLibraryElementError: Unable to find an element with the text: /101/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -93,73 +93,69 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (329.031 s)
                   [0mComputer Science Bachelor of Arts[0m
                 [36m</h3>[39m
                 [36m<br />[39m
-                [36m<div>[39m
-                  [36m<table[39m
-                    [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
-                    [33mstyle[39m=[32m"margin-left: auto; margin-right: auto; width: 95%; background-color: white; background-blend-mode: lighten;"[39m
-                  [36m>[39m
-                    [36m<thead>[39m
-                      [36m<tr>[39m
-                        [36m<th[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                          [33mstyle[39m=[32m"font-size: 30px;"[39m
-                        [36m>[39m
-                          [0mWinter 2022[0m
-                        [36m</th>[39m
-                      [36m</tr>[39m
-                    [36m</thead>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                        [36m>[39m
-                          [0mCourse[0m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                    [36m</tbody>[39m
-                    [36m<tbody>[39m
-                      [36m<tr>[39m
-                        [36m<td[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33mstyle[39m=[32m"justify-content: center; display: flex;"[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"degree-plan-semester-table-list"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [36m<table[39m
+                      [33mclass[39m=[32m"table table-striped table-bordered table-hover"[39m
+                      [33mstyle[39m=[32m"margin-left: 20px; margin-right: 20px; width: 600px; background-color: white; background-blend-mode: lighten; border-style: solid; border-width: 10px;"[39m
+                    [36m>[39m
+                      [36m<thead>[39m
+                        [36m<tr>[39m
+                          [36m<th[39m
+                            [33mcolspan[39m=[32m"3"[39m
+                            [33mstyle[39m=[32m"font-size: 30px;"[39m
+                          [36m>[39m
+                            [0mWinter 2022[0m
+                          [36m</th>[39m
+                        [36m</tr>[39m
+                      [36m</thead>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td[39m
+                            [33mcolspan[39m=[32m"3"[39m
+                          [36m>[39m
+                            [0mCourse[0m
+                          [36m</td>[39m
+                        [36m</tr>[39m
+                      [36m</tbody>[39m
+                      [36m<tbody>[39m
+                        [36m<tr>[39m
+                          [36m<td[39m
+                            [33mcolspan[39m=[32m"3"[39m
                           [36m>[39m
                             [36m<div[39m
-                              [33mstyle[39m=[32m"width: 90%;"[39m
+                              [33mstyle[39m=[32m"justify-content: center; display: flex;"[39m
                             [36m>[39m
-                              [36m<hr />[39m
                               [36m<div[39m
-                                [33mclass[39m=[32m"container"[39m
+                                [33mstyle[39m=[32m"width: 90%;"[39m
                               [36m>[39m
+                                [36m<hr />[39m
                                 [36m<div[39m
-                                  [33mclass[39m=[32m"row"[39m
+                                  [33mclass[39m=[32m"container"[39m
                                 [36m>[39m
                                   [36m<div[39m
-                                    [33mclass[39m=[32m"col"[39m
+                                    [33mclass[39m=[32m"row"[39m
                                   [36m>[39m
                                     [36m<div[39m
-                                      [33mclass[39m=[32m"row"[39m
+                                      [33mclass[39m=[32m"col"[39m
                                     [36m>[39m
-                                      [36m<h4[39m
-                                        [33mstyle[39m=[32m"cursor: pointer;"[39m
+                                      [36m<div[39m
+                                        [33mclass[39m=[32m"row"[39m
                                       [36m>[39m
-                                        [0mACCT 166[0m
-                                        [0m: [0m
-                                        [0mSPECIAL PROBLEM[0m
-                                      [36m</h4>[39m
+                                        [36m<h4[39m
+                                          [33mstyle[39m=[32m"cursor: pointer;"[39m
+                                        [36m>[39m
+                                          [0mACCT 166[0m
+                                          [0m: [0m
+                                          [0mSPECIAL PROBLEM[0m
+                                        [36m</h4>[39m
+                                      [36m</div>[39m
                                     [36m</div>[39m
                                   [36m</div>[39m
                                 [36m</div>[39m
-                              [36m</div>[39m
-                            [36m</div>[39m
-                          [36m</div>[39m
-                        [36m</td>[39m
-                      [36m</tr>[39m
-                      [36m<tr>[39m
-                        [36m<td[39m
-                          [33mcolspan[39m=[32m"3"[39m
-                    ...
+     ...
 
       62 |     });
       63 |     test("All 4 inital test courses are displayed", () => {
@@ -368,7 +364,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (329.031 s)
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:148:20)
 
-FAIL src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (85.644 s)
+FAIL src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (85.353 s)
   ● MoveCourse Tests › Courses can be moved between semesters
 
     TestingLibraryElementError: Unable to find an element with the text: /Completed 11 out of 124 required credits/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -755,7 +751,7 @@ FAIL src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (85.644 s)
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/moveCoursePopup.test.tsx:124:20)
 
-FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (79.647 s)
+FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (71.719 s)
   ● Degree Requirements Tests › Correctly displays the number of credits
 
     expect(received).toEqual(expected) // deep equality
@@ -773,7 +769,7 @@ FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (79.647
 
       at Object.<anonymous> (src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx:68:32)
 
-PASS src/Components/CourseListComponents/courseListTest.test.tsx (53.744 s)
+PASS src/Components/CourseListComponents/courseListTest.test.tsx (49.826 s)
 PASS src/Components/DegreePlanComponents/savePlans.test.tsx
 -------------------------------------|---------|----------|---------|---------|----------------------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
@@ -797,7 +793,7 @@ All files                            |      75 |    67.56 |   78.23 |   76.54 |
   TableFooter.tsx                    |     100 |      100 |     100 |     100 |                                  
   TableHead.tsx                      |     100 |    83.33 |     100 |     100 | 36                               
   ViewPlanFunctions.tsx              |    91.3 |    66.66 |     100 |    91.3 | 16,25                            
-  ViewingPlan.tsx                    |   96.66 |    85.71 |     100 |     100 | 47,198                           
+  ViewingPlan.tsx                    |   96.66 |    85.71 |     100 |     100 | 48,203                           
   addSemesterPopup.tsx               |   82.75 |    66.66 |   81.81 |   82.75 | 18-32,78,107,109                 
   exportCSV.tsx                      |     100 |      100 |     100 |     100 |                                  
   moveCoursePopup.tsx                |   81.81 |     62.5 |   83.33 |   81.81 | 31-32,39,78                      
@@ -814,5 +810,5 @@ All files                            |      75 |    67.56 |   78.23 |   76.54 |
 Test Suites: 3 failed, 2 passed, 5 total
 Tests:       5 failed, 17 passed, 22 total
 Snapshots:   0 total
-Time:        550.653 s
+Time:        523.075 s
 Ran all test suites.
