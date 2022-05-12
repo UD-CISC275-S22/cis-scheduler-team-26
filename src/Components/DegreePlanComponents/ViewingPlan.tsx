@@ -8,6 +8,7 @@ import { addSemesterPopup } from "./addSemesterPopup";
 import { DegreeRequirements } from "./ShowDegreeRequirements";
 import { PrintSemesters } from "./PrintSemesters";
 import { ExportCSV } from "./exportCSV";
+import { ImportCSV } from "./importCSV";
 
 //Icon imports for buttons
 import { TiEdit } from "react-icons/ti";
@@ -182,6 +183,7 @@ export function ViewingPlan({
                 degree={plan.degree}
                 semesterList={plan.semesterList}
             ></DegreeRequirements>
+            <ImportCSV></ImportCSV>
         </div>
     );
 }
