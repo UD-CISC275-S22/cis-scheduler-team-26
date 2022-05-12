@@ -9,6 +9,7 @@ import { Course } from "./Interfaces/course";
 import { Button } from "react-bootstrap";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { loadPlansFromStorage } from "./StorageFunctions";
+import { ImportData } from "./Components/DegreePlanComponents/importCSV";
 /*
 const INITIAL_PLANS: DegreePlan[] = [
     {
@@ -97,6 +98,7 @@ function App(): JSX.Element {
                     ></ViewingPlan>
                 )}
             </div>
+            <ImportData></ImportData>
         </div>
     );
 }
