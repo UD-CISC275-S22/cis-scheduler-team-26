@@ -3,9 +3,9 @@ import { Button, Table } from "react-bootstrap";
 import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Semester } from "../../Interfaces/semester";
-import { TableHead } from "./TableHead";
-import { TableBody } from "./TableBody";
-import { TableFooter } from "./TableFooter";
+import { TableHead } from "./SemesterTableHead";
+import { TableBody } from "./SemesterTableBody";
+import { TableFooter } from "./SemesterTableFooter";
 
 //Icon imports for buttons
 import { TiEdit } from "react-icons/ti";

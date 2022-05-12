@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Semester } from "../../Interfaces/semester";
-import { findCourseByCode } from "./ViewPlanFunctions";
 import { addCourse, clearSem } from "./ViewPlanFunctions";
+import { CourseSearch } from "./CourseSearchComponent";
 
 //Icon imports for buttons
 import { AiOutlineClear } from "react-icons/ai";
@@ -35,28 +35,10 @@ export function TableFooter({
         <tbody>
             <tr>
                 <td colSpan={1}>
-                    <Form.Group controlId="addingCourse">
-                        <Form.Label>Pick the Course to be Added:</Form.Label>
-                        <Form.Select
-                            value={addingCourse.code}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLSelectElement>
-                            ) =>
-                                setAddingCourse(
-                                    findCourseByCode(
-                                        courses,
-                                        event.target.value
-                                    )
-                                )
-                            }
-                        >
-                            {courses.map((curr: Course) => (
-                                <option key={curr.code} value={curr.code}>
-                                    {curr.code}
-                                </option>
-                            ))}
-                        </Form.Select>
-                    </Form.Group>
+                    <CourseSearch
+                        courses={courses}
+                        setAddingCourse={setAddingCourse}
+                    ></CourseSearch>
                 </td>
                 <td>
                     <Button
@@ -71,7 +53,7 @@ export function TableFooter({
                             )
                         }
                     >
-                        <RiAddBoxLine></RiAddBoxLine> Add Course
+                        <RiAddBoxLine></RiAddBoxLine> Add {addingCourse.code}
                     </Button>
                 </td>
                 <td>
