@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Course } from "../../Interfaces/course";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { RenderCourse } from "./RenderCourse";
 import { AddCourseForm } from "./AddCoursePopup";
 import { DegreePlan } from "../../Interfaces/degreePlan";
@@ -31,33 +31,61 @@ export function CoursesList({
     const [newCourseDepartment, setNewCourseDepartment] = useState<string>("");
     const [newCourseID, setNewCourseID] = useState<number>(0);
     const [newCourseCredits, setNewCourseCredits] = useState<number>(0);
+    //filter course list string
+    const [filter, setFilter] = useState<string>("");
 
     return (
         <div>
-            {courses.map((curr: Course) => (
-                <div key={curr.code}>
-                    <RenderCourse
-                        Course={curr}
-                        deleteCourse={() => {
-                            deleteCourseByName(curr.code);
-                            updateCoursesInPlans(
-                                planList,
-                                setPlanList,
-                                curr,
-                                null
-                            );
-                        }}
-                        editCourse={(newName: string, newCreds: number) =>
-                            editCourseByName(curr.code, newName, newCreds)
-                        }
-                        resetCourse={() => {
-                            resetCourse(curr, planList, setPlanList);
-                        }}
-                        planList={planList}
-                        setPlanList={setPlanList}
-                    ></RenderCourse>
-                </div>
-            ))}
+            <Form.Group>
+                <Form.Label style={{ fontSize: "30px" }}>
+                    Search For Course:
+                </Form.Label>
+                <Form.Control
+                    type="text"
+                    value={filter}
+                    placeholder={"ex. cisc108"}
+                    onChange={(
+                        event: React.ChangeEvent<
+                            HTMLTextAreaElement | HTMLInputElement
+                        >
+                    ) => setFilter(event.target.value)}
+                />
+            </Form.Group>
+            <br></br>
+            {courses.map(
+                (curr: Course) =>
+                    filterFunction(filter, curr.code) && (
+                        <div key={curr.code}>
+                            <RenderCourse
+                                Course={curr}
+                                deleteCourse={() => {
+                                    deleteCourseByName(curr.code);
+                                    updateCoursesInPlans(
+                                        planList,
+                                        setPlanList,
+                                        curr,
+                                        null
+                                    );
+                                }}
+                                editCourse={(
+                                    newName: string,
+                                    newCreds: number
+                                ) =>
+                                    editCourseByName(
+                                        curr.code,
+                                        newName,
+                                        newCreds
+                                    )
+                                }
+                                resetCourse={() => {
+                                    resetCourse(curr, planList, setPlanList);
+                                }}
+                                planList={planList}
+                                setPlanList={setPlanList}
+                            ></RenderCourse>
+                        </div>
+                    )
+            )}
             <Button onClick={() => setAddingCourse(true)}>
                 <RiAddBoxLine
                     style={{ marginBottom: "2px", fontSize: "20px" }}
@@ -81,6 +109,12 @@ export function CoursesList({
             {/*editCourse && <EditCourseForm></EditCourseForm>*/}
         </div>
     );
+
+    function filterFunction(filter: string, courseCode: string): boolean {
+        return courseCode
+            .replace(/\s+/g, "")
+            .startsWith(filter.replace(/\s+/g, "").toUpperCase());
+    }
 
     //This function allows each course to edit itself within the master list of courses
     function editCourseByName(name: string, newName: string, newCreds: number) {
