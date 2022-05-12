@@ -20,8 +20,16 @@ export function CourseSearch({
         }
     );
     function filter_for_sel_search(opts: SelectSearchOption[]) {
-        return (opt: string) =>
-            opts.filter((val: SelectSearchOption) => val.name.startsWith(opt));
+        return (opt: string) => {
+            if (opt === "") return [];
+            else
+                return opts.filter((val: SelectSearchOption) =>
+                    //The weird replace stuff here just removes whitespace from the strings
+                    val.name
+                        .replace(/\s+/g, "")
+                        .startsWith(opt.replace(/\s+/g, "").toUpperCase())
+                );
+        };
     }
     return (
         <div>

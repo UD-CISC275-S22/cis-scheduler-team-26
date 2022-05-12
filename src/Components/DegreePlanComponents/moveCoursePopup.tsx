@@ -4,7 +4,7 @@ import { Course } from "../../Interfaces/course";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Semester } from "../../Interfaces/semester";
 import { addCourse } from "./ViewPlanFunctions";
-import { removeCourseHelp } from "./TableBody";
+import { removeCourseHelp } from "./SemesterTableBody";
 
 export function movePopup(
     move: boolean,
