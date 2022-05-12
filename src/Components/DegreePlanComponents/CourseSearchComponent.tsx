@@ -2,6 +2,7 @@ import React from "react";
 import SelectSearch, { SelectSearchOption } from "react-select-search";
 import { Course } from "../../Interfaces/course";
 import { findCourseByCode } from "./ViewPlanFunctions";
+import "./CourseSearchComponent.css";
 
 export function CourseSearch({
     courses,
@@ -38,12 +39,12 @@ export function CourseSearch({
                 options={sel_search_options}
                 search={true}
                 filterOptions={filter_for_sel_search}
-                closeOnSelect={false}
-                onChange={(selectedVal) =>
+                closeOnSelect={true}
+                onChange={(selectedVal) => {
                     setAddingCourse(
                         findCourseByCode(courses, selectedVal.toString())
-                    )
-                }
+                    );
+                }}
                 placeholder={"ex. CISC 108"}
             ></SelectSearch>
         </div>
