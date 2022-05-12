@@ -53,11 +53,13 @@ export function PrintSemesters({
                 bordered
                 hover
                 style={{
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    width: "95%",
+                    marginLeft: "20px",
+                    marginRight: "20px",
+                    width: "600px",
                     backgroundColor: "white",
-                    backgroundBlendMode: "lighten"
+                    backgroundBlendMode: "lighten",
+                    borderStyle: "solid",
+                    borderWidth: "10px"
                 }}
             >
                 <TableHead
