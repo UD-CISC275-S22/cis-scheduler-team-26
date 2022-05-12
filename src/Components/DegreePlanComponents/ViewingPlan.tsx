@@ -134,53 +134,58 @@ export function ViewingPlan({
                         addSem,
                         setAddSem
                     )}
-                {edit && (
-                    <div>
-                        <Button onClick={() => setAddSem(true)}>
-                            Add Semester
-                        </Button>
-                    </div>
-                )}
-                <Button onClick={() => setEdit(!edit)}>
-                    <TiEdit></TiEdit>Edit Semesters
-                </Button>
-                <Button
-                    onClick={() => clearAllCourses(plan, planList, setPlans)}
-                    style={{ backgroundColor: "red", borderColor: "red" }}
-                >
-                    <AiOutlineClear></AiOutlineClear>
-                    Clear All Semesters
-                </Button>
-                {/* Render unsave plan button is plan is saved.
-                Otherwise render save plan button */}
-                {plan.isSaved ? (
-                    <Button
-                        onClick={() => {
-                            changeIsPlanSavedByName(
-                                plan.planName,
-                                planList,
-                                setPlans
-                            );
-                            deletePlanFromStorageByName(plan.planName);
-                        }}
-                    >
-                        <FiSave style={{ fontSize: "120%" }}></FiSave> Unsave
-                        Plan
+                <div>
+                    {edit && (
+                        <div>
+                            <Button onClick={() => setAddSem(true)}>
+                                Add Semester
+                            </Button>
+                        </div>
+                    )}
+                    <Button onClick={() => setEdit(!edit)}>
+                        <TiEdit></TiEdit>Edit Semesters
                     </Button>
-                ) : (
                     <Button
                         onClick={() =>
-                            changeIsPlanSavedByName(
-                                plan.planName,
-                                planList,
-                                setPlans
-                            )
+                            clearAllCourses(plan, planList, setPlans)
                         }
+                        style={{ backgroundColor: "red", borderColor: "red" }}
                     >
-                        <FiSave style={{ fontSize: "120%" }}></FiSave> Save Plan
+                        <AiOutlineClear></AiOutlineClear>
+                        Clear All Semesters
                     </Button>
-                )}
-                <ExportCSV plan={plan}></ExportCSV>
+                    {/* Render unsave plan button is plan is saved.
+                Otherwise render save plan button */}
+                    {plan.isSaved ? (
+                        <Button
+                            onClick={() => {
+                                changeIsPlanSavedByName(
+                                    plan.planName,
+                                    planList,
+                                    setPlans
+                                );
+                                deletePlanFromStorageByName(plan.planName);
+                            }}
+                        >
+                            <FiSave style={{ fontSize: "120%" }}></FiSave>{" "}
+                            Unsave Plan
+                        </Button>
+                    ) : (
+                        <Button
+                            onClick={() =>
+                                changeIsPlanSavedByName(
+                                    plan.planName,
+                                    planList,
+                                    setPlans
+                                )
+                            }
+                        >
+                            <FiSave style={{ fontSize: "120%" }}></FiSave> Save
+                            Plan
+                        </Button>
+                    )}
+                    <ExportCSV plan={plan}></ExportCSV>
+                </div>
             </div>
             {/*Components to show all the requirements for this plan's degree and which have been fulfilled */}
             <DegreeRequirements
