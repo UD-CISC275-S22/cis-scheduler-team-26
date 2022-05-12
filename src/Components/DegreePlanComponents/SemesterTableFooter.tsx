@@ -39,30 +39,6 @@ export function TableFooter({
                         courses={courses}
                         setAddingCourse={setAddingCourse}
                     ></CourseSearch>
-                    {/* 
-                    <Form.Group controlId="addingCourse">
-                        <Form.Label>Pick the Course to be Added:</Form.Label>
-                        <Form.Select
-                            value={addingCourse.code}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLSelectElement>
-                            ) =>
-                                setAddingCourse(
-                                    findCourseByCode(
-                                        courses,
-                                        event.target.value
-                                    )
-                                )
-                            }
-                        >
-                            {courses.map((curr: Course) => (
-                                <option key={curr.code} value={curr.code}>
-                                    {curr.code}
-                                </option>
-                            ))}
-                        </Form.Select>
-                    </Form.Group>
-                    */}
                 </td>
                 <td>
                     <Button
@@ -77,7 +53,7 @@ export function TableFooter({
                             )
                         }
                     >
-                        <RiAddBoxLine></RiAddBoxLine> Add Course
+                        <RiAddBoxLine></RiAddBoxLine> Add {addingCourse.code}
                     </Button>
                 </td>
                 <td>
