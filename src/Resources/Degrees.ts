@@ -19,6 +19,7 @@ export const DegreeList: Degree[] = [
             //Theres also a number of other university requirements such as breadth reqs
             //Not sure how to reflect those here
         ],
+        breadthRequirements: [3, 3, 3, 3],
         requiredCredits: 124
     },
     {
@@ -44,6 +45,7 @@ export const DegreeList: Degree[] = [
             //Theres also a number of other university requirements such as breadth reqs
             //Not sure how to reflect those here
         ],
+        breadthRequirements: [3, 3, 3, 3],
         requiredCredits: 124
     }
 ];
