@@ -16,7 +16,6 @@ export function DegreeRequirements({
     semesterList: Semester[];
 }): JSX.Element {
     const courses = getCourses(semesterList);
-
     return (
         <div className="degree-requirements">
             <h1>Requirements</h1>
@@ -31,6 +30,12 @@ export function DegreeRequirements({
                         isCourseInList(courseCode, courses)
                     )
                 )}
+            </div>
+            <div className="degree-breadth-body">
+                {calculateCAH(courses, degree)}
+                {calculateHCC(courses, degree)}
+                {calculateSBS(courses, degree)}
+                {calculateMNST(courses, degree)}
             </div>
         </div>
     );
@@ -88,4 +93,110 @@ function renderCourse(course: string, isFulfilled: boolean): JSX.Element {
             </div>
         </div>
     );
+}
+function calculateCAH(courses: Course[], degree: Degree): JSX.Element {
+    const credits = courses.reduce(
+        (currTotal: number, currCourse: Course) =>
+            currCourse.breadth.includes("Creative Arts and Humanities")
+                ? currTotal + currCourse.credits
+                : currTotal,
+        0
+    );
+    if (credits >= degree.breadthRequirements[0]) {
+        return (
+            <div>
+                <div>Creative Arts and Humanities</div>
+                <div>Satisfied</div>
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <div>Creative Arts and Humanities</div>
+                <div>
+                    Need {degree.breadthRequirements[0] - credits} more credits
+                </div>
+            </div>
+        );
+    }
+}
+function calculateHCC(courses: Course[], degree: Degree): JSX.Element {
+    const credits = courses.reduce(
+        (currTotal: number, currCourse: Course) =>
+            currCourse.breadth.includes("History and Cultural Change")
+                ? currTotal + currCourse.credits
+                : currTotal,
+        0
+    );
+    if (credits >= degree.breadthRequirements[1]) {
+        return (
+            <div>
+                <div>History and Cultural Change</div>
+                <div>Satisfied</div>
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <div>History and Cultural Change</div>
+                <div>
+                    Need {degree.breadthRequirements[1] - credits} more credits
+                </div>
+            </div>
+        );
+    }
+}
+function calculateSBS(courses: Course[], degree: Degree): JSX.Element {
+    const credits = courses.reduce(
+        (currTotal: number, currCourse: Course) =>
+            currCourse.breadth.includes("Social and Behavioral Sciences")
+                ? currTotal + currCourse.credits
+                : currTotal,
+        0
+    );
+    if (credits >= degree.breadthRequirements[2]) {
+        return (
+            <div>
+                <div>Social and Behavioral Sciences</div>
+                <div>Satisfied</div>
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <div>Social and Behavioral Sciences</div>
+                <div>
+                    Need {degree.breadthRequirements[2] - credits} more credits
+                </div>
+            </div>
+        );
+    }
+}
+function calculateMNST(courses: Course[], degree: Degree): JSX.Element {
+    const credits = courses.reduce(
+        (currTotal: number, currCourse: Course) =>
+            currCourse.breadth.includes(
+                "Mathematics, Natural Sciences and Technology"
+            ) && !degree.requiredCourses.includes(currCourse.code, 0)
+                ? currTotal + currCourse.credits
+                : currTotal,
+        0
+    );
+    if (credits >= degree.breadthRequirements[3]) {
+        return (
+            <div>
+                <div>Mathematics, Natural Sciences and Technology</div>
+                <div>Satisfied</div>
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <div>Mathematics, Natural Sciences and Technology</div>
+                <div>
+                    Need {degree.breadthRequirements[3] - credits} more credits
+                </div>
+            </div>
+        );
+    }
 }
