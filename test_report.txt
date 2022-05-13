@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (45.727 s)
+FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (45.398 s)
   ● ViewingPlan Tests › The initial two test semesters are displated
 
     TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Add Course"
@@ -4599,7 +4599,7 @@ FAIL src/Components/DegreePlanComponents/ViewingPlan.test.tsx (45.727 s)
       at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ViewingPlan.test.tsx:34:16)
 
-FAIL src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (8.896 s)
+FAIL src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (8.908 s)
   ● MoveCourse Tests › Courses can be moved between semesters
 
     TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Add Course"
@@ -5366,7 +5366,7 @@ FAIL src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (8.896 s)
       at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/moveCoursePopup.test.tsx:34:16)
 
-FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (12.256 s)
+FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (12.679 s)
   ● Degree Requirements Tests › Requirements window is displayed
 
     TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Add Course"
@@ -6516,12 +6516,12 @@ FAIL src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (12.256
       at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx:34:16)
 
-PASS src/Components/CourseListComponents/courseListTest.test.tsx (59.714 s)
+PASS src/Components/CourseListComponents/courseListTest.test.tsx (53.745 s)
 PASS src/Components/DegreePlanComponents/savePlans.test.tsx
 -------------------------------------|---------|----------|---------|---------|----------------------------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                      
 -------------------------------------|---------|----------|---------|---------|----------------------------------------
-All files                            |   51.56 |    46.05 |   44.31 |   52.99 |                                        
+All files                            |   52.02 |    43.52 |   44.56 |   53.38 |                                        
  src                                 |   86.66 |    81.25 |      75 |   96.29 |                                        
   App.tsx                            |   83.33 |      100 |      50 |   83.33 | 68                                     
   StorageFunctions.tsx               |    87.5 |       70 |   83.33 |     100 | 17-28                                  
@@ -6531,7 +6531,7 @@ All files                            |   51.56 |    46.05 |   44.31 |   52.99 |
   CoursesList.tsx                    |   41.66 |      100 |      40 |   44.11 | 51,62-63,81-89,143-178                 
   RenderCourse.tsx                   |   73.07 |    85.71 |   71.42 |   73.07 | 58-59,114,250-255                      
   UpdateCoursesInPlansFunction.tsx   |   26.66 |        0 |      20 |   28.57 | 17-33,46                               
- src/Components/DegreePlanComponents |   47.34 |       37 |   39.49 |   48.22 |                                        
+ src/Components/DegreePlanComponents |   48.45 |    34.74 |   40.15 |    49.3 |                                        
   CourseInSemester.tsx               |       0 |        0 |       0 |       0 | 6-12                                   
   CourseSearchComponent.tsx          |      70 |       50 |   66.66 |   66.66 | 27-29,44                               
   PlanList.tsx                       |      55 |    58.33 |   52.17 |   59.45 | 61,73-74,92-97,156-160,166,198,232-234 
@@ -6539,7 +6539,7 @@ All files                            |   51.56 |    46.05 |   44.31 |   52.99 |
   SemesterTableBody.tsx              |    7.14 |    33.33 |    8.33 |    7.14 | 23-71,77-132                           
   SemesterTableFooter.tsx            |   33.33 |      100 |   33.33 |   33.33 | 46-62                                  
   SemesterTableHead.tsx              |   16.66 |    33.33 |   16.66 |   16.66 | 19-36,62                               
-  ShowDegreeRequirements.tsx         |      80 |       50 |   63.63 |   88.88 | 53,64                                  
+  ShowDegreeRequirements.tsx         |      70 |    27.27 |   57.89 |   73.68 | 58,69,100,106,126,132,152,158,178,186  
   ViewPlanFunctions.tsx              |       0 |        0 |       0 |       0 | 6-97                                   
   ViewingPlan.tsx                    |   73.33 |    71.42 |   57.14 |   77.77 | 36-52,150                              
   addSemesterPopup.tsx               |   75.86 |    55.55 |   81.81 |   75.86 | 18-32,78,84,107,109,111                
@@ -6558,5 +6558,5 @@ All files                            |   51.56 |    46.05 |   44.31 |   52.99 |
 Test Suites: 3 failed, 2 passed, 5 total
 Tests:       17 failed, 5 passed, 22 total
 Snapshots:   0 total
-Time:        129.49 s
+Time:        123.547 s
 Ran all test suites.
