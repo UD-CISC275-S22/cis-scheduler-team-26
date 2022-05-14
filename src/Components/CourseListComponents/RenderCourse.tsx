@@ -80,6 +80,9 @@ export function RenderCourse({
                     {/* Body of the rendered course */}
                     {renderExpanded && (
                         <div style={{ marginLeft: "20px" }}>
+                            <div style={{ fontWeight: "bold" }}>
+                                {Course.name}
+                            </div>
                             <div>Credits: {Course.credits}</div>
                             {Course.preReq != "" && (
                                 <div>
