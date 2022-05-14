@@ -47,3 +47,16 @@ export const DegreeList: Degree[] = [
         requiredCredits: 124
     }
 ];
+function makeNewDegree(name: string): Degree {
+    return {
+        title: name,
+        requiredCourses: [],
+        requiredCredits: 124
+    };
+}
+export function getDegree(name: string): Degree {
+    return (
+        DegreeList.find((degree: Degree): boolean => degree.title === name) ||
+        makeNewDegree(name)
+    );
+}

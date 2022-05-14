@@ -98,7 +98,7 @@ function App(): JSX.Element {
                     ></ViewingPlan>
                 )}
             </div>
-            <ImportData></ImportData>
+            <ImportData planList={plans} setPlans={setPlans}></ImportData>
         </div>
     );
 }

@@ -11,7 +11,6 @@ export function ExportCSV({ plan }: { plan: DegreePlan }): JSX.Element {
         season: sem.season,
         courseList: sem.courseList.map((course: Course) => course.code)
     }));
-
     return (
         <div>
             <CSVLink filename="DegreePlan" data={data}>

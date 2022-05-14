@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { DegreePlan } from "../../Interfaces/degreePlan";
+import { Degree } from "../../Interfaces/degree";
 import { Semester, validSeason } from "../../Interfaces/semester";
 import { Course } from "../../Interfaces/course";
 import { courseList } from "../../Resources/Courses";
-export function ImportData(): JSX.Element {
+import { getDegree } from "../../Resources/Degrees";
+interface importProp {
+    planList: DegreePlan[];
+    setPlans: (newPlans: DegreePlan[]) => void;
+}
+export function ImportData({ setPlans, planList }: importProp): JSX.Element {
     const [content, setContent] = useState<string>("No file data uploaded");
 
     function uploadFile(event: React.ChangeEvent<HTMLInputElement>) {
@@ -25,13 +31,15 @@ export function ImportData(): JSX.Element {
             // Actually read the file
             reader.readAsText(filename);
         }
+        setPlans([...planList, loadCSVData(content)]);
     }
     function loadCSVData(raw: string): DegreePlan {
         const lines = raw.split("\n");
-        const metadata = lines[0].split(",");
-        const planName = metadata[0];
-        const semesters = getSemesters(lines.slice(2));
-        return { planName, degreeType, semesters, isSaved: false };
+        const planName = "";
+        const inputDegreeType = getDegree("");
+        const semesters = getSemesters(lines.slice(1));
+        const degree: Degree = inputDegreeType;
+        return { planName, degree, semesterList: semesters, isSaved: false };
     }
     function getSemesters(rows: string[]): Semester[] {
         return rows.map((row: string): Semester => {
