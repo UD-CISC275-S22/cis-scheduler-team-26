@@ -155,14 +155,9 @@ export function RenderCourse({
                     setNewCourseCredits={setNewCourseCredits}
                     updateCoursesInPlans={() =>
                         updateCoursesInPlans(planList, setPlanList, Course, {
+                            ...Course,
                             code: newCourseDepartment + " " + newCourseID,
-                            credits: newCourseCredits,
-                            preReq: "",
-                            name: "",
-                            descr: "",
-                            restrict: "",
-                            breadth: "",
-                            typ: ""
+                            credits: newCourseCredits
                         })
                     }
                 ></EditingCourseForm>
