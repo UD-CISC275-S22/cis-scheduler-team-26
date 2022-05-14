@@ -31,29 +31,21 @@ describe("ViewingPlan Tests", () => {
             name: "Edit Courses"
         });
         courseButtons[0].click();
-        screen.getByRole("button", { name: "Add Course" }).click();
-        userEvent.selectOptions(
-            screen.getByRole("combobox", {
-                name: /Pick the Course to be Added:/i
-            }),
-            "ENGL 110"
-        );
-        screen.getByRole("button", { name: "Add Course" }).click();
-        userEvent.selectOptions(
-            screen.getByRole("combobox", {
-                name: /Pick the Course to be Added:/i
-            }),
-            "CISC 108"
-        );
-        screen.getByRole("button", { name: "Add Course" }).click();
+        let searchBox = screen.queryByPlaceholderText("ex. CISC 108");
+        userEvent.type(searchBox, "EGGG 101");
+        userEvent.click(screen.queryByText("EGGG 101"));
+        screen.getByRole("button", { name: "Add EGGG 101" }).click();
+        userEvent.type(searchBox, "ENGL 110");
+        userEvent.click(screen.queryAllByText("ENGL 110")[0]);
+        screen.getByRole("button", { name: "Add ENGL 110" }).click();
+        userEvent.type(searchBox, "CISC 108");
+        userEvent.click(screen.queryAllByText("CISC 108")[0]);
+        screen.getByRole("button", { name: "Add CISC 108" }).click();
         courseButtons[1].click();
-        userEvent.selectOptions(
-            screen.getByRole("combobox", {
-                name: /Pick the Course to be Added:/i
-            }),
-            "CISC 181"
-        );
-        screen.getByRole("button", { name: "Add Course" }).click();
+        searchBox = screen.queryByPlaceholderText("ex. CISC 108");
+        userEvent.type(searchBox, "CISC 181");
+        userEvent.click(screen.queryAllByText("CISC 181")[0]);
+        screen.getByRole("button", { name: "Add CISC 181" }).click();
         courseButtons[1].click();
     });
     test("The initial two test semesters are displated", () => {
@@ -91,14 +83,10 @@ describe("ViewingPlan Tests", () => {
         removeCourseButton[0].click();
         expect(screen.queryByText(/EGGG/i)).not.toBeInTheDocument();
         editButton[0].click();
-        const typeDropdown = screen.getByRole("combobox", {
-            name: /Pick the Course to be Added:/i
-        });
-        userEvent.selectOptions(typeDropdown, "EGGG 101");
-        const addButton = screen.getByRole("button", {
-            name: /Add Course/i
-        });
-        addButton.click();
+        const searchBox = screen.queryByPlaceholderText("ex. CISC 108");
+        userEvent.type(searchBox, "EGGG 101");
+        userEvent.click(screen.queryByText("EGGG 101"));
+        screen.getByRole("button", { name: "Add EGGG 101" }).click();
         editButton[0].click();
         expect(screen.getByText(/101/i)).toBeInTheDocument();
         expect(screen.getByText(/EGGG/i)).toBeInTheDocument();
@@ -185,14 +173,10 @@ describe("ViewingPlan Tests", () => {
         viewPlanButton[0].click();
         const editButton2 = screen.getAllByTestId("editCourseButton");
         editButton2[0].click();
-        const typeDropdown = screen.getByRole("combobox", {
-            name: /Pick the Course to be Added:/i
-        });
-        userEvent.selectOptions(typeDropdown, "EGGG 101");
-        const addButton = screen.getByRole("button", {
-            name: /Add Course/i
-        });
-        addButton.click();
+        const searchBox = screen.queryByPlaceholderText("ex. CISC 108");
+        userEvent.type(searchBox, "EGGG 101");
+        userEvent.click(screen.queryByText("EGGG 101"));
+        screen.getByRole("button", { name: "Add EGGG 101" }).click();
         const returnButton2 = screen.getByRole("button", {
             name: /Return to Plan List/i
         });
