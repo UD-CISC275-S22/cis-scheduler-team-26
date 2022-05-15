@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { DegreePlan } from "../../Interfaces/degreePlan";
 import { Degree } from "../../Interfaces/degree";
 import { Semester, validSeason } from "../../Interfaces/semester";
@@ -30,8 +30,8 @@ export function ImportData({ setPlans, planList }: importProp): JSX.Element {
             };
             // Actually read the file
             reader.readAsText(filename);
+            setPlans([...planList, loadCSVData(content)]);
         }
-        setPlans([...planList, loadCSVData(content)]);
     }
     function loadCSVData(raw: string): DegreePlan {
         const lines = raw.split("\n");
@@ -51,6 +51,7 @@ export function ImportData({ setPlans, planList }: importProp): JSX.Element {
         });
     }
     function makeNewCourse(cs: string): Course {
+        console.log(cs);
         return {
             code: cs,
             name: "",
@@ -66,7 +67,8 @@ export function ImportData({ setPlans, planList }: importProp): JSX.Element {
         return cs.map(
             (courseString: string): Course =>
                 courseList.find(
-                    (course: Course): boolean => course.code === courseString
+                    (course: Course): boolean =>
+                        course.code === courseString.replace(/['"]+/g, "")
                 ) || makeNewCourse(courseString)
         );
     }
