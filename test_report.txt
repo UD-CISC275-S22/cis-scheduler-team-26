@@ -2,50 +2,26 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (65.789 s)
-PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (14.838 s)
-PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (16.954 s)
-PASS src/Components/CourseListComponents/courseListTest.test.tsx (58.595 s)
-PASS src/Components/DegreePlanComponents/savePlans.test.tsx
--------------------------------------|---------|----------|---------|---------|----------------------------------
-File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
--------------------------------------|---------|----------|---------|---------|----------------------------------
-All files                            |   75.74 |    67.05 |   79.34 |   77.11 |                                  
- src                                 |      90 |    81.25 |    87.5 |     100 |                                  
-  App.tsx                            |     100 |      100 |     100 |     100 |                                  
-  StorageFunctions.tsx               |    87.5 |       70 |   83.33 |     100 | 17-28                            
- src/Components/CourseListComponents |   46.53 |    56.66 |   47.82 |   47.42 |                                  
-  AddCoursePopup.tsx                 |   26.31 |     12.5 |   33.33 |   22.22 | 40-129                           
-  CourseListOffcanvas.tsx            |      80 |      100 |   66.66 |      80 | 34                               
-  CoursesList.tsx                    |   41.66 |      100 |      40 |   44.11 | 51,62-63,81-89,143-178           
-  RenderCourse.tsx                   |   73.07 |    85.71 |   71.42 |   73.07 | 58-59,117,248-253                
-  UpdateCoursesInPlansFunction.tsx   |   26.66 |        0 |      20 |   28.57 | 17-33,46                         
- src/Components/DegreePlanComponents |    85.9 |    66.94 |   89.76 |   86.63 |                                  
-  CourseInSemester.tsx               |   66.66 |     12.5 |      50 |   66.66 | 9                                
-  CourseSearchComponent.tsx          |     100 |      100 |     100 |     100 |                                  
-  PlanList.tsx                       |    62.5 |    58.33 |   65.21 |   64.86 | 61,92-97,156-160,166,198,232-234 
-  PrintSemesters.tsx                 |     100 |      100 |     100 |     100 |                                  
-  SemesterTableBody.tsx              |     100 |    83.33 |     100 |     100 | 53                               
-  SemesterTableFooter.tsx            |     100 |      100 |     100 |     100 |                                  
-  SemesterTableHead.tsx              |     100 |    83.33 |     100 |     100 | 36                               
-  ShowDegreeRequirements.tsx         |      90 |    63.63 |     100 |   89.47 | 106,132,158,186                  
-  ViewPlanFunctions.tsx              |    91.3 |    66.66 |     100 |    91.3 | 16,25                            
-  ViewingPlan.tsx                    |   96.66 |    85.71 |     100 |     100 | 48,208                           
-  addSemesterPopup.tsx               |   82.75 |    66.66 |   81.81 |   82.75 | 18-32,78,107,109                 
-  exportCSV.tsx                      |     100 |      100 |     100 |     100 |                                  
-  moveCoursePopup.tsx                |   81.81 |     62.5 |   83.33 |   81.81 | 31-32,39,78                      
- src/Interfaces                      |   85.71 |    83.33 |     100 |   85.71 |                                  
-  course.ts                          |       0 |        0 |       0 |       0 |                                  
-  degree.ts                          |       0 |        0 |       0 |       0 |                                  
-  degreePlan.ts                      |       0 |        0 |       0 |       0 |                                  
-  semester.ts                        |   85.71 |    83.33 |     100 |   85.71 | 13                               
- src/Resources                       |     100 |      100 |     100 |     100 |                                  
-  Courses.ts                         |     100 |      100 |     100 |     100 |                                  
-  Degrees.ts                         |     100 |      100 |     100 |     100 |                                  
--------------------------------------|---------|----------|---------|---------|----------------------------------
+PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (40.762 s)
+PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (9.377 s)
+PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (10.307 s)
 
-Test Suites: 5 passed, 5 total
-Tests:       22 passed, 22 total
-Snapshots:   0 total
-Time:        159.777 s
-Ran all test suites.
+<--- Last few GCs --->
+
+[1748:0x66de7f0]   125785 ms: Mark-sweep (reduce) 2037.6 (2083.4) -> 2036.6 (2083.6) MB, 1968.0 / 0.0 ms  (average mu = 0.080, current mu = 0.007) allocation failure scavenge might not succeed
+[1748:0x66de7f0]   127731 ms: Mark-sweep (reduce) 2037.7 (2083.6) -> 2036.9 (2084.1) MB, 1940.6 / 0.0 ms  (average mu = 0.042, current mu = 0.003) allocation failure scavenge might not succeed
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+ 1: 0xb09c10 node::Abort() [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
+ 2: 0xa1c193 node::FatalError(char const*, char const*) [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
+ 3: 0xcf8dbe v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
+ 4: 0xcf9137 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
+ 5: 0xeb09d5  [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
+ 6: 0xec069d v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
+ 7: 0xec339e v8::internal::Heap::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
+ 8: 0xe848da v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationType, v8::internal::AllocationOrigin) [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
+ 9: 0x11fd626 v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
+10: 0x15f2099  [/opt/hostedtoolcache/node/16.15.0/x64/bin/node]
