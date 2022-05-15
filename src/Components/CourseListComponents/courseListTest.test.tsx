@@ -28,24 +28,25 @@ describe("Add course button test", () => {
             name: "Confirm"
         });
         confirmButton.click();
+        const searchBox = screen.queryByPlaceholderText("ex. cisc108");
+        userEvent.type(searchBox, "Test100");
         expect(screen.getByText(/Test 100/i)).toBeInTheDocument();
         const testCourse = screen.getByText("Test 100");
         testCourse.click();
         expect(screen.getByText(/Credits: 4/i)).toBeInTheDocument();
     });
     test("Removing a course", () => {
+        const searchBox = screen.queryByPlaceholderText("ex. cisc108");
+        userEvent.type(searchBox, "eggg");
         const egggCourse = screen.getByText("EGGG 101");
         egggCourse.click();
-        expect(screen.getAllByText(/EGGG 101/i).length === 0);
-        const mathCourse = screen.getByText("MATH 241");
-        mathCourse.click();
-        expect(screen.getAllByText(/MATH 241/i).length === 0);
-        const ciscCourse = screen.getByText("CISC 108");
-        ciscCourse.click();
-        expect(screen.getAllByText(/CISC 108/i).length === 0);
+        screen.getByRole("button", { name: "Delete" }).click();
+        expect(egggCourse).not.toBeInTheDocument();
     });
     test("Editing a course", () => {
-        const clickCourse = screen.getByText("EGGG 101");
+        const searchBox = screen.queryByPlaceholderText("ex. cisc108");
+        userEvent.type(searchBox, "EGGG");
+        const clickCourse = screen.getByText("EGGG 288");
         clickCourse.click();
         const edit = screen.getAllByRole("button", {
             name: "Edit"
@@ -63,17 +64,17 @@ describe("Add course button test", () => {
         userEvent.type(courseID, "200");
         userEvent.type(courseCred, "3");
         submit[0].click();
-        expect(screen.getAllByText(/200/i).length === 2);
-        expect(screen.getAllByText(/test2/i).length === 2);
+        expect(screen.getAllByText(/200/i).length).toEqual(1);
+        expect(screen.getAllByText(/test2/i).length).toEqual(1);
     });
-    test("Undo a edit", () => {
-        const clickCourse = screen.getByText("EGGG 101");
+    test("Undo an edit", () => {
+        const searchBox = screen.queryByPlaceholderText("ex. cisc108");
+        userEvent.type(searchBox, "eggg");
+        const numEGGG = screen.getAllByText(/EGGG/i).length;
+        const clickCourse = screen.getByText(/EGGG 209/i);
         clickCourse.click();
         const edit = screen.getAllByRole("button", {
             name: "Edit"
-        });
-        const reset = screen.getAllByRole("button", {
-            name: "Reset"
         });
         edit[0].click();
         const submit = screen.getAllByRole("button", {
@@ -83,13 +84,23 @@ describe("Add course button test", () => {
         const courseCred = screen.getByTestId("editCred");
 
         //first test
-        userEvent.type(courseDep, "test 100");
+        userEvent.clear(courseDep);
+        userEvent.type(courseDep, "test");
         userEvent.type(courseCred, "3");
         submit[0].click();
 
-        clickCourse.click();
-        reset[0].click();
-        expect(screen.getAllByText(/EGGG/i).length).not.toEqual(2);
-        expect(screen.getAllByText(/101/i).length).not.toEqual(2);
+        expect(screen.getAllByText(/EGGG/i).length).not.toEqual(numEGGG);
+
+        //clear the search box and type in the new course name
+        userEvent.clear(searchBox);
+        userEvent.type(searchBox, "test");
+        screen.getByText(/test 209/i).click();
+        //reset the course
+        screen.getAllByRole("button", { name: "Reset" })[0].click();
+        //clear the search box and type in the old course name
+        userEvent.clear(searchBox);
+        userEvent.type(searchBox, "eggg209");
+        //expect the old course to exist in the list again
+        expect(screen.getAllByText("EGGG 209").length).toEqual(1);
     });
 });

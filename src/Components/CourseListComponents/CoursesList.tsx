@@ -52,6 +52,17 @@ export function CoursesList({
                 />
             </Form.Group>
             <br></br>
+            {filter === "" && (
+                <div
+                    style={{
+                        fontSize: "200%",
+                        color: "grey",
+                        marginBottom: "20px"
+                    }}
+                >
+                    Courses will appear here as you search for them
+                </div>
+            )}
             {courses.map(
                 (curr: Course) =>
                     filterFunction(filter, curr.code) && (
@@ -111,8 +122,10 @@ export function CoursesList({
     );
 
     function filterFunction(filter: string, courseCode: string): boolean {
+        if (filter === "") return false;
         return courseCode
             .replace(/\s+/g, "")
+            .toUpperCase()
             .startsWith(filter.replace(/\s+/g, "").toUpperCase());
     }
 
