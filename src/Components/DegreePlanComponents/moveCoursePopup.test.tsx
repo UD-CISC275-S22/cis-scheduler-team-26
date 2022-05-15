@@ -16,7 +16,6 @@ describe("MoveCourse Tests", () => {
             name: "View/Edit Plan"
         });
         viewPlanButton[0].click();
-        screen.getByRole("button", { name: "Edit Semesters" }).click();
         screen.getByRole("button", { name: "Add Semester" }).click();
         const seasonDropdown = screen.getByRole("combobox", {
             name: /Season:/i
@@ -26,9 +25,8 @@ describe("MoveCourse Tests", () => {
         userEvent.selectOptions(seasonDropdown, "Spring");
         screen.getAllByRole("button", { name: "Add Semester" })[1].click();
         screen.getByRole("button", { name: "Cancel" }).click();
-        screen.getByRole("button", { name: "Edit Semesters" }).click();
         const courseButtons = screen.getAllByRole("button", {
-            name: "Edit Courses"
+            name: "Edit Semester"
         });
         courseButtons[0].click();
         let searchBox = screen.queryByPlaceholderText("ex. CISC 108");
@@ -50,7 +48,7 @@ describe("MoveCourse Tests", () => {
     });
     test("Courses can be moved between semesters", () => {
         const editButton = screen.getAllByRole("button", {
-            name: /Edit Courses/i
+            name: /Edit Semester/i
         });
         editButton[0].click();
         const moveButton = screen.getAllByRole("button", {
@@ -77,7 +75,7 @@ describe("MoveCourse Tests", () => {
     });
     test("Courses can be moved back after being moved", () => {
         const editButton = screen.getAllByRole("button", {
-            name: /Edit Courses/i
+            name: /Edit Semester/i
         });
         editButton[0].click();
         const moveButton = screen.getAllByRole("button", {

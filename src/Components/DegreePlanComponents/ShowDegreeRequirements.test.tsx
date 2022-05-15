@@ -16,7 +16,6 @@ describe("Degree Requirements Tests", () => {
             name: "View/Edit Plan"
         });
         viewPlanButton[0].click();
-        screen.getByRole("button", { name: "Edit Semesters" }).click();
         screen.getByRole("button", { name: "Add Semester" }).click();
         const seasonDropdown = screen.getByRole("combobox", {
             name: /Season:/i
@@ -26,9 +25,8 @@ describe("Degree Requirements Tests", () => {
         userEvent.selectOptions(seasonDropdown, "Spring");
         screen.getAllByRole("button", { name: "Add Semester" })[1].click();
         screen.getByRole("button", { name: "Cancel" }).click();
-        screen.getByRole("button", { name: "Edit Semesters" }).click();
         const courseButtons = screen.getAllByRole("button", {
-            name: "Edit Courses"
+            name: "Edit Semester"
         });
         courseButtons[0].click();
         let searchBox = screen.queryByPlaceholderText("ex. CISC 108");
@@ -61,7 +59,7 @@ describe("Degree Requirements Tests", () => {
 
         screen
             .getAllByRole("button", {
-                name: "Edit Courses"
+                name: "Edit Semester"
             })[0]
             .click();
         screen
@@ -82,7 +80,7 @@ describe("Degree Requirements Tests", () => {
         //Delete CISC108 from plan
         screen
             .getAllByRole("button", {
-                name: "Edit Courses"
+                name: "Edit Semester"
             })[0]
             .click();
         screen

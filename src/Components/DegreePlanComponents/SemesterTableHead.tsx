@@ -7,7 +7,7 @@ interface tableHeadProp {
     plan: DegreePlan;
     planList: DegreePlan[];
     setPlans: (newPlans: DegreePlan[]) => void;
-    edit: boolean;
+    editingSemester: Semester;
     semester: Semester;
 }
 
@@ -42,12 +42,12 @@ export function TableHead({
     plan,
     planList,
     setPlans,
-    edit,
+    editingSemester,
     semester
 }: tableHeadProp): JSX.Element {
     return (
         <thead>
-            {edit ? (
+            {editingSemester === semester ? (
                 <tr>
                     <th colSpan={2} style={{ fontSize: "30px" }}>
                         {semester.season + " " + semester.year}

@@ -14,7 +14,6 @@ interface planListProp {
     plan: DegreePlan;
     planList: DegreePlan[];
     setPlans: (newPlans: DegreePlan[]) => void;
-    edit: boolean;
     editingSem: Semester;
     setEditingSem: (newEditingSem: Semester) => void;
     addingCourse: Course;
@@ -35,7 +34,6 @@ export function PrintSemesters({
     plan,
     planList,
     setPlans,
-    edit,
     editingSem,
     setEditingSem,
     addingCourse,
@@ -66,7 +64,7 @@ export function PrintSemesters({
                     plan={plan}
                     planList={planList}
                     setPlans={setPlans}
-                    edit={edit}
+                    editingSemester={editingSem}
                     semester={semester}
                 ></TableHead>
                 <tbody>
@@ -98,14 +96,16 @@ export function PrintSemesters({
                 )}
             </Table>
             <Button
-                style={{ marginBottom: "30px" }}
+                style={{ marginBottom: "30px", marginTop: "-15px" }}
                 onClick={() =>
                     setEditingSem(semester === editingSem ? emptySem : semester)
                 }
                 data-testid={"editCourseButton"}
             >
-                <TiEdit></TiEdit>
-                Edit Courses
+                <TiEdit
+                    style={{ fontSize: "130%", marginTop: "-5px" }}
+                ></TiEdit>
+                Edit Semester
             </Button>
         </div>
     );

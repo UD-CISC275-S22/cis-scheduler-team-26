@@ -15,7 +15,6 @@ import {
 import "./ViewingPlan.css";
 
 //Icon imports for buttons
-import { TiEdit } from "react-icons/ti";
 import { AiOutlineClear } from "react-icons/ai";
 import { FiSave } from "react-icons/fi";
 
@@ -58,7 +57,6 @@ export function ViewingPlan({
     setPlans,
     courses
 }: planListProp): JSX.Element {
-    const [edit, setEdit] = useState<boolean>(false);
     const [season, setSeason] = useState<Season>("Fall");
     const [year, setYear] = useState<number>(2022);
     const [editingSem, setEditingSem] = useState<Semester>(emptySem);
@@ -96,7 +94,6 @@ export function ViewingPlan({
                                 plan={plan}
                                 planList={planList}
                                 setPlans={setPlans}
-                                edit={edit}
                                 editingSem={editingSem}
                                 setEditingSem={setEditingSem}
                                 addingCourse={addingCourse}
@@ -135,15 +132,8 @@ export function ViewingPlan({
                         setAddSem
                     )}
                 <div>
-                    {edit && (
-                        <div>
-                            <Button onClick={() => setAddSem(true)}>
-                                Add Semester
-                            </Button>
-                        </div>
-                    )}
-                    <Button onClick={() => setEdit(!edit)}>
-                        <TiEdit></TiEdit>Edit Semesters
+                    <Button onClick={() => setAddSem(true)}>
+                        Add Semester
                     </Button>
                     <Button
                         onClick={() =>
@@ -151,40 +141,44 @@ export function ViewingPlan({
                         }
                         style={{ backgroundColor: "red", borderColor: "red" }}
                     >
-                        <AiOutlineClear></AiOutlineClear>
+                        <AiOutlineClear
+                            style={{ fontSize: "130%", marginTop: "-5px" }}
+                        ></AiOutlineClear>
                         Clear All Semesters
                     </Button>
-                    {/* Render unsave plan button is plan is saved.
-                Otherwise render save plan button */}
-                    {plan.isSaved ? (
-                        <Button
-                            onClick={() => {
-                                changeIsPlanSavedByName(
-                                    plan.planName,
-                                    planList,
-                                    setPlans
-                                );
-                                deletePlanFromStorageByName(plan.planName);
-                            }}
-                        >
-                            <FiSave style={{ fontSize: "120%" }}></FiSave>{" "}
-                            Unsave Plan
-                        </Button>
-                    ) : (
-                        <Button
-                            onClick={() =>
-                                changeIsPlanSavedByName(
-                                    plan.planName,
-                                    planList,
-                                    setPlans
-                                )
-                            }
-                        >
-                            <FiSave style={{ fontSize: "120%" }}></FiSave> Save
-                            Plan
-                        </Button>
-                    )}
-                    <ExportCSV plan={plan}></ExportCSV>
+                    <div>
+                        {/* Render unsave plan button is plan is saved.
+                            Otherwise render save plan button */}
+                        {plan.isSaved ? (
+                            <Button
+                                onClick={() => {
+                                    changeIsPlanSavedByName(
+                                        plan.planName,
+                                        planList,
+                                        setPlans
+                                    );
+                                    deletePlanFromStorageByName(plan.planName);
+                                }}
+                            >
+                                <FiSave style={{ fontSize: "120%" }}></FiSave>{" "}
+                                Unsave Plan
+                            </Button>
+                        ) : (
+                            <Button
+                                onClick={() =>
+                                    changeIsPlanSavedByName(
+                                        plan.planName,
+                                        planList,
+                                        setPlans
+                                    )
+                                }
+                            >
+                                <FiSave style={{ fontSize: "120%" }}></FiSave>{" "}
+                                Save Plan
+                            </Button>
+                        )}
+                        <ExportCSV plan={plan}></ExportCSV>
+                    </div>
                 </div>
             </div>
             {/*Components to show all the requirements for this plan's degree and which have been fulfilled */}

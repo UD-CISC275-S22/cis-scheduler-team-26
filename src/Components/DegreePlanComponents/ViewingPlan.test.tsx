@@ -16,7 +16,6 @@ describe("ViewingPlan Tests", () => {
             name: "View/Edit Plan"
         });
         viewPlanButton[0].click();
-        screen.getByRole("button", { name: "Edit Semesters" }).click();
         screen.getByRole("button", { name: "Add Semester" }).click();
         const seasonDropdown = screen.getByRole("combobox", {
             name: /Season:/i
@@ -26,9 +25,8 @@ describe("ViewingPlan Tests", () => {
         userEvent.selectOptions(seasonDropdown, "Spring");
         screen.getAllByRole("button", { name: "Add Semester" })[1].click();
         screen.getByRole("button", { name: "Cancel" }).click();
-        screen.getByRole("button", { name: "Edit Semesters" }).click();
         const courseButtons = screen.getAllByRole("button", {
-            name: "Edit Courses"
+            name: "Edit Semester"
         });
         courseButtons[0].click();
         let searchBox = screen.queryByPlaceholderText("ex. CISC 108");
@@ -63,7 +61,7 @@ describe("ViewingPlan Tests", () => {
     });
     test("Courses can be removed", () => {
         const editButton = screen.getAllByRole("button", {
-            name: /Edit Courses/i
+            name: /Edit Semester/i
         });
         editButton[0].click();
         const removeCourseButton = screen.getAllByRole("button", {
@@ -74,7 +72,7 @@ describe("ViewingPlan Tests", () => {
     });
     test("Courses can be added", () => {
         const editButton = screen.getAllByRole("button", {
-            name: /Edit Courses/i
+            name: /Edit Semester/i
         });
         editButton[0].click();
         const removeCourseButton = screen.getAllByRole("button", {
@@ -92,10 +90,10 @@ describe("ViewingPlan Tests", () => {
         expect(screen.getByText(/EGGG/i)).toBeInTheDocument();
     });
     test("Semesters can be removed", () => {
-        const editButton = screen.getByRole("button", {
-            name: /Edit Semesters/i
+        const editButton = screen.getAllByRole("button", {
+            name: /Edit Semester/i
         });
-        editButton.click();
+        editButton[0].click();
         const removeSemesterButton = screen.getAllByRole("button", {
             name: /Delete Semester/i
         });
@@ -105,10 +103,6 @@ describe("ViewingPlan Tests", () => {
         expect(screen.getAllByText(/3/i).length === 1);
     });
     test("Semesters can be added", () => {
-        const editButton = screen.getByRole("button", {
-            name: /Edit Semesters/i
-        });
-        editButton.click();
         const addButton = screen.getByRole("button", {
             name: /Add Semester/i
         });
@@ -138,7 +132,7 @@ describe("ViewingPlan Tests", () => {
     });
     test("When removing a course, the score is updated", () => {
         const editButton = screen.getAllByRole("button", {
-            name: /Edit Courses/i
+            name: /Edit Semester/i
         });
         editButton[0].click();
         const removeCourseButton = screen.getAllByRole("button", {
@@ -186,10 +180,10 @@ describe("ViewingPlan Tests", () => {
         ).toBeInTheDocument();
     });
     test("Semesters can be removed", () => {
-        const editButton = screen.getByRole("button", {
-            name: /Edit Semesters/i
+        const editButton = screen.getAllByRole("button", {
+            name: /Edit Semester/i
         });
-        editButton.click();
+        editButton[0].click();
         const removeSemesterButton = screen.getAllByRole("button", {
             name: /Delete Semester/i
         });
@@ -204,7 +198,7 @@ describe("ViewingPlan Tests", () => {
     });
     test("Semesters can be cleared individually", () => {
         const editButton = screen.getAllByRole("button", {
-            name: /Edit Courses/i
+            name: /Edit Semester/i
         });
         editButton[0].click();
         const clearButton = screen.getByRole("button", {
