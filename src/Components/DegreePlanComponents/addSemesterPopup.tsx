@@ -61,9 +61,10 @@ export function addSemesterPopup(
                 <Button
                     variant="contained"
                     className="m-2"
-                    onClick={() =>
-                        addSemester(plan, planList, setPlans, season, year)
-                    }
+                    onClick={() => {
+                        addSemester(plan, planList, setPlans, season, year);
+                        setAddSem(false);
+                    }}
                     color="primary"
                 >
                     Add Semester

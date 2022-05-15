@@ -9,6 +9,7 @@ import { TableFooter } from "./SemesterTableFooter";
 
 //Icon imports for buttons
 import { TiEdit } from "react-icons/ti";
+import { AiOutlineCheck } from "react-icons/ai";
 
 interface planListProp {
     plan: DegreePlan;
@@ -95,18 +96,33 @@ export function PrintSemesters({
                     ></TableFooter>
                 )}
             </Table>
-            <Button
-                style={{ marginBottom: "30px", marginTop: "-15px" }}
-                onClick={() =>
-                    setEditingSem(semester === editingSem ? emptySem : semester)
-                }
-                data-testid={"editCourseButton"}
-            >
-                <TiEdit
-                    style={{ fontSize: "130%", marginTop: "-5px" }}
-                ></TiEdit>
-                Edit Semester
-            </Button>
+            {editingSem === semester ? (
+                <Button
+                    style={{
+                        marginBottom: "30px",
+                        marginTop: "-15px",
+                        backgroundColor: "green",
+                        borderColor: "green"
+                    }}
+                    onClick={() => setEditingSem(emptySem)}
+                >
+                    <AiOutlineCheck
+                        style={{ fontSize: "120%", marginTop: "-5px" }}
+                    ></AiOutlineCheck>
+                    Apply Changes
+                </Button>
+            ) : (
+                <Button
+                    style={{ marginBottom: "30px", marginTop: "-15px" }}
+                    onClick={() => setEditingSem(semester)}
+                    data-testid={"editCourseButton"}
+                >
+                    <TiEdit
+                        style={{ fontSize: "130%", marginTop: "-5px" }}
+                    ></TiEdit>
+                    Edit Semester
+                </Button>
+            )}
         </div>
     );
 }
