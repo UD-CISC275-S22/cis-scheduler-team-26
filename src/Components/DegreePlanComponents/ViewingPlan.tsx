@@ -17,6 +17,7 @@ import "./ViewingPlan.css";
 //Icon imports for buttons
 import { AiOutlineClear } from "react-icons/ai";
 import { FiSave } from "react-icons/fi";
+import { RiAddBoxLine } from "react-icons/ri";
 
 interface planListProp {
     plan: DegreePlan;
@@ -133,6 +134,9 @@ export function ViewingPlan({
                     )}
                 <div>
                     <Button onClick={() => setAddSem(true)}>
+                        <RiAddBoxLine
+                            style={{ fontSize: "130%", marginTop: "-3px" }}
+                        ></RiAddBoxLine>
                         Add Semester
                     </Button>
                     <Button
