@@ -11,25 +11,28 @@ describe("Add course button test", () => {
         });
         viewCourseButton.click();
     });
-    /* THIS TEST FAILS TO RUN BECAUSE TypeError: Converting circular structure to JSON
     test("Adding a course", () => {
-        const addCourseButton = screen.getAllByRole("button", {
+        const addCourseButton = screen.getByRole("button", {
             name: "Add Course"
         });
-        addCourseButton[0].click();
-        const submit = screen.getAllByRole("button", {
+        addCourseButton.click();
+        const nameBox = screen.getByRole("textbox", {
+            name: /Course Department/i
+        });
+        userEvent.type(nameBox, "Test");
+        const id = screen.getByTestId("addId");
+        userEvent.type(id, "100");
+        const credits = screen.getByTestId("addCredits");
+        userEvent.type(credits, "4");
+        const confirmButton = screen.getByRole("button", {
             name: "Confirm"
         });
-        const courseDep = screen.getByTestId("addDep");
-        const courseCred = screen.getByTestId("addCredits");
-
-        //first test
-        userEvent.type(courseDep, "test 200");
-        userEvent.type(courseCred, "3");
-        submit[0].click();
-        expect(screen.getByText(/test 200/i)).toEqual(1);
+        confirmButton.click();
+        expect(screen.getByText(/Test 100/i)).toBeInTheDocument();
+        const testCourse = screen.getByText("Test 100");
+        testCourse.click();
+        expect(screen.getByText(/Credits: 4/i)).toBeInTheDocument();
     });
-    */
     test("Removing a course", () => {
         const egggCourse = screen.getByText("EGGG 101");
         egggCourse.click();
