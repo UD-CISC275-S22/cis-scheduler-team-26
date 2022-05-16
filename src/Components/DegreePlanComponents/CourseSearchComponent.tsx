@@ -28,6 +28,7 @@ export function CourseSearch({
                     //The weird replace stuff here just removes whitespace from the strings
                     val.name
                         .replace(/\s+/g, "")
+                        .toUpperCase()
                         .startsWith(opt.replace(/\s+/g, "").toUpperCase())
                 );
         };
