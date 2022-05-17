@@ -2,17 +2,17 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (41.97 s)
-PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (9.621 s)
-PASS src/Components/CourseListComponents/courseListTest.test.tsx (5.305 s)
-PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (10.878 s)
+PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (46.389 s)
+PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (10.694 s)
+PASS src/Components/CourseListComponents/courseListTest.test.tsx (5.727 s)
+PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (11.796 s)
 PASS src/Components/CourseListComponents/UpdateCoursesInPlansFunctions.test.tsx
 PASS src/Components/DegreePlanComponents/savePlans.test.tsx
 PASS src/Components/DegreePlanComponents/PlanList.test.tsx
 -------------------------------------|---------|----------|---------|---------|-------------------------
 File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s       
 -------------------------------------|---------|----------|---------|---------|-------------------------
-All files                            |   87.36 |    71.26 |   89.78 |   88.12 |                         
+All files                            |   88.17 |    71.26 |   89.78 |   88.98 |                         
  src                                 |   93.33 |    93.75 |    87.5 |     100 |                         
   App.tsx                            |     100 |      100 |     100 |     100 |                         
   StorageFunctions.tsx               |   91.66 |       90 |   83.33 |     100 | 17                      
@@ -22,7 +22,7 @@ All files                            |   87.36 |    71.26 |   89.78 |   88.12 |
   CoursesList.tsx                    |     100 |      100 |     100 |     100 |                         
   RenderCourse.tsx                   |   72.41 |    78.57 |   73.33 |   72.41 | 59-60,235,270-280       
   UpdateCoursesInPlansFunction.tsx   |   93.33 |       50 |     100 |   92.85 | 24                      
- src/Components/DegreePlanComponents |   87.66 |    66.94 |   92.12 |   88.47 |                         
+ src/Components/DegreePlanComponents |   89.04 |    66.94 |   92.12 |   89.95 |                         
   CourseInSemester.tsx               |   66.66 |     12.5 |      50 |   66.66 | 9                       
   CourseSearchComponent.tsx          |     100 |      100 |     100 |     100 |                         
   PlanList.tsx                       |    72.5 |    58.33 |   78.26 |   75.67 | 156-160,166,198,232-234 
@@ -30,7 +30,7 @@ All files                            |   87.36 |    71.26 |   89.78 |   88.12 |
   SemesterTableBody.tsx              |     100 |    83.33 |     100 |     100 | 53                      
   SemesterTableFooter.tsx            |     100 |      100 |     100 |     100 |                         
   SemesterTableHead.tsx              |     100 |    83.33 |     100 |     100 | 36                      
-  ShowDegreeRequirements.tsx         |      90 |    63.63 |     100 |   89.47 | 106,132,158,186         
+  ShowDegreeRequirements.tsx         |     100 |    63.63 |     100 |     100 | 100-173                 
   ViewPlanFunctions.tsx              |    91.3 |    66.66 |     100 |    91.3 | 16,25                   
   ViewingPlan.tsx                    |   96.66 |    85.71 |     100 |     100 | 48,208                  
   addSemesterPopup.tsx               |   82.75 |    66.66 |   81.81 |   82.75 | 18-32,78,107,109        
@@ -49,5 +49,5 @@ All files                            |   87.36 |    71.26 |   89.78 |   88.12 |
 Test Suites: 7 passed, 7 total
 Tests:       28 passed, 28 total
 Snapshots:   0 total
-Time:        74.359 s
+Time:        82.11 s
 Ran all test suites.
