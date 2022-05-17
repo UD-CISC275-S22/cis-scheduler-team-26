@@ -27,43 +27,32 @@ export function CourseInSemester({ course }: { course: Course }): JSX.Element {
                             {descriptionVis && (
                                 <Container>
                                     <Row>
-                                        <Col>
-                                            <h5>({course.credits} credits)</h5>
-                                        </Col>
+                                        <h5>({course.credits} credits)</h5>
                                     </Row>
                                     <Row>
-                                        <Col>
-                                            <p>{course.descr}</p>
-                                        </Col>
+                                        <p>{course.descr}</p>
                                     </Row>
                                     <Row>
-                                        <Col>
-                                            {course.preReq != "" && (
-                                                <p>
-                                                    Prerequisite Courses:{" "}
-                                                    {course.preReq}
-                                                </p>
-                                            )}
-                                        </Col>
-                                        <Col>
-                                            {course.breadth !=
-                                                "University: ; A&S: " && (
-                                                <p>
-                                                    Satisfies Breadth:{" "}
-                                                    {course.breadth}
-                                                </p>
-                                            )}
-                                        </Col>
+                                        {course.preReq != "" && (
+                                            <p>
+                                                Prerequisite Courses:{" "}
+                                                {course.preReq}
+                                            </p>
+                                        )}
+                                        {course.breadth !=
+                                            "University: ; A&S: " && (
+                                            <p>
+                                                Satisfies Breadth:{" "}
+                                                {course.breadth}
+                                            </p>
+                                        )}
                                     </Row>
                                     <Row>
-                                        <Col>
-                                            {course.restrict != "" && (
-                                                <p>
-                                                    Restrictions:{" "}
-                                                    {course.restrict}
-                                                </p>
-                                            )}
-                                        </Col>
+                                        {course.restrict != "" && (
+                                            <p>
+                                                Restrictions: {course.restrict}
+                                            </p>
+                                        )}
                                     </Row>
                                     <Row>
                                         <Col>
