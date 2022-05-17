@@ -79,13 +79,15 @@ export function CoursesList({
                                     );
                                 }}
                                 editCourse={(
-                                    newName: string,
-                                    newCreds: number
+                                    newDep: string,
+                                    newCreds: number,
+                                    newName: string
                                 ) =>
                                     editCourseByName(
                                         curr.code,
-                                        newName,
-                                        newCreds
+                                        newDep,
+                                        newCreds,
+                                        newName
                                     )
                                 }
                                 resetCourse={() => {
@@ -130,14 +132,20 @@ export function CoursesList({
     }
 
     //This function allows each course to edit itself within the master list of courses
-    function editCourseByName(name: string, newName: string, newCreds: number) {
+    function editCourseByName(
+        code: string,
+        newCode: string,
+        newCreds: number,
+        newName: string
+    ) {
         const newCourses: Course[] = [];
         courses.map((course: Course) => {
-            if (course.code === name) {
+            if (course.code === code) {
                 newCourses.push({
                     ...course,
-                    code: newName,
-                    credits: newCreds
+                    code: newCode,
+                    credits: newCreds,
+                    name: newName
                 });
             } else {
                 newCourses.push(course);
@@ -160,7 +168,8 @@ export function CoursesList({
         editCourseByName(
             courses[ind].code,
             unmodifiedCourses[ind].code,
-            unmodifiedCourses[ind].credits
+            unmodifiedCourses[ind].credits,
+            unmodifiedCourses[ind].name
         );
     }
     //Allows a course to delete itself from the master list and the unmodified list
