@@ -12,6 +12,8 @@ export function AddCourseForm({
     setNewCourseDepartment,
     newCourseID,
     setNewCourseID,
+    newCourseName,
+    setNewCourseName,
     newCourseCredits,
     setNewCourseCredits,
     courseList,
@@ -23,10 +25,12 @@ export function AddCourseForm({
     setNewCourseDepartment: (newDep: string) => void;
     newCourseID: number;
     setNewCourseID: (num: number) => void;
+    newCourseName: string;
+    setNewCourseName: (n: string) => void;
     newCourseCredits: number;
     setNewCourseCredits: (newCred: number) => void;
     courseList: Course[];
-    addCourse: (newName: string, newCredits: number) => void;
+    addCourse: (newCode: string, newCredits: number, newName: string) => void;
 }): JSX.Element {
     /* Checks if a course already exists in the courseList */
     function doesCourseExist(name: string) {
@@ -76,6 +80,14 @@ export function AddCourseForm({
                             ></Form.Control>
                         </div>
                     </div>
+                    <Form.Label>Course Name</Form.Label>
+                    <Form.Control
+                        type="text"
+                        value={newCourseName}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLTextAreaElement>
+                        ) => setNewCourseName(event.target.value)}
+                    ></Form.Control>
                     <Form.Label>Course Credits</Form.Label>
                     <Form.Control
                         data-testid="addCredits"
@@ -106,21 +118,24 @@ export function AddCourseForm({
                     style={{ backgroundColor: "green", borderColor: "green" }}
                     onClick={() => {
                         if (
-                            !doesCourseExist(
+                            doesCourseExist(
                                 newCourseDepartment +
                                     " " +
                                     newCourseID.toString()
                             )
-                        ) {
-                            setAddingCourse(false);
-                            addCourse(
-                                newCourseDepartment + " " + newCourseID,
-                                newCourseCredits
-                            );
-                            setNewCourseCredits(0);
-                            setNewCourseDepartment("");
-                            setNewCourseID(0);
-                        }
+                        )
+                            return;
+
+                        setAddingCourse(false);
+                        addCourse(
+                            newCourseDepartment + " " + newCourseID,
+                            newCourseCredits,
+                            newCourseName
+                        );
+                        setNewCourseCredits(0);
+                        setNewCourseDepartment("");
+                        setNewCourseID(0);
+                        setNewCourseName("");
                     }}
                 >
                     <AiOutlineCheck></AiOutlineCheck> Confirm

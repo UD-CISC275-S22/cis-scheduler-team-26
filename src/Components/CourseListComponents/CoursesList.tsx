@@ -27,9 +27,13 @@ export function CoursesList({
     setPlanList
 }: coursesListProp): JSX.Element {
     //Creating new course info
+    /* In hindsight, places where we did stuff like this really could have been cut down by just having a
+    newCourse useState of type course. Its really just needlessly complicated and lengthy to have to list
+    out every single property of the new course we want to make. Oh well. */
     const [addingCourse, setAddingCourse] = useState<boolean>(false);
     const [newCourseDepartment, setNewCourseDepartment] = useState<string>("");
     const [newCourseID, setNewCourseID] = useState<number>(0);
+    const [newCourseName, setNewCourseName] = useState<string>("");
     const [newCourseCredits, setNewCourseCredits] = useState<number>(0);
     //filter course list string
     const [filter, setFilter] = useState<string>("");
@@ -113,6 +117,8 @@ export function CoursesList({
                 setNewCourseDepartment={setNewCourseDepartment}
                 newCourseID={newCourseID}
                 setNewCourseID={setNewCourseID}
+                newCourseName={newCourseName}
+                setNewCourseName={setNewCourseName}
                 newCourseCredits={newCourseCredits}
                 setNewCourseCredits={setNewCourseCredits}
                 courseList={courses}
@@ -183,14 +189,14 @@ export function CoursesList({
         setUnmodifiedCourses([...unmodifiedCourses]);
     }
     //Adds a course to the master list and the unmodified list
-    function addCourse(newName: string, newCredits: number) {
+    function addCourse(newCode: string, newCredits: number, newName: string) {
         setCourses([
             ...courses,
             {
-                code: newName,
+                code: newCode,
                 credits: newCredits,
                 preReq: "",
-                name: "",
+                name: newName,
                 descr: "",
                 restrict: "",
                 breadth: "",
@@ -200,10 +206,10 @@ export function CoursesList({
         setUnmodifiedCourses([
             ...unmodifiedCourses,
             {
-                code: newName,
+                code: newCode,
                 credits: newCredits,
                 preReq: "",
-                name: "",
+                name: newName,
                 descr: "",
                 restrict: "",
                 breadth: "",
