@@ -164,7 +164,8 @@ export function RenderCourse({
                         updateCoursesInPlans(planList, setPlanList, Course, {
                             ...Course,
                             code: newCourseDepartment + " " + newCourseID,
-                            credits: newCourseCredits
+                            credits: newCourseCredits,
+                            name: newCourseName
                         })
                     }
                 ></EditingCourseForm>
