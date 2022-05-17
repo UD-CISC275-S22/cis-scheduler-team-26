@@ -206,6 +206,7 @@ function EditingCourseForm({
                 <div style={{ display: "flex", flexDirection: "row" }}>
                     {/* Form for new course department */}
                     <Form.Control
+                        placeholder="Course Department"
                         data-testid="editDep"
                         type="text"
                         value={newCourseDepartment}
@@ -215,6 +216,7 @@ function EditingCourseForm({
                     />
                     {/* Form for new course ID */}
                     <Form.Control
+                        placeholder="Course ID"
                         data-testid="editId"
                         type="number"
                         value={newCourseID}
@@ -225,6 +227,7 @@ function EditingCourseForm({
                 </div>
                 {/* Form for the new course name */}
                 <Form.Control
+                    placeholder="Course Name"
                     type="text"
                     value={newCourseName}
                     onChange={(event: ChangeEvent) =>
@@ -235,6 +238,7 @@ function EditingCourseForm({
                 <div style={{ display: "flex", flexDirection: "row" }}>
                     <div style={{ marginTop: "5px" }}>Credits: </div>
                     <Form.Control
+                        placeholder="Number of Credits"
                         data-testid="editCred"
                         type="number"
                         value={newCourseCredits}
