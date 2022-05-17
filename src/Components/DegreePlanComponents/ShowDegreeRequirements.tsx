@@ -103,24 +103,12 @@ function calculateCAH(courses: Course[], degree: Degree): JSX.Element {
         0
     );
     return (
-        <div
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center"
-            }}
-        >
-            <div>Creative Arts and Humanities</div>
+        <div className="breadth-req-text">
+            Creative Arts and Humanities:
             {credits >= degree.breadthRequirements[0] ? (
-                <div style={{ backgroundColor: "lightgreen" }}>Satisfied</div>
+                <div className="fulfilled-breadth-text">Satisfied</div>
             ) : (
-                <div
-                    style={{
-                        backgroundColor: "lightpink",
-                        width: "60%",
-                        paddingBlock: "3px"
-                    }}
-                >
+                <div className="unfulfilled-breadth-text">
                     Need {degree.breadthRequirements[0] - credits} more credits
                 </div>
             )}
@@ -136,12 +124,12 @@ function calculateHCC(courses: Course[], degree: Degree): JSX.Element {
         0
     );
     return (
-        <div>
-            <div>History and Cultural Change</div>
+        <div className="breadth-req-text">
+            History and Cultural Change:
             {credits >= degree.breadthRequirements[1] ? (
-                <div style={{ backgroundColor: "lightgreen" }}>Satisfied</div>
+                <div className="fulfilled-breadth-text">Satisfied</div>
             ) : (
-                <div style={{ backgroundColor: "lightpink" }}>
+                <div className="unfulfilled-breadth-text">
                     Need {degree.breadthRequirements[1] - credits} more credits
                 </div>
             )}
@@ -157,12 +145,12 @@ function calculateSBS(courses: Course[], degree: Degree): JSX.Element {
         0
     );
     return (
-        <div>
-            <div>Social and Behavioral Sciences</div>
+        <div className="breadth-req-text">
+            Social and Behavioral Sciences:
             {credits >= degree.breadthRequirements[2] ? (
-                <div style={{ backgroundColor: "lightgreen" }}>Satisfied</div>
+                <div className="fulfilled-breadth-text">Satisfied</div>
             ) : (
-                <div style={{ backgroundColor: "lightpink" }}>
+                <div className="unfulfilled-breadth-text">
                     Need {degree.breadthRequirements[2] - credits} more credits
                 </div>
             )}
@@ -180,12 +168,12 @@ function calculateMNST(courses: Course[], degree: Degree): JSX.Element {
         0
     );
     return (
-        <div>
-            <div>Mathematics, Natural Sciences and Technology</div>
+        <div className="breadth-req-text">
+            Mathematics, Natural Sciences and Technology:
             {credits >= degree.breadthRequirements[3] ? (
-                <div style={{ backgroundColor: "lightgreen" }}>Satisfied</div>
+                <div className="fulfilled-breadth-text">Satisfied</div>
             ) : (
-                <div style={{ backgroundColor: "lightpink" }}>
+                <div className="unfulfilled-breadth-text">
                     Need {degree.breadthRequirements[3] - credits} more credits
                 </div>
             )}
