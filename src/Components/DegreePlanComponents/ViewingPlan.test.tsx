@@ -56,7 +56,7 @@ describe("ViewingPlan Tests", () => {
         expect(screen.getByText(/101/i)).toBeInTheDocument();
         expect(screen.getByText(/EGGG/i)).toBeInTheDocument();
         expect(screen.getAllByText(/108/i)).toHaveLength(2);
-        expect(screen.getAllByText(/CISC/i)).toHaveLength(8);
+        expect(screen.getAllByText(/CISC/i)).toHaveLength(7);
         expect(screen.getAllByText(/181/i)).toHaveLength(2);
         expect(screen.getAllByText(/110/i)).toHaveLength(2);
         expect(screen.getAllByText(/ENGL/i)).toHaveLength(2);

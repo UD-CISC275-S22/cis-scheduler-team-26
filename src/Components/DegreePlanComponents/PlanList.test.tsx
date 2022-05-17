@@ -25,9 +25,7 @@ describe("PlanList Tests", () => {
         userEvent.type(nameBox, "Testing Plan");
         screen.getByRole("button", { name: "Confirm" }).click();
         expect(screen.getByText(/Testing Plan/i)).toBeInTheDocument();
-        expect(
-            screen.getByText(/Computer Science Bachelor of Arts/i)
-        ).toBeInTheDocument();
+        expect(screen.getByText(/Computer Science BA/i)).toBeInTheDocument();
     });
     test("Plans can be removed", () => {
         screen.getByRole("button", { name: "Create New Plan" }).click();

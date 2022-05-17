@@ -26,3 +26,29 @@
     margin-inline: 10px;
     font-size: larger;
 }
+
+.breadth-req-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.unfulfilled-breadth-text {
+    background-color: lightpink;
+    width: auto;
+    padding-block: 3px;
+    padding-inline: 7px;
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+.fulfilled-breadth-text {
+    background-color: lightgreen;
+    width: auto;
+    padding-block: 3px;
+    padding-inline: 7px;
+    border-radius: 10px;
+    font-weight: 400;
+}
