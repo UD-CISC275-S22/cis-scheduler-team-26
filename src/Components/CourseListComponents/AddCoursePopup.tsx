@@ -82,6 +82,7 @@ export function AddCourseForm({
                     </div>
                     <Form.Label>Course Name</Form.Label>
                     <Form.Control
+                        placeholder="ex. Intro to Systems Programming"
                         type="text"
                         value={newCourseName}
                         onChange={(
