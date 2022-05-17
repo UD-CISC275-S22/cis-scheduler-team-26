@@ -102,23 +102,30 @@ function calculateCAH(courses: Course[], degree: Degree): JSX.Element {
                 : currTotal,
         0
     );
-    if (credits >= degree.breadthRequirements[0]) {
-        return (
-            <div>
-                <div>Creative Arts and Humanities</div>
-                <div>Satisfied</div>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <div>Creative Arts and Humanities</div>
-                <div>
+    return (
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
+            }}
+        >
+            <div>Creative Arts and Humanities</div>
+            {credits >= degree.breadthRequirements[0] ? (
+                <div style={{ backgroundColor: "lightgreen" }}>Satisfied</div>
+            ) : (
+                <div
+                    style={{
+                        backgroundColor: "lightpink",
+                        width: "60%",
+                        paddingBlock: "3px"
+                    }}
+                >
                     Need {degree.breadthRequirements[0] - credits} more credits
                 </div>
-            </div>
-        );
-    }
+            )}
+        </div>
+    );
 }
 function calculateHCC(courses: Course[], degree: Degree): JSX.Element {
     const credits = courses.reduce(
@@ -128,23 +135,18 @@ function calculateHCC(courses: Course[], degree: Degree): JSX.Element {
                 : currTotal,
         0
     );
-    if (credits >= degree.breadthRequirements[1]) {
-        return (
-            <div>
-                <div>History and Cultural Change</div>
-                <div>Satisfied</div>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <div>History and Cultural Change</div>
-                <div>
+    return (
+        <div>
+            <div>History and Cultural Change</div>
+            {credits >= degree.breadthRequirements[1] ? (
+                <div style={{ backgroundColor: "lightgreen" }}>Satisfied</div>
+            ) : (
+                <div style={{ backgroundColor: "lightpink" }}>
                     Need {degree.breadthRequirements[1] - credits} more credits
                 </div>
-            </div>
-        );
-    }
+            )}
+        </div>
+    );
 }
 function calculateSBS(courses: Course[], degree: Degree): JSX.Element {
     const credits = courses.reduce(
@@ -154,23 +156,18 @@ function calculateSBS(courses: Course[], degree: Degree): JSX.Element {
                 : currTotal,
         0
     );
-    if (credits >= degree.breadthRequirements[2]) {
-        return (
-            <div>
-                <div>Social and Behavioral Sciences</div>
-                <div>Satisfied</div>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <div>Social and Behavioral Sciences</div>
-                <div>
+    return (
+        <div>
+            <div>Social and Behavioral Sciences</div>
+            {credits >= degree.breadthRequirements[2] ? (
+                <div style={{ backgroundColor: "lightgreen" }}>Satisfied</div>
+            ) : (
+                <div style={{ backgroundColor: "lightpink" }}>
                     Need {degree.breadthRequirements[2] - credits} more credits
                 </div>
-            </div>
-        );
-    }
+            )}
+        </div>
+    );
 }
 function calculateMNST(courses: Course[], degree: Degree): JSX.Element {
     const credits = courses.reduce(
@@ -182,21 +179,16 @@ function calculateMNST(courses: Course[], degree: Degree): JSX.Element {
                 : currTotal,
         0
     );
-    if (credits >= degree.breadthRequirements[3]) {
-        return (
-            <div>
-                <div>Mathematics, Natural Sciences and Technology</div>
-                <div>Satisfied</div>
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <div>Mathematics, Natural Sciences and Technology</div>
-                <div>
+    return (
+        <div>
+            <div>Mathematics, Natural Sciences and Technology</div>
+            {credits >= degree.breadthRequirements[3] ? (
+                <div style={{ backgroundColor: "lightgreen" }}>Satisfied</div>
+            ) : (
+                <div style={{ backgroundColor: "lightpink" }}>
                     Need {degree.breadthRequirements[3] - credits} more credits
                 </div>
-            </div>
-        );
-    }
+            )}
+        </div>
+    );
 }
