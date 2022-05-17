@@ -27,9 +27,13 @@ export function CoursesList({
     setPlanList
 }: coursesListProp): JSX.Element {
     //Creating new course info
+    /* In hindsight, places where we did stuff like this really could have been cut down by just having a
+    newCourse useState of type course. Its really just needlessly complicated and lengthy to have to list
+    out every single property of the new course we want to make. Oh well. */
     const [addingCourse, setAddingCourse] = useState<boolean>(false);
     const [newCourseDepartment, setNewCourseDepartment] = useState<string>("");
     const [newCourseID, setNewCourseID] = useState<number>(0);
+    const [newCourseName, setNewCourseName] = useState<string>("");
     const [newCourseCredits, setNewCourseCredits] = useState<number>(0);
     //filter course list string
     const [filter, setFilter] = useState<string>("");
@@ -79,13 +83,15 @@ export function CoursesList({
                                     );
                                 }}
                                 editCourse={(
-                                    newName: string,
-                                    newCreds: number
+                                    newDep: string,
+                                    newCreds: number,
+                                    newName: string
                                 ) =>
                                     editCourseByName(
                                         curr.code,
-                                        newName,
-                                        newCreds
+                                        newDep,
+                                        newCreds,
+                                        newName
                                     )
                                 }
                                 resetCourse={() => {
@@ -111,6 +117,8 @@ export function CoursesList({
                 setNewCourseDepartment={setNewCourseDepartment}
                 newCourseID={newCourseID}
                 setNewCourseID={setNewCourseID}
+                newCourseName={newCourseName}
+                setNewCourseName={setNewCourseName}
                 newCourseCredits={newCourseCredits}
                 setNewCourseCredits={setNewCourseCredits}
                 courseList={courses}
@@ -130,14 +138,20 @@ export function CoursesList({
     }
 
     //This function allows each course to edit itself within the master list of courses
-    function editCourseByName(name: string, newName: string, newCreds: number) {
+    function editCourseByName(
+        code: string,
+        newCode: string,
+        newCreds: number,
+        newName: string
+    ) {
         const newCourses: Course[] = [];
         courses.map((course: Course) => {
-            if (course.code === name) {
+            if (course.code === code) {
                 newCourses.push({
                     ...course,
-                    code: newName,
-                    credits: newCreds
+                    code: newCode,
+                    credits: newCreds,
+                    name: newName
                 });
             } else {
                 newCourses.push(course);
@@ -160,7 +174,8 @@ export function CoursesList({
         editCourseByName(
             courses[ind].code,
             unmodifiedCourses[ind].code,
-            unmodifiedCourses[ind].credits
+            unmodifiedCourses[ind].credits,
+            unmodifiedCourses[ind].name
         );
     }
     //Allows a course to delete itself from the master list and the unmodified list
@@ -174,14 +189,14 @@ export function CoursesList({
         setUnmodifiedCourses([...unmodifiedCourses]);
     }
     //Adds a course to the master list and the unmodified list
-    function addCourse(newName: string, newCredits: number) {
+    function addCourse(newCode: string, newCredits: number, newName: string) {
         setCourses([
             ...courses,
             {
-                code: newName,
+                code: newCode,
                 credits: newCredits,
                 preReq: "",
-                name: "",
+                name: newName,
                 descr: "",
                 restrict: "",
                 breadth: "",
@@ -191,10 +206,10 @@ export function CoursesList({
         setUnmodifiedCourses([
             ...unmodifiedCourses,
             {
-                code: newName,
+                code: newCode,
                 credits: newCredits,
                 preReq: "",
-                name: "",
+                name: newName,
                 descr: "",
                 restrict: "",
                 breadth: "",

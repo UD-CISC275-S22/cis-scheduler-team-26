@@ -25,7 +25,7 @@ export function RenderCourse({
 }: {
     Course: Course;
     deleteCourse: () => void;
-    editCourse: (newName: string, newCreds: number) => void;
+    editCourse: (newCode: string, newCreds: number, newName: string) => void;
     resetCourse: () => void;
     planList: DegreePlan[];
     setPlanList: (d: DegreePlan[]) => void;
@@ -40,6 +40,7 @@ export function RenderCourse({
     const [newCourseID, setNewCourseID] = useState<number>(
         parseInt(Course.code.substring(Course.code.indexOf(" ") + 1))
     );
+    const [newCourseName, setNewCourseName] = useState<string>(Course.name);
     const [newCourseCredits, setNewCourseCredits] = useState<number>(
         Course.credits
     );
@@ -146,7 +147,8 @@ export function RenderCourse({
                     editCourse={() =>
                         editCourse(
                             newCourseDepartment + " " + newCourseID,
-                            newCourseCredits
+                            newCourseCredits,
+                            newCourseName
                         )
                     }
                     setEditingCourse={setEditingCourse}
@@ -154,13 +156,16 @@ export function RenderCourse({
                     setNewCourseDepartment={setNewCourseDepartment}
                     newCourseID={newCourseID}
                     setNewCourseID={setNewCourseID}
+                    newCourseName={newCourseName}
+                    setNewCourseName={setNewCourseName}
                     newCourseCredits={newCourseCredits}
                     setNewCourseCredits={setNewCourseCredits}
                     updateCoursesInPlans={() =>
                         updateCoursesInPlans(planList, setPlanList, Course, {
                             ...Course,
                             code: newCourseDepartment + " " + newCourseID,
-                            credits: newCourseCredits
+                            credits: newCourseCredits,
+                            name: newCourseName
                         })
                     }
                 ></EditingCourseForm>
@@ -177,6 +182,8 @@ function EditingCourseForm({
     setNewCourseDepartment,
     newCourseID,
     setNewCourseID,
+    newCourseName,
+    setNewCourseName,
     newCourseCredits,
     setNewCourseCredits,
     updateCoursesInPlans
@@ -188,6 +195,8 @@ function EditingCourseForm({
     setNewCourseDepartment: (n: string) => void;
     newCourseID: number;
     setNewCourseID: (n: number) => void;
+    newCourseName: string;
+    setNewCourseName: (n: string) => void;
     newCourseCredits: number;
     setNewCourseCredits: (n: number) => void;
     updateCoursesInPlans: () => void;
@@ -198,6 +207,7 @@ function EditingCourseForm({
                 <div style={{ display: "flex", flexDirection: "row" }}>
                     {/* Form for new course department */}
                     <Form.Control
+                        placeholder="Course Department"
                         data-testid="editDep"
                         type="text"
                         value={newCourseDepartment}
@@ -207,6 +217,7 @@ function EditingCourseForm({
                     />
                     {/* Form for new course ID */}
                     <Form.Control
+                        placeholder="Course ID"
                         data-testid="editId"
                         type="number"
                         value={newCourseID}
@@ -215,10 +226,20 @@ function EditingCourseForm({
                         }
                     />
                 </div>
+                {/* Form for the new course name */}
+                <Form.Control
+                    placeholder="Course Name"
+                    type="text"
+                    value={newCourseName}
+                    onChange={(event: ChangeEvent) =>
+                        setNewCourseName(event.target.value)
+                    }
+                ></Form.Control>
                 {/* Form for new course credits */}
                 <div style={{ display: "flex", flexDirection: "row" }}>
                     <div style={{ marginTop: "5px" }}>Credits: </div>
                     <Form.Control
+                        placeholder="Number of Credits"
                         data-testid="editCred"
                         type="number"
                         value={newCourseCredits}
@@ -245,6 +266,7 @@ function EditingCourseForm({
             <Button
                 style={{ backgroundColor: "red", borderColor: "red" }}
                 onClick={() => {
+                    //Reset all the new course values back to their original and stop editing
                     setEditingCourse(false);
                     setNewCourseCredits(Course.credits);
                     setNewCourseDepartment(
@@ -255,6 +277,7 @@ function EditingCourseForm({
                             Course.code.substring(Course.code.indexOf(" ") + 1)
                         )
                     );
+                    setNewCourseName(Course.name);
                 }}
             >
                 <ImCancelCircle></ImCancelCircle> Cancel
