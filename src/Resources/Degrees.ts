@@ -14,8 +14,7 @@ export const DegreeList: Degree[] = [
             "MATH 210",
             "MATH 241",
             //University Requirements
-            "ENGL 110",
-            "EGGG 101"
+            "ENGL 110"
         ],
         breadthRequirements: [9, 9, 9, 9],
         requiredCredits: 124
@@ -24,7 +23,6 @@ export const DegreeList: Degree[] = [
         title: "Computer Science BS",
         requiredCourses: [
             //Major requirements
-            "EGGG 101",
             "CISC 108",
             "CISC 181",
             "CISC 210",
@@ -73,8 +71,7 @@ export const DegreeList: Degree[] = [
             "MISY 431",
             "MISY 432",
             //University Requirements
-            "ENGL 110",
-            "EGGG 101"
+            "ENGL 110"
         ],
         breadthRequirements: [3, 3, 3, 3],
         requiredCredits: 124
@@ -83,7 +80,6 @@ export const DegreeList: Degree[] = [
         title: "Computer Science BS with AI Concentration",
         requiredCourses: [
             //Major requirements
-            "EGGG 101",
             "CISC 108",
             "CISC 181",
             "CISC 210",
@@ -114,7 +110,6 @@ export const DegreeList: Degree[] = [
         title: "Computer Science BS with Bioinformatics Concentration",
         requiredCourses: [
             //Major requirements
-            "EGGG 101",
             "CISC 108",
             "CISC 181",
             "CISC 210",
@@ -150,7 +145,6 @@ export const DegreeList: Degree[] = [
         title: "Computer Science BS with Cybersecurity Concentration",
         requiredCourses: [
             //Major requirements
-            "EGGG 101",
             "CISC 108",
             "CISC 181",
             "CISC 210",
@@ -182,7 +176,6 @@ export const DegreeList: Degree[] = [
         title: "Computer Science BS with Data Science Concentration",
         requiredCourses: [
             //Major requirements
-            "EGGG 101",
             "CISC 108",
             "CISC 181",
             "CISC 210",
@@ -215,7 +208,6 @@ export const DegreeList: Degree[] = [
         title: "Computer Science BS with High Performance Computing Concentration",
         requiredCourses: [
             //Major requirements
-            "EGGG 101",
             "CISC 108",
             "CISC 181",
             "CISC 210",
@@ -245,7 +237,6 @@ export const DegreeList: Degree[] = [
         title: "Computer Science BS with Systems and Networks Concentration",
         requiredCourses: [
             //Major requirements
-            "EGGG 101",
             "CISC 108",
             "CISC 181",
             "CISC 210",
@@ -277,7 +268,6 @@ export const DegreeList: Degree[] = [
         title: "Computer Science BS with Theory and Computation Concentration",
         requiredCourses: [
             //Major requirements
-            "EGGG 101",
             "CISC 108",
             "CISC 181",
             "CISC 210",
