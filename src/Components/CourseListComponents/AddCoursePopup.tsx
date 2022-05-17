@@ -45,10 +45,12 @@ export function AddCourseForm({
             </Modal.Header>
             <Modal.Body>
                 <Form.Group controlId="formNewCourse">
+                    {/* The weird nesting of divs is required here to render properly */}
                     <div style={{ display: "flex", flexDirection: "row" }}>
                         <div>
                             <Form.Label>Course Department</Form.Label>
                             <Form.Control
+                                placeholder="ex. CISC"
                                 data-testid="addDep"
                                 type="text"
                                 value={newCourseDepartment}
@@ -60,6 +62,7 @@ export function AddCourseForm({
                         <div>
                             <Form.Label>Course ID</Form.Label>
                             <Form.Control
+                                placeholder="ex. 110"
                                 data-testid="addId"
                                 type="number"
                                 value={newCourseID}
@@ -88,9 +91,11 @@ export function AddCourseForm({
                     ></Form.Control>
                 </Form.Group>
                 {doesCourseExist(
-                    newCourseDepartment + " " + newCourseID.toString()
+                    newCourseDepartment.toUpperCase() +
+                        " " +
+                        newCourseID.toString()
                 ) && (
-                    <div style={{ color: "red" }}>
+                    <div style={{ color: "red", fontSize: "120%" }}>
                         This course already exists!
                     </div>
                 )}
