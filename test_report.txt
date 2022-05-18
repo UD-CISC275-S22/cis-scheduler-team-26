@@ -2,10 +2,10 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (38.257 s)
-PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (8.626 s)
-PASS src/Components/CourseListComponents/courseListTest.test.tsx (5.224 s)
-PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (9.783 s)
+PASS src/Components/DegreePlanComponents/ViewingPlan.test.tsx (45.299 s)
+PASS src/Components/DegreePlanComponents/moveCoursePopup.test.tsx (10.582 s)
+PASS src/Components/CourseListComponents/courseListTest.test.tsx (5.783 s)
+PASS src/Components/DegreePlanComponents/ShowDegreeRequirements.test.tsx (11.674 s)
 PASS src/Components/CourseListComponents/UpdateCoursesInPlansFunctions.test.tsx
 PASS src/Components/DegreePlanComponents/savePlans.test.tsx
 PASS src/Components/DegreePlanComponents/PlanList.test.tsx
@@ -49,5 +49,5 @@ All files                            |   88.17 |    71.26 |   89.78 |   88.98 |
 Test Suites: 7 passed, 7 total
 Tests:       28 passed, 28 total
 Snapshots:   0 total
-Time:        67.844 s
+Time:        80.737 s
 Ran all test suites.
